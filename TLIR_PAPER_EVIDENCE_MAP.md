@@ -1,5 +1,16 @@
 # TLIR paper: section, figure and evidence map
 
+## ICML update: GNN and hard-spiking SNN
+
+The current ICML manuscript uses the [two fresh Windows runs](independent_stress_tests/windows_reproduction/) in §2.3.2 (page 4), Figure 3 and Table 3 (page 17). The PNAS map below retains the results reported by that earlier manuscript.
+
+| System | Table 3 accuracy | Four-way macro recall | Figure 3 structure criteria |
+|---|---:|---:|---|
+| GNN | 99.71% | 98.96% | 8/9, 9/9, 8/9 across three seeds |
+| Hard-spiking SNN | 94.79% | 71.30% | 12/12 in all four seeds |
+
+Only the GNN nonlinear-response frequency criterion varied across seeds: 0/256, 44/256, and 6/256, with only 44/256 reaching the 10% threshold.
+
 This navigation corresponds to the **current 10-page PNAS-format manuscript** *Unified dynamics of training, learning, inference, and reinforcement in neural networks* (`TLIR_PNAS_All_35_Headings_Checked_10pages.pdf`; independently revised for PDF-text and affiliation corrections on 2026-11-04). It maps the **actual PNAS page, figure, table and equation locations** to the preserved experimental contracts, programs, results and validators. The previous 23-page Science navigation is archived without changing its historical assertions in [TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md](TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md). Earlier conference materials are identified separately in this repository.
 
 **PNAS navigation at a glance**
@@ -76,14 +87,14 @@ The direct predictor uses the already-formed update and pre-response internal qu
 | ResNet-18 / CIFAR-100 / SGD momentum | TL-G01; inference also INF-G01 | [Protocol](experiments/gfg_resnet_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_resnet_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_resnet_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Diffusion U-Net / CIFAR-10 / AdamW | TL-G02; inference also INF-G01 | [Protocol](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Vision-MoE / CIFAR-100 / AdamW | **TL-G03 / INF-G02** | [Protocol](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/PROTOCOL_FREEZE.md), [model contract](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/MODEL_CONTRACT.json), [model](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/model.py), [runner](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/runner.py) | [Results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md), [machine results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RESULTS.json), [checker](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECKER.py), [historical check receipt](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECK_RESULT.json) |
-| GNN / graph reachability / RMSprop | Independent stress test | [Frozen protocol](independent_stress_tests/gnn/gnn_falsification_frozen.json), [native code](independent_stress_tests/gnn/gnn_tlir_counterexample.py) | [Windows formal results](independent_stress_tests/windows_reproduction/round-1/gnn_tlir_formal_results.json), [two-round comparison](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json), [archived run](independent_stress_tests/gnn/) |
-| Hard-spiking SNN / digits / Adagrad | Independent stress test | [Frozen protocol](independent_stress_tests/snn/snn_tlir_frozen_protocol.json), [native code](independent_stress_tests/snn/snn_tlir_adversarial.py) | [Windows formal summary](independent_stress_tests/windows_reproduction/round-1/SNN_TLIR_formal/FORMAL_SUMMARY.json), [two-round comparison](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json), [archived run](independent_stress_tests/snn/) |
+| GNN / graph reachability / RMSprop | Independent stress test; no invented TL-G ID | [Frozen protocol](independent_stress_tests/gnn/gnn_falsification_frozen.json), [native code](independent_stress_tests/gnn/gnn_tlir_counterexample.py) | [Formal results](independent_stress_tests/gnn/gnn_tlir_formal_results.json), [replay](independent_stress_tests/gnn/gnn_tlir_formal_replay.json), [checker](independent_stress_tests/gnn/gnn_independent_checker.py), [audit](independent_stress_tests/gnn/gnn_falsification_audit.json) |
+| Hard-spiking SNN / digits / Adagrad | Independent stress test; no invented TL-G ID | [Frozen protocol](independent_stress_tests/snn/snn_tlir_frozen_protocol.json), [native code](independent_stress_tests/snn/snn_tlir_adversarial.py) | [Formal summary](independent_stress_tests/snn/formal/FORMAL_SUMMARY.json), [checker](independent_stress_tests/snn/snn_tlir_independent_checker.py), [native-state restoration](independent_stress_tests/snn/native_parts/README.md) |
 
 ResNet and diffusion inference are separately documented in **INF-G01**: [protocol](experiments/gfg_cross_system_frozen_inference_projection_v1/PROTOCOL_FREEZE.md), [results](experiments/gfg_cross_system_frozen_inference_projection_v1/RESULTS.md), [checker](experiments/gfg_cross_system_frozen_inference_projection_v1/INDEPENDENT_CHECKER.py).
 
 **MoE is included in full as publicly committed**, not merely linked externally. All three formal seeds (20260910–12) passed the frozen joint verdict. It tests deterministic top-2 selection among four experts; all expert branches execute, with zero weight outside the selection. It is not a sparse-kernel speed benchmark. See the [scientific assessment](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/SCIENTIFIC_ASSESSMENT.md) and [runtime manifest](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RUNTIME_MANIFEST.json). That manifest identifies runtime files absent from the public Git snapshot; the historical PASS receipt is not a fresh replay in this repository.
 
-In the [Windows reproduction](independent_stress_tests/windows_reproduction/), the GNN met eight, nine, and eight of the nine registered criteria. Its nonlinear-response counts were 0/256, 44/256, and 6/256. The SNN met all twelve structural criteria in every seed. [Experiment scope](independent_stress_tests/EVIDENCE_SCOPE.md).
+GNN preserves its failed nonlinear-frequency gate for seed 20261024 (4/256, 1.56%); its other eight gates passed. SNN preserves 12/12 operational gates in each of four seeds. Both stress tests explicitly **do not run GFG Core v3 or the original four-instrument implementation**; see [their evidence scope](independent_stress_tests/EVIDENCE_SCOPE.md).
 
 ### Table 3: post-update target-boundary classification (not task accuracy)
 
@@ -93,10 +104,10 @@ In the [Windows reproduction](independent_stress_tests/windows_reproduction/), t
 | ResNet | 99.28 | 97.99 | TL-G01 direct second-order predictor |
 | Diffusion | 99.60 | 97.98 | TL-G02 direct second-order predictor |
 | MoE | 99.63 | 96.95 | TL-G03 direct second-order predictor |
-| GNN | 99.71 | 98.96 | Windows reproduction; prediction criterion met |
-| Hard-spiking SNN | 94.79 | 71.30 | Windows reproduction; prediction criterion not met |
+| GNN | 98.54 | 98.62 | Independent prediction transport |
+| Hard-spiking SNN | 95.31 | 70.74 | Independent prediction transport; frozen transport verdict NOT_SUPPORTED |
 
-GNN/SNN prediction: [Windows report and audit](independent_stress_tests/windows_reproduction/), [registered protocol](independent_stress_tests/tlp01_prediction/FROZEN_PROTOCOL.json), [code](independent_stress_tests/tlp01_prediction/tlp01_cross_system.py), [checker](independent_stress_tests/tlp01_prediction/independent_checker.py), [archived report](independent_stress_tests/tlp01_prediction/REPORT.md).
+GNN/SNN prediction authorities: [protocol](independent_stress_tests/tlp01_prediction/FROZEN_PROTOCOL.json), [code](independent_stress_tests/tlp01_prediction/tlp01_cross_system.py), [report](independent_stress_tests/tlp01_prediction/REPORT.md), [machine metrics](independent_stress_tests/tlp01_prediction/ADJUDICATION_REPORT.json), [checker](independent_stress_tests/tlp01_prediction/independent_checker.py). The public subtree does not contain the full sealed target ledger or all pretarget/native endpoint files required by that checker. Do not describe this import as a fresh 10,272-target recomputation.
 
 ## 4. Reinforcement: feedback closure in the shared GRU (PNAS pages 4–5)
 
