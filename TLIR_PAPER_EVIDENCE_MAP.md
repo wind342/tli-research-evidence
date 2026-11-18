@@ -2,14 +2,14 @@
 
 ## ICML update: GNN and hard-spiking SNN
 
-The current ICML manuscript uses the [two fresh Windows runs](independent_stress_tests/windows_reproduction/) in §2.3.2 (page 4), Figure 3 and Table 3 (page 17). The PNAS map below retains the results reported by that earlier manuscript.
+The current ICML manuscript uses the [Windows GNN and SNN results](independent_stress_tests/windows_reproduction/) in §2.3.2 (page 4), Figure 3 and Table 3 (page 17). The PNAS map below retains the results reported by that earlier manuscript.
 
 | System | Table 3 accuracy | Four-way macro recall | Figure 3 structure criteria |
 |---|---:|---:|---|
-| GNN | 99.71% | 98.96% | 8/9, 9/9, 8/9 across three seeds |
-| Hard-spiking SNN | 94.79% | 71.30% | 12/12 in all four seeds |
+| GNN | 99.87% | 97.87% | 8/9, 9/9, 8/9 across three seeds |
+| Hard-spiking SNN | 93.24% | 60.05% | 12/12 in all four seeds |
 
-Only the GNN nonlinear-response frequency criterion varied across seeds: 0/256, 44/256, and 6/256, with only 44/256 reaching the 10% threshold.
+Only the GNN nonlinear-response frequency criterion varied across seeds: 6/256, 36/256, and 20/256, with only 36/256 reaching the 10% threshold.
 
 This navigation corresponds to the **current 10-page PNAS-format manuscript** *Unified dynamics of training, learning, inference, and reinforcement in neural networks* (`TLIR_PNAS_All_35_Headings_Checked_10pages.pdf`; independently revised for PDF-text and affiliation corrections on 2026-11-04). It maps the **actual PNAS page, figure, table and equation locations** to the preserved experimental contracts, programs, results and validators. The previous 23-page Science navigation is archived without changing its historical assertions in [TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md](TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md). Earlier conference materials are identified separately in this repository.
 
