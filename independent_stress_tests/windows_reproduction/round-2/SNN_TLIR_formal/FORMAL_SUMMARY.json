@@ -1,0 +1,144 @@
+{
+  "claims_not_tested": [
+    "Universal TLIR across all architectures",
+    "Native GFG Core v3 execution",
+    "A standalone capability-learning causal mediation theorem"
+  ],
+  "file_manifest": {
+    "seed_71001\\FROZEN_GATES.json": {
+      "sha256": "b687f238330b733d42663692fa41a5f05570efe9cc11fdcafbaf30adab5d1568",
+      "size": 519
+    },
+    "seed_71001\\MEASUREMENTS.json": {
+      "sha256": "bac82544476bbd8a131278ef9e0abc2d37453aec76de322499fe0205d23efc20",
+      "size": 12385
+    },
+    "seed_71001\\NATIVE_STATES_AND_OUTCOMES.pt": {
+      "sha256": "e7eb6c9bc9e2e4d989d899ba9bb765e62d46f8fd7af79e2b81899c068a2616d3",
+      "size": 3968374
+    },
+    "seed_71002\\FROZEN_GATES.json": {
+      "sha256": "b687f238330b733d42663692fa41a5f05570efe9cc11fdcafbaf30adab5d1568",
+      "size": 519
+    },
+    "seed_71002\\MEASUREMENTS.json": {
+      "sha256": "71431d1cace92cc0ecd2ad32bc8457879f1f17ee2d36b77fe96c63b23e6cad68",
+      "size": 12376
+    },
+    "seed_71002\\NATIVE_STATES_AND_OUTCOMES.pt": {
+      "sha256": "41f29558bd6d83669582fa054798a8db60543c439b9708e9448ad641fef61bc9",
+      "size": 3968374
+    },
+    "seed_71003\\FROZEN_GATES.json": {
+      "sha256": "b687f238330b733d42663692fa41a5f05570efe9cc11fdcafbaf30adab5d1568",
+      "size": 519
+    },
+    "seed_71003\\MEASUREMENTS.json": {
+      "sha256": "5922ec3527e1152b99e7f66449acd70e0bb3bd5545eee02f40dbd66869fe2669",
+      "size": 12426
+    },
+    "seed_71003\\NATIVE_STATES_AND_OUTCOMES.pt": {
+      "sha256": "8f8c712cca24298b0ad2ee0f6b692242c2753315a65a6e81dda50a2c0c56045c",
+      "size": 3968374
+    },
+    "seed_71004\\FROZEN_GATES.json": {
+      "sha256": "b687f238330b733d42663692fa41a5f05570efe9cc11fdcafbaf30adab5d1568",
+      "size": 519
+    },
+    "seed_71004\\MEASUREMENTS.json": {
+      "sha256": "778b32531572213d33e91f633f7f9d6c9d33ecad342c0cdbf0fc0667238a7f39",
+      "size": 12355
+    },
+    "seed_71004\\NATIVE_STATES_AND_OUTCOMES.pt": {
+      "sha256": "69c960dbf195be25f31a18d30cb8b76547670f82ab2029106f1b1cc92c95518b",
+      "size": 3968374
+    }
+  },
+  "numpy": "2.4.4",
+  "protocol_sha256": "9cc39a3ca6dc7b60697136ddccfa0caa9753860f2598f2e679bb62242a1ddace",
+  "python": "3.12.10",
+  "runs": [
+    {
+      "gates": {
+        "actual_adagrad_formula_integrity": true,
+        "distributed_functional_support": true,
+        "exact_learning_version_rollback": true,
+        "finite_amplitude_nonlinearity": true,
+        "formed_capability": true,
+        "frozen_inference_integrity": true,
+        "nonadditive_full_logit_combination": true,
+        "optimizer_memory_changes_action_and_response": true,
+        "persistent_support_reorganization": true,
+        "query_conditioned_support": true,
+        "same_update_different_receiver": true,
+        "shapley_efficiency_identity": true
+      },
+      "heldout_accuracy": 0.9399999976158142,
+      "nonlinear_fraction": 0.4166666666666667,
+      "seed": 71001
+    },
+    {
+      "gates": {
+        "actual_adagrad_formula_integrity": true,
+        "distributed_functional_support": true,
+        "exact_learning_version_rollback": true,
+        "finite_amplitude_nonlinearity": true,
+        "formed_capability": true,
+        "frozen_inference_integrity": true,
+        "nonadditive_full_logit_combination": true,
+        "optimizer_memory_changes_action_and_response": true,
+        "persistent_support_reorganization": true,
+        "query_conditioned_support": true,
+        "same_update_different_receiver": true,
+        "shapley_efficiency_identity": true
+      },
+      "heldout_accuracy": 0.9555555582046509,
+      "nonlinear_fraction": 0.5130208333333334,
+      "seed": 71002
+    },
+    {
+      "gates": {
+        "actual_adagrad_formula_integrity": true,
+        "distributed_functional_support": true,
+        "exact_learning_version_rollback": true,
+        "finite_amplitude_nonlinearity": true,
+        "formed_capability": true,
+        "frozen_inference_integrity": true,
+        "nonadditive_full_logit_combination": true,
+        "optimizer_memory_changes_action_and_response": true,
+        "persistent_support_reorganization": true,
+        "query_conditioned_support": true,
+        "same_update_different_receiver": true,
+        "shapley_efficiency_identity": true
+      },
+      "heldout_accuracy": 0.9511111378669739,
+      "nonlinear_fraction": 0.4947916666666667,
+      "seed": 71003
+    },
+    {
+      "gates": {
+        "actual_adagrad_formula_integrity": true,
+        "distributed_functional_support": true,
+        "exact_learning_version_rollback": true,
+        "finite_amplitude_nonlinearity": true,
+        "formed_capability": true,
+        "frozen_inference_integrity": true,
+        "nonadditive_full_logit_combination": true,
+        "optimizer_memory_changes_action_and_response": true,
+        "persistent_support_reorganization": true,
+        "query_conditioned_support": true,
+        "same_update_different_receiver": true,
+        "shapley_efficiency_identity": true
+      },
+      "heldout_accuracy": 0.9511111378669739,
+      "nonlinear_fraction": 0.3776041666666667,
+      "seed": 71004
+    }
+  ],
+  "runtime_seconds": 23.78100000001723,
+  "schema": "snn_tlir_strict_adversarial_result_v1",
+  "sklearn_version": "1.9.1",
+  "source_sha256": "718931152b06d6b7aa0d8416fe094463fed714e9cf06efb0e90dbb270a748cf1",
+  "status": "FORMAL_EXECUTED",
+  "torch": "2.13.0+cpu"
+}
