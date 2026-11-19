@@ -523,7 +523,7 @@ Training-dependent support contributions enter the loss calculation directly. An
 \tag{E7}
 \]
 
-在收敛极限，取经典幂律谱条件 \(a_k^2=\Lambda k^{-(1+\alpha)}\)，其中 \(\Lambda>0,\alpha>0\)，则
+At convergence, assume the classical power-law spectral condition \(a_k^2=\Lambda k^{-(1+\alpha)}\), with \(\Lambda>0\), \(\alpha>0\). Then
 
 \[
 \begin{aligned}
@@ -539,7 +539,7 @@ Training-dependent support contributions enter the loss calculation directly. An
 \tag{E8}
 \]
 
-这里**谱幂律属于目标函数的经典条件 [A]；损失幂律是把它代入TLI支撑—损失计算后得到的结果 [R]**。若把全部 \(N\) 个模式训练至收敛，即 \(M=N\)，直接得到
+Here the **power-law spectrum is a classical target-function assumption [A]**; the loss scaling is recovered [R] by substituting it into the TLI support–loss relation. Training all \(N\) modes to convergence, \(M=N\), gives
 
 \[
 \boxed{
@@ -551,18 +551,18 @@ Training-dependent support contributions enter the loss calculation directly. An
 \tag{E9}
 \]
 
-(E9)是一个显式的模型—数据规模关系，**但不是**Chinchilla的可分离加性拟合形式。
+Equation (E9) provides an explicit model–data scale relationship. Its form differs from the separable additive empirical Chinchilla law.
 
-**第四步：只在引入经典最优谱截断时，得到Chinchilla型双变量幂律数量级 [A]→[R]。** 将 \(M\) 视为可选的有效学习模式数，并受限于 \(M\le N\)。对(E8)求驻点，
+**Step 4: Under classical optimal spectral truncation, derive two-variable Chinchilla-like scaling orders [A]→[R].** Treat \(M\le N\) as the selectable number of effectively learned modes. Setting the derivative of (E8) to zero gives
 
 \[
 M_D=\left(\frac{\Lambda D}{\sigma^2}\right)^{1/(\alpha+1)},\qquad
 M_*=\min\{N,M_D\}
-\quad\text{（连续近似；整数模式取邻近值）}.
+\quad\text{(continuous approximation; choose a neighboring integer mode count)}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-当 \(N,D\) 共同增长、\(\sigma^2>0\) 且采用这一截断规则时，分情况比较表示误差与估计误差得到
+When \(N,D\) grow jointly with \(\sigma^2>0\) under this truncation rule, compare representation and estimation errors to obtain
 
 \[
 \boxed{
@@ -576,9 +576,9 @@ N^{-\alpha}+D^{-\alpha/(\alpha+1)}
 \tag{E10}
 \]
 
-(E10)的意义是**两个规模变量的幂律数量级**；它不主张原Chinchilla的经验系数、指数或严格可分离等式已经被重现，也不把最优截断当作任意网络训练都会自行发生的事实。
+Equation (E10) describes the **power-law order in two scaling variables** under the stated model and truncation conditions. Its coefficients and exponents are model-specific; the result is an asymptotic scaling specialization rather than a fit to the Chinchilla empirical coefficients.
 
-**第五步：从同一冻结功能状态计算能力—损失关系 [T]+[A]→[R]。** 固定训练后状态 \(L\)，在独立测试输入上，预测误差是高斯变量，
+**Step 5: Relate capability success to loss under the same fixed learned state [T]+[A]→[R].** Fix a trained state \(L\). For independent test inputs, the prediction error is Gaussian:
 
 \[
 e(x;L)=f^*(x)-\widehat y(x)\mid L\sim N(0,V(L)),
@@ -591,7 +591,7 @@ V(L)=\sum_{k\le M}(a_k-\theta_k)^2+\sum_{k>M}a_k^2,\qquad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-因此，对于上述预先指定的回归容许误差边界 \(\varepsilon>0\)，
+Therefore, for the specified regression-error tolerance \(\varepsilon>0\),
 
 \[
 \boxed{
@@ -603,9 +603,9 @@ V(L)=\sum_{k\le M}(a_k-\theta_k)^2+\sum_{k>M}a_k^2,\qquad
 \tag{E11}
 \]
 
-这是**固定学习状态下**的精确能力成功率—平均平方损失关系；\(V(L)=0\) 时按极限取成功率1。若再对训练噪声平均，不能直接把 \(\mathbb E_L[\overline{\mathcal L}(L)]\) 填进非线性的 \(\operatorname{erf}\) 并称为精确等式。它也不是一般分类能力或语言模型交叉熵的通用公式。
+This is an exact relationship between capability success probability and average squared loss **conditional on the fixed learned state**. For \(V(L)=0\), take the limiting success probability 1. Additional averaging over training noise passes through the nonlinear \(\operatorname{erf}\) according to its expectation, rather than by substituting \(\mathbb E_L[\overline{\mathcal L}(L)]\) into the function. The readout and result are specific to this regression model.
 
-**第六步：可选的计算最优关系 [A]→[R]。** 只分析**全部 \(N\) 个模式参与计算和训练**的(E9)，采用该特例的预算近似 \(\mathcal K=\kappa ND\)，代入 \(D=\mathcal K/(\kappa N)\)：
+**Step 6: Optional compute-optimal relation [A]→[R].** Analyze only case (E9), in which **all \(N\) modes participate in training and computation**, with this model's budget approximation \(\mathcal K=\kappa ND\). Substitute \(D=\mathcal K/(\kappa N)\):
 
 \[
 \mathbb E\mathcal L_\infty(N,\mathcal K)
@@ -614,7 +614,7 @@ V(L)=\sum_{k\le M}(a_k-\theta_k)^2+\sum_{k>M}a_k^2,\qquad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对 \(N\) 求导令零，得到
+Differentiate with respect to \(N\) and set the derivative to zero:
 
 \[
 \boxed{
@@ -626,15 +626,15 @@ D_*\asymp\mathcal K^{(\alpha+1)/(\alpha+2)},\qquad
 \tag{E12}
 \]
 
-这一预算计算没有偷换到(E10)的截断训练条件；其指数也不需要与Chinchilla实测指数一致。
+This budget calculation uses the all-mode regime of (E9), distinct from the truncated-training condition in (E10). Its exponent is determined by the current model's assumptions.
 
-**探索所得与适用边界。** (E1)–(E3)把TLI的干预支撑、功能响应、冻结推理和目标能力/损失读出精确连接起来；(E4)–(E8)给出实际训练动作形成支撑贡献并产生平均损失的计算链条；(E9)–(E12)在明确经典谱及训练选择条件下得到可检验的规模关系。**这里已经实现的是TLI方程组织下的可求解特例外推，而不是从TLI方程单独固定普遍指数。** 原特例是Gaussian sequence/linear orthogonal features、干净教师测试目标、平方损失；它不等同于Transformer的全训练动态、交叉熵、多Token条件分布或真实语料统计。本节没有新增运行验证，也不改变5.2.6对于原Chinchilla损失律的输入地位。
+**Exploratory results and applicable conditions.** (E1)–(E3) connect TLI intervention support, functional response, frozen inference and target capability/loss readouts. (E4)–(E8) compute how actual updates form support contributions and affect average loss. (E9)–(E12) derive testable scaling relationships under explicit classical spectrum and training-selection conditions. The solvable setting uses Gaussian-sequence observations, orthogonal linear features, a clean teacher test target and squared loss. The formulas describe this model, rather than the full training dynamics of Transformers, cross-entropy, mult-token conditional distributions or realistic corpus statistics. Section 5.2.6 retains the separate Chinchilla empirical loss-law input.
 
-**校核说明。** (E1)–(E3)已用四组件全联盟枚举作独立代数数值核对，Shapley贡献与直接平方损失在浮点精度内相等；(E4)–(E12)是公开可逐步复核的解析推导，尚未通过独立实验检验其对真实规模曲线的预测。
+**Mathematical check.** (E1)–(E3) were checked numerically by enumerating all coalitions of four components; the Shapley decomposition and direct squared loss agreed within floating-point precision. (E4)–(E12) are analytic derivations with explicit steps and have not been independently tested against real scaling curves.
 
-**研究对照（不把本例冒称为原论文的完整模型）。** [Bahri等，Explaining neural scaling laws，PNAS 2024，DOI:10.1073/pnas.2311878121](https://doi.org/10.1073/pnas.2311878121)（随机特征与谱结构的规模律研究）；[Bordelon、Atanasov与Pehlevan，A Dynamical Model of Neural Scaling Laws，ICML 2024](https://proceedings.mlr.press/v235/bordelon24a.html)（可求解随机特征训练动力学）；[Hoffmann等，Training Compute-Optimal Large Language Models，2022](https://arxiv.org/abs/2203.15556)（经验Chinchilla律，与本特例作对照）。
+**Related research.** [Bahri et al., *Explaining neural scaling laws*, *PNAS* 2024, DOI:10.1073/pnas.2311878121](https://doi.org/10.1073/pnas.2311878121) (random-feature and spectral scaling); [Bordelon, Atanasov and Pehlevan, *A Dynamical Model of Neural Scaling Laws*, ICML 2024](https://proceedings.mlr.press/v235/bordelon24a.html) (solvable random-feature training dynamics); [Hoffmann et al., *Training Compute-Optimal Large Language Models*, 2022](https://arxiv.org/abs/2203.15556) (empirical Chinchilla law used as a separate comparison).
 
-**内部实验锚点（并非本节新验证）。** TL-E03/04（真实更新与有限响应）；TL-E06/07（干预定义的功能支撑及重组）；TL-E08（能力边界）；INF-E01及INF-G01/G02（冻结推理与已训练组件版本）。这些实验支持TLI各关系本身；**不被当作本节(E8)–(E12)谱指数的直接实测证据**。
+**Experimental anchors for the TLI relations.** TL-E03/E04 (realized updates and finite responses), TL-E06/E07 (intervention-defined support and reorganization), TL-E08 (capability boundaries), INF-E01 and INF-G01/G02 (frozen inference and trained component versions). The exploratory spectral exponents in (E8)–(E12) are derived under [A], separately from these empirical measurements.
 
 ### 5.2.7 Dynamical Isometry：深层网络的动作—响应传输
 
