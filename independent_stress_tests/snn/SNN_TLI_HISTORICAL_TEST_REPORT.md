@@ -12,7 +12,7 @@ The experiment measured TLI relations under discontinuous hard-spike forward com
 - **Formal seeds:** 71001, 71002, 71003 and 71004; pilot seed 42 was separated before freezing.
 - **Frozen checkpoints:** Updates 50, 200, 400 and 700; stored pre/post parameters, realized increments, gradients, optimizer accumulators and batch identities.
 - **Interventions:** Receiving-state transplants of identical actual updates; earlier/later optimizer-memory exchanges; amplitude grid 0, 0.125, 0.25, 0.5, 0.75, 1; 16 four-component coalitions and Shapley support; complete-logit interactions; repeat-forward integrity; learned-version rollback and exact restoration.
-- **Frozen protocol:** [snn_tlir_frozen_protocol.json](snn_tlir_frozen_protocol.json), SHA-256 `9cc39a3ca6dc7b60697136ddccfa0caa9753860f2598f2e679bb62242a1ddace`.
+- **Frozen protocol:** [snn_tli_frozen_protocol.json](snn_tli_frozen_protocol.json), SHA-256 `9cc39a3ca6dc7b60697136ddccfa0caa9753860f2598f2e679bb62242a1ddace`.
 - **Frozen source SHA-256:** `718931152b06d6b7aa0d8416fe094463fed714e9cf06efb0e90dbb270a748cf1`.
 
 ## Formal twelve-criterion result
@@ -44,12 +44,12 @@ The predictor uses surrogate differentiation across a hard threshold, whereas th
 ## Reproduction and audit
 
 - **Original formal summary SHA-256:** `578bdf5f17c7398ede73697373d435d662b80310ff063a56688d766a113c8191`.
-- A fresh run of the four formal seeds under the same environment reproduced all twelve native state/measurement/gate files byte-for-byte per seed. The two summary files differ in their runtime metadata, as described in [SNN_TLIR_replay_comparison.json](SNN_TLIR_replay_comparison.json).
+- A fresh run of the four formal seeds under the same environment reproduced all twelve native state/measurement/gate files byte-for-byte per seed. The two summary files differ in their runtime metadata, as described in [SNN_TLI_replay_comparison.json](SNN_TLI_replay_comparison.json).
 - The independent checker replayed model forwards from native parameters, updates and component-coalition logits. Both source and replay audits returned **PASS**.
 
 ## Evidence and interpretation
 
-- [Original formal summary](formal/FORMAL_SUMMARY.json), [replay summary](replay/FORMAL_SUMMARY.json), [frozen protocol](snn_tlir_frozen_protocol.json), [native program](snn_tlir_adversarial.py), [independent checker](snn_tlir_independent_checker.py) and [native-state assembly](native_parts/README.md).
+- [Original formal summary](formal/FORMAL_SUMMARY.json), [replay summary](replay/FORMAL_SUMMARY.json), [frozen protocol](snn_tli_frozen_protocol.json), [native program](snn_tli_adversarial.py), [independent checker](snn_tli_independent_checker.py) and [native-state assembly](native_parts/README.md).
 - This study used its own operational TLI stress-test program, component coalitions and native-state integrity records. GFG Core v3 instrument execution and feedback reinforcement trials are separate experimental lines.
 - The original formal structural results are positive across four seeds; local hard-threshold measurements show varying finite-response sizes. [Current ICML GNN/SNN results](../windows_reproduction/README.md) have distinct seeds and predictor metrics.
 

@@ -7,10 +7,10 @@ Restore all original formal and replay .pt files:
 ```bash
 cd independent_stress_tests/snn
 python restore_native_states.py
-python snn_tlir_independent_checker.py --root formal --protocol snn_tlir_frozen_protocol.json
-python snn_tlir_independent_checker.py --root replay --protocol snn_tlir_frozen_protocol.json
+python snn_tli_independent_checker.py --root formal --protocol snn_tli_frozen_protocol.json
+python snn_tli_independent_checker.py --root replay --protocol snn_tli_frozen_protocol.json
 ```
 
 The restoration script concatenates parts in increasing index order, checks exact size and SHA-256 before accepting each original, and copies then rechecks replay. It does not deserialize PyTorch content. Only load .pt with torch.load if you trust this research artifact.
 
-The original evidence integrity hashes and replay equality claims remain in formal/FORMAL_SUMMARY.json and SNN_TLIR_replay_comparison.json.
+The original evidence integrity hashes and replay equality claims remain in formal/FORMAL_SUMMARY.json and SNN_TLI_replay_comparison.json.

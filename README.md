@@ -1,6 +1,6 @@
 # TLI research evidence — current ICML manuscript
 
-This repository accompanies the current **TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml). Earlier research releases retain some TLIR-named files for provenance; the current repository is named `tli-research-evidence`.
+This repository accompanies the current **TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml). Frozen experimental identifiers and historical schema strings are preserved for provenance; active GNN/SNN artifact filenames use TLI.
 
 **Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is hosted alongside its LaTeX source.
 
@@ -30,7 +30,6 @@ The corresponding **GNN/SNN** evidence is the [Windows-run machine results and a
 
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
 - The [complete 14-derivation record](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLI_HISTORICAL_COMPARISONS_21.md) and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
-- Older article navigation: [PNAS paper-to-evidence map (archive)](archive/manuscripts/PNAS_EVIDENCE_MAP.md) and [Science manuscript map (archive)](archive/manuscripts/SCIENCE_EVIDENCE_MAP.md). The active paper uses the [TLI ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md); prior navigation is archived separately.
 - [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
 - [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.
 

@@ -56,7 +56,7 @@ The graph controls were conducted after the nine frozen criteria and remain expl
 
 ## Evidence and scope
 
-- [Frozen protocol](gnn_falsification_frozen.json), [native code](gnn_tlir_counterexample.py), [machine results](gnn_tlir_formal_results.json), [replay](gnn_tlir_formal_replay.json), [independent checker](gnn_independent_checker.py), [audit](gnn_falsification_audit.json) and [exploratory controls](gnn_graph_negative_controls.json).
+- [Frozen protocol](gnn_falsification_frozen.json), [native code](gnn_tli_counterexample.py), [machine results](gnn_tli_formal_results.json), [replay](gnn_tli_formal_replay.json), [independent checker](gnn_independent_checker.py), [audit](gnn_falsification_audit.json) and [exploratory controls](gnn_graph_negative_controls.json).
 - The experiment evaluated supervised graph reachability and the nine registered TLI operational criteria. The full GFG Core v3 instrument stack and environmental-feedback interventions were outside this particular protocol.
 - **Current TLI/ICML figures and Table 3:** use [the November Windows records](../windows_reproduction/README.md), with a separate frozen source and distinct seed identities.
 

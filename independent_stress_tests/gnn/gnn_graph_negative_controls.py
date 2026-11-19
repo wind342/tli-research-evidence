@@ -6,9 +6,9 @@ import json,hashlib
 from pathlib import Path
 import numpy as np,torch
 import torch.nn.functional as F
-import gnn_tlir_counterexample as e
+import gnn_tli_counterexample as e
 ROOT=Path('/mnt/data')
-formal=json.loads((ROOT/'gnn_tlir_formal_results.json').read_text())
+formal=json.loads((ROOT/'gnn_tli_formal_results.json').read_text())
 output=[]
 
 def predict(model,a,x):
@@ -59,6 +59,6 @@ for row in formal['runs']:
  'relocated_marker_label_flips':int((new_y!=test[2]).sum())}
  output.append(o)
  print(json.dumps(o))
-report={'kind':'EXPLORATORY_POSTHOC_NEGATIVE_CONTROLS_NOT_ORIGINAL_FORMAL_GATES','source_sha256':hashlib.sha256((ROOT/'gnn_tlir_counterexample.py').read_bytes()).hexdigest(),'runs':output}
+report={'kind':'EXPLORATORY_POSTHOC_NEGATIVE_CONTROLS_NOT_ORIGINAL_FORMAL_GATES','source_sha256':hashlib.sha256((ROOT/'gnn_tli_counterexample.py').read_bytes()).hexdigest(),'runs':output}
 p=ROOT/'gnn_graph_negative_controls.json';p.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
 print('saved',p)

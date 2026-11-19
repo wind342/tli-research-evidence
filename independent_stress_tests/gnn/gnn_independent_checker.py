@@ -5,17 +5,17 @@ aggregate verdicts; byte-identical native rerun is separately verified by SHA.
 import hashlib,json,sys
 from pathlib import Path
 
-ROOT=Path('/mnt/data')
+ROOT=Path(__file__).resolve().parent
 def hash_file(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def check():
- p=ROOT/'gnn_falsification_frozen.json';s=ROOT/'gnn_tlir_counterexample.py'
- f=ROOT/'gnn_tlir_formal_results.json';r=ROOT/'gnn_tlir_formal_replay.json'
+ p=ROOT/'gnn_falsification_frozen.json';s=ROOT/'gnn_tli_counterexample.py'
+ f=ROOT/'gnn_tli_formal_results.json';r=ROOT/'gnn_tli_formal_replay.json'
  protocol=json.loads(p.read_text());result=json.loads(f.read_text());replay=json.loads(r.read_text())
  errors=[]
  def require(condition,label):
   if not condition:errors.append(label)
  require(hash_file(s)==protocol['source_sha256'],'SOURCE_CHANGED_AFTER_FREEZE')
- require(hash_file(ROOT/'gnn_tlir_pilot.json')==protocol['pilot_sha256'],'PILOT_RECORD_MISMATCH')
+ require(hash_file(ROOT/'gnn_tli_pilot.json')==protocol['pilot_sha256'],'PILOT_RECORD_MISMATCH')
  require(hash_file(f)==hash_file(r) and result==replay,'FRESH_REEXECUTION_NOT_BYTE_IDENTICAL')
  require(result['kind']=='FORMAL' and result['source_sha256']==protocol['source_sha256'],'SOURCE_AUTHORITY_MISMATCH')
  require(result['seeds']==protocol['formal_seeds'],'FORMAL_SEEDS_CHANGED')

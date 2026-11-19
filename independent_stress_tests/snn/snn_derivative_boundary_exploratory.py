@@ -6,7 +6,7 @@ import json,sys,math
 from pathlib import Path
 import torch
 from torch.func import functional_call
-from snn_tlir_adversarial import HardSpikingNetwork,digits_dataset,SNAPSHOTS,SEEDS
+from snn_tli_adversarial import HardSpikingNetwork,digits_dataset,SNAPSHOTS,SEEDS
 
 torch.set_num_threads(2)
 
@@ -26,7 +26,7 @@ def four_way_macro(before,actual,pred):
 def run():
     results=[]
     for seed in SEEDS:
-        r=torch.load(Path('/mnt/data/SNN_TLIR_formal')/f'seed_{seed}'/'NATIVE_STATES_AND_OUTCOMES.pt',weights_only=False,map_location='cpu')
+        r=torch.load(Path('/mnt/data/SNN_TLI_formal')/f'seed_{seed}'/'NATIVE_STATES_AND_OUTCOMES.pt',weights_only=False,map_location='cpu')
         _,test,_=digits_dataset(seed)
         X,y,_=test;X=X[:96];y=y[:96]
         model=HardSpikingNetwork().eval()
@@ -68,7 +68,7 @@ def run():
     report={'schema':'hard_spike_local_autodiff_boundary_v1','status':'EXPLORATORY_POST_HOC_NOT_A_FROZEN_GATE',
            'meaning':'A surrogate-gradient JVP is not the physical forward-map derivative of discontinuous hard spikes. This does not test the TL-P01 predictor, which was not claimed universal to hard spiking.',
            'aggregate':aggregate,'snapshots':results}
-    Path('/mnt/data/SNN_TLIR_local_derivative_exploratory.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
+    Path('/mnt/data/SNN_TLI_local_derivative_exploratory.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
     print(json.dumps(aggregate,ensure_ascii=False,indent=2))
     for z in results:
         print(z['seed'],z['step'],'JVP-vs-physical-NRMSE',round(z['surrogate_vs_physical_FD_nrmse'],2),'linear_macro',round(z['surrogate_transition_macro_recall'],3),'unchanged_macro',round(z['unchanged_transition_macro_recall'],3))
