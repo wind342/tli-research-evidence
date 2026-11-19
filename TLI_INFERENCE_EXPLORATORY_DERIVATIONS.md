@@ -159,7 +159,7 @@ holds. Then the quotient-space transition \(\overline{\mathcal T}([L],A)\) can b
 
 ---
 
-## 3. 探索 E-I02：固定学习状态下的贝叶斯推断
+## 3. Exploration E-I02: Bayesian inference with a fixed learned state
 
 ### [T]
 
@@ -167,11 +167,11 @@ $$
 Y_{x,c}=H_{x,c}(\Pi_{x,c}(L^*)),\qquad \Delta_{\mathrm{inf}}L=0.
 $$
 
-### [A] 数学条件
+### [A] Mathematical conditions
 
-设 \(L^*\) 已包含一个有限假说族 \(h=1,\dots,K\)、正先验 \(\pi_h\)、条件似然 \(p_h(z)\) 和预测分布 \(p_h(y\mid x)\)。上下文 \(c_n=(z_1,\ldots,z_n)\) 在真实假说 \(h^*\) 下独立同分布，相关似然为正，KL 散度存在。
+Suppose \(L^*\) contains a finite hypothesis family \(h=1,\ldots,K\), positive priors \(\pi_h\), conditional likelihoods \(p_h(z)\), and predictive distributions \(p_h(y\mid x)\). Context samples \(c_n=(z_1,\ldots,z_n)\) are i.i.d. under the true hypothesis \(h^*\); the relevant likelihoods are positive and KL divergences are well defined.
 
-取当前推理支撑调用为贝叶斯权重：
+Let the current inference recruitment return Bayesian weights:
 
 $$
 \Pi_{c_n}(L^*)_h
@@ -180,9 +180,9 @@ $$
 {\sum_{j=1}^{K}\pi_j\prod_{i=1}^n p_j(z_i)}.
 $$
 
-并用 \(H\) 混合假说预测。
+The map \(H\) then mixes the hypotheses' predictions.
 
-### [R] 推导
+### [R] Derivation
 
 $$
 \boxed{
@@ -193,9 +193,9 @@ $$
 }
 $$
 
-即固定模型中的贝叶斯后验预测。
+This is Bayesian posterior prediction by a fixed model.
 
-对任一竞争假说 \(h\)，由后验赔率恒等式：
+For any competing hypothesis \(h\), the posterior-odds identity gives
 
 $$
 \log\frac{\Pr(h^*\mid c_n)}{\Pr(h\mid c_n)}
@@ -204,7 +204,7 @@ $$
 +\sum_{i=1}^{n}\log\frac{p_{h^*}(z_i)}{p_h(z_i)}.
 $$
 
-对 \(z_i\sim p_{h^*}\) 取期望：
+Taking expectation under \(z_i\sim p_{h^*}\),
 
 $$
 \boxed{
@@ -217,62 +217,62 @@ nD_{\mathrm{KL}}(p_{h^*}\|p_h).
 }
 $$
 
-只要 KL 散度大于零，真实假说相对于竞争假说的**期望对数赔率**随上下文长度线性增长，而 \(L^*\) 始终固定。
+If the KL divergence is positive, the **expected log posterior odds** of the true hypothesis against a competitor grow linearly with context length, while \(L^*\) remains fixed.
 
-**探索结论：** 推理中的上下文适应可由持久状态固定的支撑调用实现；贝叶斯后验变化不是对模型持久参数进行训练更新。并非主张所有 ICL 都是贝叶斯算法。
+**Exploratory conclusion:** Context adaptation during inference can be implemented by recruitment from fixed persistent support. Changes in a Bayesian posterior need not update the model's persistent parameters. The example specifies a Bayesian inference model rather than a universal characterization of all in-context learning.
 
-### 外部证据
+### Related published evidence
 
-- Sang Michael Xie、Aditi Raghunathan、Percy Liang、Tengyu Ma，*An Explanation of In-context Learning as Implicit Bayesian Inference*，ICLR 2022。使用潜在概念／HMM 混合设定分析上下文推断，并在合成数据上检验相关 ICL 现象：[arXiv:2111.02080](https://arxiv.org/abs/2111.02080)。
-- Madhur Panwar、Kabir Ahuja、Navin Goyal，*In-Context Learning through the Bayesian Prism*，ICLR 2024。在可处理任务族上发现高容量 Transformer 的预测接近贝叶斯基准，也报告偏离贝叶斯预测器的情形：[arXiv:2306.04891](https://arxiv.org/abs/2306.04891)；[ICLR 论文](https://proceedings.iclr.cc/paper_files/paper/2024/file/d81cd83e7f6748af351485d73-Paper-Conference.pdf)。
+- Sang Michael Xie, Aditi Raghunathan, Percy Liang and Tengyu Ma, *An Explanation of In-context Learning as Implicit Bayesian Inference* (ICLR 2022), analyze inference over latent concepts and HMM mixtures and test relevant in-context phenomena on synthetic data; [arXiv:2111.02080](https://arxiv.org/abs/2111.02080).
+- Madhur Panwar, Kabir Ahuja and Navin Goyal, *In-Context Learning through the Bayesian Prism* (ICLR 2024), find predictions approaching Bayesian baselines in tractable task families for sufficiently capable Transformers, as well as deviations; [arXiv:2306.04891](https://arxiv.org/abs/2306.04891), [ICLR paper](https://proceedings.iclr.cc/paper_files/paper/2024/file/d81cd83e7f6748af351485d73-Paper-Conference.pdf).
 
-**证据结论：** 外部理论和实验直接支持“冻结模型也可通过上下文实现贝叶斯式推断”这一类现象；这里的后验赔率公式则在所列概率假设下代数成立。
+**Evidence interpretation:** Published theory and experiments support Bayesian-like inference through context under fixed model weights. The posterior-odds formula above follows algebraically from the specified probabilistic assumptions.
 
 ---
 
-## 4. 探索 E-I03：固定状态下的推理步数与目标边界
+## 4. Exploration E-I03: Inference-step budget and a target boundary under a fixed state
 
 ### [T]
 
-TLI 区分冻结推理与持久学习变化，并通过连续读出及判定边界表述能力结果：
+TLI distinguishes frozen inference from persistent learning and describes observable capability through continuous readouts and decision boundaries:
 
 $$
 \Delta_{\mathrm{inf}}L=0,\qquad C=\chi(m).
 $$
 
-### [A] 数学条件
+### [A] Mathematical conditions
 
-固定 \(L^*\)、输入及上下文。设瞬时推理工作状态（不是持久学习状态）满足迭代
+Fix \(L^*\), input and context. Let a transient inference workspace state, distinct from the persistent learned state, evolve according to
 
 $$
 w_{k+1}=F_{L^*,x,c}(w_k).
 $$
 
-假设 \(F\) 在所考虑的完备度量空间中是压缩映射，\(0<\rho<1\)，具有不动点 \(w_\infty\)。对指定目标，**探索性地定义推理预算 \(k\) 的读出** \(m_{q,k}=m_q(L^*,w_k)\)，它不是训练时刻 \(t\) 的持久状态读出。设对 \(w\) 的 Lipschitz 常数为 \(M\)，且 \(m_q(L^*,w_\infty)\ge\gamma>0\)。
+Assume \(F\) is a contraction in the relevant complete metric space with \(0<\rho<1\) and fixed point \(w_\infty\). For a given target, define an **inference-budget-dependent readout** \(m_{q,k}=m_q(L^*,w_k)\). This is separate from the persistent training-time readout indexed by \(t\). Assume a Lipschitz constant \(M\) in \(w\), and \(m_q(L^*,w_\infty)\ge\gamma>0\).
 
-### [R] 推导
+### [R] Derivation
 
-由压缩映射：
+The contraction property yields
 
 $$
 \|w_k-w_\infty\|
 \le \rho^k\|w_0-w_\infty\|.
 $$
 
-由 Lipschitz 条件：
+The Lipschitz condition gives
 
 $$
 m_q(L^*,w_k)
 \ge\gamma-M\rho^k\|w_0-w_\infty\|.
 $$
 
-故只要
+Consequently, if
 
 $$
 M\rho^k\|w_0-w_\infty\|<\gamma,
 $$
 
-推理预算 \(k\) 的输出即保证处于正边界。特别地，当初始误差上界不小于阈值时，一个充分条件为
+then the output after inference budget \(k\) lies above the positive decision boundary. In particular, when the initial error bound exceeds the threshold, a sufficient condition is
 
 $$
 \boxed{
@@ -282,22 +282,22 @@ k>
 }
 $$
 
-若初始上界已小于 \(\gamma\)，则 \(k=0\) 即充分。这里是严格的**充分步数条件**，不是一般 LLM 的经验步数定律。
+If the initial bound is already below \(\gamma\), \(k=0\) suffices. This is a **sufficient-step condition** for the specified contraction model, not an empirically fitted LLM compute law.
 
-**探索结论：** 在固定学习状态下，有限次瞬时迭代可改变特定推理预算下的能力读出。训练中的持久能力状态与推理预算相关的当前输出，必须分开表述。
+**Exploratory conclusion:** Transient inference iterations can change the budget-dependent output decision while the persistent learned state remains fixed. Persistent learning-time capability and the current output under a specified inference budget are different readouts.
 
-### 外部证据
+### Related published evidence
 
-- Charlie Snell、Jaehoon Lee、Kelvin Xu、Aviral Kumar，*Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Parameters for Reasoning*，ICLR 2025。实验表明，恰当分配测试时计算可以改善推理结果，部分 FLOPs 匹配情形下小模型加推理计算可超过更大模型：[ICLR proceedings](https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html)。
-- Wenkai Yang、Shuming Ma、Yankai Lin、Furu Wei，*Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning*，NeurIPS 2025。实验发现过长推理在部分领域反而降低表现，并非更多计算总会更好：[NeurIPS proceedings](https://papers.neurips.cc/paper_files/paper/2025/hash/3e22bea3b170f4c2aebb9c48d98ae64d-Abstract-Conference.html)。
+- Charlie Snell, Jaehoon Lee, Kelvin Xu and Aviral Kumar, *Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Parameters for Reasoning* (ICLR 2025), show that allocating test-time compute can improve reasoning, with some FLOP-matched comparisons favoring smaller models with additional inference computation; [ICLR proceedings](https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html).
+- Wenkai Yang, Shuming Ma, Yankai Lin and Furu Wei, *Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning* (NeurIPS 2025), observe cases in which excessive test-time reasoning degrades performance; [NeurIPS proceedings](https://papers.neurips.cc/paper_files/paper/2025/hash/3e22bea3b170f4c2aebb9c48d98ae64d-Abstract-Conference.html).
 
-**证据结论：** 已有实验支持测试时计算会改变表现、且效果可能非单调；**它们没有直接检验此处的压缩映射假设和步数上界**。
+**Evidence interpretation:** Published experiments show that test-time compute changes performance, sometimes nonmonotonically. The contraction-map assumptions and sufficient-step bound above are a separate mathematical specialization.
 
 ---
 
-## 5. 探索 E-I04：推理—反馈—训练闭环的稳定性条件
+## 5. Exploration E-I04: Stability conditions for the inference–feedback–training loop
 
-### [T] 当前TLI反馈方程
+### [T] Current TLI feedback equations
 
 $$
 Y_t=\mathcal I(L_t,x_t,c_t),\quad B_{t+x}=\mathcal B(Y_t,E_t),\quad
@@ -305,9 +305,9 @@ A_{t+x}=\mathcal U(Z_{t+x},B_{t+x}),\quad
 Z_{t+x+1}=\mathcal T(Z_{t+x},A_{t+x}),\quad x\ge1.
 $$
 
-### [A] 同步一步反馈的模型条件
+### [A] Synchronous one-step feedback specialization
 
-取 \(x=1\)，以一次训练/反馈周期为时间单位。固定查询和外部信息 \(E\)：
+Set \(x=1\) and index time by one training/feedback cycle. Fix the query and external information \(E\):
 
 $$
 Z_{t+1}=F(Z_t,B_t)=\mathcal T\bigl(Z_t,\mathcal U(Z_t,B_t)\bigr),\quad
