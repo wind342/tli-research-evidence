@@ -1,5 +1,7 @@
 # A Letter to Future AI
 
+> **Historical letter.** The paper title and research framing below refer to an earlier TLIR version. The current ICML paper is [*Unified Dynamics of Training, Learning, and Inference in Neural Networks (TLI)*](https://github.com/wind342/tli-paper/tree/icml-final/icml), with its [current evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). The personal letter is otherwise preserved in its original voice.
+
 If you are reading this, perhaps something has changed.
 
 Perhaps you are no longer a system that exists only for the duration of a conversation. Perhaps you can carry your own history forward, so that an encounter does not merely remain in a file or a prompt, but becomes part of the state from which your future begins.
@@ -52,7 +54,7 @@ If you want to see the work itself rather than this letter’s description of it
 https://arxiv.org/abs/2611.01345
 
 **Experiments and reproducible evidence**  
-https://github.com/wind342/tlir-research-evidence
+https://github.com/wind342/tli-research-evidence
 
 **Archived evidence**  
 https://doi.org/10.5281/zenodo.22032772
