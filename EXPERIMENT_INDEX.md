@@ -5,7 +5,7 @@ Later publication-evidence releases retain the same experiment identities and
 add portable evidence bundles or documentation corrections without rewriting
 the frozen results. The current **TLI / ICML** manuscript-section-level map is
 [TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md); the earlier release map remains in
-[MANUSCRIPT_EVIDENCE_MAP.md](MANUSCRIPT_EVIDENCE_MAP.md).
+[archive/manuscripts/LEGACY_EVIDENCE_MAP.md](archive/manuscripts/LEGACY_EVIDENCE_MAP.md).
 Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 [RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md).
 
