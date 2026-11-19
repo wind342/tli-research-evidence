@@ -1,3 +1,5 @@
+> **Historical Science-format map.** This document preserves a previous manuscript version and its original navigation. Its “current manuscript” terminology refers to that historical version. For the present TLI ICML manuscript, use [TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md).
+
 # TLIR paper: section, figure and evidence map
 
 This navigation corresponds to the **23-page final Science manuscript** *Unified dynamics of training, learning, inference, and reinforcement in neural networks* (`TLIR_Science_Final-7.pdf`), containing three figures and three numbered tables. It maps the current manuscript to the preserved protocols, programs, evidence records and validators. Earlier conference manuscript materials are identified separately in the repository.
