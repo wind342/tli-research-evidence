@@ -1,10 +1,8 @@
-# FoCM 第五章：推理的简单计算解释（待修改草稿）
+# Historical FoCM inference example — English working note
 
-**状态：** 待讨论／待统一修改；**未写入 FoCM 论文正文，也不修改 ICML 摘要。**
+**Document role:** Historical FoCM draft, now expressed in English. The canonical wording used in the current TLI/ICML paper is [Section 5, *This Is a Simple Theory*](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/simple.tex). The current paper is *Unified Dynamics of Training, Learning, and Inference in Neural Networks* (TLI).
 
-**目的：** 为第五章 *A Simple Theory* 的推理与反馈小节保存一个具体计算示例。由基本神经网络运算出发，而不是把 Attention 当成推理方程的前提。它是示例性的数学解释，跨架构证据仍以 INF-E01、INF-G01、INF-G02 和独立压力测试为准。
-
-## 建议的英文段落
+This note records the elementary ReLU-gating and version-rollback example developed during the earlier FoCM drafting process. The source example is a mathematical illustration, with INF-E01 and cross-system experiments supplying empirical evidence.
 
 ### Inference recruits and combines learned computation
 
@@ -38,7 +36,7 @@ For $x=(1,1)$, the same interaction is zero. Thus query-dependent functional con
 
 Inference also depends on the versions formed through learning. Replacing the trained first-component weight $a^*=2$ with a pre-learning version $a_{\mathrm{pre}}=1$ changes the output at $x=(1,1)$ from $3$ to $2$; exact restoration recovers the original result. The gates and version replacements are diagnostic interventions, distinct from ordinary inference.
 
-These calculations illustrate the TLIR inference relation: a fixed learned state supplies functional components, the current input determines their contributions, and nonlinear computation combines them into an output. No persistent learning update is required.
+These calculations illustrate the TLI inference relation: a fixed learned state supplies functional components, the current input determines their contributions, and nonlinear computation combines them into an output. No persistent learning update is required.
 
 ### Feedback closes the loop
 
@@ -51,10 +49,9 @@ $$
 
 Inference preserves the current learned state; feedback-driven training can change the learned state used by future inference.
 
-## 留待一起修改时处理
+## Historical editing context
 
-- 与 FoCM 第五章前四节统一变量、行文密度与公式编号。
-- 检查是否将单神经元的两项输入贡献称为“components”最合适，以及它与实验的组件门控定义是否足够清楚。
-- 保留“诊断门控／旧版本替换”与“原生冻结推理”的区别。
-- 如需进一步增强最后一节，可以考虑添加一个同样简单的反馈影响后续参数更新的计算实例，而不仅列出闭环箭头。
-- **不要把此示例写成 Attention 推导，也不要宣称单神经元例子独立证明了跨系统普遍性。**
+- Harmonize symbol use, section numbering, and equation references with the destination manuscript.
+- The component gates and parameter-version substitutions are measured interventions.
+- The current TLI manuscript already contains the ReLU example and a feedback-to-subsequent-training relation. Refer to the canonical LaTeX source for its final wording.
+
