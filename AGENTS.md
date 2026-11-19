@@ -16,4 +16,4 @@ Apply these operational rules:
 7. For **format-only requests**, preserve all scientific content verbatim. For language polishing, maintain exact meanings, formulae, numbers, and research order; disclose substantive change suggestions separately.
 8. Never claim to have independently audited code or experiments when you have inspected only manuscript text or documentation.
 
-Start current-paper navigation from `TLI_ICML_PAPER_EVIDENCE_MAP.md`, then consult `EXPERIMENT_INDEX.md`, `CROSS_SYSTEM_EVIDENCE_CHAIN.md`, `RL_EVIDENCE_CHAIN.md`, and `PUBLIC_EVIDENCE_MATRIX.md`. `MANUSCRIPT_EVIDENCE_MAP.md` preserves an earlier release's mapping. Record concrete evidence disagreements, including registered failures, with their exact scope.
+Start current-paper navigation from `TLI_ICML_PAPER_EVIDENCE_MAP.md`, then consult `EXPERIMENT_INDEX.md`, `CROSS_SYSTEM_EVIDENCE_CHAIN.md`, `RL_EVIDENCE_CHAIN.md`, and `PUBLIC_EVIDENCE_MATRIX.md`. `archive/manuscripts/LEGACY_EVIDENCE_MAP.md` preserves an earlier release's mapping. Record concrete evidence disagreements, including registered failures, with their exact scope.
