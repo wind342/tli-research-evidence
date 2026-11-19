@@ -1,3 +1,5 @@
+> **Version note:** This file is a historical research note written under the earlier **TLIR** terminology. The current ICML paper is **[Unified Dynamics of Training, Learning, and Inference in Neural Networks (TLI)](https://github.com/wind342/tli-paper/tree/icml-final/icml)**. Its current experiment, equation, derivation and figure references are indexed in the [TLI/ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). The original mathematical text and recorded hypotheses below are preserved as research history.
+
 # TLIR：14项理论外推逐项来源与数学核验报告
 
 **审核日期：** 2026-11-03  
