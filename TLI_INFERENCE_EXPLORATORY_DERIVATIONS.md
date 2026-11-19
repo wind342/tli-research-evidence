@@ -1,31 +1,31 @@
-> **TLI探索性数学研究**：E-I01–E-I04独立于当前论文14项正式数学恢复。[T]入口采用[当前ICML统一方程](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex)。E-I04按新反馈结构重新推导了Jacobian与稳定阈值。
+> **Exploratory TLI mathematics:** E-I01–E-I04 are separate from the current paper's fourteen formal mathematical recoveries. Their [T] starting point is the [current ICML unified system](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex). E-I04 uses the current feedback structure to derive its Jacobian and stability threshold.
 
-# TLI 推理方程的四项探索性数学外推及外部研究证据
+# Four Exploratory Mathematical Deductions from TLI Inference Equations and Related Published Evidence
 
-**Status: EXPLORATORY / 探索性数学研究笔记（独立于正式14项推导）**  
-**记录日期：** 2026-11-08  
-**推导起点：** TLI 统一方程中已经通过实验建立的训练、学习、能力读出、冻结推理与反馈关系  
-**证据类型：** 数学推论／明确条件下的示例／2026-11-08 外部公开文献核对  
-**研究范围：** 以当前TLI方程及公开文献为输入的四项数学探索；已有正式外推与冻结实验记录保持各自版本
+**Status:** EXPLORATORY — mathematical research notes separate from the fourteen formal recoveries
+**Record date:** November 8, 2026
+**Starting point:** The training, learning, capability-readout, frozen-inference and feedback relations established through TLI experiments
+**Evidence type:** Mathematical deduction, explicitly conditioned examples and review of published external research as of November 8, 2026
+**Scope:** Four mathematical explorations based on the current TLI equations and public literature; prior formal recoveries and frozen experimental records retain their own versions.
 
-## 0. 摘要与来源
+## 0. Overview and sources
 
-本笔记记录一次以 **TLI 推理方程 \(\mathcal I\)** 为切入点、联立前序状态转移与能力读出方程所作的四个数学探索：
+These notes combine the **TLI inference relation \(\mathcal I\)** with the established state transitions and capability readouts to explore four mathematical consequences:
 
-1. **完整当前行为并不必然决定同一更新后的行为**：行为等价类一般不一定在训练状态转移下封闭。
-2. **固定持久学习状态仍可实现贝叶斯后验更新**：上下文驱动的瞬时支撑调用可以精确表示后验预测。
-3. **固定学习状态下的推理计算量可以决定是否越过某一输出判定边界**：对满足压缩映射条件的推理过程，可推导充分的步数界。
-4. **推理—反馈—训练闭环能够具有可计算的稳定性阈值**：特定二维线性特例中得到反馈增益与衰减之间的临界等式。
+1. **Equivalent present behavior need not imply equivalent behavior after the same update:** Behavioral equivalence classes need not be closed under training transitions.
+2. **Bayesian posterior updates with fixed persistent learned state:** Context-conditioned transient support recruitment can represent posterior predictions exactly.
+3. **Inference compute under a fixed learned state can determine an output boundary crossing:** A contraction-map assumption gives a sufficient inference-step bound.
+4. **The inference–feedback–training loop can have a computable stability threshold:** A specified two-dimensional linear case yields a critical equation relating feedback gain to decay.
 
-**研究类型与来源：** TLI基础方程和前序因果实验提供已建立的关系；本文四项推论使用各自明确的附加数学条件。所引外部文献提供相邻理论或实验先例；本文件记录数学推导及公开证据核对。
+**Research type and sources:** Established TLI equations and previous causal experiments provide the foundation; each exploration introduces explicit mathematical conditions. Published studies supply related theoretical or experimental precedents. This file records mathematical derivations and checks against public evidence.
 
-TLI当前统一方程：[统一动力学](TLI_UNIFIED_DYNAMICS.md)；相关冻结证据定位：[EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md)、[CROSS_SYSTEM_EVIDENCE_CHAIN.md](CROSS_SYSTEM_EVIDENCE_CHAIN.md)、[RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md)。
+Current TLI equations: [unified dynamics](TLI_UNIFIED_DYNAMICS.md). Frozen evidence: [experiment index](EXPERIMENT_INDEX.md), [cross-system chain](CROSS_SYSTEM_EVIDENCE_CHAIN.md) and [reinforcement evidence](RL_EVIDENCE_CHAIN.md).
 
-## 1. [T] 共同起点：TLI 原方程
+## 1. [T] Common starting point: the TLI equations
 
-以下保留 TLI 定义与数学对象的区别。
+The TLI-defined objects are kept distinct from the mathematical specializations below.
 
-**训练的实际动作与状态转移：**
+**Actual training action and state transition:**
 
 $$
 Z_t=(L_t,\omega_t),\qquad
@@ -33,14 +33,14 @@ A_t=\mathcal U(Z_t,B_t),\qquad
 Z_{t+1}=\mathcal T(Z_t,A_t).
 $$
 
-参数化特例中，实际更新为
+In a parameterized implementation, the realized increment is
 
 $$
 \delta_t=\Psi(\theta_t,\omega_t,B_t),\qquad
 \theta_{t+1}=\theta_t+\delta_t.
 $$
 
-**学习的功能支撑、实际响应、能力读出：**
+**Learned functional support, realized response and capability readout:**
 
 $$
 P_{t,q}=\mathcal P_q(L_t;\mathcal J_q),\quad
@@ -52,7 +52,7 @@ R_{t,q}=m_q(L_{t+1})-m_q(L_t),\qquad
 C_{t,q}=\chi_q\bigl(m_q(L_t)\bigr).
 $$
 
-**冻结推理：**
+**Frozen inference:**
 
 $$
 S_{x,c}^{\mathrm{active}}=\Pi_{x,c}(L^*),\qquad
@@ -60,15 +60,15 @@ Y_{x,c}=H_{x,c}\bigl(S_{x,c}^{\mathrm{active}}\bigr),\qquad
 \Delta_{\mathrm{inf}}L=0.
 $$
 
-用组合符号可写
+The composed inference map is
 
 $$
 \mathcal I(L^*,x,c)=H_{x,c}\bigl(\Pi_{x,c}(L^*)\bigr).
 $$
 
-这里 \(\Pi\) 是支撑调用／选择／组合意义上的算子，**并不预设线性投影，不依赖 Attention 架构**。
+Here \(\Pi\) means support recruitment, selection and combination; it is **not assumed linear**, and does not require an attention-based architecture.
 
-**反馈闭环：**
+**Feedback loop:**
 
 $$
 Y_t=\mathcal I(L_t,x_t,c_t),\quad
@@ -80,29 +80,29 @@ A_{t+x}=\mathcal U(Z_{t+x},B_{t+x}),\quad
 Z_{t+x+1}=\mathcal T(Z_{t+x},A_{t+x}),\quad x\ge1.
 $$
 
-这组 [T] 是下面四个探索的共同数学起点。下面的假定和专用符号属于各自特例 [A]，不是重新定义 TLI，也不是从先验概念替代其实验发现的定义。
+These [T] equations form the common starting point for four explorations. Any additional assumptions and symbols appear under [A] within their respective examples.
 
 ---
 
-## 2. 探索 E-I01：当前行为等价不保证训练动力学等价
+## 2. Exploration E-I01: Equivalent current behavior does not ensure equivalent training dynamics
 
-**问题。** 如果两个持久状态在全部输入与上下文上产生同一推理函数，是否能仅靠这个当前函数决定同一训练动作作用后的新函数？
+**Question.** If two persistent states implement the same inference function for every input and context, does that function alone determine the function obtained after the same training action?
 
 ### [T]
 
-定义固定状态的完整行为映射：
+Define the complete behavioral map of a fixed state:
 
 $$
 F_L:(x,c)\mapsto \mathcal I(L,x,c).
 $$
 
-训练状态发生 \(\mathcal T(L,A)\) 的变化（下式为省略优化器记忆的参数状态特例）。
+The training transition is \(\mathcal T(L,A)\); the following example omits optimizer memory and works directly with parameter states.
 
-### [A] 数学条件
+### [A] Mathematical conditions
 
-设两个不同状态 \(L_1,L_2\) 满足 **全输入行为等价** \(F_{L_1}=F_{L_2}\)，且允许对两个参数状态施加同一个预先给定的增量 \(A\)。
+Let distinct states \(L_1,L_2\) be **behaviorally equivalent over all inputs**, \(F_{L_1}=F_{L_2}\), and allow the same pre-specified increment \(A\) to be applied to both parameter states.
 
-具体取一维模型：
+Consider the following one-dimensional model:
 
 $$
 \mathcal I(L,x)=L^2x,\qquad
@@ -110,24 +110,24 @@ L_1=1,\qquad L_2=-1,\qquad
 \mathcal T(L,A)=L+A,\qquad A=0.1.
 $$
 
-这是一个**受控同增量干预的数学反例**，不是关于 Adam 或梯度下降在两个状态下会自行形成相同增量的断言。
+This is a **controlled same-increment mathematical counterexample**. It specifies an intervention, rather than asserting that Adam or gradient descent would spontaneously produce the same increment in both states.
 
-### [R] 推导
+### [R] Derivation
 
-更新前，对任何 \(x\)：
+Before the update, for every \(x\):
 
 $$
 F_{L_1}(x)=F_{L_2}(x)=x.
 $$
 
-更新后：
+After the update:
 
 $$
 F_{\mathcal T(L_1,A)}(x)=1.21x,\qquad
 F_{\mathcal T(L_2,A)}(x)=0.81x.
 $$
 
-因此：
+Therefore:
 
 $$
 \boxed{
@@ -137,25 +137,25 @@ F_{\mathcal T(L_1,A)}=F_{\mathcal T(L_2,A)}.
 }
 $$
 
-若使用输入 \(x=1\) 上的目标边界 \(m(L)=\mathcal I(L,1)-1.1\)，并令 \(C(L)=\mathbf1[m(L)>0]\)，两者更新前均为错误，而更新后仅 \(L_1\) 的后继状态为正确。
+For the target margin \(m(L)=\mathcal I(L,1)-1.1\) at \(x=1\), and \(C(L)=\mathbf1[m(L)>0]\), both states are incorrect before the update, while only the successor of \(L_1\) becomes correct.
 
-更一般地，在状态等价关系 \(L\sim L'\iff F_L=F_{L'}\) 下，只有当
+More generally, under \(L\sim L'\iff F_L=F_{L'}\), a closed transition on behavioral equivalence classes exists only if
 
 $$
 L\sim L'\Longrightarrow\mathcal T(L,A)\sim\mathcal T(L',A)
-\quad\text{对允许的全部动作 }A\text{ 成立}
+\quad\text{for every allowed action }A
 $$
 
-时，才能在该等价商空间上定义由当前行为与动作唯一决定的封闭转移 \(\overline{\mathcal T}([L],A)\)。
+holds. Then the quotient-space transition \(\overline{\mathcal T}([L],A)\) can be defined uniquely by current behavior and action.
 
-**探索结论：** 当前完整输入输出函数可能不足以作为未来训练响应的封闭动力学状态；问题比“仅凭准确率不足以测量学习”更强。
+**Exploratory conclusion:** Even the full present input–output function may be insufficient to form a closed dynamical state for predicting future training responses. This is a stronger condition than the insufficiency of accuracy alone.
 
-### 外部证据
+### Related published evidence
 
-- Dinh 等人，*Sharp Minima Can Generalize For Deep Nets*，ICML 2017，证明函数等价的参数表示可以具有不同参数空间几何。这是 **行为等价与内部状态差异** 的数学先例；并未测试上述同增量反例：[PMLR](https://proceedings.mlr.press/v70/dinh17b.html)。
-- *Exact learning dynamics of deep linear networks with prior knowledge*，研究不同初始化对学习轨迹的影响，并报告最终函数／损失相同时内部表示和学习轨迹可不同。这是 **初始化与训练历史依赖** 的相关理论与实验，不是同增量反例的独立验证：[论文全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10955603/)。
+- Dinh et al., *Sharp Minima Can Generalize For Deep Nets* (ICML 2017), show that functionally equivalent parameterizations can have different parameter-space geometry. This is a mathematical precedent for **behavioral equivalence with distinct internal states**; [PMLR](https://proceedings.mlr.press/v70/dinh17b.html).
+- *Exact learning dynamics of deep linear networks with prior knowledge* examines initialization-dependent trajectories and reports internal representation differences even when final functions or losses agree. It supplies related theory and experiments on **initialization and training-history dependence**; [full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC10955603/).
 
-**证据结论：** 这里的特定反例由直接代数严格成立；外部文献支持问题的重要性与相邻现象，不是新增 TLI 实验验证。
+**Evidence interpretation:** The displayed counterexample follows exactly by algebra. The external papers provide adjacent theoretical and experimental precedents.
 
 ---
 
