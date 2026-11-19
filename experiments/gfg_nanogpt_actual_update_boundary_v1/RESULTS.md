@@ -4,7 +4,7 @@
 
 `ACTUAL_UPDATE_BOUNDARY_PREDICTION_REPRODUCED`
 
-This experiment predicts only whether each concrete target is correct after one already formed actual training update. It does not predict response curves or CSRG support states, and it applies no difficult-sample partition or exemption.
+This experiment predicts immediate post-update correctness for each concrete target using an already formed actual training update. Every target is evaluated under the same frozen rule.
 
 ## Primary confirmation result
 
@@ -34,7 +34,7 @@ All 15,264 targets were evaluated under one rule. Total errors were 1,195; none 
 
 The algorithm uses the full pre-update parameter state, the actual formed parameter update, the concrete evaluation input, and every target-versus-competitor boundary. It computes the hidden representation's first and second directional response and the joint rotation of output boundaries, then derives final correctness from the signs of all predicted endpoint gaps.
 
-The result supports direct prediction of the immediate functional consequence of an actual training update. It does not claim long-horizon prediction or prediction of an update before its gradient and optimizer action have formed. This run is a raw-state re-execution of an already established algorithm, not a new prospective confirmation.
+The result measures immediate target-boundary prediction from a formed update, pre-update model state and identified inputs. It is a raw-state re-execution of the established algorithm using the frozen confirmation split.
 
 ## Public recomputation
 
