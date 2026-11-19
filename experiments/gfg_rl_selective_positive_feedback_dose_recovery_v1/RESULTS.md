@@ -27,7 +27,7 @@ there was no learned or proxy reward, negative reward or entropy bonus.
 | Reinforced-skill accuracy in every dose branch | 100.00% |
 | Balanced final accuracy of every skill | at least 95%; observed 100.00% |
 
-The relation is not confined to a discrete endpoint failure. At update 3,200,
+The support and margin measurements resolve changes before discrete endpoint failure. At update 3,200,
 the balanced, mild, high and exclusive branches had mean reinforced-skill
 support shares of 25.54%, 26.47%, 27.50% and 35.20%, respectively. The
 corresponding mean margins of the other three skills were 9.474, 9.130, 8.493
@@ -59,8 +59,8 @@ Rebalanced recovery moved the support profile back toward the balanced branch
 and restored nearly all other-skill performance while retaining the reinforced
 skill at 100% in every seed. Training only the other three skills restored them
 slightly more completely but reduced the formerly reinforced skill to 89.06%
-on average. This symmetric trade-off is stronger evidence for feedback-directed
-support reorganization than an irreversible-damage explanation.
+on average. These reciprocal recovery outcomes demonstrate feedback-directed
+support reorganization across the same shared functional system.
 
 The two gain values answer different causal questions. The 29.17- and
 29.51-point changes are the observed improvements along the recovery branches
@@ -85,6 +85,6 @@ feedback causally controlled both the allocation of distributed functional
 support and the reliability of unreinforced capabilities. The same feedback
 loop that strengthened the selected skill progressively weakened other skills,
 while redistributing feedback reversed the support and behavioural trade-off.
-This establishes a bounded double-edged feedback mechanism. It does not prove
-that every reinforcement-learning system must exhibit the effect, nor that the
-measured support shares constitute a conserved finite resource.
+The results establish a feedback-driven trade-off between reinforced and
+previously mastered capabilities in the tested shared GRU, with functional
+support measured by the registered component-intervention protocol.
