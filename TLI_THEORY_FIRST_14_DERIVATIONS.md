@@ -389,11 +389,11 @@ Substituting the optimal allocation back into the original loss law gives
 
 ### 5.2.E1 (exploratory, outside the fourteen): Scaling from TLI Support, Capability and Loss to a Solvable Spectral Model
 
-**状态：EXPLORATORY / 探索性数学外推（第14项之后的独立研究笔记）。** 5.2.6代入Hoffmann等的经验损失律求计算最优分配；本节使用**经典高斯序列/正交谱学习特例**，先计算实际功能支撑贡献，再推得该特例的损失与规模渐近关系。结论的模型条件是高斯序列观测、正交特征、平方损失与相应谱假设；证据性质为解析推导。
+**Status: EXPLORATORY — separate mathematical research beyond the fourteen formal recoveries.** Section 5.2.6 inserts Hoffmann et al.'s fitted loss law to obtain compute-optimal allocation. This section instead considers a **solvable Gaussian-sequence and orthogonal-spectral model**, computes functional-support contributions and derives its own loss–scale asymptotics. Conditions include Gaussian coefficient observations, orthogonal features, squared loss and specified spectral assumptions; the evidence consists of analytical derivations.
 
-**逐式来源标记。** <sup>[T]</sup> 为当前ICML论文的统一动力学方程组及其组件干预测量（见[统一动力学方程](TLI_UNIFIED_DYNAMICS.md)）；<sup>[A]</sup> 为本节使用的高斯序列观测、正交特征、谱衰减、梯度下降及相应的谱截断/预算条件；<sup>[R]</sup> 为代入计算得到的关系。本节将回归任务能力读出与Shapley联盟值具体化为TLI一般公式的特例。
+**Equation provenance.** [T] The current ICML coupled equations and registered component-intervention support (see [unified dynamics](TLI_UNIFIED_DYNAMICS.md)). [A] Gaussian-sequence observations, orthogonal features, spectral decay, gradient descent and the specific truncation/budget conditions used below. [R] Relations obtained by substitution. The regression readout and Shapley coalition values specialize general TLI formulas to this mathematical model.
 
-**TLI方程入口 [T]。** 对持久学习状态、实际动作、目标响应、干预支撑、能力和冻结推理，使用
+**TLI starting equations [T].** Persistent learned states, realized actions, target responses, intervention-measured support, capability and frozen inference follow
 
 \[
 \begin{gathered}
@@ -411,9 +411,9 @@ Y_{x,c}=H_{x,c}(S_{x,c}^{\mathrm{active}}),\qquad
 \qquad {}^{\scriptscriptstyle\text{[T]}}
 \]
 
-本节采用监督训练，不使用反馈闭环；这不改变TLI的反馈方程定义。具体损失与能力的关系由任务的原生输出和读出规则计算，**不将能力等同于参数数目、模式数或损失本身**。
+This section studies supervised training rather than the closed feedback loop. The task's loss and capability readouts are computed from its own outputs and decision rule, keeping capability distinct from parameter count, mode count and loss.
 
-**经典可求解条件 [A]。** 在高斯正交基上取独立 \(x_k\sim N(0,1)\)，真实目标函数为 \(y=f^*(x)=\sum_{k\ge1}a_kx_k\)，并要求 \(\sum_ka_k^2<\infty\)。参数规模为 \(N\) 的此特例最多表示前 \(N\) 个模式；实际启用 \(M\le N\) 个模式。冻结推理将模式的已学习输出调用并组合：
+**Solvable classical conditions [A].** Use independent \(x_k\sim N(0,1)\) in a Gaussian orthogonal basis. The true function is \(y=f^*(x)=\sum_{k\ge1}a_kx_k\) with \(\sum_ka_k^2<\infty\). The parameterized model of size \(N\) can represent at most the first \(N\) modes, while \(M\le N\) modes are actually enabled. Frozen inference recruits and combines their learned outputs:
 
 \[
 \Pi_x(L^*)=(z_1,\ldots,z_M),\quad z_k=\theta_kx_k,\qquad
@@ -421,9 +421,9 @@ H_x(\Pi_x(L^*))=\widehat y(x)=\sum_{k=1}^{M}z_k.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-为了可精确计算训练数据的影响，采用**高斯序列观测模型**：每个启用模式的观测系数 \(\widetilde a_{k,D}=a_k+\sigma D^{-1/2}\xi_k\)，其中 \(\xi_k\) 独立同分布为 \(N(0,1)\)，且独立于测试输入。这里 \(D\) 表示每个系数的**有效观测规模**，不是未经额外论证即可等同于真实语言模型训练Token数；这个观测模型也不自动等同于直接对普通i.i.d.样本做最小二乘。训练使用系数平方目标 \(Q_M(\theta)=\frac12\sum_{k\le M}(\theta_k-\widetilde a_{k,D})^2\)，零初始化、步长 \(0<\eta<2\)。
+To calculate data effects exactly, use a **Gaussian-sequence observation model**: each enabled mode's observed coefficient is \(\widetilde a_{k,D}=a_k+\sigma D^{-1/2}\xi_k\), where independent \(\xi_k\sim N(0,1)\) are also independent of the test input. Here \(D\) is the **effective observation count per coefficient**, with a definition distinct from raw language-model training tokens or ordinary i.i.d.-sample least squares. Training minimizes \(Q_M(\theta)=\frac12\sum_{k\le M}(\theta_k-\widetilde a_{k,D})^2\), from zero initialization at step size \(0<\eta<2\).
 
-**第一步：用固定联盟干预将TLI功能支撑连到能力与损失 [T]+[A]→[R]。** 对目标 \(q=(x,y)\)，指定容许回归误差 \(\varepsilon>0\)，取此任务的功能读出与能力判定为
+**Step 1: Link TLI functional support to capability and loss through fixed-coalition interventions [T]+[A]→[R].** For target \(q=(x,y)\) and tolerated regression error \(\varepsilon>0\), define this task's readout and capability rule as
 
 \[
 m_q(L)=\varepsilon^2-(y-\widehat y)^2,\qquad
@@ -431,14 +431,14 @@ C_q(L)=\mathbf1[m_q(L)>0].
 \qquad {}^{\scriptscriptstyle\text{[T]}}
 \]
 
-按固定干预协议 \(\mathcal J_q\) 对注册模式执行全部联盟 \(S\subseteq\{1,\ldots,M\}\)，其联盟读出是
+Under fixed intervention protocol \(\mathcal J_q\), enumerate every coalition \(S\subseteq\{1,\ldots,M\}\) of registered modes. The coalition readout is
 
 \[
 v_q(S;L)=\varepsilon^2-\left(y-\sum_{k\in S}z_k\right)^2.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-以论文的联盟Shapley测量定义有符号功能贡献 \(\varphi_{k,q}\)。Shapley的联盟边际平均及完备性给出**精确等式**：
+Define signed functional contributions \(\varphi_{k,q}\) using the paper's coalition Shapley intervention measure. Averaging marginal contributions over coalitions and the Shapley completeness identity give the **exact equations**:
 
 \[
 \boxed{\varphi_{k,q}=z_k(2y-\widehat y),\qquad
@@ -447,8 +447,8 @@ v_q(S;L)=\varepsilon^2-\left(y-\sum_{k\in S}z_k\right)^2.
 \tag{E1}
 \]
 
-若全关闭的基线 \(b_q=v_q(\varnothing;L)=\varepsilon^2-y^2\)，则
-\(m_q(L)=b_q+\sum_k\varphi_{k,q}(L)\)。对固定目标 \(q\) 在实际训练前后比较，\(b_q\) 不变，故TLI实际功能响应为
+For the all-disabled baseline \(b_q=v_q(\varnothing;L)=\varepsilon^2-y^2\), we have
+\(m_q(L)=b_q+\sum_k\varphi_{k,q}(L)\). Comparing the same target \(q\) before and after actual training leaves \(b_q\) fixed, so the realized TLI functional response is
 
 \[
 \boxed{
@@ -460,7 +460,7 @@ R_{t,q}=\sum_k\Delta\varphi_{t,k,q},\qquad
 \tag{E2}
 \]
 
-这里的任务平方损失与能力读出由**同一完整支撑分解**给出：
+Thus the task's squared loss and capability readout arise from the **same complete support decomposition**:
 
 \[
 \boxed{
@@ -472,11 +472,11 @@ C_q(L)=\mathbf1\left[\sum_k\varphi_{k,q}(L)>y^2-\varepsilon^2\right].
 \tag{E3}
 \]
 
-这些等式需要**保留全部有符号贡献、全关闭基线和同一固定联盟协议**，不能把仅含正贡献的归一化支撑占比代入。此简化模型的前向输出是加性的，联盟读出的非加性交互来自**平方读出**；它不声称已在该模型中复现真实深度网络内部的一切非加性组件机制。
+These identities retain every signed contribution, the all-disabled baseline and the same fixed coalition protocol. A normalized positive-only support share has a different definition. The model's forward output is additive, while the non-additive coalition interaction in its readout arises from the **squared readout**.
 
-**第二步：用TLI实际训练转移计算支撑贡献的演化 [T]+[A]→[R]。** 经典梯度动作实例化为
+**Step 2: Compute the evolution of support contributions under actual TLI training transitions [T]+[A]→[R].** Classical gradient descent specializes the action to
 \(\delta_{t,k}=-\eta(\theta_{t,k}-\widetilde a_{k,D})\)。
-代入 \(\theta_{t+1,k}=\theta_{t,k}+\delta_{t,k}\)，令 \(s_t=1-(1-\eta)^t\)，则
+Substitute \(\theta_{t+1,k}=\theta_{t,k}+\delta_{t,k}\) and write \(s_t=1-(1-\eta)^t\). Then
 
 \[
 \boxed{\theta_{t,k}=s_t\widetilde a_{k,D}.}
@@ -484,7 +484,7 @@ C_q(L)=\mathbf1\left[\sum_k\varphi_{k,q}(L)>y^2-\varepsilon^2\right].
 \tag{E4}
 \]
 
-由(E1)，先对独立高斯测试输入求期望，再对系数观测噪声求期望：
+Using (E1), take expectation first over independent Gaussian test inputs and then over coefficient-observation noise:
 
 \[
 \begin{aligned}
@@ -497,7 +497,7 @@ C_q(L)=\mathbf1\left[\sum_k\varphi_{k,q}(L)>y^2-\varepsilon^2\right].
 \tag{E5}
 \]
 
-所以训练充分收敛时（\(s_t\to1\)）：
+At convergence, as \(s_t\to1\),
 
 \[
 \boxed{\mathbb E[\varphi_{\infty,k}]=a_k^2-\sigma^2/D.}
@@ -505,9 +505,9 @@ C_q(L)=\mathbf1\left[\sum_k\varphi_{k,q}(L)>y^2-\varepsilon^2\right].
 \tag{E6}
 \]
 
-**这里由训练后的实际支撑贡献进入损失计算，而不是先输入一个经验损失幂律。** 期望功能贡献可以为负；这代表此固定平方读出下该模式的净贡献被估计误差抵消，并不是“存在负的能力实体”。
+Training-dependent support contributions enter the loss calculation directly. An expected functional contribution can be negative when coefficient-estimation error offsets its net contribution under this squared readout.
 
-**第三步：从功能支撑求出平均损失，再代入经典谱条件 [T]+[A]→[R]。** 在任意训练时刻，由(E3)精确得到
+**Step 3: Derive average loss from functional support and then impose classical spectral conditions [T]+[A]→[R].** At any training time, (E3) gives exactly
 
 \[
 \begin{aligned}
