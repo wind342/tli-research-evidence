@@ -1,6 +1,6 @@
 # TLI research evidence — current ICML manuscript
 
-This repository accompanies the current **TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml). Historical research releases remain under their original TLIR filenames and repository name.
+This repository accompanies the current **TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml). Earlier research releases retain some TLIR-named files for provenance; the current repository is named `tli-research-evidence`.
 
 **Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is hosted alongside its LaTeX source.
 
@@ -17,22 +17,22 @@ This repository accompanies the current **TLI paper**, [*Unified Dynamics of Tra
 
 ## ICML GNN and SNN evidence authority
 
-The corresponding **GNN/SNN** evidence is the [Windows-run source bundle](independent_stress_tests/windows_reproduction/), now in this default branch:
+The corresponding **GNN/SNN** evidence is the [Windows-run machine results and audit records](independent_stress_tests/windows_reproduction/), now in this default branch:
 
 | System | Correct / targets | Prediction accuracy | Four-way macro recall | Structural checks |
 |---|---:|---:|---:|---|
 | **GNN** | 3,068 / 3,072 | **99.87%** | **97.87%** | 8/9, 9/9, 8/9; nonlinear counts 6/256, 36/256, 20/256 |
 | **Hard-spiking SNN** | 6,713 / 7,200 | **93.24%** | **60.05%** | 12/12 in all four seeds |
 
-[Independent prediction audit receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json): `PASS`, 28 events and 10,272 target records. The figures match ICML appendix Table 3. The GNN predictor met its registered criterion; the SNN predictor's **60.05%** four-way macro recall fell below its prediction threshold, while all four SNN seeds passed the **12/12 structural TLI criteria**. Earlier experiment versions remain archived.
+[Independent prediction audit receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json): `PASS`, 28 events and 10,272 target records. The figures match ICML appendix Table 3. The GNN predictor met its registered criterion; the SNN predictor's **60.05%** four-way macro recall fell below its prediction threshold, while all four SNN seeds passed the **12/12 structural TLI criteria**. Earlier experiment versions remain archived. The November GNN/SNN result directory includes machine summaries and an independent prediction-check receipt; it does not include the exact November native execution programs or frozen source/protocol files. The adjacent October programs belong to different registered seeds. See the [current-result provenance note](independent_stress_tests/windows_reproduction/README.md).
 
 ## Mathematical and historical materials
 
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
-- The [complete 14-derivation record](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLI_HISTORICAL_COMPARISONS_21.md), [combined record](TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md) and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) remain unchanged research authorities.
+- The [complete 14-derivation record](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLI_HISTORICAL_COMPARISONS_21.md), [combined record](TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md) and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
 - Older article navigation: [PNAS paper-to-evidence map (archive)](TLIR_PNAS_PAPER_EVIDENCE_MAP_ARCHIVE.md) and [Science manuscript map (archive)](TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md). The legacy [TLIR_PAPER_EVIDENCE_MAP.md](TLIR_PAPER_EVIDENCE_MAP.md) now directs readers to the current ICML map.
 - [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
-- [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tlir-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.
+- [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.
 
 ## Original research-evidence collection (preserved)
 
@@ -71,8 +71,8 @@ SVG rendering.
 The separate **TL-G01** cross-system falsification experiment changes
 architecture, modality, task and optimizer from nanoGPT/text/Adam to
 ResNet-18/CIFAR-100/SGD momentum and retests the primary training--learning
-relations under a frozen protocol. It is an extension of the evidence base,
-a separately registered extension to the sealed original experiment set.
+relations under a frozen protocol. It is a separately registered extension
+to the sealed original experiment set.
 
 The separate **TL-G02** experiment moves the same falsification programme to a
 generative diffusion objective: a time-conditioned U-Net predicts identified
