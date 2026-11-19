@@ -128,7 +128,7 @@ RL-E06 retains all 12 seeds. The update-800 other-skill accuracy is 70.31%; reba
 
 The ICML paper separates the [coupled dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex) from the [14 mathematical recoveries](TLI_THEORY_FIRST_14_DERIVATIONS.md). The main-text worked derivations are **Edge of Stability** (`icml/sections/extrap_cases/eos.tex`) and **Catastrophic Forgetting** (`icml/sections/extrap_cases/forgetting.tex`). The remaining **12** appear in the [appendix source](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex): implicit bias, model collapse, spectral bias, benign overfitting, Chinchilla, dynamical isometry, dropout, grokking, μP, SAM/sharpness, gradient noise scale and double descent.
 
-The complete source-oriented ledger remains in [14 theory-first derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting comparisons](TLI_HISTORICAL_COMPARISONS_21.md), the [combined original record](TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md), and [14-item mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md). The historical 21-case research record is **supplementary**, not an assertion that all 21 appear in the current ICML main text.
+The complete source-oriented ledger remains in [14 theory-first derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting comparisons](TLI_HISTORICAL_COMPARISONS_21.md), and [14-item mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md). The historical 21-case research record is **supplementary**, not an assertion that all 21 appear in the current ICML main text.
 
 ## 6. ICML figures and appendix tables
 
