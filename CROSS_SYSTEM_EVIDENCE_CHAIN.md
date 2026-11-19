@@ -3,11 +3,9 @@
 For the current TLI ICML paper, use [the manuscript evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). This file records the earlier native ResNet, diffusion, MoE and inference experiments. Current ICML GNN/SNN data have separate [Windows-run machine records](independent_stress_tests/windows_reproduction/).
 
 TL-G01, TL-G02 and INF-G01 form the original cumulative falsification chain.
-TL-G03 and INF-G02 add a separately frozen routed-expert chain. They do
-not replace the sealed nanoGPT experiments. They ask whether the same proposed
-relations survive when architecture, modality, objective and optimizer are
-changed, and whether the resulting learned states are subsequently used by
-frozen inference.
+TL-G03 and INF-G02 add a separately frozen routed-expert chain. They test the same proposed relations in additional architectures,
+modalities, objectives and optimizers, followed by frozen-inference measurements
+of the resulting learned states.
 
 ## TL-G01 — discriminative vision with SGD momentum
 
