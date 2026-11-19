@@ -34,17 +34,17 @@ filesystem location, but its path must remain outside the tracked repository.
 
 ## TL-P01 target-boundary prediction bundle
 
-The complete 15,264-row prediction ledger, derivative audit, frozen split
-results and source-identity manifest are distributed as
-`tl_p01_actual_update_boundary_evidence_v1.zip`.  The independent checker in
+The earlier release identified the complete 15,264-row prediction ledger, derivative audit, frozen split
+results and source-identity manifest as
+`tl_p01_actual_update_boundary_evidence_v1.zip` (historical identifier).  The independent checker in
 `experiments/gfg_nanogpt_actual_update_boundary_v1/` validates the internal
 manifest and recomputes both all-run and frozen-confirmation metrics.
 
 ## INF-E01 frozen-inference GFG bundle
 
-The 13 derived inference GFGs, their 52 checkpoint phases, content-addressed
-tensor payloads and frozen strict logit-level audit are distributed as
-`inf_e01_frozen_inference_gfg_evidence_v1.zip`.  The public checker in
+The earlier release identified the 13 derived inference GFGs, their 52 checkpoint phases, content-addressed
+tensor payloads and frozen strict logit-level audit as
+`inf_e01_frozen_inference_gfg_evidence_v1.zip` (historical identifier).  The public checker in
 `experiments/gfg_nanogpt_training_learning_inference_projection_v1/` validates
 the archive, database and tensor hashes and recomputes the strict result.
 

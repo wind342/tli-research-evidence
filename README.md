@@ -31,7 +31,8 @@ The corresponding **GNN/SNN** evidence is the [Windows-run machine results and a
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
 - [Run and inspect the current 21-check mathematical audit](math_audit/README.md) (script, fixed inputs, versioned dependencies, and result records).
 - The [complete 14-derivation record](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](theory/TLI_HISTORICAL_COMPARISONS_21.md) and [independent mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
-- [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](provenance/EVIDENCE_IMPORT.md), and [source manifest](provenance/SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
+- [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](provenance/EVIDENCE_IMPORT.md), and [source manifest](provenance/SOURCE_MANIFEST.md) record experiment authority and audit scope. Historical receipts retain their original verification dates and scope.
+- [Current-tree integrity checker](tools/verify_tli_repository_integrity.py) checks active links, required scientific records, selected reported values and directory layout without rerunning the experiments.
 
 ## Document organization
 
@@ -142,8 +143,9 @@ outputs and source-commit identities remain present.
 
 Each primary experiment retains its frozen protocol, implementation, machine
 results, negative controls and independent checker where those objects existed
-in the source experiment. Generated evidence omitted from Git is provided in
-the accompanying content-addressed archive where stated. Reproduction commands
+in the source experiment. External payload identities and verification boundaries are recorded in
+[provenance](provenance/EXTERNAL_ARTIFACTS.md) and the [evidence matrix](PUBLIC_EVIDENCE_MATRIX.md).
+Historical archive references are not a current TLI evidence-package release. Reproduction commands
 and the distinction between result recomputation and full native re-execution
 are documented in `PUBLIC_EVIDENCE_MATRIX.md`. The common Python package and
 Core v3 schemas are retained under `src/` and `protocol/core_v3/`.

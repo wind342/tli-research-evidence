@@ -15,13 +15,13 @@ This repository is an owner-authorized copy and evidence-navigation layer over t
 
 The source main history is retained. The annotated tag object is copied unchanged, not moved or recreated. The new combined repository has a new tip/tree identity: it is **not** the old frozen release. Historical manifests continue to identify their historical scope.
 
-All imported scientific files retain their Git blob identity. Only the root README is extended with a new entrypoint; its original bytes remain in source history. No original protocol, result, validator, experimental code, manifest, licence notice or manuscript asset is edited. The GNN/SNN subtree is imported exactly, not merged into or relabelled as a Core-v3 experiment.
+At the original import, experimental files were copied with their then-current Git blob identities, and the root README was extended. Later TLI maintenance removed obsolete manuscript assets and renamed GNN/SNN paths while retaining the original result records and historical source commits. The present working tree is not byte-identical to the original imported tree; original identities remain in Git history and the historical import manifest.
 
-## Public archive mirror
+## Historical archive mirror (not a current TLI release)
 
-The [GitHub Release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) contains the ten original ZIPs and eight original metadata files from Zenodo. ZIPs are not recompressed or inserted into normal Git history. Zenodo remains the archival authority; the mirror does not create a new scientific version. Compare every payload with the original `ARCHIVE_MANIFEST.json`.
+The historical [GitHub Release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) and Zenodo record `22032772` identify the original import, not a current-paper evidence package. The historical import manifest records the old filenames and checksum identities; see the [current paper evidence map](../TLI_ICML_PAPER_EVIDENCE_MAP.md) for active experimental records.
 
-The local import check also compares these bytes with the public Zenodo API checksums before publication. The separate public manuscript PDF attached to Zenodo is not duplicated in the evidence mirror.
+The original import check compared the former release payload identities with its historical manifest. Its recorded outcome is not a fresh validation of the present directory.
 
 ## Explicit availability limits
 
@@ -29,20 +29,15 @@ The local import check also compares these bytes with the public Zenodo API chec
 2. **GNN/SNN prediction transport:** all five public files are included. The checker additionally requires `PREPARED_MANIFEST.json`, `PREDICTIONS_SEALED.json`, `PREDICTIONS_SEAL_RECEIPT.json`, `ADJUDICATION.json` and matching native/pretarget states; those are not in that public subtree. The report's historical audit claim is not a newly executed audit here.
 3. **SNN structural tests:** all four distinct native states are present as 16 binary fragments. Their concatenated SHA-256 identities can be checked without deserializing PyTorch files. The existing restoration script reconstructs formal/replay copies.
 4. **nanoGPT / original release:** public archives and compact records retain the scope documented in `PUBLIC_EVIDENCE_MATRIX.md`; not every historical training checkpoint or full CSRG runtime is included.
-5. **New paper figures and historical literature comparisons:** the supplied confidential three-figure review PDF and private plotting project are not uploaded. The existing public v8 manuscript assets are preserved but are not this PDF. No complete separate 21-pair literature ledger was found in the imported snapshots.
+5. **Manuscript history and literature:** the original import included a v8 manuscript; those obsolete manuscript files were subsequently removed from the active tree and remain in Git history. The source import did not include the present paper's private plotting project. The later 21-pair research comparison ledger is a separate supplemental document under [`theory/`](../theory/).
 
-These are availability statements, not modifications to scientific outcomes. GNN's failed nonlinear gate, SNN's negative prediction-transport verdict and RL-E05's negative composite verdict remain unchanged.
+These are original-import availability statements. Historical GNN/SNN stress-test and RL-E05 verdicts remain recorded; the current November GNN/SNN version is indexed separately in the [paper evidence map](../TLI_ICML_PAPER_EVIDENCE_MAP.md).
 
-## Recheck this import
+## Verification paths
 
-From a Git checkout with history:
+**Current repository:** Run `python tools/verify_tli_repository_integrity.py` from the repository root to check active documentation paths and selected committed experiment-result identities.
 
-```bash
-python tools/verify_tlir_evidence_import.py
-python tools/verify_tlir_evidence_import.py --archive-dir /path/to/downloaded/release/assets
-```
-
-This checks source object identity, copied files, documentation links, SNN binary assembly hashes, retained negative verdicts and (when supplied) archive hashes. It does not train a model, load PyTorch checkpoints or rerun the native scientific experiments. The current import receipt is [EVIDENCE_IMPORT_CHECKS.json](../EVIDENCE_IMPORT_CHECKS.json).
+**Original import (historical):** `tools/verify_tlir_evidence_import.py` compares the file tree against the original imported snapshot; the original byte-for-byte comparison does not apply after deliberate directory cleanup and renames. Its [import receipt](../EVIDENCE_IMPORT_CHECKS.json) and [manifest](../EVIDENCE_IMPORT_MANIFEST.json) remain historical records, not current-tree verification results.
 
 ## Rights and privacy
 
