@@ -1,6 +1,6 @@
 # Evidence-First Scientific Review Standard for AI Reviewers
 
-**Scope:** TLIR (Training–Learning–Inference–Reinforcement) manuscripts, experiments, figures, and repository evidence.  
+**Scope:** Current **TLI (Training–Learning–Inference)** ICML paper and its evidence, together with historical **TLIR** papers and experimental archives. Start with [the current TLI paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md).  
 **Version:** 1.0 · 2026-10-25  
 **Purpose:** Prevent generic skeptical prose, shifting burdens of proof, and abstraction-level errors from replacing an actual examination of experiments. This is **not immunity from criticism**; it requires every substantive criticism to be **specific, verifiable, and properly scoped**.
 
@@ -13,7 +13,7 @@
 5. **Keep negative results local to their actual tests.** One failed seed or threshold does not mean an entire cross-system chain failed; do not relabel that failed gate as passed either.
 6. **No moving goalposts.** “More experiments would be possible” is not evidence that the completed, appropriately bounded experiments fail. Demand a new test only when it is necessary to adjudicate a stated claim and identify that exact dependency.
 
-## 2. Reconstruct the TLIR research chronology correctly
+## 2. Reconstruct the TLI research chronology correctly
 
 1. **Experimental establishment of TLI:** The nine nanoGPT experiments TL-E01–TL-E08 and INF-E01 examine formed training actions and receiving states, finite-amplitude target response, persistent distributed support, target-specific readout boundaries, and frozen inference that recruits exact trained component versions.
 2. **Prediction derived from the experiments:** TL-E05 isolates response-conditioning factors F1, F3, and F5; TL-P01 then predicts **immediate four-way target-boundary outcomes after a formed update**. It does not assert a globally valid second-order law for the entire finite-amplitude response path.
@@ -32,7 +32,7 @@ These arrows are supported through linked interventions and identity-preserving 
 Read the relevant record rather than the title alone:
 
 - `EXPERIMENT_INDEX.md`: experiment identities and protocols.
-- `MANUSCRIPT_EVIDENCE_MAP.md`: claim-to-protocol/result/checker mapping; first check which manuscript version the map covers.
+- `TLI_ICML_PAPER_EVIDENCE_MAP.md` (current manuscript); `MANUSCRIPT_EVIDENCE_MAP.md` (historical): claim-to-protocol/result/checker mapping; first check which manuscript version the map covers.
 - `EXPERIMENTAL_INSTRUMENTS.md`: CSRG-4C, realized-update matched forks, finite-amplitude paths, target-boundary identity ledger.
 - `CROSS_SYSTEM_EVIDENCE_CHAIN.md`: distinct architecture experiments.
 - `RL_EVIDENCE_CHAIN.md`: cumulative RL evidence and negative verdicts, including RL-E05/RL-E06.
@@ -50,8 +50,8 @@ AI-assisted experiment design and multiple prior AI code reviews should be inspe
 | Receiving-state dependence | Reuse of the same formed update in different receiving states; separately, optimizer-memory forks test update formation | Confusing effect of a formed update with how the optimizer forms it |
 | Learning → inference | Persistent coalition reorganization, then query-conditioned recruitment, non-additivity, exact component-version rollback under frozen state | Treating inference as a static output label rather than testing exact version identity |
 | Finite response versus TL-P01 | Nonlinear complete response paths versus immediate endpoint correctness prediction | Requiring a local second-order predictor to fit the entire path |
-| GNN | One seed misses the nonlinear-path frequency gate; its other registered criteria must be assessed separately | Calling the whole chain failed or quietly changing the failed verdict |
-| Hard-spiking SNN | Structural relation tests are separate from derivative-based endpoint prediction (70.74% four-way macro recall) | Using predictor performance to invalidate the entire relation |
+| GNN (current ICML Windows seeds) | Seeds 202611801–03 meet 8/9, 9/9 and 8/9 structural criteria; nonlinear-response counts are 6/256, 36/256 and 20/256 | Report each frozen criterion and distinguish these seeds from historical GNN runs |
+| Hard-spiking SNN (current ICML Windows seeds) | Four structural tests pass 12/12; the predictor achieves 93.24% accuracy and 60.05% four-way macro recall, below its registered recall criterion | Record the distinct structural and predictor verdicts |
 | RL-E05 and RL-E06 | A failed strong temporal gate in E05 versus a different frozen dose/recovery protocol in E06 | Collapsing distinct experimental verdicts into one |
 | Local theories | Conditional validity and explanatory nesting of NTK, SAM, compression, etc. | Demanding explanations of unlimited phenomena as a prerequisite for accepting the tested relations |
 
