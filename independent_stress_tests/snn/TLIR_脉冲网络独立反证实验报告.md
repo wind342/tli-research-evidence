@@ -1,70 +1,55 @@
-# TLIR 严格反证实验：硬阈值脉冲递归网络（独立试验）
+# Hard-spiking recurrent neural network: historical independent TLI stress test
 
-**日期：**2026 年 10 月 24 日  
-**实验对象：**4 个硬脉冲递归块、6 步时间演化、真实离散脉冲前向、替代梯度反传、Adagrad 优化  
-**正式状态：**4/4 种子均完成；12 项冻结检查在四个种子上全部通过；独立原生数值重放通过；同源码重新训练的所有 12 个种子证据文件（每个种子 3 个文件）逐字节一致。  
-**核心裁决：本次未找到 TLIR 整体核心关系的决定性反例。**
+**Date of original experiment:** 2026-10-24. This report records the original four-seed hard-spiking network study. The historical filename retains TLIR. The **current TLI/ICML** manuscript uses the distinct [November 2026 Windows GNN/SNN evidence](../windows_reproduction/README.md): four SNN structural checks of 12/12, with predictor accuracy **93.24%**, four-way macro recall **60.05%**, and **6,713/7,200** correct boundary predictions.
 
-## 为什么选这个系统
+## Scientific question and frozen system
 
-既有实验测试了 Transformer、ResNet、Diffusion 等连续模型，之前的独立实验测试过 GNN。硬阈值脉冲网络具有**不连续的内部 forward 映射**以及推理时的暂态膜电位和时间递归状态；优化器改为 **Adagrad**，任务改为 sklearn 内置的真实 8×8 手写数字分类。这种设置故意增加对状态依赖、有限响应、冻结推理与局部微分测量的挑战。
+The experiment measured TLI relations under discontinuous hard-spike forward computation and recurrent transient membrane states.
 
-本轮实验在事先独立的可训练性试跑 seed=42 成功后，冻结全部正式参数、源码 SHA-256、4 个正式种子、12 项门槛和测量算法；正式结果出现后**未改代码或门槛**。冻结合同保存于 `snn_tlir_frozen_protocol.json`。
+- **Model:** Four hard-spiking recurrent blocks, six temporal steps, hard discrete-spike forward passes and surrogate-gradient backpropagation.
+- **Task:** Classification of the scikit-learn 8×8 handwritten digits; stratified 75/25 train/held-out split, with 96 fixed held-out queries per seed.
+- **Optimizer:** Adagrad; 800 actual optimizer updates per seed.
+- **Formal seeds:** 71001, 71002, 71003 and 71004; pilot seed 42 was separated before freezing.
+- **Frozen checkpoints:** Updates 50, 200, 400 and 700; stored pre/post parameters, realized increments, gradients, optimizer accumulators and batch identities.
+- **Interventions:** Receiving-state transplants of identical actual updates; earlier/later optimizer-memory exchanges; amplitude grid 0, 0.125, 0.25, 0.5, 0.75, 1; 16 four-component coalitions and Shapley support; complete-logit interactions; repeat-forward integrity; learned-version rollback and exact restoration.
+- **Frozen protocol:** [snn_tlir_frozen_protocol.json](snn_tlir_frozen_protocol.json), SHA-256 `9cc39a3ca6dc7b60697136ddccfa0caa9753860f2598f2e679bb62242a1ddace`.
+- **Frozen source SHA-256:** `718931152b06d6b7aa0d8416fe094463fed714e9cf06efb0e90dbb270a748cf1`.
 
-### 训练及判定边界
+## Formal twelve-criterion result
 
-- **四个正式随机种子**：71001、71002、71003、71004；各自从头随机初始化，训练 800 次实际 Adagrad 更新。
-- **数据**：sklearn 内置 digits 数据集；分层 75/25 训练/留出；每个种子冻结自身样本身份，并从其留出集使用前 96 个固定查询。
-- **冻结检查点**：更新 50、200、400、700；每点保留完整 pre/post 参数、实际 delta、梯度、更新前优化器累加器、批样本 ID。
-- **相同实际更新不同接收者**：将晚期精确 delta 施加于早期和本期真实状态，对比相同查询的 margin 响应。
-- **优化器记忆**：固定当前真实梯度与参数，替换为较早的 Adagrad 累加器，检验实际更新与响应如何改变；使用原生更新公式校验。
-- **有限响应**：沿同一形成的 delta 实际执行 alpha=0、0.125、0.25、0.5、0.75、1，每个检查点保留完整目标 margin 路径。
-- **功能支撑**：4 组件全 16 联盟真实执行，精确 Shapley 分配；计算组件交互时使用完整 10 类 logits，避免把 margin 聚合效应直接算成网络本身的 logit 非加性。
-- **冻结推理**：重复前向、参数身份不变；将单个训练后组件替换回精确初始化版本，再恢复并核对完整 logits。
-
-12 项门槛中包括 3 项完整性／代数检验以及 9 项训练、响应、支持及推理相关检查；具体冻结表达式见协议。它们是**本轮操作性门槛**，不是声称理论预言所有系统都必须逐个超过这些数值。
-
-## 正式结果
-
-| 正式种子 | 留出集准确率 | 有限振幅非线性比例（384 条/种子） | 冻结检查通过 |
+| Historical formal seed | Held-out accuracy | Nonlinear-response fraction (384 target-update records) | Frozen structural criteria |
 |---|---:|---:|---:|
 | 71001 | 97.33% | 37.24% | 12/12 |
 | 71002 | 95.56% | 45.31% | 12/12 |
 | 71003 | 96.67% | 43.23% | 12/12 |
 | 71004 | 94.89% | 42.45% | 12/12 |
 
-**机制级事实：**四个种子均观测到，同一精确更新在不同参数接收状态下产生显著不同目标响应；在参数和梯度固定时，Adagrad 历史累加器交换改变真实更新及功能结果；在冻结模型的推理中存在随查询变化的支撑、logit 级非加性组合、以及对具体训练版本的回滚敏感性。有限振幅实际响应中出现显著偏离端点直线插值的样本，比例见上表。
+All four formal seeds passed their twelve registered criteria. The observations include receiving-state-dependent responses, optimizer-memory effects on formed updates, finite-amplitude nonlinear responses, persistent support reallocation, query-conditioned frozen inference, complete-logit non-additivity and version-dependent responses under rollback. Maximum single-parameter error when reconstructing the native Adagrad update was approximately 6×10⁻⁸ or less.
 
-所有正式种子的 Adagrad 原生更新重建最大单参数误差为约 6×10⁻⁸ 或更小，严格小于冻结完整性门槛。独立检查器不调用原始结果汇总函数，而是从保存的参数、真实更新、原始联盟 logits 重新执行模型，交叉核验训练身份、有限振幅路径、支撑指标、logit 交互和回滚结果。
+### Individual checkpoint observations
 
-## 没有隐藏的局部负结果
+- Seed 71004 at update 700: optimizer-memory-exchange response NRMSE approximately **0.019**, below the individual-response threshold of 0.05. The formal gate required at least two of three registered comparisons to pass; the other two did.
+- Seed 71002 at update 700: support-reallocation frequency approximately **1.0%**, below its earlier-checkpoint measurements.
 
-**正式整体门槛全通过，不代表每次更新都符合每项阈值。**例如，seed 71004 在更新 700 时的 Adagrad 记忆交换响应 NRMSE 仅约 **0.019**，低于单次响应门槛 0.05；这一单次对比保持在原始结果中，3 个配对里的另外两个通过了预冻结的“至少 2/3”门槛。seed 71002 在更新 700 的支撑重组比例只有约 **1.0%**，也远低于该种子早期检查点的水平。
+These checkpoint values remain in the stored records and preserve within-run variation in effect size.
 
-这些是系统进入后期、更新响应趋于局部平缓时的实测边界；**不能改写成“每次实际更新必然大幅改变支撑”**，因为 TLIR 没提出那个断言。
+## Subsequent exploratory measurements
 
-### 后验附加分析（不计入 12 个正式门槛）
+- At updates 400 and 700, **733/768** target-update records retained correct predictions across the update; **148** showed Shapley-support allocation changes above 0.01.
+- Comparison of surrogate-gradient JVP and native finite differences at 16 checkpoints (`eps=0.001`) gave mean normalized disagreement **1.177**.
+- The exploratory surrogate-based one-step logit predictor had mean RMSE **0.268**, versus **0.308** for the unchanged-parameter baseline.
 
-- 400、700 两个后期点的 768 条目标更新中，有 **733** 条在更新前后都保持正确；其中 **148** 条的 Shapley 支撑分配变化超过 0.01。说明外显正确性未变化与功能支撑发生重组可以同时存在。
-- 在 16 个检查点分别比较 surrogate-gradient JVP 与原生有限差分 eps=0.001，得到平均归一化差异 **1.177**。替代梯度不等于实际硬脉冲映射的物理导数；这对**直接运输依赖局部自动微分的某些预测算法**形成限制，不构成对你原始 TL-P01（特定模型和冻结输入范围）的否定。
-- 该 surrogate 一阶端点预测的平均 logit RMSE 为 **0.268**，未更新基线为 **0.308**。因此即使局部导数不是真实方向微分，其启发式信息仍可能有预测价值；不能简单断言它“无用”。
+The predictor uses surrogate differentiation across a hard threshold, whereas the current ICML TL-P01 table records the registered endpoint-boundary results from distinct November 2026 Windows runs.
 
-## 独立审计与完全重新训练
+## Reproduction and audit
 
-- 冻结源码 SHA-256：`718931152b06d6b7aa0d8416fe094463fed714e9cf06efb0e90dbb270a748cf1`。
-- 冻结协议 SHA-256：`9cc39a3ca6dc7b60697136ddccfa0caa9753860f2598f2e679bb62242a1ddace`。
-- 原正式汇总文件 SHA-256：`578bdf5f17c7398ede73697373d435d662b80310ff063a56688d766a113c8191`。
-- 第二次完全重新训练得到同样的全部 4 个种子科学摘要与逐字节相同的 **12/12** 个原生证据、指标、门槛文件。
-- 正式汇总文件本身与重执行汇总文件的 SHA 不同，是因为汇总中包含运行耗时；这一差异未被隐去。具体逐文件哈希在 `SNN_TLIR_replay_comparison.json`。
-- 独立原生证据复核在首次运行和第二次运行上都报告 PASS；终端原文保留。
+- **Original formal summary SHA-256:** `578bdf5f17c7398ede73697373d435d662b80310ff063a56688d766a113c8191`.
+- A fresh run of the four formal seeds under the same environment reproduced all twelve native state/measurement/gate files byte-for-byte per seed. The two summary files differ in their runtime metadata, as described in [SNN_TLIR_replay_comparison.json](SNN_TLIR_replay_comparison.json).
+- The independent checker replayed model forwards from native parameters, updates and component-coalition logits. Both source and replay audits returned **PASS**.
 
-## 明确边界（极重要）
+## Evidence and interpretation
 
-1. **这不是 GFG Core v3 原生执行/验证**，也没有复用你的完整四种 GFG 实验仪器。它是另外设计的、具备源码哈希与原生参数证据的 PyTorch 独立压力测试。
-2. 这不是 TLIR 的无条件普适性证明：只测了一个新架构、一个数据集、一个优化器、四个种子与注册的测量算子。
-3. 这不是对强化环境反馈闭环（RL-E01～E06）的新验证，没有 RL credit 传播和反馈训练动作的独立实验。
-4. 硬阈值的 surrogate gradient 造成对自动微分的特别解释边界，不应把这一点当成你声称“所有预测器都精确”的反例——你未提出这个强命题。
-5. 支撑被操作性地定义为对四个注册组件的干预与 Shapley 分配；没有宣称它完整穷尽所有可能的神经微观机制，也没有证明支撑重组是能力变化的唯一中介。
-6. 完全重新训练发生在**同一代码、软件环境与硬件环境**中，属于本地重执行，并非独立实验室跨环境复现。
+- [Original formal summary](formal/FORMAL_SUMMARY.json), [replay summary](replay/FORMAL_SUMMARY.json), [frozen protocol](snn_tlir_frozen_protocol.json), [native program](snn_tlir_adversarial.py), [independent checker](snn_tlir_independent_checker.py) and [native-state assembly](native_parts/README.md).
+- This study used its own operational TLI stress-test program, component coalitions and native-state integrity records. GFG Core v3 instrument execution and feedback reinforcement trials are separate experimental lines.
+- The original formal structural results are positive across four seeds; local hard-threshold measurements show varying finite-response sizes. [Current ICML GNN/SNN results](../windows_reproduction/README.md) have distinct seeds and predictor metrics.
 
-**最终科学结论：**这次刻意改变信号表达、时间动力学、非线性和优化器的新系统，没有发现与 TLI/TLIR 已提出的角色级核心关系不可调和的行为。负证据主要出现在局部响应量级与硬阈值下的特定微分测量，不足以击穿理论核心。这一结果是新增的系统范围内实验支持，应当与原始 GFG 正式证据分别记录。
