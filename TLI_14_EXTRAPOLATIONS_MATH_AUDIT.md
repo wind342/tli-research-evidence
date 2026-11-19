@@ -8,7 +8,7 @@
 ## 2026-11-03 — Previous mathematical audit
 
 **审核日期：** 2026-11-03  
-**基准：** `TLI_UNIFIED_DYNAMICS.md`、`TLI_THEORY_FIRST_14_DERIVATIONS.md` 与 `TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md`。  
+**基准：** `TLI_UNIFIED_DYNAMICS.md`、`TLI_THEORY_FIRST_14_DERIVATIONS.md` 与 `TLI_HISTORICAL_COMPARISONS_21.md`。  
 **标记：** <sup>[T]</sup> TLI原方程；<sup>[A]</sup> 原研究数学模型／假设；<sup>[R]</sup> 经过代入和运算恢复的关系。
 
 ## 总体结果
@@ -55,7 +55,7 @@
 ## 仓库同步范围
 
 - `TLI_THEORY_FIRST_14_DERIVATIONS.md`：14项全部添加逐式来源和适用范围。
-- `TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md`：同步上述14项，保留原21项正反解释。
+- `TLI_HISTORICAL_COMPARISONS_21.md`：21项已发表研究的正反理论对照。
 - `TLI_UNIFIED_DYNAMICS.md`：将训练输入和反馈函数更新为当前ICML论文的实际写法，其他状态、响应、支撑、能力及推理数学关系保持一致。
 
 **结论：** 14项均已被改写为可追踪的“TLI原式 [T] → 原研究条件 [A] → 实际代入与计算 → 恢复关系 [R]”，并对各自的数学强度与边界做了标记；它们作为统一方程在不同模型下的可恢复结果进行检验。
