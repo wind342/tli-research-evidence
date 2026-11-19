@@ -58,9 +58,9 @@ functional-action accuracy.
 
 An ordinary dependency DAG supplied with the already established
 term-to-action partition reproduced the optimized adjudication. The measured
-saving therefore follows from the validated formation structure exposed by
-the recursive process; the experiment does not claim that an equivalent
-supplied dependency representation could not execute the same factorization.
+saving follows from the validated formation structure exposed by the
+recursive process; an equally specified dependency DAG achieved the same
+factorization.
 
 ## RL-E04 — stochastic long-chain temporal credit
 
