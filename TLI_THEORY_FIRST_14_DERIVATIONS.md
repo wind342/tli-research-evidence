@@ -1,25 +1,25 @@
-> **当前TLI论文的14项数学恢复（正式证据）**。以[ICML统一动力学方程](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex)为[T]入口，结合原研究数学条件[A]推得结果[R]；正文2项、附录12项。本文件内部的(1)–(5)是证据说明编号，论文的公式编号由LaTeX决定。5.2.E1仍是单独的探索性数学研究。
+> **Fourteen formal TLI mathematical recoveries.** The [current ICML unified equations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex) provide the starting relations [T], combined with original-study mathematical conditions [A] to recover results [R]. Two full cases appear in the main text and twelve in the appendix. The local indices (1)–(5) below differ from LaTeX equation numbers; section 5.2.E1 is a separate exploratory derivation.
 
-## 5.2 理论先行外推与独立研究对照
+## 5.2 Theory-first mathematical recoveries and comparisons
 
-**方程来源约定（以当前ICML论文的统一方程为准，并使用 [TLI_UNIFIED_DYNAMICS.md](TLI_UNIFIED_DYNAMICS.md) 的本地(1)–(5)编号索引）。** [T] 表示在本节明确写出的TLI原方程；[A] 为被外推原研究已经使用的模型与数学条件；[R] 为在代入与计算之后恢复出的具体数学关系。公式中的等号、条件期望、近似号与渐近号不得互换。TLI的统一动力学方程确定变量之间的关系；具体闭式系数、谱律、损失幂指数等来自被外推研究的原模型条件。每项都必须有实际的代入/消元步骤，不能只做概念映射。
-理论先行外推从已建立的TLI关系出发，使用被外推研究**原本采用的模型与数学条件**，推出相应的功能变化、稳定边界、风险或优化结果，不另立用于凑结论的假设。
+**Equation provenance:** The current ICML coupled equations, locally indexed in [TLI_UNIFIED_DYNAMICS.md](TLI_UNIFIED_DYNAMICS.md), are [T]. The original mathematical model and assumptions of each study are [A], and relations obtained through explicit substitution and calculation are [R]. Equalities, conditional expectations, approximations and asymptotics are kept distinct. The TLI equations specify relations among state, update, response, support and readout; coefficients, spectra and empirical exponents come from the original-model conditions.
+The recovery procedure starts with experimentally established TLI relations and introduces the mathematical models and conditions used by the studies being compared; calculations then recover their relevant functional, stability, risk or optimization results.
 
-**已完成核心数学关系推导（14项）：** 5.2.1–5.2.14。每项列出TLI入口、被研究理论原有条件、计算步骤、所得核心关系与研究对照。其中5.2.2的多维最大间隔方向沿用原研究的定理，5.2.6由原Chinchilla经验损失律推出最优配置；5.2.10在ICLR 2024可解的线性Grokking模型下推出迟发时间；5.2.11推导μP原MLP示例的核心响应量级而非全部参数族定理。5.2.8已将原Information Bottleneck统一解释替换为Dropout自适应正则化，直接由原GLM与独立Bernoulli屏蔽条件得到相应的精确正则项和功能更新关系。
+**Fourteen completed core mathematical recoveries:** §§5.2.1–5.2.14. Each identifies its TLI entry, original-study conditions, calculation and relation recovered. Section 5.2.2 invokes Soudry et al.'s multidimensional maximum-margin theorem; 5.2.6 optimizes the original Chinchilla empirical loss law; 5.2.10 computes delay in the original soluble linear grokking model; 5.2.11 obtains the characteristic single-step response scaling in the original μP MLP example. Section 5.2.8 uses dropout's GLM/Bernoulli conditions to recover adaptive regularization.
 
-**公式右上角来源标记：** <sup>[T]</sup> 为原TLI方程，<sup>[A]</sup> 为被外推原研究使用的模型/条件，<sup>[R]</sup> 为实际代入和计算得到的结果。所有独立展示公式逐组标记；一组中有多个代数步骤时标记其最终推导性质，原始输入由紧邻的[A]文本明确区分。探索性E1保留原编号并补来源标记。\n\n**判别标准：** 将“由数学条件直接得到的公式”与“将外部现象置于TLI链条中的统一解释”分开；只有前者列为完成推导。
+**Displayed-equation provenance:** <sup>[T]</sup> marks an original TLI equation, <sup>[A]</sup> the mathematical model or assumptions of the cited study, and <sup>[R]</sup> the relation obtained by substitution and computation. A multi-step display is marked by its final mathematical role, with the original input identified in the neighboring [A] text. E1 is exploratory and retains its own numbering. **Classification rule:** Completed derivations require explicit mathematics, distinct from qualitative cross-field interpretation.
 
-### 5.2.1 演化稳定性：Edge of Stability
+### 5.2.1 Edge of Stability: Local dynamical stability
 
-**推导类型：原理论条件下的局部稳定阈值。**
+**Derivation type:** Local stability threshold under the original theory's conditions.
 
-**逐式来源标记。** <sup>[T]</sup> 原方程：\(\theta_{t+1}=\theta_t+\delta_t\)，\(Z_{t+1}=\mathcal T(Z_t,A_t)\)。<sup>[A]</sup> 原研究的局部二次模型与梯度下降：\(\delta_t=-\eta He_t\)，\(H=H^\top\)、\(e_t=\theta_t-\theta^\star\)。代入得到 \(e_{t+1}=(I-\eta H)e_t\)，再投影到 \(H\) 的每个特征方向。<sup>[R]</sup> 仅在正曲率方向的局部线性稳定边界：\(\lvert1-\eta\lambda_i\rvert<1\)，最高正曲率方向临界 \(\eta\lambda_{\max}=2\)。这里的 \([R]\) 是**局部边缘条件**，不是任意非凸训练全程都满足的稳定等式。
+**Equation provenance.** [T] \(\theta_{t+1}=\theta_t+\delta_t\) and \(Z_{t+1}=\mathcal T(Z_t,A_t)\). [A] The local quadratic model and gradient descent: \(\delta_t=-\eta He_t\), \(H=H^\top\), \(e_t=\theta_t-\theta^\star\). Substitution yields \(e_{t+1}=(I-\eta H)e_t\), projected onto each eigendirection of \(H\). [R] Along positive-curvature directions, local linear contraction requires \(\lvert1-\eta\lambda_i\rvert<1\); the largest positive-curvature direction reaches its boundary at \(\eta\lambda_{\max}=2\). This is a **local linear stability edge** for the specified model.
 
-**TLI作用对象。** 实际更新形成与状态转移：\(\theta_{t+1}=\theta_t+\delta_t\)，一次功能响应为\(R_q(\theta_t,\delta_t)=m_q(\theta_t+\delta_t)-m_q(\theta_t)\)。
+**TLI object.** Actual update formation and state transition \(\theta_{t+1}=\theta_t+\delta_t\), giving the one-step functional response \(R_q(\theta_t,\delta_t)=m_q(\theta_t+\delta_t)-m_q(\theta_t)\).
 
-**使用的原理论条件。** 普通梯度下降、固定学习率\(\eta>0\)，在驻点附近以局部二次损失近似，Hessian \(H=H^\top\) 在局部固定。这里分析的正是Edge of Stability文献的冻结局部线性稳定性问题。
+**Original-study conditions.** Ordinary gradient descent at fixed learning rate \(\eta>0\), a local quadratic approximation near a stationary point, and locally fixed symmetric Hessian \(H=H^\top\). This is the frozen local-linear stability problem used in Edge-of-Stability analysis.
 
-**逐步推导。**
+**Step-by-step derivation.**
 
 \[
 \delta_t=-\eta\nabla L(\theta_t),\qquad
@@ -28,21 +28,21 @@ e_t=\theta_t-\theta^\star,\qquad
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-将实际动作代入TLI状态转移，得
+Substituting the actual action into the TLI state transition gives
 
 \[
 e_{t+1}=(I-\eta H)e_t.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-在\(H v_i=\lambda_i v_i\)的特征方向上，
+In an eigendirection satisfying \(Hv_i=\lambda_i v_i\),
 
 \[
 e_{i,t+1}=(1-\eta\lambda_i)e_{i,t}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-正曲率方向局部收缩，当且仅当
+Along positive-curvature directions, local contraction holds if and only if
 
 \[
 |1-\eta\lambda_i|<1
@@ -50,30 +50,30 @@ e_{i,t+1}=(1-\eta\lambda_i)e_{i,t}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-因此最高正曲率方向的局部边缘条件为
+Therefore, the local edge in the largest positive-curvature direction is
 
 \[
 \boxed{\lambda_{\max}(H)=2/\eta.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**推得的结论。** \(2/\eta\)是给定梯度下降映射在正曲率方向上的局部稳定边界。实际训练改变接收状态和局部曲率；上述冻结\(H\)的推导确定瞬时线性稳定条件。
+**Recovered conclusion.** \(2/\eta\) is the positive-curvature local stability boundary for the specified gradient-descent map. Actual training changes the receiving state and local curvature; the calculation with frozen \(H\) determines the instantaneous linear stability condition.
 
-**研究对照。** Cohen等的Edge of Stability实验；Lewkowycz等的catapult轨迹。
+**Research comparison.** Edge-of-Stability experiments by Cohen et al.; catapult trajectories by Lewkowycz et al.
 
-**内部锚点。** TL-E03（实际动作的接收状态依赖）；TL-E04（有限更新响应）。
+**Internal experimental anchors.** TL-E03 (receiving-state dependence of actual-action effects); TL-E04 (finite-amplitude update response).
 
-### 5.2.2 能力形成后的持续学习：Implicit Bias与最大间隔
+### 5.2.2 Implicit Bias: Continuing internal evolution after capability formation
 
-**推导类型：一维实例直接证明“读出已正确而状态仍变化”；多维最大间隔方向采用Soudry等的原有定理。**
+**Derivation type:** Direct one-dimensional calculation showing a correct readout with continuing state evolution; the multidimensional maximum-margin direction follows Soudry et al.'s original theorem.
 
-**逐式来源标记。** <sup>[T]</sup> 原方程：\(\theta_{t+1}=\theta_t+\delta_t\)、\(R_{t,q}=m_q(L_{t+1})-m_q(L_t)\)、\(C_{t,q}=\chi_q(m_q(L_t))\)。<sup>[A]</sup> 原论文线性可分 logistic 回归与梯度下降；在一维实例中 \(m(w)=w\)，\(\delta_t=\eta/(1+e^{w_t})\)。因此一旦 \(w_t>0\)，\(\chi(m)=1\) 持续不变，而 \(\delta_t>0\)；由 \(e^{w_{t+1}}-e^{w_t}\to\eta\) 得 \(w_t=\log t+O(1)\)。<sup>[R]</sup> 已正确的离散读出与持续状态更新可以同时成立；多维向最大间隔方向收敛则是 **Soudry 等的原有定理**，本一维计算并未单独重证多维定理。
+**Equation provenance.** [T] \(\theta_{t+1}=\theta_t+\delta_t\), \(R_{t,q}=m_q(L_{t+1})-m_q(L_t)\), \(C_{t,q}=\chi_q(m_q(L_t))\). [A] Linearly separable logistic regression trained by gradient descent. For a one-dimensional example, \(m(w)=w\) and \(\delta_t=\eta/(1+e^{w_t})\). Once \(w_t>0\), \(\chi(m)=1\) remains unchanged while \(\delta_t>0\); \(e^{w_{t+1}}-e^{w_t}\to\eta\) yields \(w_t=\log t+O(1)\). [R] A saturated discrete correctness readout coexists with continuing state change. Multidimensional directional convergence is the original theorem of Soudry et al.
 
-**TLI作用对象。** \(C_{t,q}=\mathbf1[m_q(\theta_t)>0]\)以及\(\theta_{t+1}=\theta_t+\delta_t\)。正确性是目标读出，不等于参数状态停止变化。
+**TLI object.** \(C_{t,q}=\mathbf1[m_q(\theta_t)>0]\) and \(\theta_{t+1}=\theta_t+\delta_t\). Correctness is a target-specific readout, while the parameter state can continue changing.
 
-**使用的原理论条件。** 无显式正则化、线性可分样本、线性分类器、logistic损失、梯度下降。这是Soudry等最大间隔研究的原有设定。
+**Original-study conditions.** Linearly separable data, a linear classifier, logistic loss, gradient descent and no explicit regularization; these are the conditions of the original maximum-margin analysis.
 
-**逐步推导。** 对样本\((x_i,y_i)\)（\(y_i\in\{-1,1\}\)）令\(m_i=y_iw^\top x_i\)，则
+**Step-by-step derivation.** For examples \((x_i,y_i)\), with \(y_i\in\{-1,1\}\), write \(m_i=y_iw^\top x_i\). Then
 
 \[
 L(w)=\sum_i\log(1+e^{-m_i}),\qquad
@@ -81,16 +81,16 @@ L(w)=\sum_i\log(1+e^{-m_i}),\qquad
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-即使所有\(m_i>0\)、训练正确率已经为\(100\%\)，右侧一般仍不为零：实际更新仍会移动\(w\)及各个间隔。
+Even when all \(m_i>0\) and training accuracy has reached \(100\%\), the right-hand side generally remains nonzero: actual updates continue moving \(w\) and the individual margins.
 
-为把这一点写成完全可解的例子，取同一原模型类中的一维可分样本\(x=y=1\)，采用梯度下降：
+For an exactly solvable case in the same model class, take the one-dimensional separable example \(x=y=1\) and gradient descent:
 
 \[
 w_{t+1}=w_t+\frac{\eta}{1+e^{w_t}}.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-\(w_t\)单调增长并趋于无穷；一旦\(w_t>0\)，任务的离散正确性始终为1，但更新仍严格为正。由
+The sequence \(w_t\) grows monotonically without bound. Once \(w_t>0\), discrete correctness remains 1 while the update stays strictly positive. From
 
 \[
 e^{w_{t+1}}-e^{w_t}
@@ -99,20 +99,20 @@ e^{w_{t+1}}-e^{w_t}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-得到渐近关系
+the asymptotic relation follows:
 
 \[
-\boxed{w_t=\log t+O(1),\qquad C_t=1\ \text{而}\ \Delta w_t>0.}
+\boxed{w_t=\log t+O(1),\qquad C_t=1\ \text{while}\ \Delta w_t>0.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-在多维线性可分情形，Soudry等已证明在其原有步长与损失条件下，梯度下降的**方向**趋向硬间隔SVM方向。多维方向收敛结论引用Soudry等的原有定理，本节的直接代数计算针对上述一维实例。
+For multidimensional linearly separable data, Soudry et al. establish convergence of the gradient-descent **direction** toward the hard-margin SVM direction under their original step-size and loss conditions. The direct calculation here concerns the one-dimensional instance.
 
-**推得的结论。** “外部正确性已饱和”与“内部学习状态持续演化”可以严格同时成立；优化轨迹还可选择特定的间隔方向。
+**Recovered conclusion.** Saturated observable correctness and continuing evolution of the internal learned state can hold simultaneously; the optimizer trajectory may also select a particular separating direction.
 
-**研究对照。** [Soudry等，JMLR 2018](https://jmlr.org/papers/v19/18-188.html)。
+**Research comparison.** [Soudry et al., JMLR 2018](https://jmlr.org/papers/v19/18-188.html).
 
-**内部锚点。** TL-E07（正确性不变时支撑仍可重组）；TL-E08（正确性边界）；RL-E06（已掌握后仍存在功能变化）。
+**Internal experimental anchors.** TL-E07 (support reorganizes while correctness stays fixed); TL-E08 (correctness boundary); RL-E06 (persistent functional change after mastery).
 
 ### 5.2.3 递归反馈的信息收缩与模型坍塌：有限样本吸收态
 
