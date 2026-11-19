@@ -19,7 +19,7 @@
 
 这里的 **TLI 基础方程与先前因果实验** 属于已建立研究；四个带附加数学条件的推论属于 **本次探索**。外部文献属于 **相关理论或实验先例**，并不表示其作者测试或证明了此处的完整 TLI 推论。探索只整理数学及公开证据，**未新增原生实验、独立复现实验、冻结预测或新的机器学习 benchmark**。
 
-TLI 原始基础文档：[统一动力学 V5](TLI_UNIFIED_DYNAMICS.md)；相关冻结证据定位：[EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md)、[CROSS_SYSTEM_EVIDENCE_CHAIN.md](CROSS_SYSTEM_EVIDENCE_CHAIN.md)、[RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md)。
+TLI当前统一方程：[统一动力学](TLI_UNIFIED_DYNAMICS.md)；相关冻结证据定位：[EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md)、[CROSS_SYSTEM_EVIDENCE_CHAIN.md](CROSS_SYSTEM_EVIDENCE_CHAIN.md)、[RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md)。
 
 ## 1. [T] 共同起点：TLI 原方程
 
@@ -382,13 +382,12 @@ $$
 | E-I03 | 压缩推理迭代 + Lipschitz 读出下的能力边界充分步数 | 测试时计算的收益与非单调经验现象 | 条件性数学上界；非通用推理规模律 |
 | E-I04 | 指定同步反馈闭环的 Jacobian、二维线性特例稳定阈值 | RL 干扰、策略／表示稳定性已有研究 | 条件性控制理论特化；非 GRU 实测阈值 |
 
-**共同发现（探索性）：** 相同的 TLI 状态—训练动作—持久功能组织—冻结推理—能力读出—反馈结构，在不同原有数学条件下，分别连接到行为可辨识性、贝叶斯后验、推理计算收敛和闭环稳定性等研究领域。这说明统一方程有**超出当前14项正式外推的数学特化空间**；不等于这些外部论文已经直接检验 TLI 整体，也不把文献类比计为新原生实验。
+**共同发现（探索性）：** TLI的状态—训练动作—持久功能组织—冻结推理—能力读出—反馈关系，在分别加入原研究的数学条件后，连接到行为可辨识性、贝叶斯后验、推理计算收敛和闭环稳定性。四项结果属于条件性数学特化；所引外部文献提供各领域的理论与实验参照。
 
 ## 7. 记录边界与出处
 
 1. **已建立的 TLI 来源**： [TLI_UNIFIED_DYNAMICS.md](TLI_UNIFIED_DYNAMICS.md)；[实验导航](EXPERIMENT_INDEX.md)；[INF-E01 原生冻结推理](experiments/gfg_nanogpt_training_learning_inference_projection_v1/)；[INF-G01 跨系统无 Attention 冻结推理](experiments/gfg_cross_system_frozen_inference_projection_v1/)；[RL-E05/E06 证据链](RL_EVIDENCE_CHAIN.md)。
-2. **新增内容**：四项数学探索、对照文献表和证据分级，仅为本文件的研究笔记，不声称新冻结实验证据。
-3. **未改动**：既有14项正式数学外推、所有冻结的实验协议、历史数据、结果与独立检查器。
-4. **不要求用户继续增加实验**：本文件的用途是保存已有推导及公开文献对应关系；不是给已完成研究设立新的实验义务。
+2. **本文内容**：四项条件性数学探索、对应公开研究与证据分类；研究性质为数学推导及文献核对。
+3. **既有研究**：14项正式外推、冻结实验协议、历史数据、机器结果及独立检查器仍按各自的原始版本保存。
 
 **简要结论：** TLI 的推理方程 \(\mathcal I\) 与此前已建立的训练、功能响应、能力读出及反馈方程联立后，在明确数学条件下，可以推导出四组可核查的关系，并与多个独立研究领域的已发表理论和实验形成可审查的对应。这是一次**探索性数学外推与文献核对记录**，而非正式论文的新实验证明。
