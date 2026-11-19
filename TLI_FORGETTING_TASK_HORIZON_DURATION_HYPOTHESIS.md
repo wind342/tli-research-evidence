@@ -1,97 +1,95 @@
-> **TLI扩展研究假设（待检验）**：有关任务长度、训练持续时间和跨能力遗忘的探索性解释；当前ICML论文的已验证实验结果见[证据对照表](TLI_ICML_PAPER_EVIDENCE_MAP.md)。本文件中的未来预测仍是研究假设。
+> **TLI research hypothesis (pending empirical tests).** This note examines task horizon, training duration and cross-capability forgetting. The [current ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) identifies the already completed experiments. Predictions introduced here remain research hypotheses.
 
-# TLI研究笔记：任务长度、训练时间与跨能力遗忘
+# TLI Research Note: Task Horizon, Training Duration, and Cross-Capability Forgetting
 
-*TLI research note — Task horizon and training duration as explanations of observed cross-capability forgetting in RL and SFT*
+**Proposed:** November 6, 2026  
+**Status:** A theoretical explanation and testable predictions derived from established TLI relations.  
+**Question:** Why might forgetting appear particularly pronounced in real-world reinforcement learning (RL), compared with supervised fine-tuning (SFT)?
 
-**提出日期：** 2026-11-06  
-**性质：** 基于TLI已建立机制提出的理论解释与待检验预测；不是新完成的实验，也不修改已冻结的结论。  
-**研究目的：** 解释为什么现实应用中强化学习（RL）的遗忘现象可能格外突出，而不是预设RL具有比监督学习（SFT）更强的固有破坏性。
+## 1. Main proposition
 
-## 1. 核心观点
+**Cross-capability interference can arise whenever training modifies shared model parameters; its underlying computation is common to RL and SFT.**
 
-**跨能力损害是训练共享参数时可能出现的共同计算结果，不是RL独有的现象。**
+This note identifies two factors that may make forgetting appear more prominent in practical RL:
 
-本研究笔记提出两个可能使现实中的RL遗忘更显著的因素：
+1. **Task-horizon effect:** Complex, long-horizon tasks often involve multiple stages and capabilities, recruiting broader distributed functional support. Training on the entire trajectory can form updates that affect a larger collection of shared functional relationships. Existing capabilities may consequently receive positive or negative target-specific responses.
+2. **Training-duration effect:** Continued updates accumulate each previous target's functional responses. Observable forgetting occurs when the cumulative negative response to a formerly correct target crosses its capability boundary. RL is frequently applied through repeated long-horizon interaction, feedback and subsequent training, which may make these effects more prominent in practice.
 
-1. **任务长度效应（task horizon）：** 复杂长任务往往贯穿多个环节和能力，调用更广泛的分布式功能支撑。训练整条轨迹时，所形成的实际更新可能影响更广泛的共享功能关系，从而使更多既有能力受到正向或负向的功能响应。
-2. **训练时间效应（training duration）：** 持续更新会积累各旧目标的功能响应。当某旧目标的累计负响应足以跨越其已有能力边界时，表现出遗忘。RL通常以连续交互、反馈、再次训练的方式用于长程任务，因此这些影响在实际训练中可能更明显。
+The proposed explanation is that **RL and SFT share the same update–response mechanism, whereas their task-horizon distributions, training durations and update schedules may differ**.
 
-**核心解释不是“RL天生比SFT更容易遗忘”，而是两种训练具有共同的底层功能响应机制；现实应用任务的长度分布和训练持续过程可能使RL更频繁地暴露较大的跨能力损害。**
+When matched on task content and training conditions, RL and SFT might cause similar damage to previously acquired capabilities. That comparison is a **prediction to be tested**, rather than a result from a completed matched RL/SFT study.
 
-同样的复杂长任务，如果以匹配的训练条件分别进行RL与SFT，二者对其他能力的损害可能相近。这是需要直接比较的预测，而非已获得的RL/SFT成对实验结果。
+## 2. Established TLI computational basis
 
-## 2. TLI已建立的计算基础
+The experimentally established relations among actual training updates, receiving-state-dependent functional responses, distributed support and capability readouts are described in the [TLI unified dynamics](TLI_UNIFIED_DYNAMICS.md) and the current paper's *This Is a Simple Theory* section.
 
-由实验建立的实际训练更新、状态依赖功能响应、分布式支撑变化及能力读出，见 [TLI统一动力学方程](TLI_UNIFIED_DYNAMICS.md) 与论文 *A Simple Theory*。
-
-对共享学习状态上的目标 \(q\)，一次实际更新的功能响应为：
+For a target \(q\) evaluated in a shared learned state, the response to one realized update is
 
 \[
 R_{t,q}=m_q(L_{t+1})-m_q(L_t).
 \]
 
-单次更新可以使不同目标产生不同符号的响应；这与更新来自哪一种训练范式无关。对同一接收状态和完全相同的实际更新，两种训练方法对各目标的即时功能响应必然相同。**但“同一单环节任务”并不自动意味着两种算法产生相同的更新；所谓损害接近，是匹配条件下的预测。**
+The same update can produce responses of different signs for different targets, regardless of which training paradigm formed it. Applying **exactly the same realized update to exactly the same receiving state** produces the same immediate target responses. However, training paradigms presented with the same one-step task can form different realized updates. Similar forgetting under matched RL/SFT conditions is therefore a testable prediction, not an identity implied by task equivalence.
 
-对持续训练，逐步功能响应的精确累积为：
+Over continued training, exact telescoping gives
 
 \[
 m_q(L_T)=m_q(L_0)+\sum_{t=0}^{T-1}R_{t,q}.
 \]
 
-当旧目标最初 \(m_q(L_0)>0\)，且
+For a previously correct target satisfying \(m_q(L_0)>0\), if
 
 \[
 \sum_{t=0}^{T-1}R_{t,q}\le -m_q(L_0),
 \]
 
-该目标跨越正确性边界，产生可观察的能力失效。由此，训练**持续时间**与**目标累计响应**在数学上直接关联；负响应是否持续累积取决于实际形成的训练轨迹，并非每次更新必然损害旧能力。
+then the target crosses its correctness boundary and exhibits an observable capability loss. Thus **training duration** is mathematically linked to the **accumulated target response**. Whether that response remains negative depends on the actual training trajectory; individual updates need not damage previously acquired capabilities.
 
-不同目标的功能支撑由 \(P_{t,q}=\mathcal P_q(L_t;\mathcal J_q)\) 在固定组件干预协议下测量。长任务中的多环节行为和整条训练轨迹，为涉及更广的共享功能支撑提供了一条可能的计算路径；关键量是**实际涉及与被更新影响的支撑范围**，不只是形式上的步骤数量。
+The support for a target is measured by \(P_{t,q}=\mathcal P_q(L_t;\mathcal J_q)\) under a fixed component-intervention protocol. Multi-stage task behavior and trajectory-level training provide a possible computational route for involving a broader collection of shared functional components. The relevant quantity is the **actual support recruited or affected by the updates**, rather than the nominal number of task steps alone.
 
-## 3. 对现实中RL遗忘现象的解释
+## 3. Explanation for practical RL forgetting
 
-**共同机制：** RL与SFT都通过真实更新改变持久学习状态，均可能在改善当前目标的同时削弱其他能力。
+**Common mechanism:** Both RL and SFT change the persistent learned state through actual updates. Both can improve the trained target while weakening other capabilities.
 
-**任务长度的影响：** 长程任务通常需要连续组织多个功能，可能使训练更新触及更广泛的共享支撑；若其他已掌握目标在这些方向上受到负响应，其受损范围可能扩大。这个机制同样适用于长任务SFT，不能把任务长度效应归为RL的独有机制。
+**Task-horizon effect:** A long-horizon task may require the coordination of multiple functions. Its training updates may act on more shared support. When previously mastered targets have negative responses along those update directions, the range of affected targets can increase. The same mechanism applies to long-horizon SFT.
 
-**时间的影响：** 长期训练允许负面功能响应积累，并使先前尚未越过阈值的目标逐渐表现为错误。持续反馈进一步决定后续训练动作的内容和分配；但产生遗忘的直接数学关系仍是实际更新、功能响应与能力读出。
+**Duration effect:** Repeated updates allow negative responses to accumulate until a previously correct target crosses its decision boundary. Continued feedback influences the formation and allocation of future training actions; the direct mathematical mechanism remains actual updates, target-specific responses and capability readouts.
 
-**应用分布的影响：** 如果现实中的RL比SFT更经常被用于复杂长程任务，或进行更长期的反馈训练，就可能使RL的跨能力遗忘在观察上更加突出。此解释将**训练范式本身**与**任务长度、训练持续时间及更新组织方式**区分开来。
+**Application-distribution effect:** If practical RL is used more frequently than SFT for complex long-horizon tasks or longer feedback-training schedules, the observed frequency or severity of RL forgetting may be greater. This separates the training **method** from **task horizon, training duration and the organization of realized updates**.
 
-## 4. 已有实验锚点
+## 4. Existing experimental anchors
 
-- **TL-E03–E05：** 实际更新与接收状态共同决定目标功能响应及其非线性、条件化特征。
-- **TL-E06–E07：** 不同能力具有分布式、可交互、可重新分配的功能支撑。
-- **TL-E08：** 连续功能间隔的变化通过目标边界转化为离散能力表现。
-- **论文 *A Simple Theory*：** 一个更新可使目标A受益，同时使其他目标的功能响应一正一负；不需要假设RL独有的遗忘机制。
-- **[RL-E06正式结果](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md)：** 同一四能力GRU从已掌握状态出发，集中正确反馈在3200次更新中逐渐改变支撑与其他能力表现；独占反馈下，其他能力的平均准确率由更新100时的88.89%下降至更新3200时的60.94%；重新平衡反馈使其他能力从共同更新800分叉时的70.31%恢复至99.48%。该实验直接涉及**反馈分配和持续时间**，没有进行RL/SFT任务长度成对比较。
+- **TL-E03–E05:** Receiving states and actual updates jointly determine target responses, including nonlinear and state-conditioned effects.
+- **TL-E06–E07:** Different capabilities have distributed functional support that can interact and be reallocated.
+- **TL-E08:** Continuous target-margin changes yield discrete capability changes when a target crosses its registered boundary.
+- **Current paper, *This Is a Simple Theory*:** One update may improve target A while producing positive or negative responses in other targets, through shared computation.
+- **[RL-E06 formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md):** Starting from a mastered four-skill GRU, 3,200 updates of concentrated correct feedback progressively changed support and the other skills' behavior. Under exclusive feedback, mean accuracy of the other skills fell from **88.89% at update 100** to **60.94% at update 3,200**. Rebalanced feedback raised their accuracy from **70.31% at the common update-800 fork** to **99.48%**. This experiment manipulated **feedback allocation and duration**; it did not perform a matched RL/SFT task-horizon comparison.
 
-这些锚点支持机制分析的各个基础关系；本笔记关于现实RL/SFT差异的解释，属于**基于已确立关系的进一步研究预测**。
+These experimental anchors support the underlying mechanistic relations. The proposed explanation for differences between practical RL and SFT is an **additional research prediction** based on those relations.
 
-## 5. 可检验的具体预测
+## 5. Specific testable predictions
 
-设任务环节长度为 \(H\)，训练更新次数为 \(T\)，训练方式为 \(M\in\{\mathrm{RL},\mathrm{SFT}\}\)，旧能力集合为 \(Q_{\rm old}\)。从相同初始参数及优化器状态出发，比较：
+Let \(H\) denote task horizon, \(T\) the number of training updates, \(M\in\{\mathrm{RL},\mathrm{SFT}\}\) the training method, and \(Q_{\rm old}\) the set of previously mastered targets. Compare matched runs beginning from the same parameters and optimizer state.
 
-- **短任务匹配预测：** 在单环节任务、相同目标训练效果和可比更新条件下，RL与SFT的旧能力损害可能接近。
-- **长任务匹配预测：** 在相同长任务、相同训练时间和匹配的目标进步下，RL与SFT可能仍表现为接近的遗忘；长任务本身的支撑覆盖范围可能比方法标签更能解释损害范围。
-- **长度效应预测：** 当任务涵盖更多不同能力环节，训练所涉及的功能支撑范围及旧目标负响应的覆盖面可能增大。
-- **时间效应预测：** 对产生持续负响应的旧目标，训练更新越多，累计功能间隔损失越大，越可能跨越能力边界；两种训练方法都可能出现。
-- **现实应用解释：** 若RL的实际任务与训练时长分布偏向更长、更复杂的设置，观察到的遗忘可能更显著，即使训练方法本身并无额外的固有损害机制。
+- **Matched short-task prediction:** On single-stage tasks, RL and SFT may cause similar damage to older capabilities when improvements on the trained target and realized-update conditions are comparable.
+- **Matched long-task prediction:** On the same long task, with matched training duration and target improvement, RL and SFT may still show comparable forgetting. The breadth of affected support may explain more of the damage than the method label alone.
+- **Horizon prediction:** As a task involves more distinct capability stages, the support recruited by training and the range of old targets receiving negative responses may increase.
+- **Duration prediction:** For old targets receiving persistent negative responses, more updates increase cumulative margin loss and the chance of crossing a capability boundary. This can occur under either training method.
+- **Practical-distribution prediction:** RL may display more prominent observed forgetting when its real-world task and duration distributions favor longer and more complex settings, even without an additional method-specific destructive mechanism.
 
-建议把 \(H\)（例如1、5、10个环节）和 \(T\)（多个固定更新检查点）作为相互独立的实验变量；RL/SFT使用同一初始模型、相同任务内容，并记录目标能力进步、旧能力正确率、连续间隔、实际更新及干预测量的支撑变化。比较时同时报告训练步数、训练轨迹/Token预算和所达成的新任务表现，避免将不同训练强度误当成方法效应。
+A controlled comparison would vary \(H\) (e.g., 1, 5 and 10 stages) and \(T\) (multiple fixed update checkpoints) independently. RL and SFT would start from the same model, train on matched task content, and record new-target improvement, old-target correctness, continuous margins, realized updates and intervention-measured support changes. Training steps, trajectory/token budgets and achieved target performance should all be reported to separate method effects from unequal training intensity.
 
-可定义旧能力失效率：
+One possible old-capability failure rate is
 
 \[
 F(H,T,M)=\frac{1}{|Q_{\rm old}|}\sum_{q\in Q_{\rm old}}
 \mathbf1\!\left[m_q(L_0)>0\ \land\ m_q(L_{H,T,M})\le0\right].
 \]
 
-同时报告每个旧目标的连续响应和支撑改变，不仅比较最终正确率。这样可以直接区分：**任务长度效应、训练时间效应、训练方法效应及其交互。**
+Report continuous responses and support changes for each old target alongside endpoint correctness. The comparison can separate **task-horizon, training-duration and training-method effects, including their interactions**.
 
-## 6. 与论文现有结论的关系
+## 6. Relation to the current paper
 
-本笔记不改变TLI的定义、原动力学方程、九项基础TLI实验、跨系统结果或RL-E05/E06的冻结判断。它把**“两种训练均可遗忘”**、**“复杂长任务可能涉及更广的功能支撑”**和**“长期更新的功能响应累积”**连为一个待检验的解释，用于研究现实中为何RL遗忘可能尤其显著。
+This note combines three established ideas into a testable account of practical forgetting: **both RL and SFT can cause forgetting**, **complex long-horizon tasks may involve broader functional support**, and **repeated updates accumulate target-specific functional responses**. The existing paper supplies the underlying equations and experimental anchors, while the matched RL/SFT hypotheses remain to be tested.
 
-**一句话概括：** 遗忘的底层原因来自共享参数更新造成的目标功能响应；现实RL遗忘更显眼，可能主要体现为**任务长度与训练持续时间的组合效应**，而不是RL相对于SFT具有独立的损害机制。
+**Summary:** In the TLI account, forgetting follows from the responses of existing targets to shared-parameter updates. The prominence of forgetting in practical RL may be driven partly by the combination of **task horizon and training duration**, rather than by an intrinsic destructive mechanism unique to RL.
