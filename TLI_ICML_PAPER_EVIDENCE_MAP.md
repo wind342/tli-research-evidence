@@ -2,7 +2,7 @@
 
 **Current manuscript:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml) (ICML-formatted manuscript; 8-page main text plus references, appendix, figures and declarations).
 
-**Authority for ICML GNN/SNN numbers:** [Windows evidence](independent_stress_tests/windows_reproduction/README.md), [prediction metrics](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), and [checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json). The November Windows runs establish the current paper's GNN/SNN evidence version. Earlier runs and the [PNAS map](TLIR_PNAS_PAPER_EVIDENCE_MAP_ARCHIVE.md) remain archived.
+**Authority for ICML GNN/SNN numbers:** [Windows evidence](independent_stress_tests/windows_reproduction/README.md), [prediction metrics](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), and [checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json). The November Windows runs establish the current paper's GNN/SNN evidence version. Earlier runs and the [PNAS map](archive/manuscripts/PNAS_EVIDENCE_MAP.md) remain archived.
 
 ## ICML reading order
 
@@ -166,7 +166,7 @@ Figure 3 summarizes the six-system experiment chains. The [November Windows reco
 - [Frozen experiment index](EXPERIMENT_INDEX.md), [four instruments](EXPERIMENTAL_INSTRUMENTS.md), [public evidence boundaries](PUBLIC_EVIDENCE_MATRIX.md) and [original import authority](EVIDENCE_IMPORT.md)
 - [Current ICML GNN/SNN machine results](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json) and [prediction checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json); the receipt reports `PASS` for 28 events and 10,272 targets
 - [RL-E05 scientific assessment](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/SCIENTIFIC_ASSESSMENT.md) retains its stronger temporal-precedence criterion as `NOT_SUPPORTED`; [RL-E06 formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) retain all twelve seeds
-- [Historical PNAS-format map](TLIR_PNAS_PAPER_EVIDENCE_MAP_ARCHIVE.md) and [historical Science map](TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md) remain available for tracing older manuscripts
+- [Historical PNAS-format map](archive/manuscripts/PNAS_EVIDENCE_MAP.md) and [historical Science map](archive/manuscripts/SCIENCE_EVIDENCE_MAP.md) remain available for tracing older manuscripts
 - [Original source and imported evidence archive](PUBLIC_ARCHIVE.md); [ICML manuscript sources](https://github.com/wind342/tli-paper/tree/icml-final/icml)
 
 The Git repository contains programs, frozen protocols, machine summaries and checkers. The [public evidence matrix](PUBLIC_EVIDENCE_MATRIX.md) documents verification scope by experiment. This documentation revision reused the existing checks and experiment records.
