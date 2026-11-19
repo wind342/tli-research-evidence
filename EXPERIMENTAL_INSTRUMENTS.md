@@ -1,9 +1,6 @@
 # Experimental instruments
 
-This index exposes the four reusable experimental instruments developed for
-the training--learning study.  The canonical implementations remain in the
-experiment packages that execute and validate them; they are not duplicated
-under a second source tree.
+These four experimental instruments support the current **TLI (Training–Learning–Inference)** study. Their implementations and validation code reside in the corresponding experiment packages. The [ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) connects the instruments with the current manuscript.
 
 ## CSRG-4C
 
