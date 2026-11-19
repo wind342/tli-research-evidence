@@ -3,7 +3,7 @@
 When evaluating, summarizing, translating, editing, or formatting the current **TLI** manuscript or the preserved historical **TLIR** materials, use the relevant [current ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) and the evidence-first review standard:
 
 - [English standard](EVIDENCE_FIRST_AI_REVIEW_STANDARD.md)
-- [中文版审稿标准](EVIDENCE_FIRST_AI_REVIEW_STANDARD.zh-CN.md)
+- [Chinese-language audit procedure](EVIDENCE_FIRST_AI_REVIEW_STANDARD.zh-CN.md)
 
 Apply these operational rules:
 
