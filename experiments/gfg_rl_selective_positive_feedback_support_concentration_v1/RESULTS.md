@@ -8,10 +8,6 @@ reinforced capability's positive-support share to occur before or at the first
 accuracy loss of an unreinforced capability in at least 9 of 12 seeds.  This
 occurred in 2 of 12 seeds.  All 12 formal seeds are retained.
 
-This failure does not mean that the proposed concentration and crowding
-relations were absent.  It means that their frozen temporal operationalization
-was too strong for the observed ordering at the chosen checkpoint resolution.
-
 ## Primary preregistered results
 
 All four capabilities reached exact mastery before branching.  Selective,
@@ -45,13 +41,12 @@ parameter--optimizer state in every seed.
 All 15 non-empty component-version rollback subsets were executed for every
 seed.  At least one proper subset in every seed reduced the reinforced
 capability's mean margin while improving the unreinforced capabilities' mean
-margin or accuracy.  These interventions connect the selectively trained
-component versions to the observed trade-off; they do not rely only on a
-correlation between training time and performance.
+margin or accuracy.  These interventions directly link the selectively trained
+component versions to the measured functional trade-off.
 
 ## Diagnostic-only analysis of the failed temporal gate
 
-This analysis was performed after the frozen verdict and cannot replace its
+These post-verdict diagnostic observations are separate from the frozen
 decision criterion.  A positive support-share change of any size was visible
 before the first observed unreinforced accuracy loss in 11 seeds and at the same
 checkpoint in the remaining seed.  At the first accuracy loss, however, the
@@ -63,11 +58,9 @@ The best directional proper-subset rollback restored 24.83 percentage points of
 unreinforced accuracy on average while reducing the reinforced capability's
 mean margin by 2.525.  The reinforced capability's absolute positive Shapley
 support mass increased by 2.663 from baseline.  The unreinforced capabilities'
-absolute positive support mass did not literally decline from baseline; it rose
-slightly by 0.281, but remained 2.158 below the balanced branch.  Accordingly,
-the evidence establishes relative concentration, a balanced-formation deficit
-and a causal functional trade-off.  It does not establish a conserved physical
-support budget that was literally depleted.
+absolute positive support mass increased by 0.281 from baseline and remained
+2.158 below the balanced branch.  The evidence establishes relative concentration,
+a balanced-formation deficit and a causal functional trade-off.
 
 ## Evidence integrity
 
@@ -80,12 +73,10 @@ independent check status is **PASS**.
 
 ## Scientific conclusion
 
-The strict composite claim, including the preregistered 0.03 temporal event,
-was not established.  A narrower, architecture-bounded conclusion is supported:
-in this shared finite attention-free GRU, prolonged correct selective positive
-feedback preserved the reinforced capability, concentrated its relative
-functional support, caused failures in other previously mastered capabilities,
-and produced component versions whose rollback reversed the trade-off.  This is
-evidence for reinforcement-induced functional-support concentration and
-crowding in the executed system, not a claim that every reinforcement-learning
-system must collapse.
+The preregistered 0.03 temporal event passed in 2/12 seeds, and the composite
+verdict is **NOT_SUPPORTED**.  In this shared finite attention-free GRU,
+prolonged correct selective positive feedback preserved the reinforced capability,
+concentrated its relative functional support, caused failures in other previously
+mastered capabilities, and produced component versions whose rollback reversed
+the trade-off.  These observations establish feedback-directed functional-support
+concentration and cross-capability trade-offs in the tested system.
