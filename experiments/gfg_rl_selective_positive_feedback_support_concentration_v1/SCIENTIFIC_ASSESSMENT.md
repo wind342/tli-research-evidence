@@ -1,18 +1,16 @@
 # Scientific assessment
 
-## Did correct selective positive feedback produce a detectable trade-off?
+## Selective feedback and cross-capability effects
 
-Yes, in the executed shared finite GRU.  The reinforced capability remained at
+In the executed shared finite GRU,  The reinforced capability remained at
 100% in all 12 seeds, while the other three capabilities averaged 73.26%; their
-balanced and frozen counterparts remained at 100%.  Because rewards were exact
-task consequences and the frozen branch used identical episodes without a
-persistent update, neither proxy-reward error nor mere inference exposure
-explains this result.
+balanced and frozen counterparts remained at 100%.  Rewards came from exact task consequences, and the frozen branch used identical
+episodes with the persistent state held fixed.
 
-## Was the proposed functional-support mechanism established?
+## Functional-support changes and the registered verdict
 
-The central concentration and causal-trade-off relations were established, but
-the full preregistered composite criterion was not.  Selective feedback raised
+Relative support concentration and component-version causal trade-offs were
+observed; the preregistered composite verdict is **NOT_SUPPORTED**.  Selective feedback raised
 the reinforced capability's support share by 6.54 percentage points from
 baseline and by 6.52 points relative to balanced feedback.  New primary-support
 capture occurred in 11/12 seeds.  Exhaustive version rollback supplied
@@ -20,20 +18,19 @@ directional causal evidence in 12/12 seeds.
 
 The failed element was the frozen temporal gate.  A large 0.03 support-share
 event preceded or coincided with the first accuracy drop in only 2/12 seeds.
-The formal status must therefore remain `NOT_SUPPORTED`.  Diagnostic analysis
-showed smaller support changes before or at the first drop in 12/12 seeds, so
-the failure is consistent with a threshold/timescale mismatch, but that
-post-hoc observation is not allowed to redefine success.
+The formal status is **NOT_SUPPORTED**.  Separately reported post-verdict
+diagnostics found smaller support changes before or at the first observed drop
+in 12/12 seeds.
 
-## Does the result prove that positive feedback consumes a fixed support budget?
+## Measured support allocation
 
-No.  Positive support became more concentrated and other capabilities lost
-boundary correctness, but their absolute positive Shapley mass was not driven
-below baseline on average.  The defensible description is relative support
-capture, altered functional geometry and crowding relative to balanced
-formation—not literal conservation or physical exhaustion of a fixed quantity.
+Positive support became more concentrated while other capabilities lost
+boundary correctness. Absolute positive Shapley mass for the other capabilities
+rose slightly from baseline, while remaining below the balanced-feedback branch.
+The measured mechanism is relative support capture, altered functional geometry
+and crowding in comparison with balanced training.
 
-## What does the experiment add to the training--learning--inference theory?
+## Feedback closure in the TLI system
 
 It adds a bounded consequence of the theory.  Because inference projects
 already formed support, selectively rewarding one class of correct projected
@@ -43,15 +40,12 @@ its future projection and reduce the boundary reliability of other capabilities.
 The loop is therefore genuinely double-edged: the same feedback closure that
 forms a desired capability can also concentrate learning around it.
 
-## What is not established?
+## Formal experimental scope
 
-- that every reinforcement-learning algorithm or architecture exhibits this
-  effect;
-- that concentration is inevitable under adequate rehearsal, modularization,
-  replay or explicit anti-interference constraints;
-- that the observed support quantities obey a conservation law;
-- that all real-world model collapse is caused by this mechanism;
-- that the preregistered large support event always precedes behavioural loss.
+The study tests selective, balanced and frozen feedback branches in a shared
+four-skill finite GRU. The 0.03 temporal-precedence gate passed in 2/12 seeds;
+all other frozen composite decision gates passed. The recorded support measures
+are intervention-defined component allocations.
 
 ## Next falsification target
 
