@@ -1,3 +1,5 @@
+> **Version note:** This is the historical claim-to-evidence map for an earlier research release. The current TLI paper is *Unified Dynamics of Training, Learning, and Inference in Neural Networks*; use [TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md) for its actual sections, figures, tables, GNN/SNN seed data, and predictor results.
+
 # Manuscript claim-to-evidence map
 
 This map connects the principal claims and quantitative results in the final
