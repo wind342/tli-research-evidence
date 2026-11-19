@@ -107,9 +107,8 @@ steps in the original temporal-credit discovery sequence.
 RL-E05 compared correct selective positive feedback with balanced feedback and
 frozen exposure after four skills had reached exact mastery. Its frozen
 composite status was `NOT_SUPPORTED` because a preregistered large temporal
-support event preceded behavioural loss in only 2/12 seeds. The narrower
-mechanism nevertheless passed its behavioural, support, control and exhaustive
-component-version rollback tests: the reinforced skill remained at 100%, the
+support event preceded behavioural loss in only 2/12 seeds. The behavioural, support, control and exhaustive
+component-version rollback tests passed their frozen criteria: the reinforced skill remained at 100%, the
 other skills fell to 73.26%, and directional rollback reversed the trade-off in
 12/12 seeds.
 
