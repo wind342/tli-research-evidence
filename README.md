@@ -30,7 +30,7 @@ The corresponding **GNN/SNN** evidence is the [Windows-run machine results and a
 
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
 - The [complete 14-derivation record](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLI_HISTORICAL_COMPARISONS_21.md), [combined record](TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md) and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
-- Older article navigation: [PNAS paper-to-evidence map (archive)](TLIR_PNAS_PAPER_EVIDENCE_MAP_ARCHIVE.md) and [Science manuscript map (archive)](TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md). The legacy [TLIR_PAPER_EVIDENCE_MAP.md](TLIR_PAPER_EVIDENCE_MAP.md) now directs readers to the current ICML map.
+- Older article navigation: [PNAS paper-to-evidence map (archive)](archive/manuscripts/PNAS_EVIDENCE_MAP.md) and [Science manuscript map (archive)](archive/manuscripts/SCIENCE_EVIDENCE_MAP.md). The active paper uses the [TLI ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md); prior navigation is archived separately.
 - [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
 - [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.
 
@@ -51,9 +51,8 @@ The repository has **16 primary experiment entries**:
   stochastic long-chain credit.
 
 The primary entries are indexed in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md).
-The older manuscript-section-to-evidence navigation is maintained in
-[MANUSCRIPT_EVIDENCE_MAP.md](MANUSCRIPT_EVIDENCE_MAP.md) as a documentation
-layer over the unchanged frozen experimental release.
+Earlier manuscript-section-to-evidence navigation is retained in the
+[historical manuscript archive](archive/manuscripts/LEGACY_EVIDENCE_MAP.md).
 The exact public verification boundary for every manuscript experiment is
 recorded in [PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md), and the
 Git/Zenodo division is documented in [PUBLIC_ARCHIVE.md](PUBLIC_ARCHIVE.md).
