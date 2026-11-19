@@ -107,106 +107,106 @@
 
 **Contrasting finding — compute-optimal Chinchilla training (Hoffmann et al.).** Joint sweeps of parameters and training tokens show that, at fixed compute, a smaller model trained on more data can outperform a larger but undertrained model, yielding a different compute-optimal allocation.
 
-**TLI如何统一。** 模型规模、数据暴露量和计算预算共同控制可达到的接收状态与训练动作序列。某一资源瓶颈占主导时可形成稳定的局部幂律；数据瓶颈与模型瓶颈的相对作用变化时，最优参数量和训练token分配随之变化。两类规律分别描述训练动力学在不同有效资源配置下的宏观表现。
+**TLI unification.** Model size, exposure to data and compute budget jointly constrain reachable receiving states and training-action trajectories. A dominant resource bottleneck may yield a stable local power law; shifting data and model bottlenecks changes the compute-optimal allocation of parameters and tokens. These laws describe aggregate behavior of training dynamics under different effective resource configurations.
 
-**内部实验锚点。** TL-E03：接收状态影响更新响应；TL-E04：有限动作响应存在非线性；TL-E07：持续更新重组功能支撑；ResNet、Diffusion U-Net、Vision-MoE等跨系统实验：检验相同动力学角色在不同体系中的表达。
+**Internal anchors.** TL-E03: receiving states condition response to updates. TL-E04: nonlinear finite-amplitude responses. TL-E07: sustained updates reorganize support. ResNet, diffusion U-Net and Vision-MoE cross-system tests: analogous dynamical roles in distinct architectures.
 
-### 5.1.12 Lottery Ticket与Rewinding：初始子网络与早期训练历史
+### 5.1.12 Lottery Tickets and Rewinding: Initial subnetworks and early training history
 
-**正面理论／结果——Lottery Ticket Hypothesis（Frankle与Carbin）。** 适当稀疏子网络在保留特定初始权重时，能够通过重新训练达到与原网络相近的表现，显示初始化与网络结构对后续学习具有作用。
+**Positive finding — Lottery Ticket Hypothesis (Frankle and Carbin).** Suitably chosen sparse subnetworks can, when retaining particular initial weights, retrain to performance close to the full network, demonstrating the influence of initialization and architecture on subsequent learning.
 
-**反面理论／结果——Rewinding与早期训练状态（Frankle等；Renda等）。** 在更复杂的网络及训练条件中，将稀疏子网络恢复到训练早期的权重或优化状态，常能获得比直接回到最初初始化更稳定的训练结果。
+**Contrasting finding — rewinding and early training states (Frankle et al.; Renda et al.).** In more complex architectures and regimes, rewinding sparse subnetworks to early trained weights or optimizer states often gives more reliable training than returning them to the original initialization.
 
-**TLI如何统一。** 初始化确定最初接收状态，早期实际更新继续塑造参数与功能组织。Winning Ticket体现初始结构对可达学习路径的影响；Rewinding利用了早期更新形成的新接收状态。两者通过“初始状态→实际更新→接收状态演化→后续功能形成”的同一关系连接。
+**TLI unification.** Initialization specifies the first receiving state, which early realized updates further shape in both parameters and functional organization. Lottery tickets show how initial structure affects reachable learning trajectories; rewinding exploits a newly formed receiving state after early updates. Both follow **initial state → actual update → receiving-state evolution → subsequent function formation**.
 
-**内部实验锚点。** TL-E03：接收状态与优化器历史影响实际更新及其响应；TL-E07：更新带来持久功能支撑重组。
+**Internal anchors.** TL-E03: receiving states and optimizer history affect action formation and response. TL-E07: persistent support reorganization.
 
-### 5.1.13 真实数据泛化与随机标签记忆：拟合能力和学习组织
+### 5.1.13 Generalization on real data versus random-label memorization
 
-**正面理论／结果——深度网络在真实任务上的泛化。** 高容量神经网络能够在自然数据上取得较高的训练与测试表现，说明训练可以形成适用于未见样本的预测功能。
+**Positive finding — generalization on natural tasks.** Large-capacity neural networks can attain high training and test performance on natural datasets, showing that training can form predictive functions useful for unseen samples.
 
-**反面理论／结果——Rethinking Generalization（Zhang等）。** 同类高容量网络也能记忆随机标签，将训练误差降低至接近零；因此，相近的训练拟合能力可以伴随完全不同的测试泛化结果。
+**Contrasting finding — Rethinking Generalization (Zhang et al.).** Similar high-capacity networks can memorize random labels with nearly zero training error. Comparable fitting capacity can therefore coexist with very different test generalization.
 
-**TLI如何统一。** 网络容量给出可实现的功能空间，具体数据和实际训练动作决定最终形成的功能支撑。真实数据中的可迁移规律与随机标签中的样本特定关联，会引导不同的支撑组织与边界几何。训练集正确率相近时，已形成的学习状态与测试目标的功能响应仍可明显不同。
+**TLI unification.** Network capacity determines a space of attainable functions; concrete data and realized training actions determine which supporting computation is formed. Transferable regularities in real data and example-specific associations in random labels favor different support organization and decision-boundary geometry. Similar training accuracy can thus mask distinct learned states and responses on test targets.
 
-**内部实验锚点。** TL-E03：训练响应依赖实际接收状态；TL-E06：功能由分布式组件支撑；TL-E07：真实更新重组支撑；TL-E08：可观察能力取决于目标读出边界。
+**Internal anchors.** TL-E03: response depends on the receiving state. TL-E06: distributed component support. TL-E07: update-driven reorganization. TL-E08: observed capability depends on target-specific readout boundaries.
 
-### 5.1.14 Classical Bias–Variance与Double Descent：复杂度曲线和插值阈值
+### 5.1.14 Classical Bias–Variance and Double Descent: Complexity curves near interpolation
 
-**正面理论／结果——经典偏差—方差权衡。** 在经典统计学习条件下，模型复杂度上升可降低偏差，同时增加方差风险，测试误差常呈现先降后升的单谷结构。
+**Positive finding — classical bias–variance trade-off.** In classical statistical-learning regimes, increasing complexity may reduce bias while increasing variance risk, often yielding a single-valley test-error curve.
 
-**反面理论／结果——Double Descent（Belkin等；Nakkiran等）。** 在现代插值及过参数训练条件下，测试误差可在插值阈值附近上升，并在继续增大模型规模或训练程度后再次下降；模型、样本及训练轮次的不同控制轴均出现过相应现象。
+**Contrasting finding — Double Descent (Belkin et al.; Nakkiran et al.).** Under modern interpolation and overparameterization, test error can peak near the interpolation threshold and fall again as model size or training extent increases. Related behavior has been observed along model-, sample- and epoch-wise axes.
 
-**TLI如何统一。** 模型复杂度控制可达解空间，实际动作决定进入其中哪一类解；接近插值边界时，拟合噪声的高敏感方向可以放大测试响应。进一步增加冗余并改变隐式解选择后，噪声支撑可转移至对总体分布影响较小的方向。经典单谷区间与插值阈值之后的第二次下降，是接收状态、动作选择和泛化读出几何在不同区域的结果。
+**TLI unification.** Complexity changes the space of reachable solutions, while actual training actions select a solution within that space. Near interpolation, sensitivity to fitted noise directions can amplify test response. With greater redundancy and different implicit solution selection, noise support can shift toward directions with smaller effects on the population distribution. The classical single-valley regime and the post-interpolation descent correspond to different receiving states, action-selection mechanisms and generalization-readout geometry.
 
-**内部实验锚点。** TL-E03与TL-E04：接收状态和有限动作决定功能响应；TL-E07：支撑结构随更新持续变化；TL-E08：能力由目标读出边界判定。
+**Internal anchors.** TL-E03/E04: state and finite-action dependence. TL-E07: support evolves during training. TL-E08: target-readout boundaries determine capability.
 
-### 5.1.15 对抗鲁棒性：自然准确率与扰动下的能力权衡
+### 5.1.15 Adversarial Robustness: Natural accuracy and perturbation-induced trade-offs
 
-**正面理论／结果——标准训练与对抗训练（Madry等）。** 标准训练可获得较高自然测试准确率；在给定扰动集合上实施对抗训练，则可增强模型抵抗相应扰动的能力。
+**Positive finding — standard and adversarial training (Madry et al.).** Standard training can yield high natural test accuracy, while adversarial training over a registered perturbation set can improve resistance to those perturbations.
 
-**反面理论／结果——对抗脆弱性与鲁棒—准确率权衡（Tsipras等）。** 自然分布上的高准确率可以与小扰动下的错误预测并存；提高扰动鲁棒性的训练在部分任务中伴随自然准确率下降，并改变模型使用的特征。
+**Contrasting finding — adversarial fragility and robustness–accuracy trade-off (Tsipras et al.).** High accuracy on natural examples can coexist with failures under small perturbations. Training to improve robustness sometimes lowers natural accuracy and changes the features used by the model.
 
-**TLI如何统一。** 自然准确率测量原始目标的读出状态，鲁棒性测量邻域中一组目标的读出边界与间隔。训练目标及扰动分布改变实际更新，进而重组对自然与扰动输入的功能支撑。因此，高自然准确率、局部脆弱性以及对抗训练后的能力权衡对应不同目标集合和学习组织。
+**TLI unification.** Natural accuracy measures readouts on original targets; robustness measures readout margins and decision boundaries for a neighborhood of perturbed targets. The loss objective and perturbation distribution change actual training actions and hence functional support for natural and perturbed inputs. Strong natural accuracy, local fragility and adversarial-training trade-offs therefore concern different target collections and learned organizations.
 
-**内部实验锚点。** TL-E06：功能支撑具有组件依赖和协同结构；TL-E07：更新可重新分配支撑；TL-E08：目标读出边界决定正确性转变。
+**Internal anchors.** TL-E06: component dependency and synergy. TL-E07: redistribution of support. TL-E08: target-specific boundary crossings.
 
-### 5.1.16 Shortcut Learning：IID准确率与纹理—形状偏好
+### 5.1.16 Shortcut Learning: IID Accuracy and Texture–Shape Preferences
 
-**正面理论／结果——ImageNet CNN的高准确率。** 卷积神经网络能够利用训练数据中的预测特征，在同分布图像分类测试中取得较高准确率。
+**Positive finding — accurate ImageNet CNN classification.** Convolutional networks can exploit predictive training features to achieve strong classification accuracy on in-distribution images.
 
-**反面理论／结果——Texture Bias与Stylized-ImageNet（Geirhos等）。** 多种CNN更依赖纹理而非形状线索；改变训练数据的视觉统计后，模型的形状偏好及分布外鲁棒性随之改变。
+**Contrasting finding — texture bias and Stylized-ImageNet (Geirhos et al.).** Many CNNs favor texture over shape cues. Altering the visual statistics of training data changes learned shape preferences and robustness to distribution shifts.
 
-**TLI如何统一。** 同一正确预测可以依靠不同的分布式功能支撑实现。IID准确率记录了当前输入分布上的读出结果；纹理、形状等支撑路径由数据与实际更新共同形成。训练环境改变后，支撑结构可发生重组，由此改变模型在风格变化或分布迁移下的表现。
+**TLI unification.** The same correct prediction can be realized through different distributed support. IID accuracy records a readout on the observed input distribution; texture and shape pathways are organized through training data and actual updates. Changing training environments can reorganize that support and thus alter performance under style or distribution shift.
 
-**内部实验锚点。** TL-E06：同一功能存在组件必要性、替代与协同；TL-E07：训练更新重组功能支撑；TL-E08：不同目标的边界状态决定可观察能力。
+**Internal anchors.** TL-E06: component necessity, substitution and synergy. TL-E07: training reorganizes support. TL-E08: separate targets' boundary states determine observed capabilities.
 
-### 5.1.17 Emergent Abilities：规模跃迁与度量方式
+### 5.1.17 Emergent Abilities: Scaling transitions and measurement choices
 
-**正面理论／结果——LLM Emergent Abilities（Wei等）。** 某些语言模型能力在规模增加时呈现陡峭的基准测试跃迁，尤其在采用正确／错误或通过率指标时具有明显的阈值表现。
+**Positive finding — emergent abilities of LLMs (Wei et al.).** Some language-model capabilities show sharp benchmark changes as model scale increases, particularly under binary correctness or pass-rate measurements.
 
-**反面理论／结果——Emergence as a Mirage（Schaeffer等）。** 改用连续评分或其他合理度量后，一些表面上的突变可呈现更加平滑的性能变化，显示读出规则会影响跃迁的外观。
+**Contrasting finding — emergence as a mirage (Schaeffer et al.).** With continuous scores or other reasonable measurements, some apparently abrupt performance changes become smoother, showing how readout choices affect the apparent transition.
 
-**TLI如何统一。** 学习状态与功能支撑随训练和规模条件演化，评价函数将这些内部状态投影为连续分数或离散能力结果。当目标间隔越过零边界时，正确率与通过率可以发生突变；连续度量则显示更细的功能变化。不同评价曲线对应同一功能形成过程的不同读出方式。
+**TLI unification.** Learned states and functional support evolve under training and scaling conditions, while evaluation functions map those states to continuous scores or discrete capability outcomes. Binary accuracy or pass rates can change abruptly when margins cross zero; continuous measures resolve finer functional changes. Different evaluation curves may therefore represent different readouts of the same underlying formation process.
 
-**内部实验锚点。** TL-E07：持续的内部支撑重组；TL-E08：目标边界跨越决定能力转变；TL-P01：利用更新前信息预测更新后的正确性类别。
+**Internal anchors.** TL-E07: continuous internal support reorganization. TL-E08: capability changes at target-specific boundaries. TL-P01: post-update correctness classes predicted from pre-response information.
 
-### 5.1.18 长上下文：信息可访问与Lost in the Middle
+### 5.1.18 Long Context: Accessible Information and Lost in the Middle
 
-**正面理论／结果——长上下文输入能力。** 长上下文模型可以将大量文本信息放入同一次推理的可访问输入范围，使回答有机会依赖远距离证据。
+**Positive finding — long-context input capacity.** Long-context models can place large amounts of text within the available inference input, allowing answers to draw on distant evidence.
 
-**反面理论／结果——Lost in the Middle（Liu等）。** 多文档检索与长上下文任务发现，模型对相关内容的利用受到其在上下文中位置的影响，位于中间位置的信息常比开头或末尾更难被有效使用。
+**Contrasting finding — Lost in the Middle (Liu et al.).** Multi-document retrieval and long-context studies find that use of relevant material depends on its position. Middle-position information is often less effectively used than material near the beginning or end.
 
-**TLI如何统一。** 输入信息进入上下文后，还需经过查询依赖的支撑调用、路由、组合与目标绑定才能影响输出。位置变化会改变瞬时推理中的组件作用和信息组合路径。因此，“输入中存在证据”与“证据成为当前回答的有效功能支撑”对应不同的推理环节。
+**TLI unification.** Accessible context must be processed through query-dependent recruitment, routing, combination and target binding before it affects output. Position changes alter component effects and information-combination paths in transient inference. **Evidence present in the input** and **evidence functioning as support for the current answer** are distinct inferential stages.
 
-**内部实验锚点。** INF-E01：冻结学习状态下，组件效应依赖查询；成对干预揭示非加性交互；准确的历史组件回滚显示已学习版本对当前推理的作用。
+**Internal anchor.** INF-E01: frozen-state component effects depend on the query; paired interventions reveal non-additive interactions, and precise component-version rollback identifies learned contributions to inference.
 
-### 5.1.19 Chain-of-Thought：推理收益与文本轨迹忠实性
+### 5.1.19 Chain-of-Thought: Reasoning Gains and Faithfulness of Textual Traces
 
-**正面理论／结果——Chain-of-Thought Prompting（Wei等）。** 要求模型生成中间推理步骤，可以改善多步计算、符号处理等复杂任务的最终解答表现。
+**Positive finding — Chain-of-Thought Prompting (Wei et al.).** Requesting intermediate reasoning steps can improve answers on multistep arithmetic, symbolic and other complex tasks.
 
-**反面理论／结果——Unfaithful Chain-of-Thought（Turpin等）。** 受控提示实验发现，输出的自然语言推理说明有时遗漏实际影响决策的偏置来源，说明可读推理文本与内部因果计算之间可以存在差别。
+**Contrasting finding — unfaithful Chain-of-Thought (Turpin et al.).** Controlled prompting studies find that generated natural-language explanations can omit sources of bias that influence actual decisions, demonstrating a possible gap between readable explanations and internal causal computation.
 
-**TLI如何统一。** CoT提示改变冻结模型在当前查询中的瞬时计算、支撑调用和信息组合，因而能够影响答案；生成的文字步骤则是这些计算的一个可观察输出。有效的推理计算与文字说明的忠实程度，是推理过程中两个不同的功能测量对象。
+**TLI unification.** CoT prompting changes the transient computations, support recruitment and information combination performed by a frozen model for the current query, potentially improving its answer. The generated verbal steps are an observable output of those computations. Functional success and faithfulness of the textual explanation are distinct measurements within inference.
 
-**内部实验锚点。** INF-E01：冻结状态下的查询依赖组件门控、非加性支撑组合和历史版本回滚揭示推理行为的内部功能路径。
+**Internal anchor.** INF-E01: query-dependent component gates, non-additive support combinations and historical-version rollback reveal internal functional paths during frozen inference.
 
-### 5.1.20 Test-time Compute：增加推理搜索与收益差异
+### 5.1.20 Test-Time Compute: Search Budget and Variable Gains
 
-**正面理论／结果——搜索与推理时计算（如Tree of Thoughts）。** 在固定模型参数的条件下，拓展候选路径、增加搜索和回溯步骤可以改善某些需要规划、检验或组合的任务。
+**Positive finding — search and inference-time computation (e.g., Tree of Thoughts).** Expanding candidate paths, search and backtracking under fixed model parameters can improve tasks requiring planning, checking or composition.
 
-**反面理论／结果——计算预算的任务依赖效应。** 额外搜索与采样的收益受任务类型、候选质量、路由和选择规则影响；增加计算预算时，部分任务的收益会减弱或出现无效分支。
+**Contrasting finding — task-dependent returns to additional compute.** Extra search and sampling depend on task type, candidate quality, routing and selection rules; increased compute can yield diminishing gains or unproductive branches.
 
-**TLI如何统一。** 学习状态冻结后，推理仍能对已有功能支撑执行多轮调用、组合、评价与选择。额外计算扩大了瞬时探索范围；其实际收益取决于当前查询与被调用支撑之间的对应关系。因此，同样的计算增量在不同问题上产生不同结果，符合查询依赖的推理动力学。
+**TLI unification.** With a fixed learned state, inference can repeatedly recruit, combine, evaluate and select existing support. Additional computation expands transient exploration, but gains depend on the match between query and recruited functionality. The same increase in compute can therefore have different effects across problems, consistent with query-conditioned inference dynamics.
 
-**内部实验锚点。** INF-E01：冻结推理中的查询依赖调用、组件间非加性交互以及回滚与恢复实验。
+**Internal anchor.** INF-E01: query-conditioned recruitment, non-additive component interactions and rollback/restoration under frozen inference.
 
-### 5.1.21 持续学习：灾难性遗忘与EWC保护
+### 5.1.21 Continual Learning: Catastrophic Forgetting and EWC Protection
 
-**正面理论／结果——Catastrophic Forgetting。** 神经网络依次学习新任务时，后续训练会在某些情况下损害已掌握任务的表现，形成明显的旧能力遗忘。
+**Positive finding — catastrophic forgetting.** Sequentially training neural networks on new tasks can damage performance on previously mastered tasks, producing observable loss of old capabilities.
 
-**反面理论／结果——Elastic Weight Consolidation（Kirkpatrick等）。** EWC根据旧任务的Fisher信息估计参数重要性，对敏感方向的后续变化施加更强约束，从而在持续学习实验中缓解旧任务性能下降。
+**Contrasting finding — Elastic Weight Consolidation (Kirkpatrick et al.).** EWC uses Fisher information from earlier tasks to estimate parameter importance and penalizes later changes along sensitive directions, mitigating loss of old-task performance in continual-learning experiments.
 
-**TLI如何统一。** 新任务的实际更新作用于同时承载新旧能力的接收状态。更新与旧功能支撑敏感方向的重叠及响应符号，决定旧目标间隔是扩大还是收缩；累积收缩跨越边界后表现为遗忘。EWC通过改变实际动作的几何分布，降低旧功能高敏感方向上的不利响应。其他保护与恢复方法也通过改变动作及支撑重组发挥作用。
+**TLI unification.** New-task realized updates act on receiving states that support both new and old capabilities. Overlap with old-support-sensitive directions and the sign of old-target response determine whether old margins expand or contract; accumulated contraction crossing a boundary produces forgetting. EWC reshapes actual update directions to reduce harmful responses along old-function-sensitive directions. Related protection and recovery methods also act by changing updates and support reorganization.
 
-**内部实验锚点。** TL-E03：相同更新在不同接收状态产生不同旧目标响应；TL-E07：更新重新分配支撑；TL-E08：目标边界跨越决定能力损失；RL-E06：集中反馈导致旧能力间隔降低，重新平衡反馈后能力恢复。
+**Internal anchors.** TL-E03: identical updates produce different old-target responses in different receiving states. TL-E07: update-driven support redistribution. TL-E08: readout-boundary crossings determine loss. RL-E06: concentrated feedback reduces old-skill margins; rebalanced feedback restores capability.
