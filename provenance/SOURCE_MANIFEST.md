@@ -27,7 +27,7 @@ machine-specific path is intentionally included.
 
 The portable GF-P02 tree differs from the frozen source tree only by omission
 of the two third-party author-version PDFs listed in
-`THIRD_PARTY_AUTHORITIES.md`. A path-by-path Git-object comparison found no
+`provenance/THIRD_PARTY_AUTHORITIES.md`. A path-by-path Git-object comparison found no
 other added, removed or modified GF-P02 file. The citations, persistent links
 and audited hashes remain public; the papers themselves are not redistributed.
 

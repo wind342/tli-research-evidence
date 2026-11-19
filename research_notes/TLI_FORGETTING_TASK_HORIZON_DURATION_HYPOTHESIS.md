@@ -1,4 +1,4 @@
-> **TLI research hypothesis (pending empirical tests).** This note examines task horizon, training duration and cross-capability forgetting. The [current ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) identifies the already completed experiments. Predictions introduced here remain research hypotheses.
+> **TLI research hypothesis (pending empirical tests).** This note examines task horizon, training duration and cross-capability forgetting. The [current ICML paper-to-evidence map](../TLI_ICML_PAPER_EVIDENCE_MAP.md) identifies the already completed experiments. Predictions introduced here remain research hypotheses.
 
 # TLI Research Note: Task Horizon, Training Duration, and Cross-Capability Forgetting
 
@@ -21,7 +21,7 @@ When matched on task content and training conditions, RL and SFT might cause sim
 
 ## 2. Established TLI computational basis
 
-The experimentally established relations among actual training updates, receiving-state-dependent functional responses, distributed support and capability readouts are described in the [TLI unified dynamics](TLI_UNIFIED_DYNAMICS.md) and the current paper's *This Is a Simple Theory* section.
+The experimentally established relations among actual training updates, receiving-state-dependent functional responses, distributed support and capability readouts are described in the [TLI unified dynamics](../theory/TLI_UNIFIED_DYNAMICS.md) and the current paper's *This Is a Simple Theory* section.
 
 For a target \(q\) evaluated in a shared learned state, the response to one realized update is
 
@@ -63,7 +63,7 @@ The support for a target is measured by \(P_{t,q}=\mathcal P_q(L_t;\mathcal J_q)
 - **TL-E06–E07:** Different capabilities have distributed functional support that can interact and be reallocated.
 - **TL-E08:** Continuous target-margin changes yield discrete capability changes when a target crosses its registered boundary.
 - **Current paper, *This Is a Simple Theory*:** One update may improve target A while producing positive or negative responses in other targets, through shared computation.
-- **[RL-E06 formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md):** Starting from a mastered four-skill GRU, 3,200 updates of concentrated correct feedback progressively changed support and the other skills' behavior. Under exclusive feedback, mean accuracy of the other skills fell from **88.89% at update 100** to **60.94% at update 3,200**. Rebalanced feedback raised their accuracy from **70.31% at the common update-800 fork** to **99.48%**. This experiment manipulated **feedback allocation and duration**; it did not perform a matched RL/SFT task-horizon comparison.
+- **[RL-E06 formal results](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md):** Starting from a mastered four-skill GRU, 3,200 updates of concentrated correct feedback progressively changed support and the other skills' behavior. Under exclusive feedback, mean accuracy of the other skills fell from **88.89% at update 100** to **60.94% at update 3,200**. Rebalanced feedback raised their accuracy from **70.31% at the common update-800 fork** to **99.48%**. This experiment manipulated **feedback allocation and duration**; it did not perform a matched RL/SFT task-horizon comparison.
 
 These experimental anchors support the underlying mechanistic relations. The proposed explanation for differences between practical RL and SFT is an **additional research prediction** based on those relations.
 

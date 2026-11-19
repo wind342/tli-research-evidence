@@ -64,7 +64,7 @@ Distinguish the evidence operation conducted:
 - **Recalculation:** results independently recomputed from saved machine-native records.
 - **Archive verification:** identity, integrity and SHA-256 verified against stored records.
 
-[PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md), [PUBLIC_ARCHIVE.md](PUBLIC_ARCHIVE.md), [FULL_REPRODUCTION_AUDIT.md](FULL_REPRODUCTION_AUDIT.md) and [REPRODUCIBILITY_NOTES.md](REPRODUCIBILITY_NOTES.md) identify the available verification depth. Record missing source authorities as unresolved observations with their file paths.
+[PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md), [FULL_REPRODUCTION_AUDIT.md](audits/FULL_REPRODUCTION_AUDIT.md), [REPRODUCIBILITY_NOTES.md](audits/REPRODUCIBILITY_NOTES.md) and [source manifest](provenance/SOURCE_MANIFEST.md) identify the available verification depth. Record missing source authorities as unresolved observations with their file paths.
 
 ## 4. Scientific review and document editing
 

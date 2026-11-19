@@ -20,7 +20,7 @@
 | [Mathematical unification](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/extrapolations_main_complete.tex) | Two complete main-text recoveries: **Edge of Stability** and **Catastrophic Forgetting**, tagged [T]/[A]/[R] |
 | [This Is a Simple Theory](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/simple.tex) | Elementary neural-computation explanation of the coupled TLI relations |
 | [Conclusion](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/conclusion.tex) | Synthesis of experiment-based TLI and mathematical unification |
-| [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md), [runnable 21-check mathematical audit](math_audit/README.md) |
+| [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md), [runnable 21-check mathematical audit](math_audit/README.md) |
 | [Appendix experimental displays](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Figure 3 and Tables 1–3 |
 
 **Document convention:** Section, figure, table and equation references follow the `icml-final` manuscript. Experiment identities remain stable across versions; the November Windows GNN/SNN runs have distinct registered seeds.
@@ -126,9 +126,9 @@ RL-E06 retains all 12 seeds. The update-800 other-skill accuracy is 70.31%; reba
 
 ## 5. Unified equations and mathematical unification (ICML)
 
-The ICML paper separates the [coupled dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex) from the [14 mathematical recoveries](TLI_THEORY_FIRST_14_DERIVATIONS.md). The main-text worked derivations are **Edge of Stability** (`icml/sections/extrap_cases/eos.tex`) and **Catastrophic Forgetting** (`icml/sections/extrap_cases/forgetting.tex`). The remaining **12** appear in the [appendix source](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex): implicit bias, model collapse, spectral bias, benign overfitting, Chinchilla, dynamical isometry, dropout, grokking, μP, SAM/sharpness, gradient noise scale and double descent.
+The ICML paper separates the [coupled dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex) from the [14 mathematical recoveries](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md). The main-text worked derivations are **Edge of Stability** (`icml/sections/extrap_cases/eos.tex`) and **Catastrophic Forgetting** (`icml/sections/extrap_cases/forgetting.tex`). The remaining **12** appear in the [appendix source](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex): implicit bias, model collapse, spectral bias, benign overfitting, Chinchilla, dynamical isometry, dropout, grokking, μP, SAM/sharpness, gradient noise scale and double descent.
 
-The complete source-oriented ledger remains in [14 theory-first derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting comparisons](TLI_HISTORICAL_COMPARISONS_21.md), and [14-item mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md). The historical 21-case research record is **supplementary**, not an assertion that all 21 appear in the current ICML main text.
+The complete source-oriented ledger remains in [14 theory-first derivations](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting comparisons](theory/TLI_HISTORICAL_COMPARISONS_21.md), and [14-item mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md). The historical 21-case research record is **supplementary**, not an assertion that all 21 appear in the current ICML main text.
 
 ## 6. ICML figures and appendix tables
 
@@ -163,9 +163,9 @@ Figure 3 summarizes the six-system experiment chains. The [November Windows reco
 
 ## 7. Audit and availability
 
-- [Frozen experiment index](EXPERIMENT_INDEX.md), [four instruments](EXPERIMENTAL_INSTRUMENTS.md), [public evidence boundaries](PUBLIC_EVIDENCE_MATRIX.md) and [original import authority](EVIDENCE_IMPORT.md)
+- [Frozen experiment index](EXPERIMENT_INDEX.md), [four instruments](EXPERIMENTAL_INSTRUMENTS.md), [public evidence boundaries](PUBLIC_EVIDENCE_MATRIX.md) and [original import authority](provenance/EVIDENCE_IMPORT.md)
 - [Current ICML GNN/SNN machine results](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json) and [prediction checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json); the receipt reports `PASS` for 28 events and 10,272 targets
 - [RL-E05 scientific assessment](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/SCIENTIFIC_ASSESSMENT.md) retains its stronger temporal-precedence criterion as `NOT_SUPPORTED`; [RL-E06 formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) retain all twelve seeds
-- [Original source and imported evidence archive](PUBLIC_ARCHIVE.md); [ICML manuscript sources](https://github.com/wind342/tli-paper/tree/icml-final/icml)
+- [Imported evidence source identities](provenance/SOURCE_MANIFEST.md); [ICML manuscript sources](https://github.com/wind342/tli-paper/tree/icml-final/icml)
 
 The Git repository contains programs, frozen protocols, machine summaries and checkers. The [public evidence matrix](PUBLIC_EVIDENCE_MATRIX.md) documents verification scope by experiment. This documentation revision reused the existing checks and experiment records.

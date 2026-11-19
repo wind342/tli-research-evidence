@@ -4,10 +4,9 @@ The original sixteen-entry evidence set was sealed by `paper-experiments-v2`.
 Later publication-evidence releases retain the same experiment identities and
 add portable evidence bundles or documentation corrections without rewriting
 the frozen results. The current **TLI / ICML** manuscript-section-level map is
-[TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md); the earlier release map remains in
-[archive/manuscripts/LEGACY_EVIDENCE_MAP.md](archive/manuscripts/LEGACY_EVIDENCE_MAP.md).
+[TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md). Historical manuscript maps remain available through Git history.
 Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
-[RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md).
+[RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
 
 | ID | Experiment | Main scientific role | Code, protocol and evidence |
 |---|---|---|---|

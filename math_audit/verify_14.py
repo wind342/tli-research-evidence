@@ -220,7 +220,7 @@ def run(inp, derivations):
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--inputs',type=Path,default=Path(__file__).with_name('inputs.json'))
-    ap.add_argument('--derivations',type=Path,default=Path(__file__).resolve().parents[1]/'TLI_THEORY_FIRST_14_DERIVATIONS.md')
+    ap.add_argument('--derivations',type=Path,default=Path(__file__).resolve().parents[1]/'theory/TLI_THEORY_FIRST_14_DERIVATIONS.md')
     ap.add_argument('--output',type=Path,default=Path(__file__).with_name('RESULTS.json'))
     args=ap.parse_args()
     raw=args.inputs.read_bytes(); data=json.loads(raw)

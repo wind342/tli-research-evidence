@@ -1,6 +1,6 @@
 # Evidence import and preservation
 
-> **Historical import record.** This file documents the original import and its availability at that point in time. Subsequent ICML alignment updated documentation and added November GNN/SNN machine records; see [the current TLI evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). Original imported experimental source files and machine results retain their recorded provenance.
+> **Historical import record.** This file documents the original import and its availability at that point in time. Subsequent ICML alignment updated documentation and added November GNN/SNN machine records; see [the current TLI evidence map](../TLI_ICML_PAPER_EVIDENCE_MAP.md). Original imported experimental source files and machine results retain their recorded provenance.
 
 ## Sources
 
@@ -42,9 +42,9 @@ python tools/verify_tlir_evidence_import.py
 python tools/verify_tlir_evidence_import.py --archive-dir /path/to/downloaded/release/assets
 ```
 
-This checks source object identity, copied files, documentation links, SNN binary assembly hashes, retained negative verdicts and (when supplied) archive hashes. It does not train a model, load PyTorch checkpoints or rerun the native scientific experiments. The current import receipt is [EVIDENCE_IMPORT_CHECKS.json](EVIDENCE_IMPORT_CHECKS.json).
+This checks source object identity, copied files, documentation links, SNN binary assembly hashes, retained negative verdicts and (when supplied) archive hashes. It does not train a model, load PyTorch checkpoints or rerun the native scientific experiments. The current import receipt is [EVIDENCE_IMPORT_CHECKS.json](../EVIDENCE_IMPORT_CHECKS.json).
 
 ## Rights and privacy
 
-The original [proprietary notice](PROPRIETARY_NOTICE.md) and third-party authority notices remain in force. No new open-source licence is applied. This copy was requested by the repository owner; public access does not grant third parties unrestricted redistribution rights. No newly supplied confidential manuscript, local user path, credential or private working directory is added.
+The original [proprietary notice](../PROPRIETARY_NOTICE.md) and third-party authority notices remain in force. No new open-source licence is applied. This copy was requested by the repository owner; public access does not grant third parties unrestricted redistribution rights. No newly supplied confidential manuscript, local user path, credential or private working directory is added.
 

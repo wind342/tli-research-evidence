@@ -180,7 +180,7 @@ with the experimentally observed receiving-state dependence
 
 The reciprocal causal-fork protocols restore exact pre-states, execute full/skip and parameter-/optimizer-separated branches, transplant realized update increments, and compare branch-minus-skip functional responses across registered horizons. They distinguish the *formation of an update* from the *effect of applying that update to a particular receiving state*.
 
-**Experimental anchors:** [TL-E01/02 theory ledger](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/research_archive/THEORY_LEDGER.md); [TL-E02 intervention contract](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/contracts/intervention_api.json); [TL-E03 reciprocal protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/RECIPROCAL_MATCHED_PAIR_PROTOCOL_V2.json); [independent reciprocal validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/reciprocal_validator.py).
+**Experimental anchors:** [TL-E01/02 theory ledger](../experiments/gfg_nanogpt_autonomous_capability_discovery_v1/research_archive/THEORY_LEDGER.md); [TL-E02 intervention contract](../experiments/gfg_nanogpt_autonomous_capability_discovery_v1/contracts/intervention_api.json); [TL-E03 reciprocal protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/RECIPROCAL_MATCHED_PAIR_PROTOCOL_V2.json); [independent reciprocal validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/reciprocal_validator.py).
 
 ### 3.2 Finite-amplitude response and its conditioning factors — TL-E04–E05
 
@@ -220,7 +220,7 @@ TL-E05 then studies *why the response of the same identified target differs betw
 
 The frozen TL-E05 analysis uses 12 development histories, 72 update sections, 15,264 identity-aligned target responses, and 2,000 clustered bootstrap replicates. \(\mathcal F_{t,q}\) records measured families of response-conditioning information; their operational components can be adapted to the native state of a different optimizer and architecture.
 
-**Experimental anchors:** [amplitude-path protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json); [amplitude-path validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py); [TL-E05 frozen factor contract](experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md); [factor-analysis implementation](experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py).
+**Experimental anchors:** [amplitude-path protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json); [amplitude-path validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py); [TL-E05 frozen factor contract](../experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md); [factor-analysis implementation](../experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py).
 
 ### 3.3 Distributed support and component interaction — TL-E06
 
@@ -267,7 +267,7 @@ n^{\mathrm{eff}}_q=\frac{1}{\sum_jw_{j,q}^{\,2}}.
 
 The full measured profile \(\mathcal P_q(L;\mathcal J_q)\) also contains the registered single-/double-gate margins, backup/substitution effects, and failure slack. It is constructed from **actual intervention results**, with each absent or undefined statistic retained as such in the evidence record.
 
-**Experimental anchors:** [CSRG-4C frozen capture contract](experiments/gfg_nanogpt_support_redundancy_v1/capture_contract_v2.json); [intervention and support builder](experiments/gfg_nanogpt_support_redundancy_v1/builder.py); [independent archive verifier](experiments/gfg_nanogpt_support_redundancy_v1/verify_archive.py).
+**Experimental anchors:** [CSRG-4C frozen capture contract](../experiments/gfg_nanogpt_support_redundancy_v1/capture_contract_v2.json); [intervention and support builder](../experiments/gfg_nanogpt_support_redundancy_v1/builder.py); [independent archive verifier](../experiments/gfg_nanogpt_support_redundancy_v1/verify_archive.py).
 
 ### 3.4 Persistent redistribution and capability readout — TL-E07–E08
 
@@ -308,7 +308,7 @@ C_{t+1,q}&=\mathbf1[m_q(L_t)+R_{t,q}>0].
 
 The four observed outcomes—remaining correct, correct-to-wrong, remaining wrong, and wrong-to-correct—are determined by the two boundary readouts. The underlying continuous margin records how an update can move a target toward or away from the boundary before the discrete outcome changes.
 
-**Experimental anchors:** [TL-E07 analysis](experiments/gfg_nanogpt_support_reallocation_audit_v1/analysis.py); [TL-E07 independent checker](experiments/gfg_nanogpt_support_reallocation_audit_v1/independent.py); [TL-E08 identity-aligned experiment](experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/experiment.py).
+**Experimental anchors:** [TL-E07 analysis](../experiments/gfg_nanogpt_support_reallocation_audit_v1/analysis.py); [TL-E07 independent checker](../experiments/gfg_nanogpt_support_reallocation_audit_v1/independent.py); [TL-E08 identity-aligned experiment](../experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/experiment.py).
 
 ### 3.5 Query-conditioned frozen inference — INF-E01
 
@@ -329,7 +329,7 @@ INF-E01 tests 13 nanoGPT histories at four mechanically selected checkpoint phas
 
 The same frozen-inference relations are tested in ResNet, diffusion U-Net, and routed Vision-MoE. In diffusion, complete denoising trajectories change transient sample state while the model's persistent learned state remains fixed.
 
-**Experimental anchors:** [INF-E01 frozen protocol](experiments/gfg_nanogpt_training_learning_inference_projection_v1/PROTOCOL_FREEZE.md); [INF-E01 analysis](experiments/gfg_nanogpt_training_learning_inference_projection_v1/analysis.py); [cross-system frozen inference](experiments/gfg_cross_system_frozen_inference_projection_v1/RESULTS.md); [Vision-MoE inference results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md).
+**Experimental anchors:** [INF-E01 frozen protocol](../experiments/gfg_nanogpt_training_learning_inference_projection_v1/PROTOCOL_FREEZE.md); [INF-E01 analysis](../experiments/gfg_nanogpt_training_learning_inference_projection_v1/analysis.py); [cross-system frozen inference](../experiments/gfg_cross_system_frozen_inference_projection_v1/RESULTS.md); [Vision-MoE inference results](../experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md).
 
 ### 3.6 Feedback-directed support reorganization — RL-E05–E06
 
@@ -372,7 +372,7 @@ At exclusive-feedback update 800, two recovery branches begin from the **same ex
 
 Together these interventions establish feedback allocation as a causal control of *persistent functional reorganization* in the tested shared system.
 
-**Experimental anchors:** [RL-E05 protocol](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/PROTOCOL_FREEZE.md); [RL-E05 results](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/RESULTS.md); [RL-E06 frozen dose/recovery protocol](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/PROTOCOL_FREEZE.md); [RL-E06 formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md); [RL-E06 independent checker](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/independent_checker.py).
+**Experimental anchors:** [RL-E05 protocol](../experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/PROTOCOL_FREEZE.md); [RL-E05 results](../experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/RESULTS.md); [RL-E06 frozen dose/recovery protocol](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/PROTOCOL_FREEZE.md); [RL-E06 formal results](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md); [RL-E06 independent checker](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/independent_checker.py).
 
 ---
 
@@ -424,7 +424,7 @@ The predictor combines the **initial target boundary**, **the target-specific ge
 
 In the nanoGPT four-run confirmation split, the fixed algorithm obtains **4,652/5,088 = 91.43%** post-update boundary accuracy and **91.49%** macro recall across the four target-transition categories. Its primary score is a target-boundary result rather than next-token task accuracy. The same algorithm is independently applied to all 15,264 target records.
 
-**Experimental anchors:** [TL-P01 frozen protocol](experiments/gfg_nanogpt_actual_update_boundary_v1/PROTOCOL_FREEZE.md); [results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md); [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py).
+**Experimental anchors:** [TL-P01 frozen protocol](../experiments/gfg_nanogpt_actual_update_boundary_v1/PROTOCOL_FREEZE.md); [results](../experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md); [independent checker](../experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py).
 
 ## 5. Cross-system experimental tests
 
@@ -443,7 +443,7 @@ The ResNet, diffusion, and Vision-MoE experiments independently reproduce the te
 
 This separation between **underlying functional dynamics** and **a particular approximate endpoint predictor** is itself experimentally observable.
 
-**Experimental anchors:** [ResNet formal results](experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md); [diffusion formal results](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md); [Vision-MoE formal results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md); [current ICML GNN/SNN results](independent_stress_tests/windows_reproduction/README.md); [cross-system evidence scope](independent_stress_tests/EVIDENCE_SCOPE.md).
+**Experimental anchors:** [ResNet formal results](../experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md); [diffusion formal results](../experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md); [Vision-MoE formal results](../experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md); [current ICML GNN/SNN results](../independent_stress_tests/windows_reproduction/README.md); [cross-system evidence scope](../independent_stress_tests/EVIDENCE_SCOPE.md).
 
 ## 6. Equation-to-evidence map
 
@@ -492,10 +492,10 @@ The experimentally grounded relation can be summarized as
 
 ### Repository evidence and manuscript
 
-- [Current ICML manuscript evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)
-- [Primary experiment index](EXPERIMENT_INDEX.md)
-- [Experimental instruments and native implementations](EXPERIMENTAL_INSTRUMENTS.md)
-- [Public evidence and reproduction matrix](PUBLIC_EVIDENCE_MATRIX.md)
+- [Current ICML manuscript evidence map](../TLI_ICML_PAPER_EVIDENCE_MAP.md)
+- [Primary experiment index](../EXPERIMENT_INDEX.md)
+- [Experimental instruments and native implementations](../EXPERIMENTAL_INSTRUMENTS.md)
+- [Public evidence and reproduction matrix](../PUBLIC_EVIDENCE_MATRIX.md)
 - [The 21 theory comparisons](TLI_HISTORICAL_COMPARISONS_21.md) and [14 mathematical derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md)
 - [Publication evidence archive](https://doi.org/10.5281/zenodo.22005307)
 
@@ -681,7 +681,7 @@ For a back-only head, if two inputs need different answers but the frozen backbo
 
 ### 9.5 Relation to RL-E06, incremental reuse, and existing work
 
-[RL-E06](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) established that a shared GRU which initially completed all four registered tasks could lose success on unreinforced tasks under concentrated positive feedback, then largely recover under redistributed feedback. The architecture and model size were unchanged; feedback changed the learned functional organization and thus the target readouts. This supports the **motivation to avoid unnecessary overwriting of established shared computations**, not a claim that frozen-backbone heads were tested in RL-E06.
+[RL-E06](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) established that a shared GRU which initially completed all four registered tasks could lose success on unreinforced tasks under concentrated positive feedback, then largely recover under redistributed feedback. The architecture and model size were unchanged; feedback changed the learned functional organization and thus the target readouts. This supports the **motivation to avoid unnecessary overwriting of established shared computations**, not a claim that frozen-backbone heads were tested in RL-E06.
 
 For incremental use, freeze the completed task-specific transformations when training the next ones. An optional small coordination module may combine their outputs without updating the older modules. Preserving parameters preserves an earlier task's original computational path only if that path, its inputs, and its routing are still used unchanged.
 

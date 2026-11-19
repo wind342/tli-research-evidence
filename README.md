@@ -30,9 +30,18 @@ The corresponding **GNN/SNN** evidence is the [Windows-run machine results and a
 
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
 - [Run and inspect the current 21-check mathematical audit](math_audit/README.md) (script, fixed inputs, versioned dependencies, and result records).
-- The [complete 14-derivation record](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLI_HISTORICAL_COMPARISONS_21.md) and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
-- [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
-- [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.
+- The [complete 14-derivation record](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](theory/TLI_HISTORICAL_COMPARISONS_21.md) and [independent mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
+- [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](provenance/EVIDENCE_IMPORT.md), and [source manifest](provenance/SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
+
+## Document organization
+
+- [Theory and fourteen derivations](theory/) — TLI equations, mathematical recoveries and historical comparisons
+- [Audit reports](audits/) — mathematical and experimental verification and reproduction notes
+- [Evidence provenance](provenance/) — imported-source identities, manifests and external file hashes
+- [Experiment chains and current abstract](docs/) — cross-system and reinforcement evidence navigation
+- [Exploratory research notes](research_notes/) — unfinished hypotheses and calculations
+
+The original [letter to future AI](LETTER_TO_FUTURE_AI.md) stays in the repository root. The superseded `PUBLIC_ARCHIVE.md` evidence-package listing has been removed; the experiment data and recorded source identities are unchanged.
 
 ## Original research-evidence collection (preserved)
 
@@ -51,13 +60,10 @@ The repository has **16 primary experiment entries**:
   stochastic long-chain credit.
 
 The primary entries are indexed in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md).
-Earlier manuscript-section-to-evidence navigation is retained in the
-[historical manuscript archive](archive/manuscripts/LEGACY_EVIDENCE_MAP.md).
-The exact public verification boundary for every manuscript experiment is
-recorded in [PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md), and the
-Git/Zenodo division is documented in [PUBLIC_ARCHIVE.md](PUBLIC_ARCHIVE.md).
+The verification scope for every indexed experiment is recorded in
+[PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md).
 The four reinforcement-learning experiments form one cumulative evidence chain,
-summarized in [RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md).
+summarized in [RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
 Additional experiment directories support primary entries or reconstruct
 the underlying Generation-Fact Graph
 (GFG). These directories provide experimental dependencies.
@@ -85,7 +91,7 @@ diffusion seeds, it checks exact training-version identity, causal component
 recruitment, query-conditioned non-additive support combination and exact
 pre-learning rollback/restoration while keeping persistent learned state frozen.
 The cumulative relation among TL-G01, TL-G02 and INF-G01 is summarized in
-[CROSS_SYSTEM_EVIDENCE_CHAIN.md](CROSS_SYSTEM_EVIDENCE_CHAIN.md).
+[CROSS_SYSTEM_EVIDENCE_CHAIN.md](docs/CROSS_SYSTEM_EVIDENCE_CHAIN.md).
 
 The separate **TL-G03/INF-G02** frozen experiment adds deterministic top-2
 routed expert organization. Across three Vision-MoE/CIFAR-100/AdamW seeds, it
@@ -100,7 +106,7 @@ training--learning--inference loop in a shared policy. RL-E05 studies selective
 positive feedback and support concentration; RL-E06 freezes feedback dose,
 duration and recovery forks and independently re-executes all 12 formal seeds.
 They are indexed as extensions to the sealed original sixteen
-manuscript entries. See [RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md).
+manuscript entries. See [RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
 
 Four reusable instruments developed for the training--learning experiments are
 exposed through [EXPERIMENTAL_INSTRUMENTS.md](EXPERIMENTAL_INSTRUMENTS.md):
@@ -125,11 +131,11 @@ The original experiment set and RL-E02 were imported without rewriting their
 experimental content from frozen source commits. RL-E03 and RL-E04 were then
 developed and frozen directly in this companion repository. Exact source
 commits and Git tree identities are recorded in
-[SOURCE_MANIFEST.md](SOURCE_MANIFEST.md).
+[SOURCE_MANIFEST.md](provenance/SOURCE_MANIFEST.md).
 
 Four large base-GFG JSON payloads are intentionally not added to this companion
 repository. Their byte sizes and SHA-256 identities are recorded in
-[EXTERNAL_ARTIFACTS.md](EXTERNAL_ARTIFACTS.md); their generators, validation
+[EXTERNAL_ARTIFACTS.md](provenance/EXTERNAL_ARTIFACTS.md); their generators, validation
 outputs and source-commit identities remain present.
 
 ## Reproduction
@@ -143,13 +149,11 @@ are documented in `PUBLIC_EVIDENCE_MATRIX.md`. The common Python package and
 Core v3 schemas are retained under `src/` and `protocol/core_v3/`.
 
 Environment-dependent and source-history-dependent checks are identified in
-[REPRODUCIBILITY_NOTES.md](REPRODUCIBILITY_NOTES.md).
+[REPRODUCIBILITY_NOTES.md](audits/REPRODUCIBILITY_NOTES.md).
 The final pre-publication experiment-by-experiment audit is recorded in
-[FULL_REPRODUCTION_AUDIT.md](FULL_REPRODUCTION_AUDIT.md).
+[FULL_REPRODUCTION_AUDIT.md](audits/FULL_REPRODUCTION_AUDIT.md).
 The single cumulative cross-system and feedback-dynamics freeze is described in
-[FINAL_EXTENSION_RELEASE_AUDIT.md](FINAL_EXTENSION_RELEASE_AUDIT.md); its public
-archive entry point is `python tools/verify_final_extension_evidence.py
-<download-directory>`.
+[FINAL_EXTENSION_RELEASE_AUDIT.md](audits/FINAL_EXTENSION_RELEASE_AUDIT.md); its validation script is `tools/verify_final_extension_evidence.py`.
 
 This repository has no open-source license. See
 [PROPRIETARY_NOTICE.md](PROPRIETARY_NOTICE.md).
@@ -157,4 +161,4 @@ This repository has no open-source license. See
 Two third-party provenance papers used as frozen audit authorities in GF-P02
 are intentionally not redistributed in this public snapshot. Their citations,
 DOIs and audited file hashes are preserved in
-[THIRD_PARTY_AUTHORITIES.md](THIRD_PARTY_AUTHORITIES.md).
+[THIRD_PARTY_AUTHORITIES.md](provenance/THIRD_PARTY_AUTHORITIES.md).

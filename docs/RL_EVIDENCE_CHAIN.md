@@ -17,10 +17,10 @@ forks. Correct binding and credit re-formed the reversed policy in all twelve
 formal seeds; neither disrupted condition reached the frozen 90% threshold in
 any seed.
 
-- [Frozen protocol](experiments/gfg_rl_feedback_closure_v1/PROTOCOL_FREEZE.md)
-- [Formal results](experiments/gfg_rl_feedback_closure_v1/RESULTS.md)
-- [Machine-readable summary](experiments/gfg_rl_feedback_closure_v1/FORMAL_RESULT_SUMMARY.json)
-- [Independent checker](experiments/gfg_rl_feedback_closure_v1/independent_checker.py)
+- [Frozen protocol](../experiments/gfg_rl_feedback_closure_v1/PROTOCOL_FREEZE.md)
+- [Formal results](../experiments/gfg_rl_feedback_closure_v1/RESULTS.md)
+- [Machine-readable summary](../experiments/gfg_rl_feedback_closure_v1/FORMAL_RESULT_SUMMARY.json)
+- [Independent checker](../experiments/gfg_rl_feedback_closure_v1/independent_checker.py)
 
 ## RL-E02 — GFG-guided temporal-credit discovery
 
@@ -33,10 +33,10 @@ pairwise interactions exactly. Training with the discovered credit matched the
 hidden-oracle held-out result, including 96.48% terminal success and 99.08%
 functional-action accuracy.
 
-- [Frozen protocol](experiments/gfg_temporal_credit_discovery_v1/PROTOCOL_FREEZE.md)
-- [Formal results](experiments/gfg_temporal_credit_discovery_v1/RESULTS.md)
-- [Machine-readable summary](experiments/gfg_temporal_credit_discovery_v1/FORMAL_RESULT_SUMMARY.json)
-- [Independent checker](experiments/gfg_temporal_credit_discovery_v1/independent_checker.py)
+- [Frozen protocol](../experiments/gfg_temporal_credit_discovery_v1/PROTOCOL_FREEZE.md)
+- [Formal results](../experiments/gfg_temporal_credit_discovery_v1/RESULTS.md)
+- [Machine-readable summary](../experiments/gfg_temporal_credit_discovery_v1/FORMAL_RESULT_SUMMARY.json)
+- [Independent checker](../experiments/gfg_temporal_credit_discovery_v1/independent_checker.py)
 
 ## RL-E03 — recursive optimization of credit discovery
 
@@ -51,10 +51,10 @@ end-to-end speedup including the one-time credit-discovery GFG construction.
 The held-out policy reached 98.63% terminal success and 98.99%
 functional-action accuracy.
 
-- [Frozen protocol](experiments/gfg_temporal_credit_long_chain_self_optimization_v1/PROTOCOL_FREEZE.md)
-- [Formal results](experiments/gfg_temporal_credit_long_chain_self_optimization_v1/RESULTS.md)
-- [Machine-readable summary](experiments/gfg_temporal_credit_long_chain_self_optimization_v1/artifacts/FORMAL_RESULT_SUMMARY.json)
-- [Independent checker](experiments/gfg_temporal_credit_long_chain_self_optimization_v1/independent_checker.py)
+- [Frozen protocol](../experiments/gfg_temporal_credit_long_chain_self_optimization_v1/PROTOCOL_FREEZE.md)
+- [Formal results](../experiments/gfg_temporal_credit_long_chain_self_optimization_v1/RESULTS.md)
+- [Machine-readable summary](../experiments/gfg_temporal_credit_long_chain_self_optimization_v1/artifacts/FORMAL_RESULT_SUMMARY.json)
+- [Independent checker](../experiments/gfg_temporal_credit_long_chain_self_optimization_v1/independent_checker.py)
 
 An ordinary dependency DAG supplied with the already established
 term-to-action partition reproduced the optimized adjudication. The measured
@@ -74,10 +74,10 @@ result and conditional credit in every formal case. Training with the
 discovered credit achieved 94.82% terminal success and 98.62%
 functional-action accuracy on held-out policies.
 
-- [Frozen protocol](experiments/gfg_temporal_credit_stochastic_long_chain_v1/PROTOCOL_FREEZE.md)
-- [Formal results](experiments/gfg_temporal_credit_stochastic_long_chain_v1/RESULTS.md)
-- [Machine-readable summary](experiments/gfg_temporal_credit_stochastic_long_chain_v1/artifacts/FORMAL_RESULT_SUMMARY.json)
-- [Independent checker](experiments/gfg_temporal_credit_stochastic_long_chain_v1/independent_checker.py)
+- [Frozen protocol](../experiments/gfg_temporal_credit_stochastic_long_chain_v1/PROTOCOL_FREEZE.md)
+- [Formal results](../experiments/gfg_temporal_credit_stochastic_long_chain_v1/RESULTS.md)
+- [Machine-readable summary](../experiments/gfg_temporal_credit_stochastic_long_chain_v1/artifacts/FORMAL_RESULT_SUMMARY.json)
+- [Independent checker](../experiments/gfg_temporal_credit_stochastic_long_chain_v1/independent_checker.py)
 
 ## Cumulative result
 
@@ -112,9 +112,9 @@ component-version rollback tests passed their frozen criteria: the reinforced sk
 other skills fell to 73.26%, and directional rollback reversed the trade-off in
 12/12 seeds.
 
-- [Frozen protocol](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/PROTOCOL_FREEZE.md)
-- [Formal results](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/RESULTS.md)
-- [Scientific assessment](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/SCIENTIFIC_ASSESSMENT.md)
+- [Frozen protocol](../experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/PROTOCOL_FREEZE.md)
+- [Formal results](../experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/RESULTS.md)
+- [Scientific assessment](../experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/SCIENTIFIC_ASSESSMENT.md)
 
 ### RL-E06 — dose, duration and recovery
 
@@ -131,8 +131,8 @@ exclusive feedback to update 3,200. Other-skills-only repair restored the others
 but weakened the formerly reinforced skill. A separate full native replay of
 all 12 seeds passed.
 
-- [Frozen protocol](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/PROTOCOL_FREEZE.md)
-- [Formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md)
-- [Scientific assessment](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/SCIENTIFIC_ASSESSMENT.md)
-- [Independent checker](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/independent_checker.py)
+- [Frozen protocol](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/PROTOCOL_FREEZE.md)
+- [Formal results](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md)
+- [Scientific assessment](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/SCIENTIFIC_ASSESSMENT.md)
+- [Independent checker](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/independent_checker.py)
 

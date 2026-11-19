@@ -1,14 +1,9 @@
 # Public evidence and reproduction matrix
 
-This matrix states exactly what a third party can verify from the public Git
-repository and the accompanying Zenodo archive.  It deliberately distinguishes
+This matrix records verification scopes for the public Git repository and the referenced historical external artifacts. It distinguishes
 source inspection, result recomputation from frozen machine records, and full
 native re-execution.  A protocol or checker is not labelled as a public replay
-when its original checkpoints or large tensors are not in the archive.
-
-The archive series is identified by the stable Zenodo concept DOI
-[`10.5281/zenodo.22005307`](https://doi.org/10.5281/zenodo.22005307).  Each
-published version has its own immutable version DOI and top-level manifest.
+when its original checkpoints or large tensors are unavailable in Git.
 
 | Experiment | Public material | What can be checked publicly | Boundary |
 |---|---|---|---|
@@ -31,7 +26,6 @@ published version has its own immutable version DOI and top-level manifest.
 
 - TL-P01: `python -m experiments.gfg_nanogpt_actual_update_boundary_v1.INDEPENDENT_CHECKER <extracted-bundle-root>`
 - INF-E01: `python -m experiments.gfg_nanogpt_training_learning_inference_projection_v1.PUBLIC_EVIDENCE_CHECKER <extracted-bundle-root>`
-- Top-level Zenodo archive: `python tools/verify_publication_evidence_v3.py <download-directory>`
 - TL-G01: `python -m experiments.gfg_resnet_cifar_training_learning_generalization_v1.INDEPENDENT_CHECKER <extracted-bundle-root>/runtime`
 - TL-G02: `python -m experiments.gfg_ddpm_cifar_training_learning_generalization_v1.INDEPENDENT_CHECKER <extracted-bundle-root>/runtime`
 - INF-G01: `python -m experiments.gfg_cross_system_frozen_inference_projection_v1.INDEPENDENT_CHECKER --results <extracted-bundle-root>/FORMAL_RESULTS.json --gfg <extracted-bundle-root>/FORMAL_GFG.json`

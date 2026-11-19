@@ -16,7 +16,7 @@ explicit `SKIPPED` history-authority checks. The frozen GF-P02 experiment and
 test tree is preserved without modification; its three source-history authority
 checks are therefore excluded explicitly when only the companion clone is
 available. All six checks pass when run in a checkout whose Git object database
-contains the source commits identified in `SOURCE_MANIFEST.md`.
+contains the source commits identified in `provenance/SOURCE_MANIFEST.md`.
 
 The 47 history-independent GF-P02 tests can also be selected directly with:
 
@@ -26,7 +26,7 @@ python -m pytest experiments/provenance_semiring_projection_v1/tests -q \
 ```
 
 The local Core and GF-P01 unit set produces 50 passes; its remaining three
-checks require the source commits named in `SOURCE_MANIFEST.md` to be present
+checks require the source commits named in `provenance/SOURCE_MANIFEST.md` to be present
 in the local Git object database.
 
 ## External and generated runtime prerequisites
@@ -51,7 +51,7 @@ Two author-version papers used as frozen literature authorities during the
 GF-P02 preimplementation audits are not redistributed in this public snapshot.
 The audit records retain their original local paths and hashes as historical
 evidence. Bibliographic identities and official persistent links are listed in
-`THIRD_PARTY_AUTHORITIES.md`. These papers are audit references, not inputs to
+`provenance/THIRD_PARTY_AUTHORITIES.md`. These papers are audit references, not inputs to
 the executable projection or scientific result computation.
 
 ## Generated evaluation bundles
@@ -89,5 +89,5 @@ requires the original historical parameter checkpoints.
 ## Large base-GFG payloads
 
 The four omitted base-GFG JSON objects are listed in
-`EXTERNAL_ARTIFACTS.md`. Any restored copy must match the recorded SHA-256
+`provenance/EXTERNAL_ARTIFACTS.md`. Any restored copy must match the recorded SHA-256
 before use.

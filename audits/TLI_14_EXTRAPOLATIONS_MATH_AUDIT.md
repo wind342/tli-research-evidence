@@ -2,7 +2,7 @@
 
 **Current authoritative paper:** [TLI ICML manuscript](https://github.com/wind342/tli-paper/tree/icml-final/icml).  
 **Theory equations:** [`icml/sections/dynamics_layout.tex`](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex).  
-**Evidence text:** [14 complete derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md), [TLI coupled dynamical equations](TLI_UNIFIED_DYNAMICS.md).  
+**Evidence text:** [14 complete derivations](../theory/TLI_THEORY_FIRST_14_DERIVATIONS.md), [TLI coupled dynamical equations](../theory/TLI_UNIFIED_DYNAMICS.md).  
 **Audit record:** Runnable 21-check suite and equation-alignment review updated on November 20, 2026.
 
 ## Fourteen mathematical cases — audit scope and original-model conditions
@@ -48,7 +48,7 @@ All fourteen cases retain the original mathematical objects and principal closed
 
 ## Recorded code and formal checks
 
-**Current executable audit:** [`math_audit/verify_14.py`](math_audit/verify_14.py) performs **21 individually reported checks across all fourteen mathematical cases** using [archived deterministic inputs](math_audit/inputs.json) and [declared dependencies](math_audit/requirements.txt). The recorded run passed **21/21 checks**; see [`RESULTS.json`](math_audit/RESULTS.json) and [reproduction instructions](math_audit/README.md). Checks include local Hessian stability, logistic continuation, binomial sampling identities, spectral decay, conditional bias–variance, Chinchilla balance and scaling, Jacobian nullspaces, exhaustive dropout masks, capability-boundary crossing, Grokking gradient-flow and spectral-edge timing, width scaling, SAM reparameterization and finite updates, gradient-noise projection, Gaussian inverse-Wishart risk estimates on both sides of interpolation, and the Double Descent notation distinction. These are algebraic, finite enumeration, or seeded numerical checks **under each original model's stated conditions**, rather than proofs of all historical results or reruns of neural-network experiments.
+**Current executable audit:** [`math_audit/verify_14.py`](../math_audit/verify_14.py) performs **21 individually reported checks across all fourteen mathematical cases** using [archived deterministic inputs](../math_audit/inputs.json) and [declared dependencies](../math_audit/requirements.txt). The recorded run passed **21/21 checks**; see [`RESULTS.json`](../math_audit/RESULTS.json) and [reproduction instructions](../math_audit/README.md). Checks include local Hessian stability, logistic continuation, binomial sampling identities, spectral decay, conditional bias–variance, Chinchilla balance and scaling, Jacobian nullspaces, exhaustive dropout masks, capability-boundary crossing, Grokking gradient-flow and spectral-edge timing, width scaling, SAM reparameterization and finite updates, gradient-noise projection, Gaussian inverse-Wishart risk estimates on both sides of interpolation, and the Double Descent notation distinction. These are algebraic, finite enumeration, or seeded numerical checks **under each original model's stated conditions**, rather than proofs of all historical results or reruns of neural-network experiments.
 
 **Review scope:** Numerical spot checks detect some formula errors and sign mistakes. The original audit documented correction of earlier equation numbering, the dynamical-isometry nullspace bound, the distinction between exact relationships and first-order approximations, and the mathematical conditions of Grokking, μP and Chinchilla.
 

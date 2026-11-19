@@ -19,7 +19,7 @@ These notes combine the **TLI inference relation \(\mathcal I\)** with the estab
 
 **Research type and sources:** Established TLI equations and previous causal experiments provide the foundation; each exploration introduces explicit mathematical conditions. Published studies supply related theoretical or experimental precedents. This file records mathematical derivations and checks against public evidence.
 
-Current TLI equations: [unified dynamics](TLI_UNIFIED_DYNAMICS.md). Frozen evidence: [experiment index](EXPERIMENT_INDEX.md), [cross-system chain](CROSS_SYSTEM_EVIDENCE_CHAIN.md) and [reinforcement evidence](RL_EVIDENCE_CHAIN.md).
+Current TLI equations: [unified dynamics](../theory/TLI_UNIFIED_DYNAMICS.md). Frozen evidence: [experiment index](../EXPERIMENT_INDEX.md), [cross-system chain](../docs/CROSS_SYSTEM_EVIDENCE_CHAIN.md) and [reinforcement evidence](../docs/RL_EVIDENCE_CHAIN.md).
 
 ## 1. [T] Common starting point: the TLI equations
 
@@ -386,7 +386,7 @@ The response direction depends on each target's readout gradient; accumulated re
 
 ## 7. Research records and provenance
 
-1. **Established TLI sources:** [unified dynamics](TLI_UNIFIED_DYNAMICS.md); [experiment index](EXPERIMENT_INDEX.md); [native INF-E01 frozen inference](experiments/gfg_nanogpt_training_learning_inference_projection_v1/); [INF-G01 attention-free cross-system inference](experiments/gfg_cross_system_frozen_inference_projection_v1/); [RL-E05/E06 feedback evidence](RL_EVIDENCE_CHAIN.md).
+1. **Established TLI sources:** [unified dynamics](../theory/TLI_UNIFIED_DYNAMICS.md); [experiment index](../EXPERIMENT_INDEX.md); [native INF-E01 frozen inference](../experiments/gfg_nanogpt_training_learning_inference_projection_v1); [INF-G01 attention-free cross-system inference](../experiments/gfg_cross_system_frozen_inference_projection_v1); [RL-E05/E06 feedback evidence](../docs/RL_EVIDENCE_CHAIN.md).
 2. **Contents of this note:** Four conditional mathematical explorations, their corresponding published research and a classification of evidence type.
 3. **Existing records:** Fourteen formal recoveries, frozen experimental protocols, historical data, machine results and independent checkers remain stored under their registered versions.
 

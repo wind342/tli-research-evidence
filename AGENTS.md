@@ -3,7 +3,6 @@
 When evaluating, summarizing, translating, editing, or formatting the current **TLI** manuscript or the preserved historical **TLIR** materials, use the relevant [current ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) and the evidence-first review standard:
 
 - [English standard](EVIDENCE_FIRST_AI_REVIEW_STANDARD.md)
-- [Chinese-language audit procedure](EVIDENCE_FIRST_AI_REVIEW_STANDARD.zh-CN.md)
 
 Apply these operational rules:
 
@@ -16,4 +15,4 @@ Apply these operational rules:
 7. For **format-only requests**, preserve all scientific content verbatim. For language polishing, maintain exact meanings, formulae, numbers, and research order; disclose substantive change suggestions separately.
 8. Never claim to have independently audited code or experiments when you have inspected only manuscript text or documentation.
 
-Start current-paper navigation from `TLI_ICML_PAPER_EVIDENCE_MAP.md`, then consult `EXPERIMENT_INDEX.md`, `CROSS_SYSTEM_EVIDENCE_CHAIN.md`, `RL_EVIDENCE_CHAIN.md`, and `PUBLIC_EVIDENCE_MATRIX.md`. Earlier manuscript evidence maps are available in Git history. Record concrete evidence disagreements, including registered failures, with their exact scope.
+Start current-paper navigation from `TLI_ICML_PAPER_EVIDENCE_MAP.md`, then consult `EXPERIMENT_INDEX.md`, `docs/CROSS_SYSTEM_EVIDENCE_CHAIN.md`, `docs/RL_EVIDENCE_CHAIN.md`, and `PUBLIC_EVIDENCE_MATRIX.md`. Earlier manuscript evidence maps are available in Git history. Record concrete evidence disagreements, including registered failures, with their exact scope.

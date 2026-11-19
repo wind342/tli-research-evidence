@@ -71,13 +71,14 @@ def check(archive_dir: Path | None = None) -> dict:
     require(git('rev-parse', tag + '^{}').decode().strip() == manifest['frozen_commit'], 'FROZEN_COMMIT_CHANGED')
 
     checked_links = 0
-    for name in ('README.md', 'TLIR_PAPER_EVIDENCE_MAP.md', 'EVIDENCE_IMPORT.md'):
-        content = (ROOT / name).read_text(encoding='utf-8')
+    for name in ('README.md', 'TLI_ICML_PAPER_EVIDENCE_MAP.md', 'provenance/EVIDENCE_IMPORT.md'):
+        doc_path = ROOT / name
+        content = doc_path.read_text(encoding='utf-8')
         for link in re.findall(r'\]\(([^)]+)\)', content):
             if '://' in link or link.startswith('#'):
                 continue
             target = unquote(link.split('#', 1)[0])
-            require((ROOT / target).exists(), 'BROKEN_LINK:' + name + ':' + target)
+            require((doc_path.parent / target).exists(), 'BROKEN_LINK:' + name + ':' + target)
             checked_links += 1
 
     # No torch.load: reconstruct hashes in memory from existing public binary parts.

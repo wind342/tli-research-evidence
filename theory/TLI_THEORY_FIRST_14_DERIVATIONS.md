@@ -834,7 +834,7 @@ A negative gradient inner product causes a positive first-order change in old-ta
 
 **Research comparison.** Elastic Weight Consolidation (Kirkpatrick et al.); Gradient Episodic Memory (Lopez-Paz and Ranzato); gradient projection and experience replay.
 
-**Internal anchors.** TL-E03, TL-E07 and TL-E08; [RL-E06](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md), which records mastery, subsequent deterioration and recovery.
+**Internal anchors.** TL-E03, TL-E07 and TL-E08; [RL-E06](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md), which records mastery, subsequent deterioration and recovery.
 
 ### 5.2.10 Grokking: Different Crossing Times for Training and Generalization Readouts
 

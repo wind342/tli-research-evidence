@@ -1,6 +1,6 @@
 # Reproducible mathematical checks for the 14 TLI recoveries
 
-This directory is the **current** runnable numerical/algebraic verification, not a copy of the historical 2026-11-03 `verify_14.py` program. It tests 21 representative relations and notation rules across the 14 cases in [`../TLI_THEORY_FIRST_14_DERIVATIONS.md`](../TLI_THEORY_FIRST_14_DERIVATIONS.md).
+This directory is the **current** runnable numerical/algebraic verification, not a copy of the historical 2026-11-03 `verify_14.py` program. It tests 21 representative relations and notation rules across the 14 cases in [`../TLI_THEORY_FIRST_14_DERIVATIONS.md`](../theory/TLI_THEORY_FIRST_14_DERIVATIONS.md).
 
 ## Inputs and outputs
 

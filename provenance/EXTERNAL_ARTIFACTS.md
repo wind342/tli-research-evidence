@@ -48,5 +48,4 @@ tensor payloads and frozen strict logit-level audit are distributed as
 `experiments/gfg_nanogpt_training_learning_inference_projection_v1/` validates
 the archive, database and tensor hashes and recomputes the strict result.
 
-Top-level byte sizes and SHA-256 identities for both bundles are recorded in
-the Zenodo release's `ARCHIVE_MANIFEST.json`; see [PUBLIC_ARCHIVE.md](PUBLIC_ARCHIVE.md).
+The historical external filenames remain listed for hash-based identification; no current evidence-package release is designated here.
