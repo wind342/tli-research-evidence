@@ -20,7 +20,7 @@
 | [Mathematical unification](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/extrapolations_main_complete.tex) | Two complete main-text recoveries: **Edge of Stability** and **Catastrophic Forgetting**, tagged [T]/[A]/[R] |
 | [This Is a Simple Theory](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/simple.tex) | Elementary neural-computation explanation of the coupled TLI relations |
 | [Conclusion](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/conclusion.tex) | Synthesis of experiment-based TLI and mathematical unification |
-| [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) |
+| [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md), [runnable 21-check mathematical audit](math_audit/README.md) |
 | [Appendix experimental displays](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Figure 3 and Tables 1–3 |
 
 **Document convention:** Section, figure, table and equation references follow the `icml-final` manuscript. Experiment identities remain stable across versions; the November Windows GNN/SNN runs have distinct registered seeds.

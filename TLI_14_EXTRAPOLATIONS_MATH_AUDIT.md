@@ -3,11 +3,11 @@
 **Current authoritative paper:** [TLI ICML manuscript](https://github.com/wind342/tli-paper/tree/icml-final/icml).  
 **Theory equations:** [`icml/sections/dynamics_layout.tex`](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex).  
 **Evidence text:** [14 complete derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md), [TLI coupled dynamical equations](TLI_UNIFIED_DYNAMICS.md).  
-**Audit record:** Original November 3, 2026 mathematical audit; current-equation alignment reviewed on November 20, 2026.
+**Audit record:** Runnable 21-check suite and equation-alignment review updated on November 20, 2026.
 
-## November 3, 2026 — Original mathematical audit
+## Fourteen mathematical cases — audit scope and original-model conditions
 
-**Audit date:** November 3, 2026  
+**Audit date:** November 20, 2026  
 **Reference documents:** `TLI_UNIFIED_DYNAMICS.md`, `TLI_THEORY_FIRST_14_DERIVATIONS.md`, and `TLI_HISTORICAL_COMPARISONS_21.md`.  
 **Tags:** <sup>[T]</sup> Original TLI equation; <sup>[A]</sup> mathematical model and conditions in the cited research; <sup>[R]</sup> result recovered through substitution and computation.
 
@@ -48,7 +48,7 @@ All fourteen cases retain the original mathematical objects and principal closed
 
 ## Recorded code and formal checks
 
-**Original November 3, 2026 audit:** The script `verify_14.py` was reported to pass **21/21 checks**. It is absent from the current Git evidence tree and was not rerun during the subsequent version-alignment pass. Its reported checks covered local Hessian stability, continued logistic updates, binomial conditional moments, fixed-kernel residuals, bias–variance trace identities, Chinchilla marginal balance, Jacobian nullspaces, exhaustive finite Bernoulli dropout masks, old-capability readout boundaries, Grokking spectral small-threshold asymptotics, SAM coordinate transforms, gradient-noise projection, and Monte Carlo simulation of Gaussian Wishart risk on both sides of interpolation.
+**Current executable audit:** [`math_audit/verify_14.py`](math_audit/verify_14.py) performs **21 individually reported checks across all fourteen mathematical cases** using [archived deterministic inputs](math_audit/inputs.json) and [declared dependencies](math_audit/requirements.txt). The recorded run passed **21/21 checks**; see [`RESULTS.json`](math_audit/RESULTS.json) and [reproduction instructions](math_audit/README.md). Checks include local Hessian stability, logistic continuation, binomial sampling identities, spectral decay, conditional bias–variance, Chinchilla balance and scaling, Jacobian nullspaces, exhaustive dropout masks, capability-boundary crossing, Grokking gradient-flow and spectral-edge timing, width scaling, SAM reparameterization and finite updates, gradient-noise projection, Gaussian inverse-Wishart risk estimates on both sides of interpolation, and the Double Descent notation distinction. These are algebraic, finite enumeration, or seeded numerical checks **under each original model's stated conditions**, rather than proofs of all historical results or reruns of neural-network experiments.
 
 **Review scope:** Numerical spot checks detect some formula errors and sign mistakes. The original audit documented correction of earlier equation numbering, the dynamical-isometry nullspace bound, the distinction between exact relationships and first-order approximations, and the mathematical conditions of Grokking, μP and Chinchilla.
 
@@ -87,5 +87,4 @@ SymPy simplification and exact arithmetic were executed for these representative
 4. **Bernoulli dropout:** exact enumeration of independent binary masks for two coordinates yields \(\operatorname{Var}(w^\top\widetilde x)=(1-r)r^{-1}\sum_jw_j^2x_j^2\) (symbolic difference zero).
 5. **Exploratory E-I04 feedback stability:** the current-paper feedback specialization \(J=\left(\begin{smallmatrix}1-\alpha&\beta\\\kappa&0\end{smallmatrix}\right)\) has \(\det(I-J)=\alpha-\beta\kappa\), eigenvalues \(\big[(1-\alpha)\pm\sqrt{(1-\alpha)^2+4\beta\kappa}\big]/2\). For \(0<\alpha<1,\beta,\kappa\ge0\), its spectral-radius threshold is \(\beta\kappa=\alpha\).
 
-**Scope of this review:** All fourteen theory cases were checked against the corresponding ICML source sections for their starting TLI equations, original-model conditions, and displayed main mathematical results. The five checks above independently verify representative algebra. This review did not reproduce every original paper theorem or rerun the historical 21-check script; the original 2026-11-03 findings remain documented separately. E-I04 is an exploratory calculation, outside the official fourteen cases, and its local Jacobian was corrected to match the current feedback map.
-
+**Scope of this review:** The fourteen theory cases were reviewed against the current ICML source sections for their starting TLI equations, original-model conditions, and displayed main mathematical results. The current reproducible suite reports 21 representative verifications across all fourteen cases; the five independent symbolic spot checks above provide complementary equation-alignment examples. E-I04 is exploratory, outside the official fourteen cases, and its local Jacobian was corrected to match the current feedback map.

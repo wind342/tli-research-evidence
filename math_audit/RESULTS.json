@@ -1,0 +1,117 @@
+{
+  "schema": "tli-math-audit-v1",
+  "kind": "NEW_INDEPENDENT_CHECKS_NOT_HISTORICAL_SCRIPT",
+  "checks": 21,
+  "PASS": 21,
+  "FAIL": 0,
+  "input_sha256": "9983fc607e9558efc573d49658933d73e402d6b0428212dc932c9a502e42bbbe",
+  "cases": [
+    {
+      "case": 1,
+      "name": "local Hessian eigenmode multiplier",
+      "status": "PASS"
+    },
+    {
+      "case": 1,
+      "name": "positive-curvature stability boundary",
+      "status": "PASS"
+    },
+    {
+      "case": 2,
+      "name": "continued logistic update and exponential increment limit",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "name": "finite binomial support-loss probability, mean and variance",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "name": "real-data mixture recurrence and category recovery",
+      "status": "PASS"
+    },
+    {
+      "case": 4,
+      "name": "fixed-kernel modal residual decay",
+      "status": "PASS"
+    },
+    {
+      "case": 5,
+      "name": "minimum-norm conditional expected bias/variance risk",
+      "status": "PASS"
+    },
+    {
+      "case": 6,
+      "name": "compute-constrained marginal balance",
+      "status": "PASS"
+    },
+    {
+      "case": 6,
+      "name": "optimized-loss power-law scaling conditional on empirical input",
+      "status": "PASS"
+    },
+    {
+      "case": 7,
+      "name": "Jacobian nullspace has zero full-space minimum gain",
+      "status": "PASS"
+    },
+    {
+      "case": 8,
+      "name": "exhaustive independent dropout mean and variance",
+      "status": "PASS"
+    },
+    {
+      "case": 8,
+      "name": "exact Gaussian-linear dropout penalty",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "name": "telescoping response and capability boundary crossing",
+      "status": "PASS"
+    },
+    {
+      "case": 10,
+      "name": "shared-state train/generalization gradient-flow readouts",
+      "status": "PASS"
+    },
+    {
+      "case": 10,
+      "name": "spectral-edge shared-exponent crossing delay",
+      "status": "PASS"
+    },
+    {
+      "case": 11,
+      "name": "specified one-step width-scaling identity",
+      "status": "PASS"
+    },
+    {
+      "case": 12,
+      "name": "function-preserving SAM/sharpness Hessian reparameterization",
+      "status": "PASS"
+    },
+    {
+      "case": 12,
+      "name": "one-step SGD and SAM realized functional responses",
+      "status": "PASS"
+    },
+    {
+      "case": 13,
+      "name": "minibatch action covariance and target Jacobian projection",
+      "status": "PASS"
+    },
+    {
+      "case": 14,
+      "name": "seeded inverse-Wishart expected excess-risk Monte Carlo on both sides",
+      "status": "PASS"
+    },
+    {
+      "case": 14,
+      "name": "TLI response and expected excess-risk notation separation",
+      "status": "PASS"
+    }
+  ],
+  "numpy": "2.3.5",
+  "sympy": "1.14.0"
+}

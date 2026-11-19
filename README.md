@@ -29,6 +29,7 @@ The corresponding **GNN/SNN** evidence is the [Windows-run machine results and a
 ## Mathematical and historical materials
 
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
+- [Run and inspect the current 21-check mathematical audit](math_audit/README.md) (script, fixed inputs, versioned dependencies, and result records).
 - The [complete 14-derivation record](TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLI_HISTORICAL_COMPARISONS_21.md) and [independent mathematical audit](TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md) are supporting TLI research documents. Their equation references and terminology were aligned with the current ICML manuscript on November 20, 2026.
 - [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
 - [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.

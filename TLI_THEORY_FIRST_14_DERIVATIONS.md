@@ -1138,7 +1138,7 @@ For an output vector \(f\) with Jacobian \(J\), likewise,
 
 **Derivation type.** Using the original isotropic Gaussian design and minimum-norm/least-squares solutions, derive the expected risk on either side of the interpolation threshold.
 
-**Equation provenance.** <sup>[T]</sup> State update \(\theta_{t+1}=\theta_t+\delta_t\); write population test risk as a functional readout \(m_{\rm test}(L)\) of the final learned state, with stepwise response \(R_{t,\rm test}=m_{\rm test}(L_{t+1})-m_{\rm test}(L_t)\). <sup>[A]</sup> The original isotropic zero-signal Gaussian regression model of Hastie et al.: \(X_{ij}\sim N(0,1)\), \(y=\varepsilon\sim N(0,\sigma^2I_n)\), independent test covariance \(I_p\), and zero-initialized least-squares/minimum-norm solutions. Training converges to \(\hat\beta=(X^\top X)^{-1}X^\top\varepsilon\) for the underparameterized case or \(\hat\beta=X^\top(XX^\top)^{-1}\varepsilon\) for the overparameterized case. Substituting these into the original population-risk readout and applying inverse-Wishart expectations gives <sup>[R]</sup> \(\mathbb E R_{\rm test}=\sigma^2 p/(n-p-1)\) for \(p<n-1\) or \(\sigma^2 n/(p-n-1)\) for \(p>n+1\). This is **excess risk from noise**, excluding irreducible test-label noise; its quantitative form follows from the original Gaussian conditions.
+**Equation provenance.** <sup>[T]</sup> State update \(\theta_{t+1}=\theta_t+\delta_t\); take \(m_{\mathrm{test}}(L)=-\mathcal E_{\mathrm{test}}(L)\) as the test excess-risk readout, with stepwise TLI functional response \(R_{t,\mathrm{test}}=m_{\mathrm{test}}(L_{t+1})-m_{\mathrm{test}}(L_t)\). <sup>[A]</sup> The original isotropic zero-signal Gaussian regression model of Hastie et al.: \(X_{ij}\sim N(0,1)\), \(y=\varepsilon\sim N(0,\sigma^2I_n)\), independent test covariance \(I_p\), and zero-initialized least-squares/minimum-norm solutions. Training converges to \(\hat\beta=(X^\top X)^{-1}X^\top\varepsilon\) for the underparameterized case or \(\hat\beta=X^\top(XX^\top)^{-1}\varepsilon\) for the overparameterized case. Substituting these into the original population-risk readout and applying inverse-Wishart expectations gives <sup>[R]</sup> \(\mathbb E[\mathcal E_{\mathrm{test}}]=\sigma^2 p/(n-p-1)\) for \(p<n-1\) or \(\sigma^2 n/(p-n-1)\) for \(p>n+1\). This is **excess risk from noise**, excluding irreducible test-label noise; its quantitative form follows from the original Gaussian conditions.
 
 **TLI variables.** Model size \(p\) changes the available parameterized function space; training selects a final parameter solution, and test error is a functional readout of that solution on new inputs.
 
@@ -1154,7 +1154,7 @@ For an output vector \(f\) with Jacobian \(J\), likewise,
 Taking expectations over training noise and an independent test input,
 
 \[
-\mathbb E R
+\mathbb E[\mathcal E_{\mathrm{test}}]
 =\sigma^2\,\mathbb E_X
 \operatorname{tr}[(X^\top X)^{-1}].
 \qquad {}^{\scriptscriptstyle\text{[R]}}
@@ -1163,7 +1163,7 @@ Taking expectations over training noise and an independent test input,
 Using the inverse-Wishart expectation for the original Gaussian design gives
 
 \[
-\boxed{\mathbb ER=\sigma^2\frac{p}{n-p-1},\quad p<n-1.}
+\boxed{\mathbb E[\mathcal E_{\mathrm{test}}]=\sigma^2\frac{p}{n-p-1},\quad p<n-1.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
@@ -1171,7 +1171,7 @@ Using the inverse-Wishart expectation for the original Gaussian design gives
 
 \[
 \hat\beta=X^\top(XX^\top)^{-1}\varepsilon,\qquad
-\mathbb E R=\sigma^2\mathbb E_X
+\mathbb E[\mathcal E_{\mathrm{test}}]=\sigma^2\mathbb E_X
 \operatorname{tr}[(XX^\top)^{-1}],
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
@@ -1179,7 +1179,7 @@ Using the inverse-Wishart expectation for the original Gaussian design gives
 Therefore,
 
 \[
-\boxed{\mathbb ER=\sigma^2\frac{n}{p-n-1},\quad p>n+1.}
+\boxed{\mathbb E[\mathcal E_{\mathrm{test}}]=\sigma^2\frac{n}{p-n-1},\quad p>n+1.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
