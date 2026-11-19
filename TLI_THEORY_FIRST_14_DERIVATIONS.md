@@ -114,17 +114,17 @@ For multidimensional linearly separable data, Soudry et al. establish convergenc
 
 **Internal experimental anchors.** TL-E07 (support reorganizes while correctness stays fixed); TL-E08 (correctness boundary); RL-E06 (persistent functional change after mastery).
 
-### 5.2.3 递归反馈的信息收缩与模型坍塌：有限样本吸收态
+### 5.2.3 Recursive Model Collapse: Information loss through finite-sample absorbing states
 
-**推导类型：在原模型坍塌论文的有限离散分布、逐代抽样、精确拟合设定下，直接推导尾部丢失概率和最终吸收态；对真实数据混合，推导原混合数据设定下的期望关系。**
+**Derivation type:** Under the original finite-discrete-distribution, generational-sampling and exact-fitting model, derive the probability of tail loss and eventual absorption. Under the original mixed-real-data setting, derive the corresponding expectation.
 
-**逐式来源标记。** <sup>[T]</sup> 原反馈闭环 \(Y_t=\mathcal I(L_t,x_t,c_t)\)、\(B_{t+x}=\mathcal B(Y_t,E_t)\)、\(A_{t+x}=\mathcal U(Z_{t+x},B_{t+x})\)、\(Z_{t+x+1}=\mathcal T(Z_{t+x},A_{t+x})\)，\(x\ge1\)。这里把一次模型代际递归视为一次闭环转移，而非一个优化步。<sup>[A]</sup> 原文有限离散支持、固定 \(M\) 次独立采样、每代精确拟合经验频率：\(N_{t+1,i}\mid p_t\sim\mathrm{Bin}(M,q_t)\)，\(q_{t+1}=N_{t+1,i}/M\)。<sup>[R]</sup> \(\Pr(q_{t+1}=0\mid q_t)=(1-q_t)^M\)、\(\mathbb E(q_{t+1}\mid q_t)=q_t\)；有限状态吸收链最终在某一类别的点质量处吸收。添加固定比例真实数据后，缺失类别不再是吸收态，恢复概率由原混合抽样条件计算。**切勿把随机支持消失改写成每代期望概率必然下降。**
+**Equation provenance.** [T] Feedback loop \(Y_t=\mathcal I(L_t,x_t,c_t)\), \(B_{t+x}=\mathcal B(Y_t,E_t)\), \(A_{t+x}=\mathcal U(Z_{t+x},B_{t+x})\), \(Z_{t+x+1}=\mathcal T(Z_{t+x},A_{t+x})\), with \(x\ge1\). One recursive model generation corresponds to one feedback-loop transition, rather than one optimizer step. [A] A finite discrete support, \(M\) independent samples per generation, and exact matching of empirical frequencies: \(N_{t+1,i}\mid p_t\sim\mathrm{Bin}(M,q_t)\), \(q_{t+1}=N_{t+1,i}/M\). [R] \(\Pr(q_{t+1}=0\mid q_t)=(1-q_t)^M\), \(\mathbb E(q_{t+1}\mid q_t)=q_t\); the finite absorbing Markov chain reaches a point mass on one category. Mixing in genuine data at a fixed positive proportion makes missing categories recoverable, with probabilities calculated from the original mixture model. Random loss of support does not imply a declining mean frequency at each generation.
 
-**TLI作用对象。** TLI式(4)描述冻结推理，式(5)描述推理后果经延迟反馈返回后续训练的信息\(B_{t+x}\)，进而由训练动作改变持久模型状态；式(1)的状态转移将此写为\(Z_{t+1}=\mathcal T(Z_t,\mathcal U(Z_t,B_t))\)。这里的\(t\)按**模型代际**计，而非一次优化器步。具体的生成、抽样与拟合映射使用被研究论文自己的定义。
+**TLI objects.** Local group (4) describes frozen inference, group (5) the delayed return of inference consequences as \(B_{t+x}\), and group (1) the subsequent learned-state transition, \(Z_{t+1}=\mathcal T(Z_t,\mathcal U(Z_t,B_t))\). Here \(t\) counts **model generations**, not optimizer steps. The generation, sampling and fitting maps use the original paper's definitions.
 
-**使用的原理论条件。** Shumailov等（Nature 2024）的「有限离散分布、无函数逼近误差」模型：有限类别集合\(\{1,\ldots,K\}\)、每代样本数固定为\(M\ge 1\)、从上一代模型分布\(p_t\)独立抽样\(M\)次、下一代模型精确拟合这批样本的经验分布。不额外设定信息保留率、噪声衰减指数或模型容量关系。
+**Original-study conditions.** The finite-discrete, exact-fitting model of Shumailov et al. (*Nature*, 2024): category set \(\{1,\ldots,K\}\), fixed \(M\ge1\) observations per generation, \(M\) independent samples from \(p_t\), and an exact fit of \(p_{t+1}\) to their empirical distribution. No additional information-retention rate, noise-decay exponent or model-capacity law is introduced.
 
-**逐步推导：一次代际反馈怎样丢失信息。** 对任一类别\(i\)，令其概率为\(q_t=p_t(i)\)，下一代计数\(N_{t+1,i}\)满足
+**Step-by-step derivation: loss of information in one generation.** For category \(i\), let \(q_t=p_t(i)\); its next-generation count \(N_{t+1,i}\) satisfies
 
 \[
 N_{t+1,i}\mid p_t\sim \operatorname{Binomial}(M,q_t),\qquad
@@ -132,7 +132,7 @@ q_{t+1}=\frac{N_{t+1,i}}{M}.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-因此
+Consequently,
 
 \[
 \boxed{
@@ -144,16 +144,16 @@ q_{t+1}=\frac{N_{t+1,i}}{M}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对于\(q_t\ll1/M\)，漏抽该类别的概率很高。**特别注意，单代期望概率并不下降**：这里的坍塌是有限抽样导致的随机支持集丢失，不是事先假定\(q_{t+1}=\rho q_t\)且\(\rho<1\)。
+When \(q_t\ll1/M\), the probability of omitting that category is high. **The one-generation expected frequency remains unchanged**: collapse here concerns random support-set loss through finite sampling, rather than an assumed recurrence \(q_{t+1}=\rho q_t\) with \(\rho<1\).
 
-**逐步推导：多代递归为什么到达吸收态。** 对整个分布，
+**Step-by-step derivation: eventual absorption under repeated generation.** For the full distribution,
 
 \[
 p_{t+1}=\frac1M\,\operatorname{Multinomial}(M,p_t).
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-一旦\(p_t(i)=0\)，纯递归抽样无法再产生类别\(i\)；一旦\(p_t=e_i\)（全部概率集中于一个类别），则\(p_{t+1}=e_i\)必然成立。因为\(M\)固定，经验分布只在有限个格点上取值；在任一非吸收态，下一代所有样本恰好相同的概率为\(\sum_i p_t(i)^M>0\)，因此以概率1最终进入某个\(e_i\)。再由各坐标的有界鞅性质，
+Once \(p_t(i)=0\), purely recursive sampling cannot regenerate category \(i\). If \(p_t=e_i\), a point mass on one category, then necessarily \(p_{t+1}=e_i\). Since \(M\) is fixed, empirical distributions take values on a finite grid. From every nonabsorbing state there is positive probability \(\sum_i p_t(i)^M>0\) that all observations take the same category; hence a point-mass absorbing state is eventually reached with probability one. The bounded-martingale property of each coordinate further gives
 
 \[
 \boxed{
@@ -163,9 +163,9 @@ p_t\xrightarrow[t\to\infty]{\mathrm{a.s.}}e_I,\qquad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**核心结论：** 原有限离散模型中，纯生成数据逐代替换使支持集随机收缩，并最终坍塌到单一类别；该结果由原抽样—拟合映射推出，无需设定统一的逐代衰减率。
+**Core conclusion.** Replacing every generation with finite samples from the previous generative model causes random contraction of support and eventual absorption into one category in the stated finite-discrete model. The result follows from its sampling–fitting map without requiring a uniform per-generation decay coefficient.
 
-**原研究中的另一种数据组织：持续混合真实数据。** 对采用固定比例\(\alpha\in(0,1]\)真实源数据、其余比例使用上一代生成数据的原有混合设定，设真实分布在类别\(i\)的概率为\(r_i>0\)。混合抽样概率是\(\widetilde q_t=(1-\alpha)q_t+\alpha r_i\)，因此
+**A different data regime from the original research: continually mixing real data.** With a fixed proportion \(\alpha\in(0,1]\) from a real source distribution and the remainder generated by the preceding model, let category \(i\) have real probability \(r_i>0\). The mixture sampling probability is \(\widetilde q_t=(1-\alpha)q_t+\alpha r_i\); therefore
 
 \[
 \boxed{
@@ -175,30 +175,30 @@ p_t\xrightarrow[t\to\infty]{\mathrm{a.s.}}e_I,\qquad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-（最后一式取\(t\)从0开始）。并且在\(q_t=0\)时，下一代重新出现该类别的概率为
+where the final expression takes \(t=0\) as the initial generation. At \(q_t=0\), the probability that category \(i\) reappears in the next generation is
 
 \[
 \Pr(q_{t+1}>0\mid q_t=0)=1-(1-\alpha r_i)^M>0.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-因此真实数据使“缺失类别”不再是吸收态；结论是**长期期望与可恢复性**，而不是每代有限样本永远不丢失类别。另有Gerstgrasser等采用不同的「保留并累积历史数据」训练方案并证明相应线性模型的误差有界；两种数据方案不可混作同一个递推。
+Consequently, introducing real data makes a missing category a recoverable rather than absorbing state. The equations describe **long-run expectations and recovery probabilities**, while individual finite samples can still omit categories. Gerstgrasser et al. study a different retain-and-accumulate-data scheme and prove a bounded error for its corresponding linear model; these two data-generation processes have distinct recursions.
 
-**独立研究对照。** [Shumailov等，AI models collapse when trained on recursively generated data，Nature 2024](https://doi.org/10.1038/s41586-024-07566-y)；[Seddik等，How Bad is Training on Synthetic Data? (2024)](https://arxiv.org/abs/2404.05090)；[Gerstgrasser等，Is Model Collapse Inevitable? (2024)](https://arxiv.org/abs/2404.01413)。
+**Independent studies.** [Shumailov et al., *AI models collapse when trained on recursively generated data*, *Nature* 2024](https://doi.org/10.1038/s41586-024-07566-y); [Seddik et al., *How Bad is Training on Synthetic Data?* (2024)](https://arxiv.org/abs/2404.05090); [Gerstgrasser et al., *Is Model Collapse Inevitable?* (2024)](https://arxiv.org/abs/2404.01413).
 
-**内部实验锚点。** TLI式(4)–(5)（冻结推理输出及后续反馈回流）、式(1)（状态转移）；RL-E06（反馈数据组织改变持续功能结果）。
+**Internal experimental anchors.** TLI local groups (4)–(5) for inference output and delayed feedback, group (1) for state transition; RL-E06 for feedback-data allocation and sustained functional effects.
 
-### 5.2.4 频率学习顺序：Spectral Bias与响应谱
+### 5.2.4 Spectral Bias: Frequency-dependent response and learning rates
 
-**推导类型：原理论的核动力学条件下，直接推导模态收敛速率。**
+**Derivation type:** Modal convergence rates recovered under the original theory's kernel-dynamics conditions.
 
-**逐式来源标记。** <sup>[T]</sup> 原状态转移 \(\theta_{t+1}=\theta_t+\delta_t\)，功能响应 \(R_{t,q}=m_q(\theta_{t+1})-m_q(\theta_t)\)。<sup>[A]</sup> 平方损失、GD、原研究采用的局部线性化 \(J=\partial f/\partial\theta\) 和在相应区间固定的核 \(K=JJ^\top\)。代入 \(\delta_t=-\eta J^\top(f_t-y)\) 得 \(\Delta f_t\approx-\eta K(f_t-y)\)；沿 \(Kv_k=\lambda_kv_k\) 的模态重复迭代。<sup>[R]</sup> \(r_{k,t}\approx(1-\eta\lambda_k)^t r_{k,0}\)；只有在**原模型的傅里叶核谱**满足低频特征值较大时才得到低频先学，不是TLI额外宣布的通用频率排序。
+**Equation provenance.** [T] \(\theta_{t+1}=\theta_t+\delta_t\) and \(R_{t,q}=m_q(\theta_{t+1})-m_q(\theta_t)\). [A] Squared loss, GD, local linearization \(J=\partial f/\partial\theta\) and a frozen kernel \(K=JJ^\top\). Substituting \(\delta_t=-\eta J^\top(f_t-y)\) gives \(\Delta f_t\approx-\eta K(f_t-y)\), with iteration along modes \(Kv_k=\lambda_kv_k\). [R] \(r_{k,t}\approx(1-\eta\lambda_k)^t r_{k,0}\). A low-frequency-first order follows when the original model's **Fourier-mode kernel spectrum** assigns larger eigenvalues to lower frequencies.
 
-**TLI作用对象。** 实际更新导致目标函数响应\(R_q(\theta,\delta)\)。对输出向量\(f_\theta\)作当前状态的一阶展开，可将参数动作映射到功能空间。
+**TLI object.** An actual update produces a functional response \(R_q(\theta,\delta)\). First-order expansion of the current output vector \(f_\theta\) maps parameter actions into functional-output space.
 
-**使用的原理论条件。** 平方损失、梯度下降，以及核谱研究采用的局部线性化/固定切线核条件。记目标向量为\(y\)，残差\(r_t=f_{\theta_t}-y\)，输出参数雅可比\(J_t\)。
+**Original-study conditions.** Squared loss, gradient descent and the local linearization or fixed tangent-kernel assumptions used in the kernel-spectrum research. Let \(y\) be the targets, \(r_t=f_{\theta_t}-y\) the residual vector, and \(J_t\) the output-parameter Jacobian.
 
-**逐步推导。**
+**Step-by-step derivation.**
 
 \[
 L=\tfrac12\|r_t\|^2,\quad
@@ -207,46 +207,46 @@ L=\tfrac12\|r_t\|^2,\quad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-定义\(K_t=J_tJ_t^\top\)。在冻结\(K_t=K\)的局部演化中，
+Define \(K_t=J_tJ_t^\top\). In a locally frozen regime with \(K_t=K\),
 
 \[
 r_{t+1}\approx(I-\eta K)r_t.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对\(K v_k=\lambda_kv_k\)作特征分解：
+Diagonalize \(K\) using \(Kv_k=\lambda_kv_k\):
 
 \[
 \boxed{r_{k,t}\approx(1-\eta\lambda_k)^t r_{k,0}.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-当\(0<\eta\lambda_k<1\)时，\(\lambda_k\)越大，该模态的残差衰减越快。原Spectral Bias研究中，若相应输入分布和核的**傅里叶模态**满足低频具有较大的\(\lambda_k\)，便得到低频优先的顺序。
+For \(0<\eta\lambda_k<1\), modes with larger \(\lambda_k\) have faster residual decay. In the original Spectral Bias setting, if the Fourier modes of the relevant input distribution and kernel have larger eigenvalues at low frequencies, a low-frequency-first learning order follows.
 
-**推得的结论。** TLI的动作—响应关系在固定核区域分解为明确的模态形成速率；所谓“低频先学”来自原研究的核谱结构，而不是向TLI另加一个普适的频率排序假设。
+**Recovered conclusion.** The TLI action–response relation decomposes into explicit modal learning rates in a frozen-kernel regime. Frequency ordering is supplied by the kernel spectrum of the original model.
 
-**研究对照。** Basri等、Cao等的核谱与频率收敛研究；Tancik等的Fourier Features研究。
+**Research comparison.** Kernel-spectrum and frequency-convergence studies by Basri et al. and Cao et al.; Fourier Features by Tancik et al.
 
-**内部锚点。** TL-E03、TL-E04、TL-E07。
+**Internal anchors.** TL-E03, TL-E04 and TL-E07.
 
-### 5.2.5 Benign Overfitting：插值解选择与总体风险
+### 5.2.5 Benign Overfitting: Interpolating solutions and population risk
 
-**推导类型：使用原过参数线性回归设定，直接得到最小范数解的总体风险分解。**
+**Derivation type:** Population-risk decomposition for the minimum-norm solution under the original overparameterized linear-regression model.
 
-**逐式来源标记。** <sup>[T]</sup> 原训练转移 \(\theta_{t+1}=\theta_t+\delta_t\)；可将测试风险看作固定总体分布上的连续功能读出 \(m_{\rm test}(\theta)\)，于是 \(R_{t,\rm test}=m_{\rm test}(\theta_{t+1})-m_{\rm test}(\theta_t)\)。<sup>[A]</sup> 原最小范数线性回归：\(y=X\beta^\star+\varepsilon\)，零初始化平方损失梯度下降、\(p>n\)、\(X\) 满行秩、测试协方差 \(\Sigma\)。由原训练动作选取 \(\hat\beta=X^\top(XX^\top)^{-1}y\)，代入总体风险并对零均值独立噪声取条件期望。<sup>[R]</sup> 风险分解为 \(\beta^{\star\top}(I-P_X)\Sigma(I-P_X)\beta^\star+\sigma^2\operatorname{tr}[\Sigma X^\top(XX^\top)^{-2}X]\)。这是**条件期望等式**，不是单个测试样本的必然值。
+**Equation provenance.** [T] Training transition \(\theta_{t+1}=\theta_t+\delta_t\). Population test risk can be treated as a continuous functional readout \(m_{\rm test}(\theta)\), so \(R_{t,\rm test}=m_{\rm test}(\theta_{t+1})-m_{\rm test}(\theta_t)\). [A] Original minimum-norm regression: \(y=X\beta^\star+\varepsilon\), zero-initialized GD on squared loss, \(p>n\), full-row-rank \(X\), and test covariance \(\Sigma\). GD selects \(\hat\beta=X^\top(XX^\top)^{-1}y\); substitute into population risk and take conditional expectation over independent mean-zero noise. [R] \(\beta^{\star\top}(I-P_X)\Sigma(I-P_X)\beta^\star+\sigma^2\operatorname{tr}[\Sigma X^\top(XX^\top)^{-2}X]\), an identity for **conditional expected risk** rather than for every sampled test outcome.
 
-**TLI作用对象。** 训练动作选择最终参数状态；训练集和总体分布的功能表现是同一状态上的**不同读出**，不能以训练误差代替总体风险。
+**TLI object.** Realized training actions select a final parameter state; training performance and population risk are distinct readouts of that state.
 
-**使用的原理论条件。** \(y=X\beta^\star+\varepsilon\)、\(p>n\)、\(X\in\mathbb R^{n\times p}\)满行秩、平方损失、从零初始化的梯度下降收敛到最小范数插值解；测试输入协方差为\(\Sigma\)，训练噪声独立零均值且协方差\(\sigma^2I_n\)。这些均属于原良性过拟合/无正则最小二乘研究中的条件。
+**Original-study conditions.** \(y=X\beta^\star+\varepsilon\), \(p>n\), \(X\in\mathbb R^{n\times p}\) with full row rank, squared loss, and GD from zero initialization converging to the minimum-norm interpolator. Test-input covariance is \(\Sigma\); training noise is independent, mean-zero, with covariance \(\sigma^2 I_n\). These are conditions of the original benign-overfitting and unregularized least-squares analyses.
 
-**逐步推导。** 梯度始终属于\(X^\top\)的列空间，零初始化的极限插值解为
+**Step-by-step derivation.** Gradients lie in the column space of \(X^\top\), so zero-initialized GD converges to the interpolating solution
 
 \[
 \hat\beta=X^\top(XX^\top)^{-1}y.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-令\(P_X=X^\top(XX^\top)^{-1}X\)，代入\(y\)得
+Let \(P_X=X^\top(XX^\top)^{-1}X\). Substituting \(y\) gives
 
 \[
 \hat\beta-\beta^\star
@@ -254,9 +254,9 @@ r_{t+1}\approx(I-\eta K)r_t.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-总体超额平方预测风险为
+Population excess squared prediction risk is
 \(R=(\hat\beta-\beta^\star)^\top\Sigma(\hat\beta-\beta^\star)\)。
-对训练噪声取条件期望，交叉项消失：
+Taking conditional expectation over training noise eliminates the cross term:
 
 \[
 \boxed{
@@ -270,11 +270,11 @@ r_{t+1}\approx(I-\eta K)r_t.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**推得的结论。** 所有训练样本均可插值（训练误差为零），但总体风险由未覆盖信号和被放大的噪声方向共同决定。原论文关于有效秩/协方差谱的条件，决定第二项是否足够小，进而产生“良性”过拟合。
+**Recovered conclusion.** All training samples may be interpolated with zero training error, while population risk is determined by uncovered signal directions and amplified noise directions. Conditions on effective rank and covariance spectrum in the original research determine whether the latter contribution is small enough to yield benign overfitting.
 
-**研究对照。** [Hastie等，Annals of Statistics 2022](https://doi.org/10.1214/21-AOS2133)；Bartlett等的有效秩分析。
+**Research comparison.** [Hastie et al., *Annals of Statistics* 2022](https://doi.org/10.1214/21-AOS2133); effective-rank analysis by Bartlett et al.
 
-**内部锚点。** TL-E03（不同接收状态与实际更新）；TL-E08（目标依赖的读出）。
+**Internal anchors.** TL-E03 (receiving states and actual updates); TL-E08 (target-specific readouts).
 
 ### 5.2.6 Scaling Laws与Chinchilla：TLI功能响应和计算最优配置
 
