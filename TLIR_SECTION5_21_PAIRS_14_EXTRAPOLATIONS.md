@@ -1,3 +1,5 @@
+> **Version note:** This file is a historical research note written under the earlier **TLIR** terminology. The current ICML paper is **[Unified Dynamics of Training, Learning, and Inference in Neural Networks (TLI)](https://github.com/wind342/tli-paper/tree/icml-final/icml)**. Its current experiment, equation, derivation and figure references are indexed in the [TLI/ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). The original mathematical text and recorded hypotheses below are preserved as research history.
+
 # 5 正反结果的统一解释与理论先行外推
 
 TLIR首先通过九项nanoGPT实验建立训练、学习、推理之间的动力学关系，再通过跨系统实验与强化反馈实验建立闭环。随后，以同一组接收状态、实际动作、功能响应、支撑重组、能力边界与反馈关系，统一解释已有研究中的正反结果，并从这些关系推导可与独立研究对照的动力学结论。
