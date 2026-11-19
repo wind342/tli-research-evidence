@@ -496,7 +496,7 @@ The experimentally grounded relation can be summarized as
 - [Primary experiment index](EXPERIMENT_INDEX.md)
 - [Experimental instruments and native implementations](EXPERIMENTAL_INSTRUMENTS.md)
 - [Public evidence and reproduction matrix](PUBLIC_EVIDENCE_MATRIX.md)
-- [Theory comparisons and mathematical recoveries](TLI_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md)
+- [The 21 theory comparisons](TLI_HISTORICAL_COMPARISONS_21.md) and [14 mathematical derivations](TLI_THEORY_FIRST_14_DERIVATIONS.md)
 - [Publication evidence archive](https://doi.org/10.5281/zenodo.22005307)
 
 ## 8. A Simple Theory
