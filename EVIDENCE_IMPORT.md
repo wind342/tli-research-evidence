@@ -1,5 +1,7 @@
 # Evidence import and preservation
 
+> **Historical import record.** This file documents the original import and its availability at that point in time. Subsequent ICML alignment updated documentation and added November GNN/SNN machine records; see [the current TLI evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). Original imported experimental source files and machine results retain their recorded provenance.
+
 ## Sources
 
 This repository is an owner-authorized copy and evidence-navigation layer over the existing public [research-evidence repository](https://github.com/wind342/gfg-training-learning-inference-experiments). Nothing is moved out of or deleted from that repository.
@@ -17,7 +19,7 @@ All imported scientific files retain their Git blob identity. Only the root READ
 
 ## Public archive mirror
 
-The [GitHub Release mirror](https://github.com/wind342/tlir-research-evidence/releases/tag/zenodo-22032772-mirror) contains the ten original ZIPs and eight original metadata files from Zenodo. ZIPs are not recompressed or inserted into normal Git history. Zenodo remains the archival authority; the mirror does not create a new scientific version. Compare every payload with the original `ARCHIVE_MANIFEST.json`.
+The [GitHub Release mirror](https://github.com/wind342/tli-research-evidence/releases/tag/zenodo-22032772-mirror) contains the ten original ZIPs and eight original metadata files from Zenodo. ZIPs are not recompressed or inserted into normal Git history. Zenodo remains the archival authority; the mirror does not create a new scientific version. Compare every payload with the original `ARCHIVE_MANIFEST.json`.
 
 The local import check also compares these bytes with the public Zenodo API checksums before publication. The separate public manuscript PDF attached to Zenodo is not duplicated in the evidence mirror.
 
