@@ -1,3 +1,5 @@
+> **Historical PNAS-format map.** This document preserves the earlier PNAS-layout evidence navigation. References below to a “current PNAS manuscript” describe that earlier release, not the present TLI ICML paper. For the current manuscript use [TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md). The prefixed November GNN/SNN update records current ICML metrics; the original PNAS map remains identifiable beneath it.
+
 # TLIR paper: section, figure and evidence map
 
 ## ICML update: GNN and hard-spiking SNN
