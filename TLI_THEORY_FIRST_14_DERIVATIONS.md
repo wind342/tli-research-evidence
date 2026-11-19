@@ -276,13 +276,13 @@ Taking conditional expectation over training noise eliminates the cross term:
 
 **Internal anchors.** TL-E03 (receiving states and actual updates); TL-E08 (target-specific readouts).
 
-### 5.2.6 Scaling Laws与Chinchilla：TLI功能响应和计算最优配置
+### 5.2.6 Scaling Laws and Chinchilla: TLI Functional Response and Compute-Optimal Allocation
 
-**推导类型：把原Chinchilla经验损失律代入TLI功能响应，先得到固定模型规模下增加训练Token的边际功能收益，再结合原研究的模型规模项和计算预算约束，恢复其计算最优配置。经验幂律和指数仍来自原研究，不由TLI单独预设或证明。**
+**Derivation type:** Substitute the original Chinchilla empirical loss law into the TLI response to obtain the marginal benefit of additional training tokens at fixed model size. Combine this with the original model-size term and compute constraint to recover compute-optimal allocation. The empirical power law and its exponents come from the original study.
 
-**逐式来源标记。** <sup>[T]</sup> TLI原状态转移和功能响应；<sup>[A]</sup> 原研究的经验损失律及计算预算；<sup>[R]</sup> 具体功能响应、边际收益、最优配置和损失标度。
+**Equation provenance.** [T] Original TLI state transition and functional response. [A] Empirical loss law and compute budget from the original study. [R] Functional response, marginal benefit, optimal allocation and optimized-loss scaling.
 
-**TLI原方程 [T]。** 实际训练动作改变学习状态，目标功能响应是前后状态读出之差：
+**TLI starting equations [T].** Realized training actions change the learned state, and target responses are differences between readouts of the two states:
 
 \[
 Z_{t+1}=\mathcal T(Z_t,A_t),\qquad
@@ -295,7 +295,7 @@ R_{t,q}=m_q(L_{t+1})-m_q(L_t).
 \qquad {}^{\scriptscriptstyle\text{[T]}}
 \]
 
-**原研究条件 [A]。** Hoffmann等采用的经验损失律及计算量近似：
+**Original-study conditions [A].** Hoffmann et al.'s empirical loss form and approximate compute cost are
 
 \[
 \mathcal L(N,D)=E+AN^{-\alpha}+BD^{-\beta},\quad
@@ -303,14 +303,14 @@ A,B,\alpha,\beta>0,\qquad C=6ND.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-其中 \(N\) 是参数规模、\(D\) 是训练Token量、\(C\) 是计算量。固定模型规模 \(N\)，用累计训练Token数 \(D_t\) 索引该模型训练达到的状态；将该状态上的训练损失取负，作为TLI连续功能读出：
+Here \(N\) is the parameter count, \(D\) the number of training tokens and \(C\) the compute budget. At fixed model size \(N\), let cumulative tokens \(D_t\) index the learned state attained by training; take the negative training loss as the TLI continuous functional readout:
 
 \[
-m_{\ell}(L_t)=-\mathcal L(N,D_t)\qquad(N\ \text{固定}).
+m_{\ell}(L_t)=-\mathcal L(N,D_t)\qquad(N\ \text{fixed}).
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-**第一步：将原损失律实际代入TLI功能响应 [T]+[A]→[R]。**
+**Step 1: Substitute the original loss law into the TLI functional response [T]+[A]→[R].**
 
 \[
 \begin{aligned}
@@ -322,7 +322,7 @@ R_{t,\ell}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-令 \(D_{t+1}=D_t+\Delta D\)，得到固定模型规模下的Token边际功能收益：
+Let \(D_{t+1}=D_t+\Delta D\). The token-marginal functional improvement at fixed model size is
 
 \[
 \lim_{\Delta D\to0}\frac{R_{t,\ell}}{\Delta D}
@@ -331,9 +331,9 @@ R_{t,\ell}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-这一步用到TLI前后功能差分和原经验损失函数，而不是仅在规模律旁列出TLI符号。
+This calculation combines the TLI before/after functional difference with the original empirical loss law.
 
-**第二步：结合原研究已有的计算预算和模型规模效应。** 沿固定计算预算配置有：
+**Step 2: Apply the original compute budget and model-size effect.** Along a fixed-compute configuration curve:
 
 \[
 D=\frac{C}{6N},\qquad
@@ -341,7 +341,7 @@ D=\frac{C}{6N},\qquad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-从原经验损失律得模型规模方向的边际收益 \(\partial m_\ell/\partial N=\alpha AN^{-\alpha-1}\)。同第一步得到的Token边际收益一起代入预算约束：
+The original loss law gives the model-size marginal benefit \(\partial m_\ell/\partial N=\alpha AN^{-\alpha-1}\). Combine it with the token-marginal benefit from Step 1 and the compute constraint:
 
 \[
 \begin{aligned}
@@ -354,14 +354,14 @@ D=\frac{C}{6N},\qquad
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-在最优配置令上式为零，得到：
+Setting this expression to zero at the optimum yields
 
 \[
 \boxed{\alpha AN^{-\alpha}=\beta BD^{-\beta}.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-所以：
+Hence:
 
 \[
 \boxed{
@@ -374,20 +374,20 @@ D_\star=\frac{C}{6N_\star}\propto C^{\alpha/(\alpha+\beta)}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-原损失律在最优配置下变为：
+Substituting the optimal allocation back into the original loss law gives
 
 \[
 \boxed{\mathcal L_\star(C)-E\propto C^{-\alpha\beta/(\alpha+\beta)}.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**推得的结论。** TLI功能响应经原Chinchilla条件具体化后，给出训练Token的边际功能收益；结合原模型规模收益及预算约束，得到计算最优条件。模型规模 \(N\) 的导数比较不同计算配置；经验损失幂律及其指数来自Hoffmann等的拟合条件[A]。
+**Recovered conclusion.** Specializing the TLI functional response with the original Chinchilla conditions yields a marginal improvement from training tokens; combining it with the original model-size term and compute budget recovers the compute-optimal configuration. Derivatives in \(N\) compare different compute configurations. The empirical loss exponents are supplied by Hoffmann et al.'s fitted law [A].
 
-**研究对照。** [Hoffmann等，Training Compute-Optimal Large Language Models (2022)](https://arxiv.org/abs/2203.15556)；Kaplan等的经验规模规律。
+**Research comparison.** [Hoffmann et al., *Training Compute-Optimal Large Language Models* (2022)](https://arxiv.org/abs/2203.15556); empirical scaling laws by Kaplan et al.
 
-**内部锚点。** TL-E03（实际动作与接收状态）；TL-E04（功能响应）；TL-E07（持续重组）；跨架构TLI测试。
+**Internal experimental anchors.** TL-E03 (actions and receiving states), TL-E04 (functional response), TL-E07 (continuing reorganization) and cross-architecture TLI tests.
 
-### 5.2.E1（探索性，不计入14项）Scaling Laws：从TLI功能支撑、能力与损失到谱模型规模关系
+### 5.2.E1 (exploratory, outside the fourteen): Scaling from TLI Support, Capability and Loss to a Solvable Spectral Model
 
 **状态：EXPLORATORY / 探索性数学外推（第14项之后的独立研究笔记）。** 5.2.6代入Hoffmann等的经验损失律求计算最优分配；本节使用**经典高斯序列/正交谱学习特例**，先计算实际功能支撑贡献，再推得该特例的损失与规模渐近关系。结论的模型条件是高斯序列观测、正交特征、平方损失与相应谱假设；证据性质为解析推导。
 
