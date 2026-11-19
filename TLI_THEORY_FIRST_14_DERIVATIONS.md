@@ -974,13 +974,13 @@ The original forward computation and backpropagated update thus give the scaling
 
 **Internal anchors.** TL-E03 (receiving-state-dependent responses), TL-E04 (nonlinear finite-update effects), TL-E05 (target and update geometry).
 
-### 5.2.12 Sharpness与SAM：参数几何、实际动作与功能响应
+### 5.2.12 Sharpness and SAM: Parameter Geometry, Realized Updates, and Functional Responses
 
-**推导类型：在Dinh等的函数保持重参数化思想及Foret等的SAM训练规则下，把实际SAM动作代入TLI功能响应，明确计算SGD和SAM产生的单步目标变化。**
+**Derivation type.** Using the function-preserving reparameterization of Dinh et al. and the SAM training rule of Foret et al., substitute realized SAM updates into the TLI functional response to calculate the one-step output changes under SGD and SAM.
 
-**逐式来源标记。** <sup>[T]</sup> TLI状态更新与功能响应；<sup>[A]</sup> 原乘积模型/平方损失、函数保持变换、SAM邻域目标和更新规则；<sup>[R]</sup> Hessian特征值及具体SGD/SAM目标功能响应。SAM扰动采用原算法一阶近似；对所选更新动作，乘积输出的单步响应是代数精确式。
+**Equation provenance.** <sup>[T]</sup> TLI state updates and functional responses; <sup>[A]</sup> the original product model and squared loss, function-preserving transformation, SAM neighborhood objective and update rule; <sup>[R]</sup> Hessian eigenvalues and concrete SGD/SAM functional responses. SAM uses its algorithmic first-order perturbation approximation; the one-step product-output response is algebraically exact for the resulting update.
 
-**TLI原方程 [T]。**
+**TLI equation [T].**
 
 \[
 \theta_{t+1}=\theta_t+\delta_t,\qquad
@@ -988,14 +988,14 @@ R_q(\theta,\delta)=m_q(\theta+\delta)-m_q(\theta).
 \qquad {}^{\scriptscriptstyle\text{[T]}}
 \]
 
-**原研究条件 [A]。** 使用Dinh等函数保持重参数化思想的二参数乘积特例和平方损失：
+**Original-study conditions [A].** Use the two-parameter product example and squared loss under the function-preserving reparameterization idea of Dinh et al.:
 
 \[
 f(a,b)=ab,\qquad \mathcal L(a,b)=\tfrac12(ab-1)^2.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-**第一步：函数不变而参数锐度改变。** 对任意 \(c>0\)，变换 \((a,b)\mapsto(ca,b/c)\) 保持 \(f=ab\) 不变。在拟合点 \(ab=1\)，Hessian为：
+**Step 1: Function preservation with changed parameter sharpness.** For any \(c>0\), the transformation \((a,b)\mapsto(ca,b/c)\) preserves \(f=ab\). At a fitted point \(ab=1\), the Hessian is:
 
 \[
 H=\nabla^2\mathcal L
@@ -1003,7 +1003,7 @@ H=\nabla^2\mathcal L
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-它在原参数点与重标定后参数点的最大特征值分别是：
+The largest eigenvalues at the original and rescaled parameter points are, respectively:
 
 \[
 \boxed{\lambda_{\max}=a^2+b^2,\qquad
@@ -1011,7 +1011,7 @@ H=\nabla^2\mathcal L
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**第二步：用原SAM定义形成实际训练动作。** 原邻域最坏损失目标为：
+**Step 2: Form the realized training action using the original SAM definition.** The worst-case neighborhood loss objective is:
 
 \[
 \mathcal L_{\rm SAM}(\theta)
@@ -1019,7 +1019,7 @@ H=\nabla^2\mathcal L
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-在 \(g=\nabla\mathcal L(a,b)\ne0\) 处，原SAM算法用一阶近似扰动并在扰动点计算梯度：
+At \(g=\nabla\mathcal L(a,b)\ne0\), the original SAM algorithm uses a first-order perturbation and evaluates the gradient at the perturbed point:
 
 \[
 g=(ab-1)(b,a),\qquad
@@ -1028,7 +1028,7 @@ g=(ab-1)(b,a),\qquad
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-设 \(\tilde a=a+\epsilon_a\)、\(\tilde b=b+\epsilon_b\)，得到两个实际更新分量：
+Let \(\tilde a=a+\epsilon_a\) and \(\tilde b=b+\epsilon_b\). The two realized update components are:
 
 \[
 \delta_a=-\eta(\tilde a\tilde b-1)\tilde b,\qquad
@@ -1036,7 +1036,7 @@ g=(ab-1)(b,a),\qquad
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-**第三步：直接代入TLI响应 [T]+[A]→[R]。** 取目标读出为该原模型输出 \(m_q=f(a,b)=ab\)，则：
+**Step 3: Substitute into the TLI response [T]+[A]→[R].** Set the target readout to the original model output \(m_q=f(a,b)=ab\). Then:
 
 \[
 \begin{aligned}
@@ -1049,14 +1049,14 @@ R_q^{\rm SAM}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-这是**采用上述SAM近似扰动所形成的具体更新后**，输出的精确单步差。对比普通SGD在同一接收状态形成的更新：
+This is the exact one-step output difference after applying the update formed using the SAM perturbation approximation above. For comparison, ordinary SGD at the same receiving state produces:
 
 \[
 \delta_{\rm SGD}=-\eta(ab-1)(b,a).
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-再次代入TLI响应：
+Substitute again into the TLI response:
 
 \[
 \boxed{R_q^{\rm SGD}
@@ -1064,23 +1064,23 @@ R_q^{\rm SAM}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**推得的结论。** 函数保持重参数化在拟合点 \(ab=1\) 给出相同函数与不同参数锐度；在梯度非零位置，SAM与SGD按原训练算法产生不同实际更新，经TLI响应方程得到明确不同的功能变化。这两种观察在原模型中各自成立，不要求Hessian拟合点与SAM非零梯度点重合。没有增加额外假设。
+**Derived conclusion.** At fitted points \(ab=1\), function-preserving reparameterization yields the same function with different parameter sharpness. At nonzero-gradient points, SAM and SGD produce different realized updates under their respective training rules, and the TLI response equation gives their distinct functional changes. The fitted-point Hessian calculation and the nonzero-gradient update calculation apply at their respective points in the same original model.
 
-**研究对照。** [Dinh等，Sharp Minima Can Generalize For Deep Nets](https://arxiv.org/abs/1703.04933)；[Foret等，SAM，ICLR 2021](https://research.google/pubs/sharpness-aware-minimization-for-efficiently-improving-generalization/)。
+**Research references.** [Dinh et al., *Sharp Minima Can Generalize For Deep Nets*](https://arxiv.org/abs/1703.04933); [Foret et al., *Sharpness-Aware Minimization*, ICLR 2021](https://research.google/pubs/sharpness-aware-minimization-for-efficiently-improving-generalization/).
 
-**内部锚点。** TL-E03（动作和接收状态）；TL-E04（有限幅度响应）；TL-E05（目标与更新几何）。
+**Internal anchors.** TL-E03 (update and receiving state); TL-E04 (finite-step response); TL-E05 (target-update geometry).
 
-### 5.2.13 Gradient Noise Scale：随机梯度如何变成目标功能响应噪声
+### 5.2.13 Gradient Noise Scale: Stochastic-Gradient Noise in Target Functional Responses
 
-**推导类型：沿用原批量梯度独立采样条件，直接计算参数与功能空间方差。**
+**Derivation type.** Under the original independent minibatch-gradient sampling conditions, calculate variance in parameter space and functional space.
 
-**逐式来源标记。** <sup>[T]</sup> 原响应 \(R_{t,q}=m_q(\theta_t+\delta_t)-m_q(\theta_t)\)。<sup>[A]</sup> McCandlish等使用的独立样本梯度与普通SGD条件：\(g_i\) 的均值 \(g\)，协方差 \(\Sigma_g\)，批量大小 \(B\)；此处 \(B\) 是**batch size**，不同于TLI反馈变量 \(B_t\)。由 \(\delta=-\eta B^{-1}\sum_{i=1}^{B}g_i\) 得精确的参数动作协方差 \(\operatorname{Cov}(\delta)=\eta^2\Sigma_g/B\)。再将 <sup>[T]</sup> 的 \(R\) 在接收点一阶展开，<sup>[R]</sup> \(\operatorname{Var}(R_{t,q})\approx\eta^2 j_q^\top\Sigma_gj_q/B\)，\(\operatorname{Cov}(\Delta f)\approx\eta^2 J\Sigma_gJ^\top/B\)；原梯度噪声尺度是 \(\operatorname{tr}\Sigma_g/\|g\|^2\)。这里的功能方差关系是**线性化近似**。
+**Equation provenance.** <sup>[T]</sup> The response \(R_{t,q}=m_q(\theta_t+\delta_t)-m_q(\theta_t)\). <sup>[A]</sup> McCandlish et al.'s independent sample gradients under ordinary SGD: mean \(g\), covariance \(\Sigma_g\), batch size \(B\), where \(B\) denotes batch size rather than the TLI feedback variable \(B_t\). The action \(\delta=-\eta B^{-1}\sum_{i=1}^{B}g_i\) has exact covariance \(\operatorname{Cov}(\delta)=\eta^2\Sigma_g/B\). First-order expansion of the [T] response at the receiving state yields <sup>[R]</sup> \(\operatorname{Var}(R_{t,q})\approx\eta^2 j_q^\top\Sigma_gj_q/B\) and \(\operatorname{Cov}(\Delta f)\approx\eta^2 J\Sigma_gJ^\top/B\). The original gradient noise scale is \(\operatorname{tr}\Sigma_g/\|g\|^2\); functional variance is a local linearization approximation.
 
-**TLI作用对象。** 实际动作\(\delta_t\)作用于当前接收状态，目标响应\(R_q(\theta_t,\delta_t)\)由该动作和目标决定。
+**TLI variables.** The realized action \(\delta_t\) acts on the current receiving state; the target response \(R_q(\theta_t,\delta_t)\) depends on that action and target.
 
-**使用的原理论条件。** 从同一固定训练分布独立抽取\(B\)个样本；单样本梯度\(g_i\)有均值\(g\)、协方差\(\Sigma_g\)；采用普通SGD、小步长局部线性近似。这是梯度噪声规模分析的基础条件。
+**Original-study assumptions.** Independently sample \(B\) examples from one fixed training distribution; each gradient \(g_i\) has mean \(g\) and covariance \(\Sigma_g\). Use ordinary SGD and a small-step local linear approximation for the functional response.
 
-**逐步推导。** 平均梯度及其协方差：
+**Derivation.** The minibatch mean gradient and covariance are:
 
 \[
 \hat g_B=\frac1B\sum_{i=1}^B g_i,\qquad
@@ -1089,7 +1089,7 @@ R_q^{\rm SAM}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-实际参数更新为\(\delta=-\eta\hat g_B\)，故
+The realized parameter update is \(\delta=-\eta\hat g_B\), hence
 
 \[
 \boxed{
@@ -1098,7 +1098,7 @@ R_q^{\rm SAM}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对一个固定目标\(q\)，令其功能读出的参数梯度为\(j_q=\nabla_\theta m_q(\theta)\)，则
+For a fixed target \(q\), define its readout parameter gradient as \(j_q=\nabla_\theta m_q(\theta)\). Then
 
 \[
 R_q(\theta,\delta)\approx j_q^\top\delta
@@ -1106,7 +1106,7 @@ R_q(\theta,\delta)\approx j_q^\top\delta
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-因而
+Consequently,
 
 \[
 \boxed{
@@ -1118,7 +1118,7 @@ R_q(\theta,\delta)\approx j_q^\top\delta
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对输出向量\(f\)及其雅可比\(J\)，同理得到
+For an output vector \(f\) with Jacobian \(J\), likewise,
 
 \[
 \boxed{
@@ -1128,30 +1128,30 @@ R_q(\theta,\delta)\approx j_q^\top\delta
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**推得的结论。** 批量大小不仅改变更新噪声，还通过当前模型的目标敏感方向，改变**具体任务的功能响应噪声**。原研究中的梯度噪声规模可由\(\operatorname{tr}\Sigma_g/\|g\|^2\)表征其典型量级；是否为有效批量瓶颈仍由原优化问题决定。
+**Derived conclusion.** Batch size changes update noise and, through the receiving model's target-sensitive directions, the **functional response noise of each task**. The original gradient noise scale \(\operatorname{tr}\Sigma_g/\|g\|^2\) characterizes its typical scale; the effective batch-size bottleneck is determined by the original optimization problem.
 
-**研究对照。** [McCandlish等，An Empirical Model of Large-Batch Training](https://arxiv.org/abs/1812.06162)。
+**Research reference.** [McCandlish et al., *An Empirical Model of Large-Batch Training*](https://arxiv.org/abs/1812.06162).
 
-**内部锚点。** TL-E03（接收状态）；TL-E05（目标—更新几何）。
+**Internal anchors.** TL-E03 (receiving state); TL-E05 (target-update geometry).
 
-### 5.2.14 Double Descent：高斯线性原模型中的显式风险曲线
+### 5.2.14 Double Descent: Explicit Risk Curves in the Original Gaussian Linear Model
 
-**推导类型：只采用原研究的各向同性高斯设计和最小范数/最小二乘解，直接推导插值边界两侧的期望风险。**
+**Derivation type.** Using the original isotropic Gaussian design and minimum-norm/least-squares solutions, derive the expected risk on either side of the interpolation threshold.
 
-**逐式来源标记。** <sup>[T]</sup> 原状态更新 \(\theta_{t+1}=\theta_t+\delta_t\)；将测试总体风险记作同一最终学习状态的功能读出 \(m_{\rm test}(L)\)，其步间变化由 \(R_{t,\rm test}=m_{\rm test}(L_{t+1})-m_{\rm test}(L_t)\) 给出。<sup>[A]</sup> Hastie等各向同性零信号高斯回归的原始模型 \(X_{ij}\sim N(0,1)\)、\(y=\varepsilon\sim N(0,\sigma^2I_n)\)、独立测试协方差 \(I_p\)、零初始化最小二乘/最小范数解。通过原训练动作收敛到对应解：欠参数 \(\hat\beta=(X^\top X)^{-1}X^\top\varepsilon\)，过参数 \(\hat\beta=X^\top(XX^\top)^{-1}\varepsilon\)。代入**原模型的**总体风险读出并使用Wishart逆期望，得到 <sup>[R]</sup> \(\mathbb E R_{\rm test}=\sigma^2 p/(n-p-1)\)（\(p<n-1\)）或 \(\sigma^2 n/(p-n-1)\)（\(p>n+1\)）。这是噪声**超额风险**而非包含不可约噪声的总MSE；曲线的定量形式来自原高斯设定，不由TLI单独给出。
+**Equation provenance.** <sup>[T]</sup> State update \(\theta_{t+1}=\theta_t+\delta_t\); write population test risk as a functional readout \(m_{\rm test}(L)\) of the final learned state, with stepwise response \(R_{t,\rm test}=m_{\rm test}(L_{t+1})-m_{\rm test}(L_t)\). <sup>[A]</sup> The original isotropic zero-signal Gaussian regression model of Hastie et al.: \(X_{ij}\sim N(0,1)\), \(y=\varepsilon\sim N(0,\sigma^2I_n)\), independent test covariance \(I_p\), and zero-initialized least-squares/minimum-norm solutions. Training converges to \(\hat\beta=(X^\top X)^{-1}X^\top\varepsilon\) for the underparameterized case or \(\hat\beta=X^\top(XX^\top)^{-1}\varepsilon\) for the overparameterized case. Substituting these into the original population-risk readout and applying inverse-Wishart expectations gives <sup>[R]</sup> \(\mathbb E R_{\rm test}=\sigma^2 p/(n-p-1)\) for \(p<n-1\) or \(\sigma^2 n/(p-n-1)\) for \(p>n+1\). This is **excess risk from noise**, excluding irreducible test-label noise; its quantitative form follows from the original Gaussian conditions.
 
-**TLI作用对象。** 模型规模\(p\)改变可选的参数化函数空间；训练动作选择一个最终参数解；测试误差是该解对新输入的功能读出。它不是独立的“能力实体”。
+**TLI variables.** Model size \(p\) changes the available parameterized function space; training selects a final parameter solution, and test error is a functional readout of that solution on new inputs.
 
-**使用的原理论条件。** 取经典Double Descent研究中的纯噪声各向同性线性模型：\(X\in\mathbb R^{n\times p}\)各元素独立服从\(N(0,1)\)，\(y=\varepsilon\)且\(\varepsilon\sim N(0,\sigma^2I_n)\)，测试\(x\sim N(0,I_p)\)与训练独立；\(p<n\)用普通最小二乘，\(p>n\)用最小范数插值解。此处计算的是测试**超额预测风险**，不包含新标签自身的不可约噪声。
+**Original-study assumptions.** In the classical pure-noise isotropic linear model, \(X\in\mathbb R^{n\times p}\) has independent \(N(0,1)\) entries, \(y=\varepsilon\) with \(\varepsilon\sim N(0,\sigma^2I_n)\), and the test input \(x\sim N(0,I_p)\) is independent of training. Ordinary least squares applies for \(p<n\); minimum-norm interpolation applies for \(p>n\). The calculated test excess prediction risk excludes irreducible noise in a new label.
 
-**逐步推导：欠参数区间\(p<n-1\)。**
+**Derivation: Underparameterized regime \(p<n-1\).**
 
 \[
 \hat\beta=(X^\top X)^{-1}X^\top\varepsilon.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对训练噪声与独立测试输入取期望，
+Taking expectations over training noise and an independent test input,
 
 \[
 \mathbb E R
@@ -1160,14 +1160,14 @@ R_q(\theta,\delta)\approx j_q^\top\delta
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-利用该原高斯设计的Wishart逆矩阵期望，得到
+Using the inverse-Wishart expectation for the original Gaussian design gives
 
 \[
 \boxed{\mathbb ER=\sigma^2\frac{p}{n-p-1},\quad p<n-1.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**逐步推导：过参数区间\(p>n+1\)。**
+**Derivation: Overparameterized regime \(p>n+1\).**
 
 \[
 \hat\beta=X^\top(XX^\top)^{-1}\varepsilon,\qquad
@@ -1176,17 +1176,17 @@ R_q(\theta,\delta)\approx j_q^\top\delta
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-从而
+Therefore,
 
 \[
 \boxed{\mathbb ER=\sigma^2\frac{n}{p-n-1},\quad p>n+1.}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-在插值阈值附近，这些逆矩阵期望发散；远离阈值、\(p\)继续增大后，第二式下降。这样便直接得到**先升至峰值、再下降**的Double Descent风险形状。
+Near the interpolation threshold, these inverse-matrix expectations diverge. Farther into the overparameterized regime, the second expression decreases as \(p\) grows, giving the **rise-to-peak-and-decline** double-descent risk curve.
 
-**推得的结论。** 这个反常曲线是原线性回归的解与训练/测试分布共同确定的计算结果；无需另加“参数变多后噪声支撑必然重新分配”的新假设。对非零真实信号或一般协方差，可继续使用5.2.5的偏差—方差分解及原研究条件。
+**Derived conclusion.** The curve follows from the original linear-regression solution and the joint training/test distribution. For nonzero signals or general covariance, the bias–variance decomposition in §5.2.5 and the corresponding original-study conditions provide the broader formulation.
 
-**研究对照。** [Hastie、Montanari、Rosset与Tibshirani，Annals of Statistics 2022](https://doi.org/10.1214/21-AOS2133)；Belkin等的插值阈值研究。
+**Research references.** [Hastie, Montanari, Rosset, and Tibshirani, *Annals of Statistics*, 2022](https://doi.org/10.1214/21-AOS2133); Belkin et al.'s interpolation-threshold work.
 
-**内部锚点。** TL-E03（参数更新与状态）；TL-E08（目标依赖读出）。
+**Internal anchors.** TL-E03 (parameter updates and receiving state); TL-E08 (target-dependent readout).
