@@ -1,3 +1,5 @@
+> **Version note:** This file is a historical research note written under the earlier **TLIR** terminology. The current ICML paper is **[Unified Dynamics of Training, Learning, and Inference in Neural Networks (TLI)](https://github.com/wind342/tli-paper/tree/icml-final/icml)**. Its current experiment, equation, derivation and figure references are indexed in the [TLI/ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). The original mathematical text and recorded hypotheses below are preserved as research history.
+
 ## 5.1 正反结果的统一解释
 ### 5.1.1 Sharpness与SAM：参数几何和实际训练效应
 
