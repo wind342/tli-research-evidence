@@ -836,17 +836,17 @@ A negative gradient inner product causes a positive first-order change in old-ta
 
 **Internal anchors.** TL-E03, TL-E07 and TL-E08; [RL-E06](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md), which records mastery, subsequent deterioration and recovery.
 
-### 5.2.10 Grokking：训练/测试读出的不同跨界时间
+### 5.2.10 Grokking: Different Crossing Times for Training and Generalization Readouts
 
-**推导类型：使用被外推Grokking可解研究的线性教师—学生模型、实际梯度流与随机矩阵谱，直接推出训练/测试损失轨迹以及延迟泛化时间。**
+**Derivation type:** Use the original solvable linear teacher–student grokking model, gradient flow and random-matrix spectrum to derive training/test loss trajectories and delayed generalization times.
 
-**逐式来源标记。** <sup>[T]</sup> 原状态更新 \(\theta_{t+1}=\theta_t+\delta_t\) 在原研究的梯度流极限中给出连续状态 \(D(t)\)；TLI响应 \(R_{t,q}=m_q(L_{t+1})-m_q(L_t)\)，能力读出 \(C_{t,q}=\chi_q(m_q(L_t))\)。<sup>[A]</sup> Levi、Beck与Bar-Sinai的标量输出（\(d_{\rm out}=1\)）高斯线性教师—学生模型、零权重衰减、平方损失梯度流、训练协方差 \(\Sigma_{\rm tr}\)、总体协方差 \(I\)，以及原文使用的Marčenko–Pastur谱和同一正确率阈值。代入更新得 \(D(t)=e^{-2\eta_0\Sigma_{\rm tr}t}D_0\)，同一状态的两个连续读出分别是 \(L_{\rm tr}(t)=D_0^\top e^{-4\eta_0\Sigma_{\rm tr}t}\Sigma_{\rm tr}D_0\) 与 \(L_{\rm gen}(t)=D_0^\top e^{-4\eta_0\Sigma_{\rm tr}t}D_0\)。对**原研究的**准确率阈值 \(L=\epsilon/4\)，可等价选择TLI读出 \(m_q=\epsilon/4-L_q\)、\(\chi_q(m)=\mathbf1[m\ge0]\)。由原谱边缘渐近得到 <sup>[R]</sup> \(\Delta t_{\rm grok}\simeq-\ln(1-\sqrt\lambda)/[2\eta_0(1-\sqrt\lambda)^2]\)，其中 \(0<\lambda<1\)。这个时间公式属于**特定渐近区域的结果**，不是仅由TLI形式方程独立确定的常数。
+**Equation provenance.** [T] The original state update \(\theta_{t+1}=\theta_t+\delta_t\), specialized to the original gradient-flow limit with continuous state \(D(t)\); TLI response \(R_{t,q}=m_q(L_{t+1})-m_q(L_t)\) and capability \(C_{t,q}=\chi_q(m_q(L_t))\). [A] Levi, Beck and Bar-Sinai's scalar-output (\(d_{\rm out}=1\)) Gaussian linear teacher–student model, zero weight decay, squared-loss gradient flow, training covariance \(\Sigma_{\rm tr}\), population covariance \(I\), and the original Marčenko–Pastur spectrum and accuracy threshold. The update yields \(D(t)=e^{-2\eta_0\Sigma_{\rm tr}t}D_0\), with readouts \(L_{\rm tr}(t)=D_0^\top e^{-4\eta_0\Sigma_{\rm tr}t}\Sigma_{\rm tr}D_0\) and \(L_{\rm gen}(t)=D_0^\top e^{-4\eta_0\Sigma_{\rm tr}t}D_0\). At the original threshold \(L=\epsilon/4\), one can use TLI readout \(m_q=\epsilon/4-L_q\) and \(\chi_q(m)=\mathbf1[m\ge0]\). Original spectral-edge asymptotics yield [R] \(\Delta t_{\rm grok}\simeq-\ln(1-\sqrt\lambda)/[2\eta_0(1-\sqrt\lambda)^2]\), for \(0<\lambda<1\). This time expression is conditional on that asymptotic model.
 
-**TLI作用对象。** 式(2)的实际参数更新及式(3)的连续功能响应与离散能力读出。训练集目标和测试分布目标是**同一个学习状态**的两类读出；正确性可以先后跨越各自的阈值。
+**TLI objects.** The actual parameter action (local group 2) and continuous response and capability readout (group 3). Training and test targets are **different readouts of the same learned state**, and their threshold crossings can occur at different times.
 
-**使用的原理论条件。** Levi、Beck、Bar-Sinai（ICLR 2024）的无偏置线性教师—学生设定：输入\(x\sim\mathcal N(0,I_d)\)，教师参数\(T\)、学生参数\(S_t\)；平方损失，标量输出，\(n\)个固定训练样本，零权重衰减，梯度流；训练协方差\(\Sigma_{\rm tr}=\frac1n\sum_jx_jx_j^\top\)，总体协方差为\(I_d\)，高维极限\(d,n\to\infty\)，\(\lambda=d/n\in(0,1)\)固定；原论文的Marčenko–Pastur谱、各向同性初始化，以及误差阈值\(\epsilon\)。
+**Original-study conditions.** Levi, Beck and Bar-Sinai (ICLR 2024) use an unbiased linear teacher–student setup: \(x\sim\mathcal N(0,I_d)\), teacher parameters \(T\) and student parameters \(S_t\); squared loss, scalar output, \(n\) fixed training examples, zero weight decay, gradient flow, \(\Sigma_{\rm tr}=\frac1n\sum_jx_jx_j^\top\) and population covariance \(I_d\). In the high-dimensional limit \(d,n\to\infty\), the ratio \(\lambda=d/n\in(0,1)\) is fixed, and the derivation uses the original Marčenko–Pastur law, isotropic initialization and error threshold \(\epsilon\).
 
-**第一步：由TLI更新代入原模型的优化动作。** 记\(D_t=S_t-T\)，训练与测试的两个连续读出为
+**Step 1: Substitute the original optimizer action into the TLI transition.** Let \(D_t=S_t-T\). The two continuous training and test readouts are
 
 \[
 L_{\rm tr}(D)=D^\top\Sigma_{\rm tr}D,\qquad
@@ -854,7 +854,7 @@ L_{\rm gen}(D)=D^\top D.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-原梯度流在时间尺度\(\eta_0\)下满足
+Under the original gradient flow and time-scale parameter \(\eta_0\),
 
 \[
 \dot D(t)=-2\eta_0\Sigma_{\rm tr}D(t),\qquad
@@ -862,7 +862,7 @@ L_{\rm gen}(D)=D^\top D.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-代入同一状态的两个读出，得**精确**损失演化：
+Substitution into the two readouts of the same state gives the **exact** loss evolution:
 
 \[
 \boxed{
@@ -873,7 +873,7 @@ L_{\rm gen}(t)&=D_0^\top e^{-4\eta_0\Sigma_{\rm tr}t}D_0.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**第二步：代入原论文使用的协方差谱。** 设\(\nu\)遵循\(\lambda=d/n\)下的Marčenko–Pastur谱，在原论文的各向同性初始方向及大维度近似下：
+**Step 2: Use the covariance spectrum of the original paper.** Let \(\nu\) follow the Marčenko–Pastur spectrum for \(\lambda=d/n\). Under the original isotropic initial direction and high-dimensional approximation,
 
 \[
 L_{\rm tr}(t)\approx\mathbb E_\nu[\nu e^{-4\eta_0\nu t}],\qquad
@@ -881,7 +881,7 @@ L_{\rm gen}(t)\approx\mathbb E_\nu[e^{-4\eta_0\nu t}].
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-其正谱下端为\(\nu_-=(1-\sqrt\lambda)^2\)。当\(\eta_0t\gg\sqrt\lambda/(1-\sqrt\lambda)^2\)时，原论文的谱端点渐近给出
+The lower positive spectral edge is \(\nu_-=(1-\sqrt\lambda)^2\). When \(\eta_0t\gg\sqrt\lambda/(1-\sqrt\lambda)^2\), the original spectral-edge asymptotics give
 
 \[
 \boxed{
@@ -894,21 +894,21 @@ L_{\rm gen}(t)\simeq\frac{L_{\rm tr}(t)}{(1-\sqrt\lambda)^2}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**第三步：用原论文的正确率读出计算迟发时间。** 每个输入的正确性由误差是否小于\(\epsilon\)定义：
+**Step 3: Calculate the delayed threshold-crossing time using the original accuracy readout.** Correctness on an input is defined by squared error below \(\epsilon\):
 
 \[
 C_x(t)=\mathbf1[(D(t)^\top x)^2<\epsilon].
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-在相应高斯读出近似下
+Under the corresponding Gaussian-readout approximation,
 
 \[
 A(t)=\operatorname{erf}\!\left(\sqrt{\frac{\epsilon}{2L(t)}}\right).
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-原论文用\(A=\operatorname{erf}(\sqrt2)\approx95.45\%\)作为跨界标准，对应\(L(t^*)=\epsilon/4\)。分别求\(L_{\rm tr}(t_{\rm tr}^*)\)和\(L_{\rm gen}(t_{\rm gen}^*)\)到达该阈值的时间，在小\(\epsilon\)渐近下：
+The original paper uses \(A=\operatorname{erf}(\sqrt2)\approx95.45\%\) as its crossing criterion, corresponding to \(L(t^*)=\epsilon/4\). Solve for when \(L_{\rm tr}(t_{\rm tr}^*)\) and \(L_{\rm gen}(t_{\rm gen}^*)\) reach the threshold. In the small-\(\epsilon\) regime:
 
 \[
 \boxed{
@@ -919,23 +919,23 @@ A(t)=\operatorname{erf}\!\left(\sqrt{\frac{\epsilon}{2L(t)}}\right).
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**核心结论。** 训练、测试都从同一条连续参数轨迹得到；在原模型的两种读出几何及同一正确性阈值下，测试正确率可远晚于训练正确率跃升。时间差不仅存在，而且由原研究的\(\lambda,\eta_0\)条件定量给出。整个过程无需假设外部读出跃升时突然生成独立“能力”。
+**Core conclusion.** Training and test performance follow the same continuous parameter trajectory. With the original model's distinct readout geometries and common correctness criterion, test correctness can rise long after training correctness. The delay is quantitatively determined by the original conditions in \(\lambda,\eta_0\).
 
-**研究对照。** [Levi、Beck与Bar-Sinai，Grokking in Linear Estimators—A Solvable Model that Groks without Understanding，ICLR 2024](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8c0a85ee3eddb1858d9142f0d51d67b2-Abstract-Conference.html)；[Žunkovič与Ilievski，Grokking phase transitions in learning local rules with gradient descent，JMLR 2024](https://www.jmlr.org/papers/v25/22-1228.html)。
+**Research comparison.** [Levi, Beck and Bar-Sinai, *Grokking in Linear Estimators—A Solvable Model that Groks without Understanding*, ICLR 2024](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8c0a85ee3eddb1858d9142f0d51d67b2-Abstract-Conference.html); [Žunkovič and Ilievski, *Grokking phase transitions in learning local rules with gradient descent*, JMLR 2024](https://www.jmlr.org/papers/v25/22-1228.html).
 
-**内部实验锚点。** TL-E03（接收状态决定响应）；TL-E07（训练继续时支撑可重组）；TL-E08（连续间隔与离散边界）；TL-P01（目标边界预测）。
+**Internal anchors.** TL-E03 (receiving-state-dependent response), TL-E07 (continuing support reorganization), TL-E08 (continuous margin and discrete readout) and TL-P01 (target-boundary prediction).
 
-### 5.2.11 μP：宽度增长时保持非退化功能更新
+### 5.2.11 Maximal Update Parameterization (μP): Finite Functional Updates as Width Grows
 
-**推导类型：使用Tensor Programs IV的原MLP参数化与SGD条件，直接得到更新量级和输出稳定性；进一步使用该论文的第一层修改，说明各层特征学习的条件。**
+**Derivation type:** Use the original MLP parameterization and SGD regime in Tensor Programs IV to compute update scaling and output stability, then apply the paper's first-layer modification to describe conditions for learning in all layers.
 
-**逐式来源标记。** <sup>[T]</sup> 原实际动作 \(\theta_{t+1}=\theta_t+\delta_t\) 和功能响应 \(R_{t,q}=m_q(\theta_t+\delta_t)-m_q(\theta_t)\)。<sup>[A]</sup> Yang与Hu《Tensor Programs IV》附录E.1的线性MLP参数化、输出缩放 \(f=n^{-1/2}v\bar h\)、相关权重尺度与学习率 \(\eta_n\propto n^{-c}\)。对该论文的**同一SGD动作**按链式法则计算中间特征变化和输出响应，得到 <sup>[R]</sup> \(\Delta\bar h_j=\Theta(n^{-c})\)、\(\Delta f=\Theta(n^{-c})\)；当 \(c=0\) 时单步两者均为 \(\Theta(1)\)。这是原附录的**单步、特定参数化量级**；不据此直接声称完整μP所有层及μTransfer定理都已由此独立证明。
+**Equation provenance.** [T] Actual action \(\theta_{t+1}=\theta_t+\delta_t\) and response \(R_{t,q}=m_q(\theta_t+\delta_t)-m_q(\theta_t)\). [A] The linear MLP parameterization in Appendix E.1 of Yang and Hu's *Tensor Programs IV*, with output scaling \(f=n^{-1/2}v\bar h\), specified weight scales and learning rate \(\eta_n\propto n^{-c}\). Applying the chain rule to the **same SGD action** gives [R] \(\Delta\bar h_j=\Theta(n^{-c})\) and \(\Delta f=\Theta(n^{-c})\). At \(c=0\) both are \(\Theta(1)\) in one step. These are **one-step scaling statements for the specified parameterization**; the complete μP family and μTransfer are separate results in the original work.
 
-**TLI作用对象。** 式(2) \(\theta_{t+1}=\theta_t+\delta_t\)和式(3) \(R_q(\theta,\delta)=m_q(\theta+\delta)-m_q(\theta)\)。跨宽度比较必须检查实际参数动作在**功能/表征空间**造成的响应，而不能只比较参数增量数值。
+**TLI objects.** Actual update \(\theta_{t+1}=\theta_t+\delta_t\) and response \(R_q(\theta,\delta)=m_q(\theta+\delta)-m_q(\theta)\). Across widths, compare the realized parameter action's effect in **functional and representation space**, in addition to the parameter increment.
 
-**使用的原理论条件。** Yang与Hu（ICML 2021，Tensor Programs IV）附录E的两隐藏层线性MLP演示及其SGD宽度极限：隐藏宽度\(n\to\infty\)，\(h=U\xi\)、\(\bar h=Wh\)，\(h^\top h=\Theta(n)\)，中间层与输出层原始高斯初始化尺度为\(n^{-1/2}\)，损失对输出的导数\(\chi=\mathcal L'(f,y)=\Theta(1)\)。该附录给出输出缩放\(f=n^{-1/2}v\bar h\)，学习率\(\eta_n\propto n^{-c}\)，并研究固定输入上的单次实际SGD动作。
+**Original-study conditions.** The two-hidden-layer linear MLP example and SGD width limit in Appendix E of Yang and Hu (ICML 2021): width \(n\to\infty\), \(h=U\xi\), \(\bar h=Wh\), \(h^\top h=\Theta(n)\); original middle- and output-layer Gaussian initialization scale \(n^{-1/2}\); output-loss derivative \(\chi=\mathcal L'(f,y)=\Theta(1)\). Output scaling is \(f=n^{-1/2}v\bar h\), learning rate \(\eta_n\propto n^{-c}\), with one realized SGD action on a fixed input.
 
-**第一步：把原参数化与动作代入TLI响应。** 对中间层的一个SGD动作，该论文附录E.1直接按链式求导得到
+**Step 1: Substitute the original parameterization and actual action into the TLI response.** For a middle-layer SGD update, the original Appendix E.1 obtains by chain-rule differentiation
 
 \[
 \Delta\bar h
@@ -945,7 +945,7 @@ A(t)=\operatorname{erf}\!\left(\sqrt{\frac{\epsilon}{2L(t)}}\right).
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-在它自己的初始化尺度下，每个\(v_j=\Theta(n^{-1/2})\)、\(vv^\top=\Theta(1)\)、\(h^\top h=\Theta(n)\)，故
+At the original initialization scale, each \(v_j=\Theta(n^{-1/2})\), \(vv^\top=\Theta(1)\), and \(h^\top h=\Theta(n)\). Hence
 
 \[
 \boxed{
@@ -955,24 +955,24 @@ A(t)=\operatorname{erf}\!\left(\sqrt{\frac{\epsilon}{2L(t)}}\right).
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-若\(c>0\)，固定步数内特征与输出更新趋零；若\(c=0\)，则
+If \(c>0\), feature and output updates vanish at fixed step count as width grows. If \(c=0\), then
 
 \[
 \boxed{\Delta\bar h_j=\Theta(1),\qquad \Delta f=\Theta(1).}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-这从原前向计算和实际反向更新直接给出**宽度增长但功能更新仍非退化**的量级条件。
+The original forward computation and backpropagated update thus give the scaling condition for **nondegenerate functional change at increasing width**.
 
-**第二步：为什么必须连输出缩放一起调整。** 原论文将上述\(n^{-1/2}\)的输出缩放与标准参数化对照：按原标准输出缩放、却让隐藏特征发生\(\Theta(1)\)的更新时，输出权重与已更新特征的相关项可使logit达到\(\Theta(\sqrt n)\)并失去稳定性；采用附录E.1的μP输出缩放时该项为\(\Theta(1)\)。因此不能只要求某一层“大幅更新”，还要同时控制输出的稳定量级。
+**Step 2: Adjust output scaling along with representation updates.** The original study compares the \(n^{-1/2}\) output scaling with standard parameterization. Under standard output scaling, allowing a \(\Theta(1)\) hidden-feature update can make the correlated output-weight/updated-feature term grow as \(\Theta(\sqrt n)\), destabilizing logits. Appendix E.1's μP output scaling keeps that term \(\Theta(1)\). Feature update scale and output stability must therefore be controlled together.
 
-**第三步：第一层也参与特征学习。** 原论文进一步把第一层参数化指数改为\(a_1=-1/2,b_1=1/2\)（并在输出层取\(a_{L+1}=1/2,c=0\)），使输入层的实际更新传入隐藏特征也保持非退化；不同层须分别满足相应的初始化和更新缩放条件。该条件来自Tensor Programs IV的参数化定义与证明，而不是额外假设各层采用相同学习率。
+**Step 3: Enable feature learning in the first layer as well.** The original paper adjusts the first-layer parameterization exponents to \(a_1=-1/2,b_1=1/2\) (and \(a_{L+1}=1/2,c=0\) at the output layer), retaining nondegenerate influence from input-layer updates on hidden features. Each layer has its corresponding initialization and update scaling conditions, rather than one assumed common learning rate.
 
-**核心结论。** μP的核心关系是：**在参数宽度增加时，调整各层的实际更新与前向缩放，使学习形成的功能变化保持有限而不消失、同时不导致logit发散。** 上述原MLP例子完成了这一关系的量级推导。Tensor Programs V的μTransfer进一步研究此参数化下最优超参数跨宽度的稳定性，其完整参数族证明与实测迁移效果仍属于原研究的进一步结果，不把“\(\Theta(1)\)响应”直接等同于“任意超参数必然可迁移”。
+**Core conclusion.** μP regulates actual layerwise updates and forward scales so that **functional changes remain finite and nonvanishing as width increases, without divergent logits**. The original MLP provides the order-of-magnitude calculation. Tensor Programs V's μTransfer further studies width-stable optimal hyperparameters; its full parameterization results and transfer measurements are separate research results.
 
-**研究对照。** [Yang与Hu，Tensor Programs IV: Feature Learning in Infinite-Width Neural Networks，ICML 2021](https://proceedings.mlr.press/v139/yang21c.html)，特别是[附录E](https://proceedings.mlr.press/v139/yang21c/yang21c-supp.pdf)；[Yang等，Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer，NeurIPS 2021](https://proceedings.nips.cc/paper_files/paper/2021/hash/8df7c2e3c3c3be098ef7b382bd2c37ba-Abstract.html)。
+**Research comparison.** [Yang and Hu, *Tensor Programs IV: Feature Learning in Infinite-Width Neural Networks*, ICML 2021](https://proceedings.mlr.press/v139/yang21c.html), particularly [Appendix E](https://proceedings.mlr.press/v139/yang21c/yang21c-supp.pdf); [Yang et al., *Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer*, NeurIPS 2021](https://proceedings.nips.cc/paper_files/paper/2021/hash/8df7c2e3c3c3be098ef7b382bd2c37ba-Abstract.html).
 
-**内部实验锚点。** TL-E03（接收状态决定实际功能响应）；TL-E04（有限幅度更新的非线性）；TL-E05（目标与动作几何）。
+**Internal anchors.** TL-E03 (receiving-state-dependent responses), TL-E04 (nonlinear finite-update effects), TL-E05 (target and update geometry).
 
 ### 5.2.12 Sharpness与SAM：参数几何、实际动作与功能响应
 
