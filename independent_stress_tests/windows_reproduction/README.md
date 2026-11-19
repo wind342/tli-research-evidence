@@ -1,6 +1,6 @@
-# GNN and hard-spiking SNN: Windows reproduction
+# GNN and hard-spiking SNN: November 2026 Windows results
 
-These results supply Section 2.3.2, Figure 3, and Table 3 of the ICML manuscript. The native Windows CPU runs used three fixed GNN seeds and four fixed SNN seeds. The prediction calculation used the actual updates captured during training.
+These records supply the current ICML manuscript's GNN/SNN cross-system subsection, Figure 3, and appendix Table 3. The reported native Windows CPU runs used three fixed GNN seeds and four fixed SNN seeds. Boundary predictions were calculated from updates recorded during training.
 
 | System | Correct / targets | Accuracy | Four-way macro recall | Prediction criterion |
 | --- | ---: | ---: | ---: | --- |
@@ -12,5 +12,9 @@ The prediction criterion requires accuracy and four-way macro recall of at least
 - [Run environment, seeds and results](WINDOWS_REPRODUCTION.json)
 - [GNN structure](round-1/gnn_tlir_formal_results.json) · [SNN structure](round-1/SNN_TLIR_formal/FORMAL_SUMMARY.json)
 - [Table 3](round-1/table3/ADJUDICATION_REPORT.json) · [Independent prediction audit](round-1/table3/INDEPENDENT_CHECK_RESULT.json)
+
+## Source identity and verification level
+
+The current directory contains the November machine-result summaries, seed/criterion record, prediction adjudication and independent-check receipt. The current tree does **not** contain the exact November-run native training programs, runnable environment specification, or full frozen execution protocol. The GNN and SNN source programs under the adjacent historical directories correspond to different October seeds and should be cited as historical source, not the executable authority for these November records. The existing prediction checker receipt reports `PASS` for 28 events and 10,272 targets; that receipt documents the recorded check, rather than a new native training rerun performed by this documentation update.
 
 Earlier manuscript versions can still be audited with the archived [GNN](../gnn/), [SNN](../snn/), and [prediction](../tlp01_prediction/) evidence and the Git history.
