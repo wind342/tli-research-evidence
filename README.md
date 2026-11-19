@@ -1,8 +1,8 @@
 # TLI research evidence — current ICML manuscript
 
-This repository accompanies the **current TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml), and preserves supporting historical TLIR research evidence. The **current paper is TLI**; the repository retains its historical `tlir-research-evidence` name.
+This repository accompanies the current **TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml). Historical research releases remain under their original TLIR filenames and repository name.
 
-**Start with the current [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md).** It follows the actual `icml-final` LaTeX source rather than an older PNAS page layout. The current [compiled manuscript PDF](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is maintained in the paper repository.
+**Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is hosted alongside its LaTeX source.
 
 | In ICML paper order | Frozen experimental evidence |
 |---|---|
@@ -24,21 +24,21 @@ The corresponding **GNN/SNN** evidence is the [Windows-run source bundle](indepe
 | **GNN** | 3,068 / 3,072 | **99.87%** | **97.87%** | 8/9, 9/9, 8/9; nonlinear counts 6/256, 36/256, 20/256 |
 | **Hard-spiking SNN** | 6,713 / 7,200 | **93.24%** | **60.05%** | 12/12 in all four seeds |
 
-[Independent prediction audit receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json): `PASS`, 28 events and 10,272 target records. These are the same figures as the current ICML manuscript appendix Table 3. The **SNN predictor** did not meet the registered four-way-recall success threshold; its **structural TLI checks** did pass. Earlier GNN/SNN experiments are preserved separately and are not substituted for these ICML values.
+[Independent prediction audit receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json): `PASS`, 28 events and 10,272 target records. The figures match ICML appendix Table 3. The GNN predictor met its registered criterion; the SNN predictor's **60.05%** four-way macro recall fell below its prediction threshold, while all four SNN seeds passed the **12/12 structural TLI criteria**. Earlier experiment versions remain archived.
 
 ## Mathematical and historical materials
 
 - The current ICML paper presents two worked mathematical recoveries in the main text (**Edge of Stability, Catastrophic Forgetting**) and twelve further complete recoveries in the appendix, all linked from the [ICML map](TLI_ICML_PAPER_EVIDENCE_MAP.md).
 - The [complete 14-derivation record](TLIR_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting explanations](TLIR_HISTORICAL_STRESS_TEST_21.md), [combined record](TLIR_SECTION5_21_PAIRS_14_EXTRAPOLATIONS.md) and [independent mathematical audit](TLIR_14_EXTRAPOLATIONS_MATH_AUDIT_2026-11-03.md) remain unchanged research authorities.
 - Older article navigation: [PNAS paper-to-evidence map (archive)](TLIR_PNAS_PAPER_EVIDENCE_MAP_ARCHIVE.md) and [Science manuscript map (archive)](TLIR_SCIENCE_23PAGE_EVIDENCE_MAP_ARCHIVE.md). The legacy [TLIR_PAPER_EVIDENCE_MAP.md](TLIR_PAPER_EVIDENCE_MAP.md) now directs readers to the current ICML map.
-- [Public evidence and reproduction boundaries](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) still apply. A prior validation receipt is not a new native experiment execution.
+- [Verification levels](PUBLIC_EVIDENCE_MATRIX.md), [import provenance](EVIDENCE_IMPORT.md), and [source manifest](SOURCE_MANIFEST.md) record experiment authority and audit scope. The documentation update reused existing validation receipts.
 - [Legacy Zenodo release](https://doi.org/10.5281/zenodo.22032772) and [original ZIP release mirror](https://github.com/wind342/tlir-research-evidence/releases/tag/zenodo-22032772-mirror) preserve older evidence independently of the ICML document navigation.
 
 ## Original research-evidence collection (preserved)
 
-This public, read-only companion repository collects the executable experiments used to
+The preserved original release collected executable experiments used to
 establish and test the generation-fact, training–learning, inference and
-reinforcement-learning claims of the accompanying manuscript.
+reinforcement-learning claims across historical manuscripts.
 
 The repository has **16 primary experiment entries**:
 
@@ -59,9 +59,9 @@ recorded in [PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md), and the
 Git/Zenodo division is documented in [PUBLIC_ARCHIVE.md](PUBLIC_ARCHIVE.md).
 The four reinforcement-learning experiments form one cumulative evidence chain,
 summarized in [RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md).
-Additional experiment directories are included only when they are imported by
-a primary entry or are required to reconstruct its Generation-Fact Graph
-(GFG). They are supporting dependencies, not additional manuscript claims.
+Additional experiment directories support primary entries or reconstruct
+the underlying Generation-Fact Graph
+(GFG). These directories provide experimental dependencies.
 
 The index also exposes **GF-S01**, a four-stage real-signal experiment showing
 that the generation-fact and GFG structures remain fixed while their concrete
@@ -72,7 +72,7 @@ The separate **TL-G01** cross-system falsification experiment changes
 architecture, modality, task and optimizer from nanoGPT/text/Adam to
 ResNet-18/CIFAR-100/SGD momentum and retests the primary training--learning
 relations under a frozen protocol. It is an extension of the evidence base,
-not a rewrite of the sealed sixteen manuscript entries.
+a separately registered extension to the sealed original experiment set.
 
 The separate **TL-G02** experiment moves the same falsification programme to a
 generative diffusion objective: a time-conditioned U-Net predicts identified
@@ -100,7 +100,7 @@ Two later feedback-dynamics experiments test a bounded consequence of the
 training--learning--inference loop in a shared policy. RL-E05 studies selective
 positive feedback and support concentration; RL-E06 freezes feedback dose,
 duration and recovery forks and independently re-executes all 12 formal seeds.
-They are indexed as extensions rather than revisions to the sealed sixteen
+They are indexed as extensions to the sealed original sixteen
 manuscript entries. See [RL_EVIDENCE_CHAIN.md](RL_EVIDENCE_CHAIN.md).
 
 Four reusable instruments developed for the training--learning experiments are
