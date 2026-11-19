@@ -636,17 +636,17 @@ This budget calculation uses the all-mode regime of (E9), distinct from the trun
 
 **Experimental anchors for the TLI relations.** TL-E03/E04 (realized updates and finite responses), TL-E06/E07 (intervention-defined support and reorganization), TL-E08 (capability boundaries), INF-E01 and INF-G01/G02 (frozen inference and trained component versions). The exploratory spectral exponents in (E8)–(E12) are derived under [A], separately from these empirical measurements.
 
-### 5.2.7 Dynamical Isometry：深层网络的动作—响应传输
+### 5.2.7 Dynamical Isometry: Transmission of Training Actions through Deep Networks
 
-**推导类型：由原网络的分层复合与链式法则直接推出。**
+**Derivation type:** Direct derivation from layered composition and the chain rule in the original network.
 
-**逐式来源标记。** <sup>[T]</sup> 原功能响应 \(R_q=m_q(\theta+\delta\theta)-m_q(\theta)\)，其局部形式是 \(R_q\approx\nabla_\theta m_q^\top\delta\theta\)。<sup>[A]</sup> 原分层网络 \(h^{\ell+1}=F_\ell(h^\ell,\theta_\ell)\) 与可微链式法则，层间Jacobian记为 \(J_{L\leftarrow\ell+1}\)。逐层传播 \(\delta h^{\ell+1}=B_\ell\delta\theta_\ell\)，得 <sup>[R]</sup> \(\delta f\approx\sum_\ell J_{L\leftarrow\ell+1}B_\ell\delta\theta_\ell\)。这里是**局部一阶响应**；动态等距仅约束对应 Jacobian 的奇异值传输，不单独保证所有更新具有良好泛化效果。若矩阵有非零核空间，**全空间**范数下界为零，不能把仅对非零奇异子空间有效的下界误写成对所有输入成立。
+**Equation provenance.** [T] Functional response \(R_q=m_q(\theta+\delta\theta)-m_q(\theta)\), with local form \(R_q\approx\nabla_\theta m_q^\top\delta\theta\). [A] The original layered network \(h^{\ell+1}=F_\ell(h^\ell,\theta_\ell)\), the differentiable chain rule and cross-layer Jacobian \(J_{L\leftarrow\ell+1}\). Propagating \(\delta h^{\ell+1}=B_\ell\delta\theta_\ell\) gives [R] \(\delta f\approx\sum_\ell J_{L\leftarrow\ell+1}B_\ell\delta\theta_\ell\), a **local first-order response**. Dynamical isometry constrains transmission through the relevant Jacobian singular values. If the Jacobian has a nontrivial nullspace, the minimum norm gain on the **entire space** is zero; a positive lower bound from the smallest nonzero singular value applies only on the suitable restricted subspace.
 
-**TLI作用对象。** 一个实际参数更新\(\delta\theta\)改变输出\(f_\theta\)，其局部功能响应由当前接收状态决定。
+**TLI object.** An actual parameter increment \(\delta\theta\) changes the network output \(f_\theta\), with its local response conditioned by the current receiving state.
 
-**使用的原理论条件。** 可微的分层网络\(h^{\ell+1}=F_\ell(h^\ell,\theta_\ell)\)，以及Dynamical Isometry研究所考察的跨层雅可比及其奇异值。
+**Original-study conditions.** A differentiable layered network \(h^{\ell+1}=F_\ell(h^\ell,\theta_\ell)\), its interlayer Jacobians and the singular-value conditions studied in dynamical isometry.
 
-**逐步推导。** 对第\(\ell\)层参数做微小改动，首先有
+**Step-by-step derivation.** For a small parameter perturbation at layer \(\ell\), first write
 
 \[
 \delta h^{\ell+1}\approx
@@ -655,7 +655,7 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-余下层以链式法则传递，令\(J_{L\leftarrow\ell+1}=\partial h^L/\partial h^{\ell+1}\)，于是
+The remaining layers transmit the change by the chain rule. Let \(J_{L\leftarrow\ell+1}=\partial h^L/\partial h^{\ell+1}\). Then
 
 \[
 \boxed{\delta f\approx
@@ -663,7 +663,7 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-同时，对从第\(\ell\)层发出的激活扰动\(v\)，有
+Likewise, for a perturbation \(v\) of the activation leaving layer \(\ell\),
 
 \[
 \|J_{L\leftarrow\ell}v\|
@@ -671,32 +671,32 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-其中\(\sigma_{\min}^{\mathrm{all}}(J)=\inf_{\|v\|=1}\|Jv\|\)，当\(J\)有非零核空间时严格为0；只有限制在与核空间正交的有效子空间，才可以使用最小非零奇异值作下界。。反传梯度沿相应转置雅可比传递。若相关非零奇异值集中于1附近，则这些方向上的信号与梯度跨层传输不发生大的范数放大或衰减；若谱极端偏离1，则出现明显的方向性放大或衰减。
+Here \(\sigma_{\min}^{\mathrm{all}}(J)=\inf_{\|v\|=1}\|Jv\|\), which is zero when \(J\) has a nontrivial nullspace. A lower bound from the smallest nonzero singular value applies on the effective subspace orthogonal to that nullspace. Backpropagated gradients travel through the corresponding transpose Jacobian. When relevant nonzero singular values cluster near one, signals and gradients on those directions undergo little norm amplification or attenuation; strongly displaced spectra yield directional expansion or contraction.
 
-**推得的结论。** Dynamical Isometry描述的是固定当前状态上**计算和梯度的传输条件**，由原网络复合结构直接推出。它不是对每个实际参数更新必然高效的承诺，因为局部参数映射\(B_\ell\)也参与实际功能响应。
+**Recovered conclusion.** Dynamical isometry gives **conditions for transporting activations and gradients at a fixed state**, derived directly from the original network's composition. The parameter-to-activation Jacobian \(B_\ell\) also enters the response to an actual parameter update.
 
-**研究对照。** [Pennington、Schoenholz与Ganguli，NeurIPS 2017](https://arxiv.org/abs/1711.04735)。
+**Research comparison.** [Pennington, Schoenholz and Ganguli, NeurIPS 2017](https://arxiv.org/abs/1711.04735).
 
-**内部锚点。** TL-E03（接收状态）；TL-E04（实际更新路径）；TL-E05（更新几何）。
+**Internal anchors.** TL-E03 (receiving state), TL-E04 (actual update paths), TL-E05 (update geometry).
 
-### 5.2.8 Dropout：随机特征屏蔽为什么等价于自适应正则化
+### 5.2.8 Dropout: Adaptive Regularization from Random Feature Masking
 
-**推导类型：使用Dropout研究自身的独立Bernoulli特征屏蔽与广义线性模型（GLM）条件，直接推出标签无关的正则项；在原GLM包含的高斯线性回归中，精确推出数据依赖的对角二次正则化，以及它怎样改变真实训练动作。**
+**Derivation type:** Use independent Bernoulli feature dropout and generalized linear model (GLM) assumptions from the original dropout theory to derive a label-independent regularizer. In Gaussian linear regression, an original GLM special case, derive an exact data-dependent diagonal quadratic penalty and its effects on actual training updates.
 
-**逐式来源标记。** <sup>[T]</sup> 原训练动作 \(\theta_{t+1}=\theta_t+\delta_t\) 与功能响应 \(R_{t,q}=m_q(\theta_{t+1})-m_q(\theta_t)\)。<sup>[A]</sup> Wager 等的独立Bernoulli特征遮蔽、倒置缩放 \(\tilde x_j=z_jx_j/r\)、GLM对数配分函数 \(A(u)\) 凸。对遮蔽取期望，标签线性项不变，得到 <sup>[R]</sup> \(\overline L_{\rm drop}=L_0+\frac1n\sum_i\{\mathbb E_zA(w^\top\tilde x_i)-A(w^\top x_i)\}\ge L_0\)。原高斯线性特例 \(A(u)=u^2/2\) 时，该差值精确等于 \((1-r)/(2r)\sum_j s_j^2w_j^2\)。**[T→A]** 代回更新得 \(\mathbb E_z[\delta_t\mid w_t]=-\eta\nabla\overline L_{\rm drop}\)，单次抽到的实际动作并不等于该期望。对非线性网络不能把测试期望等同关系当成精确恒等式。
+**Equation provenance.** [T] Training transition \(\theta_{t+1}=\theta_t+\delta_t\) and response \(R_{t,q}=m_q(\theta_{t+1})-m_q(\theta_t)\). [A] Independent Bernoulli feature masks, inverse scaling \(\tilde x_j=z_jx_j/r\) and a convex GLM log-partition function \(A(u)\), as in Wager et al. Taking mask expectation preserves the label-linear term and gives [R] \(\overline L_{\rm drop}=L_0+\frac1n\sum_i\{\mathbb E_zA(w^\top\tilde x_i)-A(w^\top x_i)\}\ge L_0\). For the Gaussian linear case \(A(u)=u^2/2\), the penalty is exactly \((1-r)/(2r)\sum_j s_j^2w_j^2\). [T→A] Substitution into an update gives \(\mathbb E_z[\delta_t\mid w_t]=-\eta\nabla\overline L_{\rm drop}\). A single sampled mask gives its own realized update; a general nonlinear network has a different inference model-averaging relation.
 
-**TLI作用对象。** 式(1)–(2)把实际训练写为\(A_t=\mathcal U(Z_t,B_t)\)、\(\theta_{t+1}=\theta_t+\delta_t\)。训练时随机屏蔽特征，直接改变实际动作的形成；式(3)再测量该动作对任一固定目标的连续功能响应。式(4)区分训练时的随机屏蔽和冻结模型的推理调用。
+**TLI objects.** Local groups (1)–(2) write training as \(A_t=\mathcal U(Z_t,B_t)\) and \(\theta_{t+1}=\theta_t+\delta_t\). Randomly masking features during training changes the formation of actual updates; group (3) measures their continuous target responses, and group (4) concerns subsequent frozen inference.
 
-**使用的原理论条件。** Wager、Wang与Liang（NeurIPS 2013）研究广义线性模型的**独立特征Dropout**。令保留概率\(r\in(0,1]\)，各掩码\(z_{ij}\)独立服从\(\operatorname{Bernoulli}(r)\)，并使用原研究的倒置缩放\(\widetilde x_{ij}=x_{ij}z_{ij}/r\)，因此\(\mathbb E_z[\widetilde x_i]=x_i\)。GLM的单样本负对数似然为
+**Original-study conditions.** Wager, Wang and Liang (NeurIPS 2013) study **independent feature dropout** in generalized linear models. Each mask \(z_{ij}\) is independent with distribution \(\operatorname{Bernoulli}(r)\), for keep probability \(r\in(0,1]\). Inverse scaling is \(\widetilde x_{ij}=x_{ij}z_{ij}/r\), so \(\mathbb E_z[\widetilde x_i]=x_i\). The per-example GLM negative log likelihood is
 
 \[
 \ell_i(w;x_i,y_i)=A(w^\top x_i)-y_iw^\top x_i-\log h(y_i),
 \qquad {}^{\scriptscriptstyle\text{[A]}}
 \]
 
-其中\(A\)是原GLM的凸对数配分函数；不引入其他正则项或新的特征噪声模型。
+Here \(A\) is the convex log-partition function of the original GLM; the derivation uses this dropout noise model and no added regularization term.
 
-**第一步：由原Dropout屏蔽机制计算目标函数。** 令\(L_0(w)=n^{-1}\sum_i\ell_i(w;x_i,y_i)\)。对屏蔽变量取期望：
+**Step 1: Compute the dropout-averaged objective under the original masking mechanism.** Let \(L_0(w)=n^{-1}\sum_i\ell_i(w;x_i,y_i)\). Averaging over masks gives
 
 \[
 \begin{aligned}
@@ -711,9 +711,9 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-最后的不等式来自\(A\)凸、\(\mathbb E_z[\widetilde x_i]=x_i\)以及Jensen不等式。由于标签项对屏蔽取期望后不变，**\(\mathcal R_{\rm drop}\)不包含\(y_i\)**。这是原GLM条件下的精确分解，而不是额外猜测Dropout会产生何种惩罚。
+The final inequality follows from convexity of \(A\), \(\mathbb E_z[\widetilde x_i]=x_i\), and Jensen's inequality. The label-linear term retains its expectation under masking, so \(\mathcal R_{\rm drop}\) contains no \(y_i\). This is the exact decomposition under the original GLM assumptions.
 
-**第二步：在原GLM包含的高斯线性回归中算出正则项。** 对固定方差的高斯线性模型，归一化单位方差后\(A(u)=u^2/2\)，对应平方损失\(\ell_i=\tfrac12(y_i-w^\top x_i)^2+\mathrm{const}\)。因为独立屏蔽，
+**Step 2: Calculate the regularizer for Gaussian linear regression, a case included in the original GLM.** With unit-normalized fixed variance, \(A(u)=u^2/2\) and squared loss \(\ell_i=\tfrac12(y_i-w^\top x_i)^2+\mathrm{const}\). Independent masks give
 
 \[
 \operatorname{Var}_z(w^\top\widetilde x_i)
@@ -721,7 +721,7 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-令\(s_j^2=n^{-1}\sum_i x_{ij}^2\)，则
+Let \(s_j^2=n^{-1}\sum_i x_{ij}^2\). Then
 
 \[
 \boxed{
@@ -731,9 +731,9 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-**这就是Dropout与数据依赖的对角\(L_2\)正则化之间的精确关系。** 特征坐标的惩罚系数由该坐标在训练数据中的平方均值和原始Dropout保留率决定。
+This is the **exact connection between dropout and data-dependent diagonal \(L_2\) regularization**. Penalty coefficients depend on each feature's empirical second moment and the original dropout keep probability.
 
-**第三步：代回TLI实际更新，得到功能响应。** 对上述期望目标使用原有的梯度下降训练动作（单次随机掩码SGD的条件期望梯度也等于下式梯度），记\(D_s=\operatorname{diag}(s_1^2,\ldots,s_d^2)\)，则
+**Step 3: Substitute into the actual TLI update to obtain functional response.** Use the original gradient-descent action for this expected objective (the conditional mean gradient of one-mask SGD matches its gradient). With \(D_s=\operatorname{diag}(s_1^2,\ldots,s_d^2)\),
 
 \[
 \boxed{
@@ -745,9 +745,9 @@ B_\ell=\frac{\partial F_\ell}{\partial\theta_\ell}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-这里的期望指**固定接收状态和训练数据、只平均Dropout掩码**；一次真实训练使用的仍是实际抽到的掩码所形成的动作\(\delta_t\)。
+The expectation holds **at fixed receiving state and training data, averaging only over dropout masks**. One actual training step uses the increment \(\delta_t\) formed from the mask sampled on that step.
 
-对于线性模型，在固定查询\(x_q\)上的连续功能读出\(m_q(w)=w^\top x_q\)，TLI功能响应恰好为
+For a linear model with continuous readout \(m_q(w)=w^\top x_q\) at fixed query \(x_q\), the TLI response is exactly
 
 \[
 \boxed{
@@ -758,9 +758,9 @@ R_{t,q}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-所以随机屏蔽通过改变训练动作，使不同查询产生不同的目标功能响应；其期望更新含有上述自适应收缩项。**正则化并不是另一个独立的学习过程，而是原有随机训练机制对状态更新施加的确定性平均效应。**
+Random masking therefore changes actual training actions and creates query-dependent functional responses. The expected update includes the adaptive shrinkage term calculated above. Regularization is the deterministic average effect of the original stochastic training mechanism on the state transition.
 
-**第四步：训练与冻结推理的关系。** 对这一线性模型，因\(\mathbb E_z[\widetilde x]=x\)，
+**Step 4: Relate dropout training to frozen inference.** In the linear model, since \(\mathbb E_z[\widetilde x]=x\),
 
 \[
 \boxed{
@@ -769,13 +769,13 @@ R_{t,q}
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-故训练时随机子模型预测的平均值，与冻结权重、关闭屏蔽后的线性推理**精确相同**。原Dropout论文在非线性深网中的测试时权重缩放/模型平均属于近似，不把线性模型的等式推广为所有非线性网络的恒等式。
+For this linear model, the mean prediction of the randomly masked training submodels **equals exactly** the unmasked inference prediction at frozen weights. The original dropout paper treats test-time rescaling or ensemble averaging in nonlinear deep networks using approximations with different conditions.
 
-**推得的核心关系。** 在原广义线性模型与独立Dropout条件下，**随机特征屏蔽 \(\Rightarrow\) 标签无关的非负正则项**；在原高斯线性特例下进一步得到**精确的自适应二次惩罚 \(\Rightarrow\) 改变的实际梯度更新 \(\Rightarrow\) 查询相关的功能响应**。这与TLI的训练—学习—冻结推理链直接衔接。
+**Core recovered relationship.** Under the original GLM and independent-dropout conditions, **random feature masking ⇒ a nonnegative label-independent regularizer**. Under the Gaussian linear specialization this yields an **exact adaptive quadratic penalty ⇒ changed actual gradient update ⇒ query-conditioned functional response**. This connects directly to the TLI training–learning–frozen-inference chain.
 
-**独立研究对照。** [Srivastava等，Dropout: A Simple Way to Prevent Neural Networks from Overfitting，JMLR 2014](https://www.jmlr.org/papers/v15/srivastava14a.html)；[Wager、Wang与Liang，Dropout Training as Adaptive Regularization，NeurIPS 2013](https://papers.nips.cc/paper_files/paper/2013/hash/38db3aed920cf82ab059bfccbd02be6a-Abstract.html)。
+**Independent studies.** [Srivastava et al., *Dropout: A Simple Way to Prevent Neural Networks from Overfitting*, JMLR 2014](https://www.jmlr.org/papers/v15/srivastava14a.html); [Wager, Wang and Liang, *Dropout Training as Adaptive Regularization*, NeurIPS 2013](https://papers.nips.cc/paper_files/paper/2013/hash/38db3aed920cf82ab059bfccbd02be6a-Abstract.html).
 
-**内部实验锚点。** TL-E03（形成的实际动作及接收状态影响功能响应）；TL-E04（有限幅度功能响应）；INF-E01（固定学习状态上的查询相关推理）。
+**Internal anchors.** TL-E03 (actual-action formation and receiver dependence), TL-E04 (finite-amplitude response) and INF-E01 (query-dependent frozen inference).
 
 ### 5.2.9 Catastrophic Forgetting：旧目标失效的精确边界
 
