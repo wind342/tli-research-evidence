@@ -777,13 +777,13 @@ For this linear model, the mean prediction of the randomly masked training submo
 
 **Internal anchors.** TL-E03 (actual-action formation and receiver dependence), TL-E04 (finite-amplitude response) and INF-E01 (query-dependent frozen inference).
 
-### 5.2.9 Catastrophic Forgetting：旧目标失效的精确边界
+### 5.2.9 Catastrophic Forgetting: Exact Boundary for Loss of a Previously Correct Target
 
-**推导类型：直接由TLI功能响应和正确性读出式推出，SGD梯度解释采用遗忘理论原条件。**
+**Derivation type:** An exact consequence of TLI functional responses and capability readouts, combined with gradient conditions from the original forgetting literature.
 
-**逐式来源标记。** <sup>[T]</sup> 原响应 \(R_{t,q}=m_q(L_{t+1})-m_q(L_t)\) 与能力读出 \(C_{t,q}=\mathbf1[m_q(L_t)>0]\)。精确求和得 \(m_q(L_T)=m_q(L_0)+\sum_{t<T}R_{t,q}\)，故对最初 \(m_q(L_0)>0\) 的目标，<sup>[R]</sup> 失效当且仅当 \(\sum_{t<T}R_{t,q}\le-m_q(L_0)\)。<sup>[A]</sup> 原持续学习分析的SGD更新 \(\delta_t=-\eta\nabla L_{\rm new}(\theta_t)\) 和可微读出，另外给出**一阶近似** \(R_{t,q}\approx-\eta\nabla m_q^\top\nabla L_{\rm new}\)；旧任务损失的相应变化为 \(\Delta L_{\rm old}\approx-\eta g_{\rm old}^\top g_{\rm new}\)。请区分前一条精确边界与后一条局部近似。
+**Equation provenance.** [T] Response \(R_{t,q}=m_q(L_{t+1})-m_q(L_t)\) and capability readout \(C_{t,q}=\mathbf1[m_q(L_t)>0]\). Exact telescoping gives \(m_q(L_T)=m_q(L_0)+\sum_{t<T}R_{t,q}\). For an initially correct target with \(m_q(L_0)>0\), [R] failure occurs exactly when \(\sum_{t<T}R_{t,q}\le-m_q(L_0)\). [A] With the SGD action \(\delta_t=-\eta\nabla L_{\rm new}(\theta_t)\) and differentiable readouts from the original continual-learning setting, the **first-order approximation** is \(R_{t,q}\approx-\eta\nabla m_q^\top\nabla L_{\rm new}\); the change in old-task loss is \(\Delta L_{\rm old}\approx-\eta g_{\rm old}^\top g_{\rm new}\). The accumulated boundary identity is exact; the gradient relation is local and approximate.
 
-**TLI作用对象。**
+**TLI object.**
 
 \[
 R_{t,q}=m_q(\theta_{t+1})-m_q(\theta_t),\qquad
@@ -791,7 +791,7 @@ C_{t,q}=\mathbf1[m_q(\theta_t)>0].
 \qquad {}^{\scriptscriptstyle\text{[T]}}
 \]
 
-**第一步：精确累计，不需要线性近似。**
+**Step 1: Exact accumulation of functional responses.**
 
 \[
 \boxed{
@@ -800,7 +800,7 @@ m_q(\theta_T)=m_q(\theta_0)+\sum_{t=0}^{T-1}R_{t,q}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-对于初始已正确的旧目标\(m_q(\theta_0)>0\)，在时刻\(T\)的目标失败当且仅当
+For a previously correct target \(m_q(\theta_0)>0\), failure at time \(T\) occurs exactly when
 
 \[
 \boxed{
@@ -809,16 +809,16 @@ m_q(\theta_T)=m_q(\theta_0)+\sum_{t=0}^{T-1}R_{t,q}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-同一个公式还描述保持与恢复：后续的正向功能响应可以使间隔重新跨过零边界，重新得到正确结果。
+The same identity describes retention and recovery: later positive responses can move the margin back across zero and restore correctness.
 
-**第二步：代入被研究对象采用的SGD。** 若新任务的损失为\(L_{\rm new}\)，其更新为\(\delta_t=-\eta g_{\rm new}\)。在可微读出和局部小步长条件下，
+**Step 2: Substitute the original continual-learning SGD action.** For new-task loss \(L_{\rm new}\), the increment is \(\delta_t=-\eta g_{\rm new}\). With a differentiable readout and a sufficiently small step,
 
 \[
 R_{t,q}\approx-\eta\nabla_\theta m_q(\theta_t)^\top g_{\rm new}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-如果旧目标采用可微损失\(L_{\rm old}\)，则
+For a differentiable old-task loss \(L_{\rm old}\),
 
 \[
 \boxed{
@@ -828,13 +828,13 @@ R_{t,q}\approx-\eta\nabla_\theta m_q(\theta_t)^\top g_{\rm new}.
 \qquad {}^{\scriptscriptstyle\text{[R]}}
 \]
 
-梯度点积为负时，当前新任务更新使旧损失的一阶变化为正；为正时则为负。多个任务共享同一批参数，所以一次动作可同时改变许多目标的间隔。
+A negative gradient inner product causes a positive first-order change in old-task loss under the current new-task update; a positive inner product causes the opposite sign. A single action can change many target margins because the tasks share parameters.
 
-**推得的结论。** 遗忘首先是旧目标函数的计算结果越过正确性边界；它不是“能力实体”从参数中消失。保护旧任务的方法本质上是在改变旧目标上累计的功能响应轨迹。
+**Recovered conclusion.** Forgetting is the computational event in which a previously correct target crosses its readout boundary. Methods that protect old tasks act by changing the trajectory of accumulated functional responses to those targets.
 
-**研究对照。** Kirkpatrick等的EWC；Lopez-Paz与Ranzato的GEM；梯度投影与经验回放研究。
+**Research comparison.** Elastic Weight Consolidation (Kirkpatrick et al.); Gradient Episodic Memory (Lopez-Paz and Ranzato); gradient projection and experience replay.
 
-**内部锚点。** TL-E03、TL-E07、TL-E08；[RL-E06](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md)（先掌握、后退化、再恢复）。
+**Internal anchors.** TL-E03, TL-E07 and TL-E08; [RL-E06](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md), which records mastery, subsequent deterioration and recovery.
 
 ### 5.2.10 Grokking：训练/测试读出的不同跨界时间
 
