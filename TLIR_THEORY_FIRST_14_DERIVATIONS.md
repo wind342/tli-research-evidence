@@ -1,3 +1,5 @@
+> **Version note:** This file is a historical research note written under the earlier **TLIR** terminology. The current ICML paper is **[Unified Dynamics of Training, Learning, and Inference in Neural Networks (TLI)](https://github.com/wind342/tli-paper/tree/icml-final/icml)**. Its current experiment, equation, derivation and figure references are indexed in the [TLI/ICML evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md). The original mathematical text and recorded hypotheses below are preserved as research history.
+
 ## 5.2 理论先行外推与独立研究对照
 
 **方程来源约定（统一按 [TLIR_UNIFIED_DYNAMICS_V5.md](TLIR_UNIFIED_DYNAMICS_V5.md) 的编号）。** [T] 表示在本节明确写出的TLIR原方程；[A] 为被外推原研究已经使用的模型与数学条件；[R] 为在代入与计算之后恢复出的具体数学关系。公式中的等号、条件期望、近似号与渐近号不得互换。TLIR的统一动力学方程确定变量之间的关系；具体闭式系数、谱律、损失幂指数等来自被外推研究的原模型条件。每项都必须有实际的代入/消元步骤，不能只做概念映射。
