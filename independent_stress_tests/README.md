@@ -4,8 +4,8 @@ Independent ChatGPT-assisted experiments on two new neural systems, using their 
 
 ## Experiments
 
-- [GNN, four-layer residual message-passing, RMSprop](gnn/GNN_TLIR_独立反证实验报告.md): 3 formal seeds; one frozen finite-amplitude nonlinear-frequency gate **FAILED** (seed 20261024: 4/256 = 1.56% versus a 10% threshold), while both other seeds passed this gate. This formal negative result is retained.
-- [Hard-spiking recurrent SNN, Adagrad](snn/TLIR_脉冲网络独立反证实验报告.md): 4 formal seeds, all 12 operational checks passed per seed; single-branch low-response cases and surrogate-derivative mismatch are retained.
+- [GNN, four-layer residual message-passing, RMSprop](gnn/GNN_TLI_HISTORICAL_TEST_REPORT.md): 3 formal seeds; one frozen finite-amplitude nonlinear-frequency gate **FAILED** (seed 20261024: 4/256 = 1.56% versus a 10% threshold), while both other seeds passed this gate. This formal negative result is retained.
+- [Hard-spiking recurrent SNN, Adagrad](snn/SNN_TLI_HISTORICAL_TEST_REPORT.md): 4 formal seeds, all 12 operational checks passed per seed; single-branch low-response cases and surrogate-derivative mismatch are retained.
 
 ## Source identity and reproduction
 
