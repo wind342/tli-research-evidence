@@ -1,111 +1,111 @@
-> **TLI研究对照**：这是21项已有研究的正反结果比较，供当前TLI统一解释参考。它们是文献对照，不计入九项原生nanoGPT实验或14项正式数学恢复。
+> **TLI research comparisons:** Twenty-one paired results from previously published research, used to examine the explanatory relationships provided by TLI. These are literature comparisons, separate from the nine nanoGPT experiments and fourteen formal mathematical recoveries.
 
-## 5.1 正反结果的统一解释
-### 5.1.1 Sharpness与SAM：参数几何和实际训练效应
+## 5.1 Unified explanations of contrasting findings
+### 5.1.1 Sharpness and SAM: Parameter geometry versus realized training effects
 
-**正面理论／结果——SAM（Foret等）。** 锐度感知最小化在参数邻域中评估损失扰动，以邻域内的较高损失引导优化方向。在研究所测试的任务中，这种训练动作改善了泛化表现，说明局部敏感性可以成为有效的优化控制量。
+**Positive finding — SAM (Foret et al.).** Sharpness-aware minimization evaluates loss perturbations in a parameter neighborhood and uses elevated neighborhood loss to guide optimization. In the reported tasks, this training action improves generalization, demonstrating the practical value of local sensitivity as an optimization control.
 
-**反面理论／结果——Sharpness的重参数化反例（Dinh等）。** 保持神经网络表示函数不变的重参数化可以显著改变原始参数空间中的锐度。因此，相同的输入—输出功能可以对应不同的锐度数值，单独的参数锐度无法唯一决定泛化结果。
+**Contrasting finding — reparameterization of sharpness (Dinh et al.).** Function-preserving reparameterizations can markedly change sharpness measured in the original parameter coordinates. Identical input–output functions can therefore have different sharpness values; raw parameter sharpness alone does not determine generalization uniquely.
 
-**TLI如何统一。** 两项研究测量的是动力学链中的不同对象：Sharpness是当前参数状态的局部几何读数；SAM借助该读数改变实际形成的训练动作。动作进入具体接收状态后，引起目标特定的有限幅度功能响应。因而，某个参数空间指标可以随着坐标表示变化，同时依据该指标设计的优化干预仍然可以改变训练结果。核心关系是“局部几何→训练动作形成→接收状态上的功能响应”，而不是“单一几何数值→泛化好坏”。
+**TLI unification.** The studies measure different objects in the dynamical chain. Sharpness is a local geometric readout of the current parameter state; SAM uses that readout to form a realized training action. Applied to a concrete receiving state, the action produces finite-amplitude, target-specific functional responses. A geometry measure may change under reparameterization while interventions designed from that measure still affect training. The operative chain is **local geometry → formation of an actual action → functional response of the receiving state**.
 
-**内部实验锚点。** TL-E03：同一实际更新在不同接收状态下产生不同功能响应；TL-E04：实际更新的有限幅度响应呈现非线性。
+**Internal anchors.** TL-E03: the same actual update produces different responses in different receiving states. TL-E04: finite-amplitude responses to actual updates can be nonlinear.
 
-### 5.1.2 NTK与特征学习：固定核动力学和表征演化
+### 5.1.2 NTK and feature learning: Fixed-kernel dynamics and evolving representations
 
-**正面理论／结果——神经切线核NTK（Jacot等）。** 在相应无限宽度、惰性训练条件下，网络的输出演化可由固定或近固定的核动力学描述，局部参数变化对功能的作用因而具有可解析的核表示。
+**Positive finding — Neural Tangent Kernel (Jacot et al.).** Under appropriate infinite-width and lazy-training conditions, network-output evolution can be described by fixed or nearly fixed kernel dynamics, giving a tractable kernel representation of the functional effects of local parameter changes.
 
-**反面理论／结果——特征学习参数化（Yang等）。** 在允许实质性特征演化的参数化与训练条件中，内部表征随训练持续改变，网络的后续功能响应需要随之更新，固定核近似不能描述这一过程的全部动力学。
+**Contrasting finding — feature-learning parameterizations (Yang et al.).** Under parameterizations and training regimes that admit substantial feature evolution, internal representations change throughout training. Subsequent functional responses change with those representations, beyond the complete description offered by a fixed-kernel approximation.
 
-**TLI如何统一。** 两者对应接收状态—实际更新—功能响应关系的不同动力学区域：NTK描述功能映射和局部响应变化受限的训练区域；特征学习描述实际更新持续改变内部功能组织、并使后续接收状态发生实质性演化的区域。核动力学与表征学习通过“当前接收状态决定实际更新的响应、更新反过来改变未来接收状态”这一共同关系连接。
+**TLI unification.** These are different regimes of the receiving-state → actual-update → functional-response relation. NTK describes a regime with restricted changes in the functional map and its local responses. Feature learning describes a regime in which actual updates persistently reorganize internal function and substantially alter later receiving states. The common relation is that the current state determines an update's response, and each realized update changes the state available for later responses.
 
-**内部实验锚点。** TL-E03：功能响应依赖接收状态；TL-E04：有限幅度响应存在非线性；TL-E07：真实更新持续重组功能支撑。
+**Internal anchors.** TL-E03: receiving-state dependence. TL-E04: nonlinear finite-amplitude responses. TL-E07: persistent support reorganization through actual updates.
 
-### 5.1.3 Grokking：迟发能力和提前形成的内部机制
+### 5.1.3 Grokking: Delayed observable capability and earlier internal formation
 
-**正面理论／结果——Grokking（Power等）。** 模型训练准确率已经达到高水平或饱和，测试泛化能力却可能在很长训练延迟后迅速提升，呈现明显的外显能力跃迁。
+**Positive finding — Grokking (Power et al.).** Training accuracy may saturate well before test generalization, which can improve abruptly after a long delay, producing an apparent transition in externally measured capability.
 
-**反面理论／结果——Grokking计算回路研究（Nanda等）。** 对内部回路的追踪发现，支撑泛化的结构可以在外显测试能力跃迁之前经历持续的形成与重组；能力读出突然变化时，内部学习过程已经持续了一段时间。
+**Contrasting finding — circuits underlying grokking (Nanda et al.).** Tracking internal computational circuits shows that the structures supporting generalization can form and reorganize continuously before the sudden test-accuracy transition. Internal learning may therefore precede the observed capability change.
 
-**TLI如何统一。** Learning对应功能支撑的持久重组，Capability对应目标功能状态穿过读出边界后的可观察结果。支撑组织可逐步变化，而某个目标的正确性由读出间隔的符号决定；当该间隔跨越零边界时，连续积累的学习表现为离散能力跃迁。两类研究分别观察了同一过程的内部形成轨迹和外部读出时刻。
+**TLI unification.** Learning corresponds to persistent reorganization of functional support, whereas capability is the observable result of crossing a target-specific readout boundary. Support can change continuously even when correctness is determined by the sign of a target margin; crossing zero converts accumulated internal changes into a discrete observed transition. The two lines of research measure internal formation and external readout within the same process.
 
-**内部实验锚点。** TL-E06：组件干预揭示分布式功能支撑；TL-E07：真实更新重组支撑；TL-E08：能力转变由目标读出边界决定；TL-P01：预测更新后的目标边界结果。
+**Internal anchors.** TL-E06: distributed support measured by component interventions. TL-E07: actual updates reorganize support. TL-E08: capability transitions depend on readout boundaries. TL-P01: prediction of post-update target-boundary outcomes.
 
-### 5.1.4 Neural Collapse：准确率饱和和持续表征形成
+### 5.1.4 Neural Collapse: Saturated accuracy and continuing representation formation
 
-**正面理论／结果——正确率读出饱和。** 当训练样本已被正确分类、训练错误率降至零时，基于正确／错误的离散能力指标达到平台期；在该指标下，后续训练不再增加已正确样本的数量。
+**Positive observation — saturated correctness readout.** When all training examples are correctly classified and training error reaches zero, the discrete correct/incorrect metric reaches a plateau; subsequent updates do not increase the number of already-correct examples under that metric.
 
-**反面理论／结果——Neural Collapse（Papyan等）。** 即使训练误差已经为零，深层特征与分类器仍可持续演化，并形成类内聚集、类别均值几何与分类器方向的特定结构关系。
+**Contrasting finding — Neural Collapse (Papyan et al.).** Even after zero training error, deep features and classifiers can continue evolving toward particular within-class concentration, between-class mean geometry and classifier-direction relationships.
 
-**TLI如何统一。** 正确率只记录目标读出边界的哪一侧；学习记录的是持久的功能组织状态。目标已经被正确分类时，实际训练动作仍可改变目标间隔、组件责任分配与特征几何。因此，同一训练阶段可以同时具有稳定的离散正确率和持续变化的内部功能结构。
+**TLI unification.** Accuracy records which side of the target-specific decision boundary an output occupies, whereas learning concerns the persistent functional organization. Continued training can change margins, component allocations and feature geometry after discrete correctness has stabilized. The same training period can therefore show constant observed accuracy and changing internal structure.
 
-**内部实验锚点。** TL-E07：能力不变时支撑仍可重组；TL-E08：读出边界决定能力状态；RL-E06：准确率下降前目标间隔已持续变化。
+**Internal anchors.** TL-E07: support can reorganize without a capability change. TL-E08: the readout boundary determines capability state. RL-E06: margins evolve before correctness declines.
 
-### 5.1.5 Attention：机制有效性和权重解释争论
+### 5.1.5 Attention: Effective computation and the interpretation of attention weights
 
-**正面理论／结果——Attention的计算机制（Vaswani等；Wiegreffe与Pinter）。** Attention根据输入内容和查询条件改变信息加权、路由及组合；受控比较也表明，适当构造的注意力解释可以反映某些模型行为机制。
+**Positive finding — attention computation (Vaswani et al.; Wiegreffe and Pinter).** Attention changes information weighting, routing and combination as a function of inputs and queries. Controlled comparisons also show that appropriately designed attention explanations can reveal aspects of model behavior.
 
-**反面理论／结果——Attention权重解释的反例（Jain与Wallace）。** 注意力权重与梯度特征重要性可能不一致；明显不同的注意力权重分布也可能产生相近的最终输出，因而权重数值与完整功能因果作用之间存在可测量的差别。
+**Contrasting finding — attention-weight interpretation counterexamples (Jain and Wallace).** Attention weights can disagree with gradient-based importance measures, and sharply different attention distributions can yield similar outputs. This exposes a measurable difference between weight values and complete functional causal effects.
 
-**TLI如何统一。** 冻结的学习状态可以依查询调用不同功能支撑，并通过组件之间的组合产生输出。Attention权重刻画一种瞬时路由和加权关系；完整功能作用则由相应组件及其组合的实际输出效应决定。于是，注意力作为计算机制有效，与单张权重图无法完整表达分布式因果支撑这两个结果可以同时成立。
+**TLI unification.** A fixed learned state can recruit different functional support for different queries and combine recruited components into an output. Attention weights describe one instantaneous routing and weighting mechanism; full functional effects depend on the realized outputs of individual components and their interactions. Attention can be an effective computation while a single weight visualization remains an incomplete account of distributed causal support.
 
-**内部实验锚点。** INF-E01：冻结推理的组件门控、成对干预和版本回滚揭示查询依赖的支撑调用、非加性交互及已学习版本依赖。
+**Internal anchor.** INF-E01: frozen-inference component gating, paired interventions and version rollback reveal query-dependent support recruitment, non-additive interaction and dependence on learned component versions.
 
-### 5.1.6 RLHF：对齐增益和能力权衡
+### 5.1.6 RLHF: Alignment gains and capability trade-offs
 
-**正面理论／结果——偏好反馈与指令优化（Ouyang等）。** 用人类偏好与反馈信号进一步训练模型，可以增强目标指令遵循、偏好一致性及相应任务表现，体现反馈对学习方向的调节作用。
+**Positive finding — preference feedback and instruction tuning (Ouyang et al.).** Further training with human preferences and feedback can improve instruction following, preference alignment and task-specific performance, illustrating the influence of feedback on the direction of learning.
 
-**反面理论／结果——Alignment Tax。** 同类反馈训练也观察到部分原有基准能力下降；在训练中混入更广泛的预训练分布，可以缓解这些表现退化，说明目标反馈的收益和其他能力的保持存在分配关系。
+**Contrasting finding — alignment tax.** Similar feedback-based training has also been associated with decreases on some prior benchmarks. Mixing more broadly distributed pretraining data into the training stream can mitigate such degradation, indicating a trade-off between target-directed feedback and the retention of other capabilities.
 
-**TLI如何统一。** 反馈改变后续训练样本、奖励与实际更新的分布，实际更新又在共享接收状态中重新配置多项能力的功能支撑。被集中强化的能力获得更多支撑，其他已经掌握的能力可能先损失读出间隔，再发生正确率下降；平衡反馈推动支撑重新分配，使原有能力恢复。正面增益与能力权衡来自同一个反馈—训练—学习闭环。
+**TLI unification.** Feedback changes the distribution of subsequent training examples, rewards and realized updates. Applied to a shared receiving state, those updates redistribute support across capabilities. A concentrated target can gain support while other mastered capabilities first lose margin and later correctness; balanced feedback can redirect support and restore prior capabilities. Targeted gains and cross-capability trade-offs arise within the same feedback–training–learning loop.
 
-**内部实验锚点。** RL-E06：正确反馈集中造成其他已掌握技能的支撑与能力下降；反馈重新均衡使其恢复。
+**Internal anchor.** RL-E06: concentrated correct feedback reduces support and performance in other mastered skills, while rebalancing feedback produces recovery.
 
-### 5.1.7 奖励代理过优化：错误目标绑定和正确反馈过度集中
+### 5.1.7 Reward-proxy overoptimization: Misbound objectives versus concentrated correct feedback
 
-**正面理论／结果——奖励模型与偏好优化。** 当真实目标难以直接写成可微训练损失时，奖励模型及偏好信号可以为策略提供可执行的优化方向，促进目标行为形成。
+**Positive finding — reward models and preference optimization.** Where the real objective is difficult to express as a differentiable loss, reward models and preference signals supply executable optimization directions for policy training.
 
-**反面理论／结果——Goodhart与奖励过优化。** 奖励模型是实际偏好的代理量；当优化过程逐渐利用代理与真实目标之间的偏差时，代理得分继续改善，真实目标表现却可能下降。
+**Contrasting finding — Goodhart effects and reward overoptimization.** A reward model is a proxy for the underlying preference. Training can exploit differences between proxy and true objective, improving the proxy score while reducing real objective performance.
 
-**TLI如何统一。** 反馈通过两条具体关系影响实际训练动作。第一条是**内容与信用绑定**：奖励归属于哪个动作、哪个时间位置，决定优化器收到的训练信号；第二条是**反馈分布**：即使每个反馈值完全正确，长期集中作用于少数目标也会改变共享功能支撑的分配。代理失配改变了动作的目标绑定；正确反馈过度集中改变了动作的长期分布。两者通过相同的“反馈关系→实际动作→功能支撑与能力”闭环产生不同结果。
+**TLI unification.** Feedback affects realized actions through two distinct relationships. First, **content and credit binding** determine which action and temporal position receive a reward and therefore which signal reaches the optimizer. Second, **feedback allocation** determines the long-term distribution of training actions: even fully correct feedback concentrated on a few targets can reorganize shared functional support. Proxy mismatch changes the objective assigned to actions; excessive concentration of correct feedback changes the sequence of actions. Both operate through **feedback → actual action → functional support and capability**, with distinct consequences.
 
-**内部实验锚点。** RL-E01/E02：反馈绑定与因果信用改变实际训练作用；RL-E06：完全正确但过度集中的反馈也会引起跨技能支撑重分配与能力下降。
+**Internal anchors.** RL-E01/E02: feedback binding and causal credit alter training effects. RL-E06: concentrated correct feedback can also redistribute cross-skill support and reduce other capabilities.
 
-### 5.1.8 Self-training：伪标签学习收益和递归模型坍塌
+### 5.1.8 Self-training: Pseudo-label gains and recursive model collapse
 
-**正面理论／结果——Noisy Student与自训练（Xie等）。** 利用模型产生的伪标签扩展训练数据，再对学生模型进行训练，可以提升ImageNet分类表现及若干稳健性指标，显示生成数据作为反馈输入能够促进学习。
+**Positive finding — Noisy Student and self-training (Xie et al.).** Pseudo-labels generated by a model can expand training data for a student, improving ImageNet classification and some robustness metrics. Generated data can therefore serve as beneficial feedback into learning.
 
-**反面理论／结果——递归模型坍塌（Shumailov等）。** 多代模型主要依赖前代生成的数据继续训练时，低概率模式与分布尾部可能逐代消失；持续保留真实数据（Gerstgrasser等）可以改变这种长期信息衰减过程。
+**Contrasting finding — recursive model collapse (Shumailov et al.).** When successive models predominantly train on previous models' generated data, low-probability patterns and distribution tails can progressively disappear. Retaining genuine data across iterations (Gerstgrasser et al.) changes this long-term information-loss process.
 
-**TLI如何统一。** 两者共用同一条反馈链：推理输出进入新训练数据，数据组织决定下一轮实际动作，实际动作又改变未来学习状态和推理分布。高质量、多样化伪标签可扩大有效训练信号；递归替换使尾部模式的有效输入持续减少，导致这些模式所依赖的功能支撑不断削弱；持续引入真实数据改变训练输入分布，维持相关模式的学习机会。
+**TLI unification.** Both studies use a feedback chain: inference outputs enter future training data, the data distribution shapes realized actions, and those actions change later learned states and inference distributions. Diverse, high-quality pseudo-labels can enlarge the effective training signal. Recursive replacement can diminish input for tail patterns and weaken the functional support they rely on; continual real-data input changes the training distribution and preserves learning opportunities for those patterns.
 
-**内部实验锚点。** TL-E07：训练更新造成持久功能支撑重组；RL-E06：反馈分配改变支撑集中与能力保持，再平衡使能力恢复。
+**Internal anchors.** TL-E07: training updates persistently reorganize support. RL-E06: feedback allocation changes support concentration and capability retention, with recovery after rebalancing.
 
-### 5.1.9 Batch Normalization：训练收益与机制解释
+### 5.1.9 Batch Normalization: Training gains and their mechanism
 
-**正面理论／结果——Batch Normalization（Ioffe与Szegedy）。** BN在训练过程中规范化中间层激活，在多种深层网络中加快优化并提高训练稳定性。最初的解释强调缓解内部协变量偏移（internal covariate shift）。
+**Positive finding — Batch Normalization (Ioffe and Szegedy).** BN normalizes intermediate activations during training and improves speed and stability in various deep networks. The original explanation emphasized reduction of internal covariate shift.
 
-**反面理论／结果——优化平滑性解释（Santurkar等）。** 后续受控实验发现，BN的训练收益与内部协变量偏移的变化并不呈现原先预期的必然关系；其对损失地形、梯度可预测性及有效步长的改变，更直接地影响优化过程。
+**Contrasting finding — optimization smoothness (Santurkar et al.).** Later controlled studies found no necessary relation between BN's training benefit and the expected change in internal covariate shift. Changes to the loss landscape, gradient predictability and effective step size more directly affect optimization.
 
-**TLI如何统一。** BN改变实际更新进入的接收状态及其局部功能映射，使相同名义优化设置下的动作产生不同响应。内部激活统计与局部优化几何是接收状态的不同读数；训练收益来自状态、动作与后续功能响应的共同演化。原始经验收益和后续机制分析分别刻画了干预效果及其动力学来源。
+**TLI unification.** BN changes the receiving state and local functional mapping on which actual updates act, leading to different responses under nominally similar optimization settings. Internal activation statistics and local optimizer geometry are different readouts of a receiving state; training improvements emerge from the joint evolution of state, action and functional response. The original empirical gain and the later mechanism study characterize the intervention effect and its dynamical basis.
 
-**内部实验锚点。** TL-E03：同一已形成更新在不同接收状态上产生不同响应；TL-E04：实际更新具有状态相关的有限幅度响应。
+**Internal anchors.** TL-E03: identical formed updates act differently across receiving states. TL-E04: actual updates produce state-conditioned finite-amplitude responses.
 
-### 5.1.10 Large-Batch Training：大批量泛化差距与训练策略补偿
+### 5.1.10 Large-Batch Training: Generalization gap and training-strategy compensation
 
-**正面理论／结果——Large-batch Generalization Gap（Keskar等）。** 部分大批量训练实验观察到测试性能落后于小批量，并发现所得解的锐度及优化轨迹存在差异。
+**Positive finding — large-batch generalization gap (Keskar et al.).** Some large-batch experiments report worse test performance than small-batch training and differences in the sharpness of learned solutions and optimization trajectories.
 
-**反面理论／结果——学习率缩放与Warmup（Goyal等；Hoffer等）。** 适当改变学习率、预热、训练时长及其他优化条件后，大批量训练能够达到接近小批量训练的准确率。
+**Contrasting finding — learning-rate scaling and warmup (Goyal et al.; Hoffer et al.).** With suitable learning-rate choices, warmup, training duration and related adjustments, large-batch training can approach small-batch accuracy.
 
-**TLI如何统一。** 批量大小通过采样梯度、噪声协方差及优化器历史影响实际训练动作；学习率和预热进一步改变动作幅度与接收状态轨迹。因此，大批量造成的泛化差距与经训练策略调整后的性能恢复，分别对应不同动作分布和后续支撑形成路径。核心关系是“采样与优化规则→实际动作→接收状态上的功能响应→学习结果”。
+**TLI unification.** Batch size influences realized actions through sampled gradients, noise covariance and optimizer history. Learning-rate changes and warmup affect action magnitudes and receiving-state trajectories. The generalization gap and its mitigation through training strategy are therefore associated with different action distributions and paths of functional-support formation. The common chain is **sampling and optimization rules → actual action → response at the receiving state → learning outcome**.
 
-**内部实验锚点。** TL-E03：实际更新效应依赖接收状态，优化器记忆影响动作形成；TL-E05：目标更新几何F3与接收状态F5共同制约响应。
+**Internal anchors.** TL-E03: receiving-state dependence and optimizer-memory effects on action formation. TL-E05: target-specific update geometry F3 and receiving-state factors F5 condition responses.
 
-### 5.1.11 Scaling Laws与Chinchilla：规模规律与计算最优分配
+### 5.1.11 Scaling Laws and Chinchilla: Scaling regularities versus compute-optimal allocation
 
-**正面理论／结果——神经语言模型Scaling Laws（Kaplan等）。** 在研究覆盖的训练条件中，模型规模、数据量和计算量与交叉熵损失呈稳定幂律关系，支持依据规模规律安排训练资源。
+**Positive finding — neural language model scaling laws (Kaplan et al.).** Under the training conditions studied, model size, data and compute exhibit stable empirical power-law relationships with cross-entropy loss, informing resource allocation.
 
-**反面理论／结果——Chinchilla计算最优训练（Hoffmann等）。** 扩展模型规模与训练token数量的联合扫描表明，同等计算预算下，更充分训练的较小模型可以优于参数更多但数据训练不足的模型，得到不同的计算最优分配。
+**Contrasting finding — compute-optimal Chinchilla training (Hoffmann et al.).** Joint sweeps of parameters and training tokens show that, at fixed compute, a smaller model trained on more data can outperform a larger but undertrained model, yielding a different compute-optimal allocation.
 
 **TLI如何统一。** 模型规模、数据暴露量和计算预算共同控制可达到的接收状态与训练动作序列。某一资源瓶颈占主导时可形成稳定的局部幂律；数据瓶颈与模型瓶颈的相对作用变化时，最优参数量和训练token分配随之变化。两类规律分别描述训练动力学在不同有效资源配置下的宏观表现。
 
