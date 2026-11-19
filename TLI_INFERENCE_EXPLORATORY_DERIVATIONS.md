@@ -314,9 +314,9 @@ Z_{t+1}=F(Z_t,B_t)=\mathcal T\bigl(Z_t,\mathcal U(Z_t,B_t)\bigr),\quad
 B_{t+1}=\mathcal B\bigl(\mathcal I(L_t,x,c),E\bigr).
 $$
 
-在可微固定点附近，\(\mathcal I_Z\) 表示通过 \(Z\mapsto L\) 得到的导数。
+Near a differentiable fixed point, \(\mathcal I_Z\) denotes the derivative through the mapping \(Z\mapsto L\).
 
-### [R] 局部稳定Jacobian
+### [R] Local stability Jacobian
 
 $$
 \boxed{
@@ -329,11 +329,11 @@ J_{\mathrm{loop}}=
 }
 $$
 
-偏导均在同一固定点、固定外部条件下求值。反馈规则 \(\mathcal B(Y_t,E_t)\) 不以先前 \(B_t\) 为独立参数，因此右下角为0。若谱半径 \(\rho(J_{\mathrm{loop}})<1\)，固定点局部渐近稳定；若有模大于1的特征值，线性化有增长方向。
+All partial derivatives are evaluated at the same fixed point with external conditions held fixed. Because the feedback map \(\mathcal B(Y_t,E_t)\) has no previous-feedback argument \(B_t\), the lower-right entry is zero. If \(\rho(J_{\mathrm{loop}})<1\), the fixed point is locally asymptotically stable; a characteristic root of modulus above one gives a growing linearized direction.
 
-### [A] 二维线性特例
+### [A] Two-dimensional linear specialization
 
-考虑 \(Y_t=L_t\)、\(L_{t+1}=(1-\alpha)L_t+\beta B_t\)、\(B_{t+1}=\kappa Y_t\)，取 \(0<\alpha<1\)、\(\beta,\kappa\ge0\)。则
+Take \(Y_t=L_t\), \(L_{t+1}=(1-\alpha)L_t+\beta B_t\) and \(B_{t+1}=\kappa Y_t\), where \(0<\alpha<1\) and \(\beta,\kappa\ge0\). Then
 
 $$
 J=\begin{pmatrix}1-\alpha&\beta\\\kappa&0\end{pmatrix},\quad
@@ -344,50 +344,50 @@ $$
 \lambda_\pm=\frac{(1-\alpha)\pm\sqrt{(1-\alpha)^2+4\beta\kappa}}2.
 $$
 
-因此矩阵的谱半径为 \(\lambda_+\)，从而
+The spectral radius is therefore \(\lambda_+\), giving
 
 $$
 \boxed{\rho(J)<1\iff\beta\kappa<\alpha,\quad
 \rho(J)=1\iff\beta\kappa=\alpha.}
 $$
 
-此前记忆反馈模型 \(B_{t+1}=\gamma B_t+\kappa Y_t\) 的阈值是 \(\beta\kappa=\alpha(1-\gamma)\)；当前版本使用ICML论文的反馈输入形式，取无历史反馈项的特例。
+The earlier feedback-memory model \(B_{t+1}=\gamma B_t+\kappa Y_t\) yielded the threshold \(\beta\kappa=\alpha(1-\gamma)\). The current specialization uses the ICML paper's feedback arguments and omits the additional historical-feedback term.
 
-### [R] 功能响应与能力边界
+### [R] Functional response and the capability boundary
 
-若 \(m_q\) 可微，反馈增量 \(\Delta B\) 在固定接收状态附近产生局部变化
+If \(m_q\) is differentiable, a feedback increment \(\Delta B\) produces the following local change around a fixed receiving state:
 
 $$
 \Delta m_q\simeq\nabla_Zm_q^\top\mathcal T_A\mathcal U_B\,\Delta B.
 $$
 
-不同目标的响应方向由各自的读出梯度决定，累积响应是否跨越能力边界由TLI读出方程判定。这里的数值稳定阈值属于探索性二维线性模型，不是RL-E05/E06实验测得的阈值。
+The response direction depends on each target's readout gradient; accumulated responses cross capability boundaries according to the TLI readout equations. The numerical stability threshold here belongs to this exploratory two-dimensional linear model. RL-E05/E06 measure different feedback effects in an experimental GRU.
 
-### 外部证据
+### Related published evidence
 
-- Vincent Liu、Han Wang、Ruo Yu Tao、Khurram Javed、Adam White、Martha White，*Measuring and Mitigating Interference in Reinforcement Learning*，CoLLAs 2023，报告干扰测量与控制性能不稳定之间的联系：[PMLR](https://proceedings.mlr.press/v232/liu23a.html)。
-- Brahma S. Pavse 等人，*Learning to Stabilize Online Reinforcement Learning in Unbounded State Spaces*，ICML 2024，研究在线 RL 的策略稳定性，并采用稳定性方法：[PMLR](https://proceedings.mlr.press/v235/pavse24a.html)。
-- Ali Saheb Pasand 等人，*Stable Deep Reinforcement Learning via Isotropic Gaussian Representations*，ICML 2026，分析非平稳学习目标下的表示稳定性与训练不稳定：[PMLR](https://proceedings.mlr.press/v306/pasand26a.html)。
+- Vincent Liu, Han Wang, Ruo Yu Tao, Khurram Javed, Adam White and Martha White, *Measuring and Mitigating Interference in Reinforcement Learning* (CoLLAs 2023), relate measures of interference to instability in control performance; [PMLR](https://proceedings.mlr.press/v232/liu23a.html).
+- Brahma S. Pavse et al., *Learning to Stabilize Online Reinforcement Learning in Unbounded State Spaces* (ICML 2024), study online-RL policy stability using stability-based methods; [PMLR](https://proceedings.mlr.press/v235/pavse24a.html).
+- Ali Saheb Pasand et al., *Stable Deep Reinforcement Learning via Isotropic Gaussian Representations* (ICML 2026), examine representation stability and training instability under nonstationary targets; [PMLR](https://proceedings.mlr.press/v306/pasand26a.html).
 
-**证据结论：** 外部研究支持 RL／反馈系统中干扰和稳定性问题的实际存在，但**没有直接验证本节的 TLI 局部 Jacobian 或特例阈值等式**。TLI 自身的 RL-E05/E06 提供反馈分配、功能支撑变化、其他能力损失与恢复的独立实验锚点，不能重标为本节新实验。
+**Evidence interpretation:** External work establishes that interference and stability are substantive problems in RL and feedback-driven systems. TLI's RL-E05/E06 provide separate experimental observations on feedback allocation, functional support, cross-capability loss and recovery. The local Jacobian and threshold above are derived for the stated mathematical specialization.
 
 ---
 
-## 6. 数学推论、外部证据及现有 TLI 结果的对应表
+## 6. Correspondence among mathematical deductions, external research and TLI evidence
 
-| 探索 ID | 严格数学内容 | 外部证据的准确作用 | 记录性质 |
+| Exploration | Exact mathematical result | Role of external evidence | Research status |
 |---|---|---|---|
-| E-I01 | 完整行为等价不蕴含同增量更新后的等价：明确代数反例；给出商空间转移的相容条件 | 函数等价表示与初始化依赖的相关理论／实验 | 新反例分析，未新增原生干预 |
-| E-I02 | 指定假说模型下的贝叶斯预测及期望对数后验赔率恒等式 | 贝叶斯式 ICL 的已有理论与实验 | 原方程的概率模型特化 |
-| E-I03 | 压缩推理迭代 + Lipschitz 读出下的能力边界充分步数 | 测试时计算的收益与非单调经验现象 | 条件性数学上界；非通用推理规模律 |
-| E-I04 | 指定同步反馈闭环的 Jacobian、二维线性特例稳定阈值 | RL 干扰、策略／表示稳定性已有研究 | 条件性控制理论特化；非 GRU 实测阈值 |
+| E-I01 | Complete behavioral equivalence need not survive a common update: explicit counterexample and compatibility condition for quotient transitions | Studies of function-equivalent representations and initialization dependence | Mathematical counterexample |
+| E-I02 | Bayesian prediction and the expected log posterior-odds identity for a specified hypothesis family | Published Bayesian-like in-context learning theory and experiments | Probabilistic specialization of inference |
+| E-I03 | Sufficient inference-step budget for crossing a target boundary under contraction and a Lipschitz readout | Test-time compute gains and nonmonotone empirical effects | Conditional mathematical upper bound |
+| E-I04 | Jacobian of a synchronous feedback loop and a threshold in its two-dimensional linear specialization | RL interference and policy/representation stability research | Conditional control-theoretic specialization |
 
-**共同发现（探索性）：** TLI的状态—训练动作—持久功能组织—冻结推理—能力读出—反馈关系，在分别加入原研究的数学条件后，连接到行为可辨识性、贝叶斯后验、推理计算收敛和闭环稳定性。四项结果属于条件性数学特化；所引外部文献提供各领域的理论与实验参照。
+**Common finding (exploratory):** The same TLI sequence—state, training action, persistent functional organization, frozen inference, capability readout and feedback—can be specialized using established mathematical conditions to connect behavioral identifiability, Bayesian posteriors, convergence of inference computation and closed-loop stability. The four deductions are conditional mathematical results; the cited papers supply related domain-specific theory and evidence.
 
-## 7. 记录边界与出处
+## 7. Research records and provenance
 
-1. **已建立的 TLI 来源**： [TLI_UNIFIED_DYNAMICS.md](TLI_UNIFIED_DYNAMICS.md)；[实验导航](EXPERIMENT_INDEX.md)；[INF-E01 原生冻结推理](experiments/gfg_nanogpt_training_learning_inference_projection_v1/)；[INF-G01 跨系统无 Attention 冻结推理](experiments/gfg_cross_system_frozen_inference_projection_v1/)；[RL-E05/E06 证据链](RL_EVIDENCE_CHAIN.md)。
-2. **本文内容**：四项条件性数学探索、对应公开研究与证据分类；研究性质为数学推导及文献核对。
-3. **既有研究**：14项正式外推、冻结实验协议、历史数据、机器结果及独立检查器仍按各自的原始版本保存。
+1. **Established TLI sources:** [unified dynamics](TLI_UNIFIED_DYNAMICS.md); [experiment index](EXPERIMENT_INDEX.md); [native INF-E01 frozen inference](experiments/gfg_nanogpt_training_learning_inference_projection_v1/); [INF-G01 attention-free cross-system inference](experiments/gfg_cross_system_frozen_inference_projection_v1/); [RL-E05/E06 feedback evidence](RL_EVIDENCE_CHAIN.md).
+2. **Contents of this note:** Four conditional mathematical explorations, their corresponding published research and a classification of evidence type.
+3. **Existing records:** Fourteen formal recoveries, frozen experimental protocols, historical data, machine results and independent checkers remain stored under their registered versions.
 
-**简要结论：** TLI 的推理方程 \(\mathcal I\) 与此前已建立的训练、功能响应、能力读出及反馈方程联立后，在明确数学条件下，可以推导出四组可核查的关系，并与多个独立研究领域的已发表理论和实验形成可审查的对应。这是一次**探索性数学外推与文献核对记录**，而非正式论文的新实验证明。
+**Conclusion:** Combining the TLI inference equation \(\mathcal I\) with the established training, response, capability-readout and feedback equations yields four verifiable relations under explicit mathematical conditions. These connect to published theory and experiments from distinct fields as exploratory mathematical deductions and a literature-based comparison.
