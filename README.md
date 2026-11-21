@@ -9,7 +9,7 @@ This repository accompanies the current **TLI paper**, [*Unified Dynamics of Tra
 | Training and receiving-state interventions | [TL-E01–TL-E05](TLI_ICML_PAPER_EVIDENCE_MAP.md#21-training-realized-updates-and-receiving-states) |
 | Learning, support reallocation and capability | [TL-E06–TL-E08](TLI_ICML_PAPER_EVIDENCE_MAP.md#22-learning-distributed-support-and-capability-boundaries) |
 | Frozen inference | [INF-E01](TLI_ICML_PAPER_EVIDENCE_MAP.md#23-inference-frozen-recruitment-of-learned-support) |
-| TL-E05-derived boundary predictor | [TL-P01](TLI_ICML_PAPER_EVIDENCE_MAP.md#31-prediction-derived-from-tl-e05) |
+| Theory-derived target-boundary predictor | [TL-P01](TLI_ICML_PAPER_EVIDENCE_MAP.md#31-theory-derived-target-boundary-prediction) |
 | Five additional TLI systems | [ResNet, diffusion, MoE, GNN, SNN](TLI_ICML_PAPER_EVIDENCE_MAP.md#32-six-tli-systems) |
 | Seventh system: GRU feedback | [RL-E05/RL-E06](TLI_ICML_PAPER_EVIDENCE_MAP.md#4-feedback-allocation-experiments-in-the-shared-gru-icml-experimental-section) |
 | Unified equations, simple theory and 14 mathematical derivations | [ICML mathematical map](TLI_ICML_PAPER_EVIDENCE_MAP.md#5-unified-equations-and-mathematical-unification-icml) |

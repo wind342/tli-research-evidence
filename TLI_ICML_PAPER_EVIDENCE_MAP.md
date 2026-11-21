@@ -48,7 +48,7 @@ The introduction motivates the experimentally established TLI relations. The [ex
 | TL-E02 | Pausing parameter–optimizer evolution delays formation; clipping control | [Intervention contract](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/contracts/intervention_api.json), [checkpoint forks](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/checkpoint_fork.py) | [Archived executions and causal evaluations](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/research_archive/entries/) |
 | TL-E03 | Same formed update, different receiving states; separate optimizer-memory exchanges | [Reciprocal protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/RECIPROCAL_MATCHED_PAIR_PROTOCOL_V2.json), [P2 local response](experiments/gfg_nanogpt_stepwise_support_transition_v1/P2_RECIPROCAL_LOCAL_RESPONSE_PROTOCOL.json), [optimizer exchange](experiments/gfg_nanogpt_stepwise_support_transition_v1/H20_RECIPROCAL_OPTIMIZER_EXCHANGE_PROTOCOL.json) | [Reciprocal validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/reciprocal_validator.py), [independent replay](experiments/gfg_nanogpt_stepwise_support_transition_v1/independent_replay_validator.py) |
 | TL-E04 | Finite-amplitude response paths, including nonlinear morphologies | [Amplitude-path protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json) | [Path validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py), [GFG validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_gfg_validator.py) |
-| TL-E05 | Seven frozen conditioning-factor blocks across 12 development runs, 72 finite-amplitude sections and 15,264 identity-aligned target responses; F1 target boundary, F3 target-update geometry and F5 receiving state identified as primary families | [Frozen contract](experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md), [analysis and cross-run matching](experiments/gfg_nanogpt_response_factor_analysis_v1/analysis.py), [2,000 clustered-bootstrap resamples and factor-order/leave-one-out tests](experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py) | [Independent validator](experiments/gfg_nanogpt_response_factor_analysis_v1/validator.py); [public verification record](PUBLIC_EVIDENCE_MATRIX.md) |
+| TL-E05 | Seven frozen conditioning-factor blocks across 12 development runs, 72 finite-amplitude sections and 15,264 identity-aligned target responses; F1 target boundary, F3 target-update geometry and F5 receiving state identified as primary families in those original runs | [Frozen contract](experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md), [analysis and cross-run matching](experiments/gfg_nanogpt_response_factor_analysis_v1/analysis.py), [2,000 clustered-bootstrap resamples and factor-order/leave-one-out tests](experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py) | [Independent validator](experiments/gfg_nanogpt_response_factor_analysis_v1/validator.py); [public verification record](PUBLIC_EVIDENCE_MATRIX.md) |
 
 ### 2.2 Learning: distributed support and capability boundaries
 
@@ -71,13 +71,13 @@ Undefined allocations are not zero support. TL-E08's measured endpoint facts are
 
 ## 3. Prediction and cross-system validation (ICML experimental section and appendix)
 
-### 3.1 Prediction derived from TL-E05
+### 3.1 Theory-derived target-boundary prediction
 
 **TL-P01:** [protocol](experiments/gfg_nanogpt_actual_update_boundary_v1/PROTOCOL_FREEZE.md), [results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md), [analysis](experiments/gfg_nanogpt_actual_update_boundary_v1/analysis.py), [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py).
 
 Confirmation: **4,652/5,088 = 91.43% accuracy; 91.49% four-transition macro recall**. The 92.17% confirmation balanced accuracy is a different metric. The all-run total is 14,069/15,264 with 91.30% four-transition macro recall.
 
-The direct TL-P01 algorithm computes target-boundary outcomes from an already formed update and pre-response internal quantities. Separate coordinate-transport analyses evaluate KNN models.
+The direct TL-P01 algorithm implements the established TLI relations among realized updates, functional responses and capability readouts. It approximates the post-update competitor gaps using first and second directional responses of the pre-update hidden representation and output-head changes, then reads out the target boundary. Separate coordinate-transport analyses evaluate KNN models. See the [mathematical formulation](theory/TLI_UNIFIED_DYNAMICS.md#4-quantitative-prediction-from-the-established-dynamics--tl-p01).
 
 ### 3.2 Six TLI systems
 

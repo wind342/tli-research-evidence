@@ -204,7 +204,7 @@ r_{t,q}(\alpha)\ne\alpha\,r_{t,q}(1).
 \tag{9}
 \]
 
-TL-E05 then studies *why the response of the same identified target differs between real training histories*. Its frozen analysis separates seven prior-information blocks, matches identical target identities across runs, tests alternative factor orders and leave-one-block-out comparisons, and uses run-pair-clustered bootstrap uncertainty. The principal response-conditioning families are
+TL-E05 then studies *why the response of the same identified target differs between real training histories*. Its frozen analysis separates seven prior-information blocks, matches identical target identities across runs, tests alternative factor orders and leave-one-block-out comparisons, and uses run-pair-clustered bootstrap uncertainty. In the original twelve runs, the analysis identified the following three primary response-conditioning families. Equation (10) records this experiment's factor grouping, separate from the coupled TLI equations (1)–(5):
 
 \[
 \boxed{
@@ -218,7 +218,7 @@ TL-E05 then studies *why the response of the same identified target differs betw
 - **F3 — target–update geometry:** the realized update's magnitude, component distribution, and directional relationship to the identified target;
 - **F5 — receiving parameter/optimizer state:** the pre-update parameter configuration, optimizer memory, preconditioning summaries, and their interactions with the formed update.
 
-The frozen TL-E05 analysis uses 12 development histories, 72 update sections, 15,264 identity-aligned target responses, and 2,000 clustered bootstrap replicates. \(\mathcal F_{t,q}\) records measured families of response-conditioning information; their operational components can be adapted to the native state of a different optimizer and architecture.
+The frozen TL-E05 analysis uses 12 development histories, 72 update sections, 15,264 identity-aligned target responses, and 2,000 clustered bootstrap replicates. \(\mathcal F_{t,q}\) records the measured factor families in that original experiment.
 
 **Experimental anchors:** [amplitude-path protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json); [amplitude-path validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py); [TL-E05 frozen factor contract](../experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md); [factor-analysis implementation](../experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py).
 
@@ -378,7 +378,7 @@ Together these interventions establish feedback allocation as a causal control o
 
 ## 4. Quantitative prediction from the established dynamics — TL-P01
 
-The realized-update and target-boundary measurements yield a concrete prediction task: **after an update has been formed, predict its effect on an identified target's decision boundary before evaluating the updated network on that target**.
+Equations (2) and (3), with the signed-margin readout in Equation (17), give a concrete prediction task: **after an update has been formed, approximate its functional response and read out the resulting target capability before evaluating the updated network on that target**. TL-P01 implements these established TLI relations.
 
 For a network with hidden representation \(h(\theta,x)\) and linear output rows \(w_k\), fix correct class \(y\) and competitor \(c\). At the receiving pre-state, set
 
@@ -395,7 +395,7 @@ h'&=Dh(\theta_t,x)[\delta_t],\\
 
 Here \(h'\) and \(h''\) are the first and second *directional responses of the pre-update hidden representation along the already formed actual update*. An affine output head can be written in the same form by augmenting \(h\) with a constant coordinate.
 
-The frozen quadratic-complete endpoint-gap estimator is
+The exact updated competitor gap is \(g_{y,c}(\theta_t+\delta_t)=(b_c+\Delta b_c)^\top h(\theta_t+\delta_t,x)\). Substituting the directional expansion \(h(\theta_t+\delta_t,x)\approx h+h'+\tfrac12 h''\) and retaining terms through second order in the realized update yields the frozen quadratic-complete endpoint-gap estimator:
 
 \[
 \boxed{
@@ -452,7 +452,7 @@ This separation between **underlying functional dynamics** and **a particular ap
 | Realized training actions, persistent receiving states, optimizer memory | (1)–(2) | TL-E01–E03; TL-G01–G03; GNN/SNN |
 | State-dependent response to the same formed update | (6)–(7) | TL-E03 and cross-system reciprocal update exchanges |
 | Actual finite-amplitude nonlinear response | (8)–(9) | TL-E04; TL-G01–G03; GNN/SNN |
-| Response-conditioning factor families F1/F3/F5 | (10) | TL-E05; run-isolated cross-system factor tests |
+| Original response-conditioning factor analysis (F1/F3/F5) | (10), experimental grouping | TL-E05; separate cross-system factor tests |
 | Distributed support and non-additive component effects | (11)–(14) | TL-E06; native coalition experiments in other systems |
 | Persistent support redistribution under actual updates | (3), (15)–(16) | TL-E07; cross-system before/after support interventions |
 | Target capability and boundary crossings | (3), (17) | TL-E08 and identity-aligned true endpoint records |
