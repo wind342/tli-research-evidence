@@ -1,6 +1,6 @@
 # Pre-publication full reproduction audit
 
-This audit was executed before the final publication-evidence release. It
+This audit summary uses the current manuscript identifiers and reports results for the retained experiments. The [original historical audit](https://github.com/wind342/tli-research-evidence/blob/2fc00e4a04f1b511f05ddd33b827686e8f56de45/audits/FULL_REPRODUCTION_AUDIT.md) is preserved in Git history. The underlying audit was executed before the final publication-evidence release. It
 distinguishes fresh native re-execution, independent recomputation from frozen
 machine records and deep validation of historical native evidence. No missing
 checkpoint or tensor payload is represented as a fresh native rerun.
@@ -13,10 +13,9 @@ checkpoint or tensor payload is represented as a fresh native rerun.
 | TL-E01–TL-E02 | Deep validation of all 13 historical run archives and their native GFG/evaluation records | PASS; 149,057 GFG database/tensor files and 184 submission files validated |
 | TL-E03 | Fresh validation of 72 adjacent-update sections plus independent validation of the preserved reciprocal-response bundle | PASS; the exact source window required to regenerate the reciprocal bundle is not present, so that part is not labelled a fresh rerun |
 | TL-E04 | Fresh validation and numeric replay of the 72-section multi-amplitude bundle | PASS; 6,048 forward and 1,512 support derivations checked |
-| TL-E05 | Fresh independent validation of the factor-analysis bundle | `PASS_WITH_DISCLOSED_BOUNDARY_VIOLATION`; 15,264 factor records and 75,258 matches checked; an unsuccessfully initialized global-unseen entry was accessed during setup but was not used in any factor record or model |
-| TL-E06 | Fresh native CSRG replay with frozen nanoGPT code and checkpoints | PASS; 468 GPU forwards across 13 runs, with parameter immutability and all structural checks passing |
-| TL-E07 | Fresh independent numeric recomputation | PASS; 1,656 target-group transitions, 1,636 valid allocations and 228 hand-offs reproduced |
-| TL-E08 | Fresh identity-ledger recomputation plus validation of the separate 500-sample candidate | Boundary ledger PASS for all 15,264 records; the local-quadratic candidate is correctly retained as FALSIFIED and is not used as boundary authority |
+| TL-E05 | Fresh native CSRG replay with frozen nanoGPT code and checkpoints | PASS; 468 GPU forwards across 13 runs, with parameter immutability and all structural checks passing |
+| TL-E06 | Fresh independent numeric recomputation | PASS; 1,656 target-group transitions, 1,636 valid allocations and 228 hand-offs reproduced |
+| TL-E07 | Fresh identity-ledger recomputation plus validation of the separate 500-sample candidate | Boundary ledger PASS for all 15,264 records; the local-quadratic candidate is correctly retained as FALSIFIED and is not used as boundary authority |
 | TL-P01 | Independent recomputation from the complete frozen raw-state ledger | PASS; 14,069/15,264 overall and 4,652/5,088 confirmation outcomes reproduced |
 | INF-E01 | Independent hash, tensor and strict logit-level recomputation | PASS; 13 runs and 52 phases reproduced |
 | RL-E01 | Fresh native 12-seed training, 48 one-step forks and 12 Core-v3/GFG evidence builds | PASS |
@@ -51,6 +50,6 @@ Additional integrity checks:
 The audit found no contradiction in a manuscript-level numerical result. It
 did find publication-packaging defects, corrected in the final release:
 the omitted `compat/__init__.py`, ambiguous handling of source-history-only
-checks, an imprecise TL-E08 authority pointer and an undocumented GF-P02
+checks, an imprecise TL-E07 authority pointer and an undocumented GF-P02
 portable-tree difference caused solely by non-redistribution of two third-party
 papers. The GF-P02 experiment and test tree itself remains unchanged.

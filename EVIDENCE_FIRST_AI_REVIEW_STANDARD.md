@@ -17,7 +17,7 @@ The current paper follows this experimental and mathematical sequence:
 4. **Seventh system and feedback:** Shared GRU experiments RL-E05 and RL-E06 test concentrated correct feedback, functional-support changes, cross-skill erosion and recovery through feedback redistribution.
 5. **Unified mathematical relationships:** The paper writes a coupled system from the experimentally established relations. Two complete recoveries appear in the ICML main text (**Edge of Stability**, **Catastrophic Forgetting**); the other **twelve** appear in the appendix. Each derivation identifies its starting TLI relation [T], original-study model and mathematical conditions [A], and recovered relation [R].
 
-The experimental instruments are indexed in [EXPERIMENTAL_INSTRUMENTS.md](EXPERIMENTAL_INSTRUMENTS.md). The discovery sequence is recorded in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md), with original frozen identities in [EXPERIMENT_ID_CROSSWALK.md](EXPERIMENT_ID_CROSSWALK.md).
+The experimental instruments are indexed in [EXPERIMENTAL_INSTRUMENTS.md](EXPERIMENTAL_INSTRUMENTS.md). The discovery sequence is recorded in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md).
 
 ## 2. Separate scientific operations and criteria
 

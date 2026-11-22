@@ -1,6 +1,6 @@
 # Public evidence and reproduction matrix
 
-Current manuscript IDs follow the [experiment ID crosswalk](EXPERIMENT_ID_CROSSWALK.md); historical audits retain original frozen IDs.
+Experiment identifiers follow the current [experiment index](EXPERIMENT_INDEX.md).
 
 This matrix identifies current Git experiment records and the verification scope reported in earlier audits. Recorded recomputation of external payloads is a historical result, not a newly run check or a designated current TLI ZIP release. Distinguish source inspection, recomputation from saved machine records, and native experimental re-execution. See [the current paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) for paper-level authorities and [source provenance](provenance/EXTERNAL_ARTIFACTS.md) for original external artifact identifiers.
 
@@ -20,10 +20,6 @@ This matrix identifies current Git experiment records and the verification scope
 | INF-G01 | [INF-G01 results](experiments/gfg_cross_system_frozen_inference_projection_v1/RESULTS.md) and [checker](experiments/gfg_cross_system_frozen_inference_projection_v1/INDEPENDENT_CHECKER.py) | The formal ResNet and diffusion results, validated GFG, all six seed-level nine-criterion decisions and all six exact checkpoint authorities are independently checked | The checkpoints are stored once in their training-learning bundles and resolved by byte length and SHA-256 rather than duplicated in the inference bundle |
 | RL-E05 | [RL-E05 results](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/RESULTS.md) and [checker](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/independent_checker.py) | All 12 formal seeds, frozen-state identities, 29,352 generation facts, feedback ledgers, support profiles and every preregistered decision gate are independently checked | The strict temporal-precedence hypothesis remains `NOT_SUPPORTED`; the preserved evidence supports only the narrower co-occurring support-concentration and capability-trade-off relations |
 | RL-E06 | [RL-E06 results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) and [checker](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/independent_checker.py) | All 12 formal dose/recovery seeds, 84 condition executions, checkpoints, ledgers, GFGs, dose associations, recovery forks and the corrected recovery-reference arithmetic are independently checked | Full native re-execution is computationally larger than static public recomputation and writes a separate audit root; the public bundle contains the complete formal authority once, without duplicating the fresh audit payload |
-
-## Historical exploratory evidence
-
-Historical factor analysis (original TL-E05): [frozen factor-analysis contract](experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md) and [historical reproduction audit](audits/FULL_REPRODUCTION_AUDIT.md). The original audit records unused global-unseen setup access; its factor records exclude that run.
 
 ## Historical external-payload verification commands
 

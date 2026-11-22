@@ -4,7 +4,7 @@ This repository accompanies the current **TLI paper**, [*Unified Dynamics of Tra
 
 **Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is hosted alongside its LaTeX source.
 
-Current manuscript numbering and original frozen identities are linked in the [experiment ID crosswalk](EXPERIMENT_ID_CROSSWALK.md).
+Experiment identifiers follow the current manuscript and [experiment index](EXPERIMENT_INDEX.md). Historical releases remain available in Git history.
 
 | In ICML paper order | Frozen experimental evidence |
 |---|---|
@@ -52,7 +52,7 @@ The preserved original release collected executable experiments used to
 establish and test the generation-fact, training–learning, inference and
 reinforcement-learning claims across historical manuscripts.
 
-The current index contains **15 primary experiment entries**, plus the historical exploratory factor analysis (original TL-E05). The fifteen entries comprise:
+The current index contains **15 primary experiment entries**:
 
 - two structural projection experiments;
 - seven experiments forming the training–learning theory;
@@ -62,7 +62,7 @@ The current index contains **15 primary experiment entries**, plus the historica
   long-delay credit discovery, recursive optimization of credit discovery and
   stochastic long-chain credit.
 
-The current primary entries and the separately listed historical factor study are indexed in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md). The original sealed collection contained sixteen entries.
+The primary entries are indexed in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md).
 The verification scope for every indexed experiment is recorded in
 [PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md).
 The four reinforcement-learning experiments form one cumulative evidence chain,
@@ -108,8 +108,7 @@ Two later feedback-dynamics experiments test a bounded consequence of the
 training--learning--inference loop in a shared policy. RL-E05 studies selective
 positive feedback and support concentration; RL-E06 freezes feedback dose,
 duration and recovery forks and independently re-executes all 12 formal seeds.
-They are indexed as extensions to the sealed original sixteen
-manuscript entries. See [RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
+They are indexed as extensions to the primary experiment collection. See [RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
 
 Four reusable instruments developed for the training--learning experiments are
 exposed through [EXPERIMENTAL_INSTRUMENTS.md](EXPERIMENTAL_INSTRUMENTS.md):

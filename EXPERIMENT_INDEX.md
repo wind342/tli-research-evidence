@@ -1,10 +1,6 @@
 # Primary experiment index
 
-The original sixteen-entry evidence set was sealed by `paper-experiments-v2`.
-Later publication-evidence releases retain the same experiment identities and
-add portable evidence bundles or documentation corrections without rewriting
-the frozen results. The current **TLI / ICML** manuscript-section-level map is
-[TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md). Historical manuscript maps remain available through Git history. Current manuscript IDs are mapped to original frozen IDs in [EXPERIMENT_ID_CROSSWALK.md](EXPERIMENT_ID_CROSSWALK.md).
+The current experiment index follows the TLI manuscript. The section-level map is [TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md). Historical releases are available through Git history.
 Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 [RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
 
@@ -26,12 +22,6 @@ Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 | RL-E03 | Long-chain temporal-credit discovery and self-optimization | Replaces direct terminal slot reads with 64-step versioned state formation, validates both the base execution GFG and a credit-discovery meta-GFG, and tests whether formation structure can reduce exact causal-adjudication cost against trace, cache, dependency-DAG and rewired controls. | [long-chain self-optimization experiment](experiments/gfg_temporal_credit_long_chain_self_optimization_v1/) |
 | RL-E04 | Stochastic long-chain temporal-credit discovery | Adds occurrence-addressed exogenous inputs to every native state transition, separates conditional action credit from realized stochastic variation through matched replay, estimates expected credit on disjoint random tapes, and tests stochastic-binding, interaction, policy-transfer and full-cost controls. | [stochastic long-chain experiment](experiments/gfg_temporal_credit_stochastic_long_chain_v1/) |
 
-## Historical exploratory factor analysis
-
-| ID | Experiment | Main scientific role | Code, protocol and evidence |
-|---|---|---|---|
-| Historical factor analysis (original TL-E05) | Response-conditioning factor analysis | Identified target boundary state, target-specific update geometry and parameter–Adam receiving state as three primary conditioning factors in the original twelve runs. | [factor-analysis experiment](experiments/gfg_nanogpt_response_factor_analysis_v1/) |
-
 ## Additional structural experiment
 
 | ID | Experiment | Main scientific role | Code, protocol and evidence |
@@ -51,7 +41,7 @@ Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 ## Additional reinforcement-feedback dynamics experiments
 
 These later experiments extend the feedback-loop analysis without changing the
-sealed sixteen-entry manuscript index.
+primary experiment index.
 
 | ID | Experiment | Main scientific role | Code, protocol and evidence |
 |---|---|---|---|
