@@ -4,7 +4,7 @@ The original sixteen-entry evidence set was sealed by `paper-experiments-v2`.
 Later publication-evidence releases retain the same experiment identities and
 add portable evidence bundles or documentation corrections without rewriting
 the frozen results. The current **TLI / ICML** manuscript-section-level map is
-[TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md). Historical manuscript maps remain available through Git history.
+[TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md). Historical manuscript maps remain available through Git history. Current manuscript IDs are mapped to original frozen IDs in [EXPERIMENT_ID_CROSSWALK.md](EXPERIMENT_ID_CROSSWALK.md).
 Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 [RL_EVIDENCE_CHAIN.md](docs/RL_EVIDENCE_CHAIN.md).
 
@@ -16,9 +16,9 @@ Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 | TL-E02 | Optimizer pauses and clipping negative controls | Tests whether effective parameter–optimizer evolution, rather than a superficial clipping change, moves capability-formation time. | [intervention experiment](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/) |
 | TL-E03 | Full/skip, receiving-state exchange and reciprocal response | Establishes that the same realized update produces different functional responses in different receiving states. | [stepwise causal experiment](experiments/gfg_nanogpt_stepwise_support_transition_v1/) |
 | TL-E04 | Multi-amplitude realized-update paths | Falsifies a globally fixed linear or quadratic local extrapolation and establishes finite-amplitude nonlinear functional response. | [frozen amplitude-path protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json) |
-| TL-E06 | CSRG single- and paired-component gating | Establishes distributed functional support, including necessity, substitution, backup, synergy and failure slack. | [CSRG experiment](experiments/gfg_nanogpt_support_redundancy_v1/) |
-| TL-E07 | Support reallocation across an actual update | Measures persistent reorganization and support hand-off caused by realized training updates. | [support-reallocation experiment](experiments/gfg_nanogpt_support_reallocation_audit_v1/) |
-| TL-E08 | Identity-aligned target margins and readout crossings | Connects internal change to the four observable target transitions through the target-specific readout boundary. | [identity-aligned boundary experiment](experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/) |
+| TL-E05 | CSRG single- and paired-component gating | Establishes distributed functional support, including necessity, substitution, backup, synergy and failure slack. | [CSRG experiment](experiments/gfg_nanogpt_support_redundancy_v1/) |
+| TL-E06 | Support reallocation across an actual update | Measures persistent reorganization and support hand-off caused by realized training updates. | [support-reallocation experiment](experiments/gfg_nanogpt_support_reallocation_audit_v1/) |
+| TL-E07 | Identity-aligned target margins and readout crossings | Connects internal change to the four observable target transitions through the target-specific readout boundary. | [identity-aligned boundary experiment](experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/) |
 | TL-P01 | Actual-update target-boundary prediction | Tests the TLI-derived prediction of immediate target-boundary outcomes from the pre-update state and the realized update, before post-update target outputs are read. | [prediction experiment](experiments/gfg_nanogpt_actual_update_boundary_v1/) |
 | INF-E01 | Frozen-inference projection | Tests exact learned-version use, causal support recruitment, query conditioning, non-additive combination and rollback dependence under frozen inference. | [inference experiment](experiments/gfg_nanogpt_training_learning_inference_projection_v1/) |
 | RL-E01 | Reinforcement-learning feedback closure | Tests consequence binding and temporal credit as the relations that close inference outcomes back into effective training formation. | [RL feedback-closure experiment](experiments/gfg_rl_feedback_closure_v1/) |
@@ -30,7 +30,7 @@ Together, RL-E01–RL-E04 form the cumulative experimental chain summarized in
 
 | ID | Experiment | Main scientific role | Code, protocol and evidence |
 |---|---|---|---|
-| TL-E05 | Response-conditioning factor analysis | Identified target boundary state, target-specific update geometry and parameter–Adam receiving state as three primary conditioning factors in the original twelve runs. | [factor-analysis experiment](experiments/gfg_nanogpt_response_factor_analysis_v1/) |
+| Historical factor analysis (original TL-E05) | Response-conditioning factor analysis | Identified target boundary state, target-specific update geometry and parameter–Adam receiving state as three primary conditioning factors in the original twelve runs. | [factor-analysis experiment](experiments/gfg_nanogpt_response_factor_analysis_v1/) |
 
 ## Additional structural experiment
 

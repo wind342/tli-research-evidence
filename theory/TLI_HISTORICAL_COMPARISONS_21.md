@@ -19,7 +19,7 @@
 
 **TLI unification.** These are different regimes of the receiving-state → actual-update → functional-response relation. NTK describes a regime with restricted changes in the functional map and its local responses. Feature learning describes a regime in which actual updates persistently reorganize internal function and substantially alter later receiving states. The common relation is that the current state determines an update's response, and each realized update changes the state available for later responses.
 
-**Internal anchors.** TL-E03: receiving-state dependence. TL-E04: nonlinear finite-amplitude responses. TL-E07: persistent support reorganization through actual updates.
+**Internal anchors.** TL-E03: receiving-state dependence. TL-E04: nonlinear finite-amplitude responses. TL-E06: persistent support reorganization through actual updates.
 
 ### 5.1.3 Grokking: Delayed observable capability and earlier internal formation
 
@@ -29,7 +29,7 @@
 
 **TLI unification.** Learning corresponds to persistent reorganization of functional support, whereas capability is the observable result of crossing a target-specific readout boundary. Support can change continuously even when correctness is determined by the sign of a target margin; crossing zero converts accumulated internal changes into a discrete observed transition. The two lines of research measure internal formation and external readout within the same process.
 
-**Internal anchors.** TL-E06: distributed support measured by component interventions. TL-E07: actual updates reorganize support. TL-E08: capability transitions depend on readout boundaries. TL-P01: prediction of post-update target-boundary outcomes.
+**Internal anchors.** TL-E05: distributed support measured by component interventions. TL-E06: actual updates reorganize support. TL-E07: capability transitions depend on readout boundaries. TL-P01: prediction of post-update target-boundary outcomes.
 
 ### 5.1.4 Neural Collapse: Saturated accuracy and continuing representation formation
 
@@ -39,7 +39,7 @@
 
 **TLI unification.** Accuracy records which side of the target-specific decision boundary an output occupies, whereas learning concerns the persistent functional organization. Continued training can change margins, component allocations and feature geometry after discrete correctness has stabilized. The same training period can therefore show constant observed accuracy and changing internal structure.
 
-**Internal anchors.** TL-E07: support can reorganize without a capability change. TL-E08: the readout boundary determines capability state. RL-E06: margins evolve before correctness declines.
+**Internal anchors.** TL-E06: support can reorganize without a capability change. TL-E07: the readout boundary determines capability state. RL-E06: margins evolve before correctness declines.
 
 ### 5.1.5 Attention: Effective computation and the interpretation of attention weights
 
@@ -79,7 +79,7 @@
 
 **TLI unification.** Both studies use a feedback chain: inference outputs enter future training data, the data distribution shapes realized actions, and those actions change later learned states and inference distributions. Diverse, high-quality pseudo-labels can enlarge the effective training signal. Recursive replacement can diminish input for tail patterns and weaken the functional support they rely on; continual real-data input changes the training distribution and preserves learning opportunities for those patterns.
 
-**Internal anchors.** TL-E07: training updates persistently reorganize support. RL-E06: feedback allocation changes support concentration and capability retention, with recovery after rebalancing.
+**Internal anchors.** TL-E06: training updates persistently reorganize support. RL-E06: feedback allocation changes support concentration and capability retention, with recovery after rebalancing.
 
 ### 5.1.9 Batch Normalization: Training gains and their mechanism
 
@@ -109,7 +109,7 @@
 
 **TLI unification.** Model size, exposure to data and compute budget jointly constrain reachable receiving states and training-action trajectories. A dominant resource bottleneck may yield a stable local power law; shifting data and model bottlenecks changes the compute-optimal allocation of parameters and tokens. These laws describe aggregate behavior of training dynamics under different effective resource configurations.
 
-**Internal anchors.** TL-E03: receiving states condition response to updates. TL-E04: nonlinear finite-amplitude responses. TL-E07: sustained updates reorganize support. ResNet, diffusion U-Net and Vision-MoE cross-system tests: analogous dynamical roles in distinct architectures.
+**Internal anchors.** TL-E03: receiving states condition response to updates. TL-E04: nonlinear finite-amplitude responses. TL-E06: sustained updates reorganize support. ResNet, diffusion U-Net and Vision-MoE cross-system tests: analogous dynamical roles in distinct architectures.
 
 ### 5.1.12 Lottery Tickets and Rewinding: Initial subnetworks and early training history
 
@@ -119,7 +119,7 @@
 
 **TLI unification.** Initialization specifies the first receiving state, which early realized updates further shape in both parameters and functional organization. Lottery tickets show how initial structure affects reachable learning trajectories; rewinding exploits a newly formed receiving state after early updates. Both follow **initial state → actual update → receiving-state evolution → subsequent function formation**.
 
-**Internal anchors.** TL-E03: receiving states and optimizer history affect action formation and response. TL-E07: persistent support reorganization.
+**Internal anchors.** TL-E03: receiving states and optimizer history affect action formation and response. TL-E06: persistent support reorganization.
 
 ### 5.1.13 Generalization on real data versus random-label memorization
 
@@ -129,7 +129,7 @@
 
 **TLI unification.** Network capacity determines a space of attainable functions; concrete data and realized training actions determine which supporting computation is formed. Transferable regularities in real data and example-specific associations in random labels favor different support organization and decision-boundary geometry. Similar training accuracy can thus mask distinct learned states and responses on test targets.
 
-**Internal anchors.** TL-E03: response depends on the receiving state. TL-E06: distributed component support. TL-E07: update-driven reorganization. TL-E08: observed capability depends on target-specific readout boundaries.
+**Internal anchors.** TL-E03: response depends on the receiving state. TL-E05: distributed component support. TL-E06: update-driven reorganization. TL-E07: observed capability depends on target-specific readout boundaries.
 
 ### 5.1.14 Classical Bias–Variance and Double Descent: Complexity curves near interpolation
 
@@ -139,7 +139,7 @@
 
 **TLI unification.** Complexity changes the space of reachable solutions, while actual training actions select a solution within that space. Near interpolation, sensitivity to fitted noise directions can amplify test response. With greater redundancy and different implicit solution selection, noise support can shift toward directions with smaller effects on the population distribution. The classical single-valley regime and the post-interpolation descent correspond to different receiving states, action-selection mechanisms and generalization-readout geometry.
 
-**Internal anchors.** TL-E03/E04: state and finite-action dependence. TL-E07: support evolves during training. TL-E08: target-readout boundaries determine capability.
+**Internal anchors.** TL-E03/E04: state and finite-action dependence. TL-E06: support evolves during training. TL-E07: target-readout boundaries determine capability.
 
 ### 5.1.15 Adversarial Robustness: Natural accuracy and perturbation-induced trade-offs
 
@@ -149,7 +149,7 @@
 
 **TLI unification.** Natural accuracy measures readouts on original targets; robustness measures readout margins and decision boundaries for a neighborhood of perturbed targets. The loss objective and perturbation distribution change actual training actions and hence functional support for natural and perturbed inputs. Strong natural accuracy, local fragility and adversarial-training trade-offs therefore concern different target collections and learned organizations.
 
-**Internal anchors.** TL-E06: component dependency and synergy. TL-E07: redistribution of support. TL-E08: target-specific boundary crossings.
+**Internal anchors.** TL-E05: component dependency and synergy. TL-E06: redistribution of support. TL-E07: target-specific boundary crossings.
 
 ### 5.1.16 Shortcut Learning: IID Accuracy and Texture–Shape Preferences
 
@@ -159,7 +159,7 @@
 
 **TLI unification.** The same correct prediction can be realized through different distributed support. IID accuracy records a readout on the observed input distribution; texture and shape pathways are organized through training data and actual updates. Changing training environments can reorganize that support and thus alter performance under style or distribution shift.
 
-**Internal anchors.** TL-E06: component necessity, substitution and synergy. TL-E07: training reorganizes support. TL-E08: separate targets' boundary states determine observed capabilities.
+**Internal anchors.** TL-E05: component necessity, substitution and synergy. TL-E06: training reorganizes support. TL-E07: separate targets' boundary states determine observed capabilities.
 
 ### 5.1.17 Emergent Abilities: Scaling transitions and measurement choices
 
@@ -169,7 +169,7 @@
 
 **TLI unification.** Learned states and functional support evolve under training and scaling conditions, while evaluation functions map those states to continuous scores or discrete capability outcomes. Binary accuracy or pass rates can change abruptly when margins cross zero; continuous measures resolve finer functional changes. Different evaluation curves may therefore represent different readouts of the same underlying formation process.
 
-**Internal anchors.** TL-E07: continuous internal support reorganization. TL-E08: capability changes at target-specific boundaries. TL-P01: post-update correctness classes predicted from pre-response information.
+**Internal anchors.** TL-E06: continuous internal support reorganization. TL-E07: capability changes at target-specific boundaries. TL-P01: post-update correctness classes predicted from pre-response information.
 
 ### 5.1.18 Long Context: Accessible Information and Lost in the Middle
 
@@ -209,4 +209,4 @@
 
 **TLI unification.** New-task realized updates act on receiving states that support both new and old capabilities. Overlap with old-support-sensitive directions and the sign of old-target response determine whether old margins expand or contract; accumulated contraction crossing a boundary produces forgetting. EWC reshapes actual update directions to reduce harmful responses along old-function-sensitive directions. Related protection and recovery methods also act by changing updates and support reorganization.
 
-**Internal anchors.** TL-E03: identical updates produce different old-target responses in different receiving states. TL-E07: update-driven support redistribution. TL-E08: readout-boundary crossings determine loss. RL-E06: concentrated feedback reduces old-skill margins; rebalanced feedback restores capability.
+**Internal anchors.** TL-E03: identical updates produce different old-target responses in different receiving states. TL-E06: update-driven support redistribution. TL-E07: readout-boundary crossings determine loss. RL-E06: concentrated feedback reduces old-skill margins; rebalanced feedback restores capability.

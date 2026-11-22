@@ -59,9 +59,9 @@ The support for a target is measured by \(P_{t,q}=\mathcal P_q(L_t;\mathcal J_q)
 
 ## 4. Existing experimental anchors
 
-- **TL-E03–E05:** Receiving states and actual updates jointly determine target responses, including nonlinear and state-conditioned effects.
-- **TL-E06–E07:** Different capabilities have distributed functional support that can interact and be reallocated.
-- **TL-E08:** Continuous target-margin changes yield discrete capability changes when a target crosses its registered boundary.
+- **TL-E03–E04:** Receiving states and actual updates jointly determine target responses, including nonlinear and state-conditioned effects.
+- **TL-E05–E06:** Different capabilities have distributed functional support that can interact and be reallocated.
+- **TL-E07:** Continuous target-margin changes yield discrete capability changes when a target crosses its registered boundary.
 - **Current paper, *This Is a Simple Theory*:** One update may improve target A while producing positive or negative responses in other targets, through shared computation.
 - **[RL-E06 formal results](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md):** Starting from a mastered four-skill GRU, 3,200 updates of concentrated correct feedback progressively changed support and the other skills' behavior. Under exclusive feedback, mean accuracy of the other skills fell from **88.89% at update 100** to **60.94% at update 3,200**. Rebalanced feedback raised their accuracy from **70.31% at the common update-800 fork** to **99.48%**. This experiment manipulated **feedback allocation and duration**; it did not perform a matched RL/SFT task-horizon comparison.
 

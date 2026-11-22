@@ -11,13 +11,13 @@ Record the manuscript's actual proposition, the relevant system and target, the 
 
 The current paper follows this experimental and mathematical sequence:
 
-1. **Eight nanoGPT experiments** (TL-E01–TL-E04, TL-E06–TL-E08 and INF-E01) establish the training, learning and frozen-inference relations. Realized updates, receiving states, target responses, distributed functional support, capability-readout boundaries and query-conditioned inference are measured through registered interventions.
+1. **Eight nanoGPT experiments** (TL-E01–TL-E07 and INF-E01) establish the training, learning and frozen-inference relations. Realized updates, receiving states, target responses, distributed functional support, capability-readout boundaries and query-conditioned inference are measured through registered interventions.
 2. **Prediction:** TL-P01 uses the established TLI relations to predict immediate target-boundary transitions using an already formed actual update and pre-response information. nanoGPT confirmation is **4,652/5,088 = 91.43%** accuracy and **91.49%** four-way macro recall.
 3. **Five additional TLI systems:** ResNet-18, diffusion U-Net, Vision-MoE, GNN and hard-spiking SNN test the TLI relations with distinct architectures, tasks and optimizers. Together with nanoGPT, these are **six** TLI systems.
 4. **Seventh system and feedback:** Shared GRU experiments RL-E05 and RL-E06 test concentrated correct feedback, functional-support changes, cross-skill erosion and recovery through feedback redistribution.
 5. **Unified mathematical relationships:** The paper writes a coupled system from the experimentally established relations. Two complete recoveries appear in the ICML main text (**Edge of Stability**, **Catastrophic Forgetting**); the other **twelve** appear in the appendix. Each derivation identifies its starting TLI relation [T], original-study model and mathematical conditions [A], and recovered relation [R].
 
-The experimental instruments are indexed in [EXPERIMENTAL_INSTRUMENTS.md](EXPERIMENTAL_INSTRUMENTS.md). The discovery sequence and experiment identity are recorded in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md).
+The experimental instruments are indexed in [EXPERIMENTAL_INSTRUMENTS.md](EXPERIMENTAL_INSTRUMENTS.md). The discovery sequence is recorded in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md), with original frozen identities in [EXPERIMENT_ID_CROSSWALK.md](EXPERIMENT_ID_CROSSWALK.md).
 
 ## 2. Separate scientific operations and criteria
 

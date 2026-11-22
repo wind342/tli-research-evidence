@@ -206,7 +206,7 @@ r_{t,q}(\alpha)\ne\alpha\,r_{t,q}(1).
 
 **Experimental anchors:** [amplitude-path protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json); [amplitude-path validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py).
 
-### 3.3 Distributed support and component interaction — TL-E06
+### 3.3 Distributed support and component interaction — TL-E05
 
 Fix a learned state \(L\), target \(q\), and component-intervention protocol \(\mathcal J_q\). Let \(f_q(L;\mathrm{full})\) be the continuous functional readout with all registered components active. Write \(f_q(L;-i)\) for the same state with component \(i\)'s output disabled, and \(f_q(L;-i,-j)\) for simultaneous removal of \(i\) and \(j\).
 
@@ -253,7 +253,7 @@ The full measured profile \(\mathcal P_q(L;\mathcal J_q)\) also contains the reg
 
 **Experimental anchors:** [CSRG-4C frozen capture contract](../experiments/gfg_nanogpt_support_redundancy_v1/capture_contract_v2.json); [intervention and support builder](../experiments/gfg_nanogpt_support_redundancy_v1/builder.py); [independent archive verifier](../experiments/gfg_nanogpt_support_redundancy_v1/verify_archive.py).
 
-### 3.4 Persistent redistribution and capability readout — TL-E07–E08
+### 3.4 Persistent redistribution and capability readout — TL-E06–E07
 
 Measure the same registered support profile on both sides of a *single actual training transition*:
 
@@ -266,7 +266,7 @@ Measure the same registered support profile on both sides of a *single actual tr
 \tag{15}
 \]
 
-TL-E07 compares the identical receiving pre-state with \(\alpha=0\) (skipped parameter increment) and \(\alpha=1\) (the complete realized increment). Across 72 sections, it records 1,656 target-group transitions, 1,636 defined allocation comparisons, and **228 primary-support handoffs**. The measured allocation can reorganize while the observed target capability is unchanged:
+TL-E06 compares the identical receiving pre-state with \(\alpha=0\) (skipped parameter increment) and \(\alpha=1\) (the complete realized increment). Across 72 sections, it records 1,656 target-group transitions, 1,636 defined allocation comparisons, and **228 primary-support handoffs**. The measured allocation can reorganize while the observed target capability is unchanged:
 
 \[
 \boxed{
@@ -278,7 +278,7 @@ C_{t+1,q}=C_{t,q}.
 \tag{16}
 \]
 
-For signed target margins, TL-E08 connects the actual response to the observable boundary:
+For signed target margins, TL-E07 connects the actual response to the observable boundary:
 
 \[
 \boxed{
@@ -292,7 +292,7 @@ C_{t+1,q}&=\mathbf1[m_q(L_t)+R_{t,q}>0].
 
 The four observed outcomes—remaining correct, correct-to-wrong, remaining wrong, and wrong-to-correct—are determined by the two boundary readouts. The underlying continuous margin records how an update can move a target toward or away from the boundary before the discrete outcome changes.
 
-**Experimental anchors:** [TL-E07 analysis](../experiments/gfg_nanogpt_support_reallocation_audit_v1/analysis.py); [TL-E07 independent checker](../experiments/gfg_nanogpt_support_reallocation_audit_v1/independent.py); [TL-E08 identity-aligned experiment](../experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/experiment.py).
+**Experimental anchors:** [TL-E06 analysis](../experiments/gfg_nanogpt_support_reallocation_audit_v1/analysis.py); [TL-E06 independent checker](../experiments/gfg_nanogpt_support_reallocation_audit_v1/independent.py); [TL-E07 identity-aligned experiment](../experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/experiment.py).
 
 ### 3.5 Query-conditioned frozen inference — INF-E01
 
@@ -436,9 +436,9 @@ This separation between **underlying functional dynamics** and **a particular ap
 | Realized training actions, persistent receiving states, optimizer memory | (1)–(2) | TL-E01–E03; TL-G01–G03; GNN/SNN |
 | State-dependent response to the same formed update | (6)–(7) | TL-E03 and cross-system reciprocal update exchanges |
 | Actual finite-amplitude nonlinear response | (8)–(9) | TL-E04; TL-G01–G03; GNN/SNN |
-| Distributed support and non-additive component effects | (11)–(14) | TL-E06; native coalition experiments in other systems |
-| Persistent support redistribution under actual updates | (3), (15)–(16) | TL-E07; cross-system before/after support interventions |
-| Target capability and boundary crossings | (3), (17) | TL-E08 and identity-aligned true endpoint records |
+| Distributed support and non-additive component effects | (11)–(14) | TL-E05; native coalition experiments in other systems |
+| Persistent support redistribution under actual updates | (3), (15)–(16) | TL-E06; cross-system before/after support interventions |
+| Target capability and boundary crossings | (3), (17) | TL-E07 and identity-aligned true endpoint records |
 | Query-conditioned frozen inference and learned-version dependence | (4), (18) | INF-E01; INF-G01; INF-G02; GNN/SNN |
 | Feedback-directed concentration and recovery | (5), (19)–(21) | RL-E05–E06 |
 | Quantitative prediction of an actual update's target boundary | (22)–(24) | TL-P01 and cross-system prediction tests |

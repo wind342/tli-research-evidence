@@ -4,10 +4,12 @@ This repository accompanies the current **TLI paper**, [*Unified Dynamics of Tra
 
 **Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is hosted alongside its LaTeX source.
 
+Current manuscript numbering and original frozen identities are linked in the [experiment ID crosswalk](EXPERIMENT_ID_CROSSWALK.md).
+
 | In ICML paper order | Frozen experimental evidence |
 |---|---|
 | Training and receiving-state interventions | [TL-E01–TL-E04](TLI_ICML_PAPER_EVIDENCE_MAP.md#21-training-realized-updates-and-receiving-states) |
-| Learning, support reallocation and capability | [TL-E06–TL-E08](TLI_ICML_PAPER_EVIDENCE_MAP.md#22-learning-distributed-support-and-capability-boundaries) |
+| Learning, support reallocation and capability | [TL-E05–TL-E07](TLI_ICML_PAPER_EVIDENCE_MAP.md#22-learning-distributed-support-and-capability-boundaries) |
 | Frozen inference | [INF-E01](TLI_ICML_PAPER_EVIDENCE_MAP.md#23-inference-frozen-recruitment-of-learned-support) |
 | Theory-derived target-boundary predictor | [TL-P01](TLI_ICML_PAPER_EVIDENCE_MAP.md#31-theory-derived-target-boundary-prediction) |
 | Five additional TLI systems | [ResNet, diffusion, MoE, GNN, SNN](TLI_ICML_PAPER_EVIDENCE_MAP.md#32-six-tli-systems) |

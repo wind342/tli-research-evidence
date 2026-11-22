@@ -74,5 +74,5 @@ matching.
   [`native_response_500_gfg.py`](experiments/gfg_nanogpt_stepwise_support_transition_v1/native_response_500_gfg.py) and
   [`native_response_500_gfg_validator.py`](experiments/gfg_nanogpt_stepwise_support_transition_v1/native_response_500_gfg_validator.py)
 
-The associated scientific experiments are indexed as TL-E03, TL-E04, TL-E06
-and TL-E08 in [`EXPERIMENT_INDEX.md`](EXPERIMENT_INDEX.md).
+The associated scientific experiments are indexed as TL-E03, TL-E04, TL-E05
+and TL-E07 in [`EXPERIMENT_INDEX.md`](EXPERIMENT_INDEX.md).

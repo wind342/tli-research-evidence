@@ -112,7 +112,7 @@ For multidimensional linearly separable data, Soudry et al. establish convergenc
 
 **Research comparison.** [Soudry et al., JMLR 2018](https://jmlr.org/papers/v19/18-188.html).
 
-**Internal experimental anchors.** TL-E07 (support reorganizes while correctness stays fixed); TL-E08 (correctness boundary); RL-E06 (persistent functional change after mastery).
+**Internal experimental anchors.** TL-E06 (support reorganizes while correctness stays fixed); TL-E07 (correctness boundary); RL-E06 (persistent functional change after mastery).
 
 ### 5.2.3 Recursive Model Collapse: Information loss through finite-sample absorbing states
 
@@ -227,7 +227,7 @@ For \(0<\eta\lambda_k<1\), modes with larger \(\lambda_k\) have faster residual 
 
 **Research comparison.** Kernel-spectrum and frequency-convergence studies by Basri et al. and Cao et al.; Fourier Features by Tancik et al.
 
-**Internal anchors.** TL-E03, TL-E04 and TL-E07.
+**Internal anchors.** TL-E03, TL-E04 and TL-E06.
 
 ### 5.2.5 Benign Overfitting: Interpolating solutions and population risk
 
@@ -274,7 +274,7 @@ Taking conditional expectation over training noise eliminates the cross term:
 
 **Research comparison.** [Hastie et al., *Annals of Statistics* 2022](https://doi.org/10.1214/21-AOS2133); effective-rank analysis by Bartlett et al.
 
-**Internal anchors.** TL-E03 (receiving states and actual updates); TL-E08 (target-specific readouts).
+**Internal anchors.** TL-E03 (receiving states and actual updates); TL-E07 (target-specific readouts).
 
 ### 5.2.6 Scaling Laws and Chinchilla: TLI Functional Response and Compute-Optimal Allocation
 
@@ -385,7 +385,7 @@ Substituting the optimal allocation back into the original loss law gives
 
 **Research comparison.** [Hoffmann et al., *Training Compute-Optimal Large Language Models* (2022)](https://arxiv.org/abs/2203.15556); empirical scaling laws by Kaplan et al.
 
-**Internal experimental anchors.** TL-E03 (actions and receiving states), TL-E04 (functional response), TL-E07 (continuing reorganization) and cross-architecture TLI tests.
+**Internal experimental anchors.** TL-E03 (actions and receiving states), TL-E04 (functional response), TL-E06 (continuing reorganization) and cross-architecture TLI tests.
 
 ### 5.2.E1 (exploratory, outside the fourteen): Scaling from TLI Support, Capability and Loss to a Solvable Spectral Model
 
@@ -634,7 +634,7 @@ This budget calculation uses the all-mode regime of (E9), distinct from the trun
 
 **Related research.** [Bahri et al., *Explaining neural scaling laws*, *PNAS* 2024, DOI:10.1073/pnas.2311878121](https://doi.org/10.1073/pnas.2311878121) (random-feature and spectral scaling); [Bordelon, Atanasov and Pehlevan, *A Dynamical Model of Neural Scaling Laws*, ICML 2024](https://proceedings.mlr.press/v235/bordelon24a.html) (solvable random-feature training dynamics); [Hoffmann et al., *Training Compute-Optimal Large Language Models*, 2022](https://arxiv.org/abs/2203.15556) (empirical Chinchilla law used as a separate comparison).
 
-**Experimental anchors for the TLI relations.** TL-E03/E04 (realized updates and finite responses), TL-E06/E07 (intervention-defined support and reorganization), TL-E08 (capability boundaries), INF-E01 and INF-G01/G02 (frozen inference and trained component versions). The exploratory spectral exponents in (E8)–(E12) are derived under [A], separately from these empirical measurements.
+**Experimental anchors for the TLI relations.** TL-E03/E04 (realized updates and finite responses), TL-E05/E06 (intervention-defined support and reorganization), TL-E07 (capability boundaries), INF-E01 and INF-G01/G02 (frozen inference and trained component versions). The exploratory spectral exponents in (E8)–(E12) are derived under [A], separately from these empirical measurements.
 
 ### 5.2.7 Dynamical Isometry: Transmission of Training Actions through Deep Networks
 
@@ -834,7 +834,7 @@ A negative gradient inner product causes a positive first-order change in old-ta
 
 **Research comparison.** Elastic Weight Consolidation (Kirkpatrick et al.); Gradient Episodic Memory (Lopez-Paz and Ranzato); gradient projection and experience replay.
 
-**Internal anchors.** TL-E03, TL-E07 and TL-E08; [RL-E06](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md), which records mastery, subsequent deterioration and recovery.
+**Internal anchors.** TL-E03, TL-E06 and TL-E07; [RL-E06](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md), which records mastery, subsequent deterioration and recovery.
 
 ### 5.2.10 Grokking: Different Crossing Times for Training and Generalization Readouts
 
@@ -923,7 +923,7 @@ The original paper uses \(A=\operatorname{erf}(\sqrt2)\approx95.45\%\) as its cr
 
 **Research comparison.** [Levi, Beck and Bar-Sinai, *Grokking in Linear Estimators—A Solvable Model that Groks without Understanding*, ICLR 2024](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8c0a85ee3eddb1858d9142f0d51d67b2-Abstract-Conference.html); [Žunkovič and Ilievski, *Grokking phase transitions in learning local rules with gradient descent*, JMLR 2024](https://www.jmlr.org/papers/v25/22-1228.html).
 
-**Internal anchors.** TL-E03 (receiving-state-dependent response), TL-E07 (continuing support reorganization), TL-E08 (continuous margin and discrete readout) and TL-P01 (target-boundary prediction).
+**Internal anchors.** TL-E03 (receiving-state-dependent response), TL-E06 (continuing support reorganization), TL-E07 (continuous margin and discrete readout) and TL-P01 (target-boundary prediction).
 
 ### 5.2.11 Maximal Update Parameterization (μP): Finite Functional Updates as Width Grows
 
@@ -1189,4 +1189,4 @@ Near the interpolation threshold, these inverse-matrix expectations diverge. Far
 
 **Research references.** [Hastie, Montanari, Rosset, and Tibshirani, *Annals of Statistics*, 2022](https://doi.org/10.1214/21-AOS2133); Belkin et al.'s interpolation-threshold work.
 
-**Internal anchors.** TL-E03 (parameter updates and receiving state); TL-E08 (target-dependent readout).
+**Internal anchors.** TL-E03 (parameter updates and receiving state); TL-E07 (target-dependent readout).

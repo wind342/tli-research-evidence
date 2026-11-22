@@ -11,7 +11,7 @@
 | [Introduction](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/intro.tex) | Questions motivating the eight core TLI experiments |
 | [Experimental Methods and Findings: instruments](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/experiments_layout.tex) | [GFG and four reusable instruments](EXPERIMENTAL_INSTRUMENTS.md); frozen interventions and independently auditable results |
 | Experimental section: training | TL-E01–TL-E04 (formation, receiver-state causal forks, finite-amplitude nonlinear responses) |
-| Experimental section: learning | TL-E06–TL-E08 (distributed support, persistent reallocation, target-boundary transitions) |
+| Experimental section: learning | TL-E05–TL-E07 (distributed support, persistent reallocation, target-boundary transitions) |
 | Experimental section: inference | INF-E01 (13 histories, 52 checkpoints, query-conditioned support and exact learned-version rollback) |
 | Experimental section: prediction | TL-P01; 4,652/5,088 = **91.43%**, four-transition macro recall **91.49%** |
 | Experimental section: five additional TLI systems | ResNet, diffusion U-Net, Vision-MoE, GNN, hard-spiking SNN; see appendix **Table 2** (seven systems) and **Table 3** (six-system prediction results) |
@@ -23,7 +23,7 @@
 | [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md), [runnable 21-check mathematical audit](math_audit/README.md) |
 | [Appendix experimental displays](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Figure 3 and Tables 1–3 |
 
-**Document convention:** Section, figure, table and equation references follow the `icml-final` manuscript. Experiment identities remain stable across versions; the November Windows GNN/SNN runs have distinct registered seeds.
+**Document convention:** Section, figure, table and equation references follow the `icml-final` manuscript. The [experiment ID crosswalk](EXPERIMENT_ID_CROSSWALK.md) links the current sequential manuscript IDs to the original frozen records; the November Windows GNN/SNN runs have distinct registered seeds.
 
 ## Confirmed ICML GNN and SNN results
 
@@ -53,11 +53,11 @@ The introduction motivates the experimentally established TLI relations. The [ex
 
 | Experiment | Question / evidence | Protocol / code / checker |
 |---|---|---|
-| TL-E06 | Distributed necessity, backup, substitution, synergy and failure slack | [CSRG-4C experiment](experiments/gfg_nanogpt_support_redundancy_v1/README.md), [capture contract](experiments/gfg_nanogpt_support_redundancy_v1/capture_contract_v2.json), [archive verifier](experiments/gfg_nanogpt_support_redundancy_v1/verify_archive.py) |
-| TL-E07 | Actual updates reorganize support: 72 sections, 1,656 transitions, 1,636 defined allocations, 228 handoffs | [Scope](experiments/gfg_nanogpt_support_reallocation_audit_v1/ANALYSIS_SCOPE.md), [analysis](experiments/gfg_nanogpt_support_reallocation_audit_v1/analysis.py), [checker](experiments/gfg_nanogpt_support_reallocation_audit_v1/INDEPENDENT_CHECKER.py) |
-| TL-E08 | Identity-aligned measured margins cross target readout boundaries | [Ledger construction](experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/experiment.py), [15,264-row ledger checking](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
+| TL-E05 | Distributed necessity, backup, substitution, synergy and failure slack | [CSRG-4C experiment](experiments/gfg_nanogpt_support_redundancy_v1/README.md), [capture contract](experiments/gfg_nanogpt_support_redundancy_v1/capture_contract_v2.json), [archive verifier](experiments/gfg_nanogpt_support_redundancy_v1/verify_archive.py) |
+| TL-E06 | Actual updates reorganize support: 72 sections, 1,656 transitions, 1,636 defined allocations, 228 handoffs | [Scope](experiments/gfg_nanogpt_support_reallocation_audit_v1/ANALYSIS_SCOPE.md), [analysis](experiments/gfg_nanogpt_support_reallocation_audit_v1/analysis.py), [checker](experiments/gfg_nanogpt_support_reallocation_audit_v1/INDEPENDENT_CHECKER.py) |
+| TL-E07 | Identity-aligned measured margins cross target readout boundaries | [Ledger construction](experiments/gfg_nanogpt_identity_aligned_margin_crossing_v1/experiment.py), [15,264-row ledger checking](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
 
-Undefined allocations are not zero support. TL-E08's measured endpoint facts are distinct from TL-P01's predictions, even when the archived ledger supports both analyses.
+Undefined allocations are not zero support. TL-E07's measured endpoint facts are distinct from TL-P01's predictions, even when the archived ledger supports both analyses.
 
 ### 2.3 Inference: frozen recruitment of learned support
 
@@ -84,7 +84,7 @@ The direct TL-P01 algorithm implements the established TLI relations among reali
 
 | System | Identity | Protocol / code | Results / check |
 |---|---|---|---|
-| nanoGPT / Adam | TL-E01–04, TL-E06–08, INF-E01, TL-P01 | Sections 2 and 3.1 above | [Experiment index](EXPERIMENT_INDEX.md), [TL-P01 results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md), [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
+| nanoGPT / Adam | TL-E01–07, INF-E01, TL-P01 | Sections 2 and 3.1 above | [Experiment index](EXPERIMENT_INDEX.md), [TL-P01 results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md), [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
 | ResNet-18 / CIFAR-100 / SGD momentum | TL-G01; inference also INF-G01 | [Protocol](experiments/gfg_resnet_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_resnet_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_resnet_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Diffusion U-Net / CIFAR-10 / AdamW | TL-G02; inference also INF-G01 | [Protocol](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Vision-MoE / CIFAR-100 / AdamW | **TL-G03 / INF-G02** | [Protocol](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/PROTOCOL_FREEZE.md), [model contract](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/MODEL_CONTRACT.json), [model](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/model.py), [runner](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/runner.py) | [Results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md), [machine results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RESULTS.json), [checker](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECKER.py), [historical check receipt](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECK_RESULT.json) |
@@ -147,9 +147,9 @@ The complete source-oriented ledger remains in [14 theory-first derivations](the
 | a1 | TL-E02 | Formation steps of 11 pause pairs and one clipping control |
 | a2 | TL-E03 P2 | Receiver-conditioned q10 response at alpha=0.125 |
 | a3 | TL-E04 | Five measured finite-amplitude response morphologies normalized by their maximum absolute displacement |
-| b1 | TL-E06 measurements retained in TL-E07 | Single/pair component-gating effects on the group-q10 failure boundary |
-| b2 | TL-E07 | Measured before/after component-support handoff |
-| b3 | TL-E08 | All 15,264 measured pre/post margins |
+| b1 | TL-E05 measurements retained in TL-E06 | Single/pair component-gating effects on the group-q10 failure boundary |
+| b2 | TL-E06 | Measured before/after component-support handoff |
+| b3 | TL-E07 | All 15,264 measured pre/post margins |
 | c1 | INF-E01 | 23 target-group profiles: q10(full) minus q10(single gate) |
 | c2 | INF-E01 | q10(full) minus both single-gate q10s plus joint-gate q10; zero means additive for this readout |
 | c3 | INF-E01 | 52 historical-component rollback/restoration comparisons; exact restoration |
