@@ -8,9 +8,9 @@
 
 | Current ICML manuscript location | Experiment or evidence authority |
 |---|---|
-| [Introduction](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/intro.tex) | Questions motivating the nine core TLI experiments |
+| [Introduction](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/intro.tex) | Questions motivating the eight core TLI experiments |
 | [Experimental Methods and Findings: instruments](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/experiments_layout.tex) | [GFG and four reusable instruments](EXPERIMENTAL_INSTRUMENTS.md); frozen interventions and independently auditable results |
-| Experimental section: training | TL-E01–TL-E05 (formation, receiver-state causal forks, finite-amplitude nonlinear responses, conditioning factors) |
+| Experimental section: training | TL-E01–TL-E04 (formation, receiver-state causal forks, finite-amplitude nonlinear responses) |
 | Experimental section: learning | TL-E06–TL-E08 (distributed support, persistent reallocation, target-boundary transitions) |
 | Experimental section: inference | INF-E01 (13 histories, 52 checkpoints, query-conditioned support and exact learned-version rollback) |
 | Experimental section: prediction | TL-P01; 4,652/5,088 = **91.43%**, four-transition macro recall **91.49%** |
@@ -48,7 +48,6 @@ The introduction motivates the experimentally established TLI relations. The [ex
 | TL-E02 | Pausing parameter–optimizer evolution delays formation; clipping control | [Intervention contract](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/contracts/intervention_api.json), [checkpoint forks](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/checkpoint_fork.py) | [Archived executions and causal evaluations](experiments/gfg_nanogpt_autonomous_capability_discovery_v1/research_archive/entries/) |
 | TL-E03 | Same formed update, different receiving states; separate optimizer-memory exchanges | [Reciprocal protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/RECIPROCAL_MATCHED_PAIR_PROTOCOL_V2.json), [P2 local response](experiments/gfg_nanogpt_stepwise_support_transition_v1/P2_RECIPROCAL_LOCAL_RESPONSE_PROTOCOL.json), [optimizer exchange](experiments/gfg_nanogpt_stepwise_support_transition_v1/H20_RECIPROCAL_OPTIMIZER_EXCHANGE_PROTOCOL.json) | [Reciprocal validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/reciprocal_validator.py), [independent replay](experiments/gfg_nanogpt_stepwise_support_transition_v1/independent_replay_validator.py) |
 | TL-E04 | Finite-amplitude response paths, including nonlinear morphologies | [Amplitude-path protocol](experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json) | [Path validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py), [GFG validator](experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_gfg_validator.py) |
-| TL-E05 | Seven frozen conditioning-factor blocks across 12 development runs, 72 finite-amplitude sections and 15,264 identity-aligned target responses; F1 target boundary, F3 target-update geometry and F5 receiving state identified as primary families in those original runs | [Frozen contract](experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md), [analysis and cross-run matching](experiments/gfg_nanogpt_response_factor_analysis_v1/analysis.py), [2,000 clustered-bootstrap resamples and factor-order/leave-one-out tests](experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py) | [Independent validator](experiments/gfg_nanogpt_response_factor_analysis_v1/validator.py); [public verification record](PUBLIC_EVIDENCE_MATRIX.md) |
 
 ### 2.2 Learning: distributed support and capability boundaries
 
@@ -85,7 +84,7 @@ The direct TL-P01 algorithm implements the established TLI relations among reali
 
 | System | Identity | Protocol / code | Results / check |
 |---|---|---|---|
-| nanoGPT / Adam | TL-E01–08, INF-E01, TL-P01 | Sections 2 and 3.1 above | [Experiment index](EXPERIMENT_INDEX.md), [TL-P01 results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md), [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
+| nanoGPT / Adam | TL-E01–04, TL-E06–08, INF-E01, TL-P01 | Sections 2 and 3.1 above | [Experiment index](EXPERIMENT_INDEX.md), [TL-P01 results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md), [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
 | ResNet-18 / CIFAR-100 / SGD momentum | TL-G01; inference also INF-G01 | [Protocol](experiments/gfg_resnet_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_resnet_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_resnet_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Diffusion U-Net / CIFAR-10 / AdamW | TL-G02; inference also INF-G01 | [Protocol](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Vision-MoE / CIFAR-100 / AdamW | **TL-G03 / INF-G02** | [Protocol](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/PROTOCOL_FREEZE.md), [model contract](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/MODEL_CONTRACT.json), [model](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/model.py), [runner](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/runner.py) | [Results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md), [machine results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RESULTS.json), [checker](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECKER.py), [historical check receipt](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECK_RESULT.json) |
@@ -135,7 +134,7 @@ The complete source-oriented ledger remains in [14 theory-first derivations](the
 | ICML item | Manuscript source | Evidence scope |
 |---|---|---|
 | **Figure 1** | [TLI core with feedback](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig1_tli_core_feedback.pdf) | Conceptual TLI and feedback schematic |
-| **Figure 2** | [Experimental evidence](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig2_experimental_evidence.pdf) | 14 panels covering training, learning, inference and RL feedback; panel-by-panel map below |
+| **Figure 2** | [Experimental evidence](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig2_experimental_evidence.pdf) | 13 panels covering training, learning, inference and RL feedback; panel-by-panel map below |
 | **Figure 3** | [Six-system TLI experiment chains](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig3_cross_system.pdf) | Two GNN seeds 8/9, one 9/9; four SNN seeds 12/12; detailed numerical authorities above |
 | **Table 1 (appendix)** | [Experimental relations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Nine experimental relations and their variables (labels `eq:exp1`–`eq:exp9`) |
 | **Table 2 (appendix)** | [Seven systems](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Six TLI system chains plus the GRU feedback system |
@@ -148,7 +147,6 @@ The complete source-oriented ledger remains in [14 theory-first derivations](the
 | a1 | TL-E02 | Formation steps of 11 pause pairs and one clipping control |
 | a2 | TL-E03 P2 | Receiver-conditioned q10 response at alpha=0.125 |
 | a3 | TL-E04 | Five measured finite-amplitude response morphologies normalized by their maximum absolute displacement |
-| a4 | TL-E05 | F1/F3/F5 conditioning contrasts with 95% intervals |
 | b1 | TL-E06 measurements retained in TL-E07 | Single/pair component-gating effects on the group-q10 failure boundary |
 | b2 | TL-E07 | Measured before/after component-support handoff |
 | b3 | TL-E08 | All 15,264 measured pre/post margins |

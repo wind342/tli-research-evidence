@@ -677,7 +677,7 @@ Here \(\sigma_{\min}^{\mathrm{all}}(J)=\inf_{\|v\|=1}\|Jv\|\), which is zero whe
 
 **Research comparison.** [Pennington, Schoenholz and Ganguli, NeurIPS 2017](https://arxiv.org/abs/1711.04735).
 
-**Internal anchors.** TL-E03 (receiving state), TL-E04 (actual update paths), TL-E05 (update geometry).
+**Internal anchors.** TL-E03 (receiving state), TL-E04 (actual update paths).
 
 ### 5.2.8 Dropout: Adaptive Regularization from Random Feature Masking
 
@@ -972,7 +972,7 @@ The original forward computation and backpropagated update thus give the scaling
 
 **Research comparison.** [Yang and Hu, *Tensor Programs IV: Feature Learning in Infinite-Width Neural Networks*, ICML 2021](https://proceedings.mlr.press/v139/yang21c.html), particularly [Appendix E](https://proceedings.mlr.press/v139/yang21c/yang21c-supp.pdf); [Yang et al., *Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer*, NeurIPS 2021](https://proceedings.nips.cc/paper_files/paper/2021/hash/8df7c2e3c3c3be098ef7b382bd2c37ba-Abstract.html).
 
-**Internal anchors.** TL-E03 (receiving-state-dependent responses), TL-E04 (nonlinear finite-update effects), TL-E05 (target and update geometry).
+**Internal anchors.** TL-E03 (receiving-state-dependent responses), TL-E04 (nonlinear finite-update effects).
 
 ### 5.2.12 Sharpness and SAM: Parameter Geometry, Realized Updates, and Functional Responses
 
@@ -1068,7 +1068,7 @@ Substitute again into the TLI response:
 
 **Research references.** [Dinh et al., *Sharp Minima Can Generalize For Deep Nets*](https://arxiv.org/abs/1703.04933); [Foret et al., *Sharpness-Aware Minimization*, ICLR 2021](https://research.google/pubs/sharpness-aware-minimization-for-efficiently-improving-generalization/).
 
-**Internal anchors.** TL-E03 (update and receiving state); TL-E04 (finite-step response); TL-E05 (target-update geometry).
+**Internal anchors.** TL-E03 (update and receiving state); TL-E04 (finite-step response).
 
 ### 5.2.13 Gradient Noise Scale: Stochastic-Gradient Noise in Target Functional Responses
 
@@ -1132,7 +1132,7 @@ For an output vector \(f\) with Jacobian \(J\), likewise,
 
 **Research reference.** [McCandlish et al., *An Empirical Model of Large-Batch Training*](https://arxiv.org/abs/1812.06162).
 
-**Internal anchors.** TL-E03 (receiving state); TL-E05 (target-update geometry).
+**Internal anchors.** TL-E03 (receiving state).
 
 ### 5.2.14 Double Descent: Explicit Risk Curves in the Original Gaussian Linear Model
 

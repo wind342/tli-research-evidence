@@ -1,4 +1,4 @@
-> **TLI research comparisons:** Twenty-one paired results from previously published research, used to examine the explanatory relationships provided by TLI. These are literature comparisons, separate from the nine nanoGPT experiments and fourteen formal mathematical recoveries.
+> **TLI research comparisons:** Twenty-one paired results from previously published research, used to examine the explanatory relationships provided by TLI. These are literature comparisons, separate from the eight core nanoGPT experiments and fourteen formal mathematical recoveries.
 
 ## 5.1 Unified explanations of contrasting findings
 ### 5.1.1 Sharpness and SAM: Parameter geometry versus realized training effects
@@ -99,7 +99,7 @@
 
 **TLI unification.** Batch size influences realized actions through sampled gradients, noise covariance and optimizer history. Learning-rate changes and warmup affect action magnitudes and receiving-state trajectories. The generalization gap and its mitigation through training strategy are therefore associated with different action distributions and paths of functional-support formation. The common chain is **sampling and optimization rules → actual action → response at the receiving state → learning outcome**.
 
-**Internal anchors.** TL-E03: receiving-state dependence and optimizer-memory effects on action formation. TL-E05: target-specific update geometry F3 and receiving-state factors F5 condition responses.
+**Internal anchors.** TL-E03: receiving-state dependence and optimizer-memory effects on action formation.
 
 ### 5.1.11 Scaling Laws and Chinchilla: Scaling regularities versus compute-optimal allocation
 

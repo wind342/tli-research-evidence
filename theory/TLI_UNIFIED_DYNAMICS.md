@@ -182,7 +182,7 @@ The reciprocal causal-fork protocols restore exact pre-states, execute full/skip
 
 **Experimental anchors:** [TL-E01/02 theory ledger](../experiments/gfg_nanogpt_autonomous_capability_discovery_v1/research_archive/THEORY_LEDGER.md); [TL-E02 intervention contract](../experiments/gfg_nanogpt_autonomous_capability_discovery_v1/contracts/intervention_api.json); [TL-E03 reciprocal protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/RECIPROCAL_MATCHED_PAIR_PROTOCOL_V2.json); [independent reciprocal validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/reciprocal_validator.py).
 
-### 3.2 Finite-amplitude response and its conditioning factors — TL-E04–E05
+### 3.2 Finite-amplitude response — TL-E04
 
 The actual update is applied at controlled amplitudes to one unchanged receiving pre-state:
 
@@ -204,23 +204,7 @@ r_{t,q}(\alpha)\ne\alpha\,r_{t,q}(1).
 \tag{9}
 \]
 
-TL-E05 then studies *why the response of the same identified target differs between real training histories*. Its frozen analysis separates seven prior-information blocks, matches identical target identities across runs, tests alternative factor orders and leave-one-block-out comparisons, and uses run-pair-clustered bootstrap uncertainty. In the original twelve runs, the analysis identified the following three primary response-conditioning families. Equation (10) records this experiment's factor grouping, separate from the coupled TLI equations (1)–(5):
-
-\[
-\boxed{
-\mathcal F_{t,q}
-=\bigl(F1_{t,q},F3_{t,q},F5_t\bigr).
-}
-\tag{10}
-\]
-
-- **F1 — target boundary:** the pre-update margin, competing outcomes, and proximity to a capability boundary;
-- **F3 — target–update geometry:** the realized update's magnitude, component distribution, and directional relationship to the identified target;
-- **F5 — receiving parameter/optimizer state:** the pre-update parameter configuration, optimizer memory, preconditioning summaries, and their interactions with the formed update.
-
-The frozen TL-E05 analysis uses 12 development histories, 72 update sections, 15,264 identity-aligned target responses, and 2,000 clustered bootstrap replicates. \(\mathcal F_{t,q}\) records the measured factor families in that original experiment.
-
-**Experimental anchors:** [amplitude-path protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json); [amplitude-path validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py); [TL-E05 frozen factor contract](../experiments/gfg_nanogpt_response_factor_analysis_v1/FACTOR_ANALYSIS_CONTRACT.md); [factor-analysis implementation](../experiments/gfg_nanogpt_response_factor_analysis_v1/runner.py).
+**Experimental anchors:** [amplitude-path protocol](../experiments/gfg_nanogpt_stepwise_support_transition_v1/B_UPDATE_AMPLITUDE_PATH_PROTOCOL.json); [amplitude-path validator](../experiments/gfg_nanogpt_stepwise_support_transition_v1/amplitude_path_validator.py).
 
 ### 3.3 Distributed support and component interaction — TL-E06
 
@@ -452,7 +436,6 @@ This separation between **underlying functional dynamics** and **a particular ap
 | Realized training actions, persistent receiving states, optimizer memory | (1)–(2) | TL-E01–E03; TL-G01–G03; GNN/SNN |
 | State-dependent response to the same formed update | (6)–(7) | TL-E03 and cross-system reciprocal update exchanges |
 | Actual finite-amplitude nonlinear response | (8)–(9) | TL-E04; TL-G01–G03; GNN/SNN |
-| Original response-conditioning factor analysis (F1/F3/F5) | (10), experimental grouping | TL-E05; separate cross-system factor tests |
 | Distributed support and non-additive component effects | (11)–(14) | TL-E06; native coalition experiments in other systems |
 | Persistent support redistribution under actual updates | (3), (15)–(16) | TL-E07; cross-system before/after support interventions |
 | Target capability and boundary crossings | (3), (17) | TL-E08 and identity-aligned true endpoint records |

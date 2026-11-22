@@ -6,7 +6,7 @@ This repository accompanies the current **TLI paper**, [*Unified Dynamics of Tra
 
 | In ICML paper order | Frozen experimental evidence |
 |---|---|
-| Training and receiving-state interventions | [TL-E01–TL-E05](TLI_ICML_PAPER_EVIDENCE_MAP.md#21-training-realized-updates-and-receiving-states) |
+| Training and receiving-state interventions | [TL-E01–TL-E04](TLI_ICML_PAPER_EVIDENCE_MAP.md#21-training-realized-updates-and-receiving-states) |
 | Learning, support reallocation and capability | [TL-E06–TL-E08](TLI_ICML_PAPER_EVIDENCE_MAP.md#22-learning-distributed-support-and-capability-boundaries) |
 | Frozen inference | [INF-E01](TLI_ICML_PAPER_EVIDENCE_MAP.md#23-inference-frozen-recruitment-of-learned-support) |
 | Theory-derived target-boundary predictor | [TL-P01](TLI_ICML_PAPER_EVIDENCE_MAP.md#31-theory-derived-target-boundary-prediction) |
