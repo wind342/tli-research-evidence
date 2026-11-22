@@ -38,9 +38,12 @@ The result measures immediate target-boundary prediction from a formed update, p
 
 ## Public recomputation
 
-The complete machine records are distributed in the publication archive as
-`tl_p01_actual_update_boundary_evidence_v1.zip`. After extracting the bundle,
-run from the matching Git release:
+The historical publication archive identified the complete machine records as
+`tl_p01_actual_update_boundary_evidence_v1.zip`. This is a historical bundle
+identifier, not a currently distributed TLI release. The current Git evidence
+and verification scope are listed in the [public evidence matrix](../../PUBLIC_EVIDENCE_MATRIX.md).
+For a locally retained copy of the matching historical bundle, extract it and
+run from the corresponding Git release:
 
 ```bash
 python -m experiments.gfg_nanogpt_actual_update_boundary_v1.INDEPENDENT_CHECKER path/to/tl_p01_actual_update_boundary_v1
