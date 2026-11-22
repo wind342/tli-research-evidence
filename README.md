@@ -52,17 +52,17 @@ The preserved original release collected executable experiments used to
 establish and test the generation-fact, training–learning, inference and
 reinforcement-learning claims across historical manuscripts.
 
-The repository has **16 primary experiment entries**:
+The current index contains **15 primary experiment entries**, plus the historical exploratory factor analysis (original TL-E05). The fifteen entries comprise:
 
 - two structural projection experiments;
-- eight experiments forming the training–learning theory;
+- seven experiments forming the training–learning theory;
 - one direct prediction experiment;
 - one frozen-inference projection experiment; and
 - four reinforcement-learning experiments spanning feedback closure,
   long-delay credit discovery, recursive optimization of credit discovery and
   stochastic long-chain credit.
 
-The primary entries are indexed in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md).
+The current primary entries and the separately listed historical factor study are indexed in [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md). The original sealed collection contained sixteen entries.
 The verification scope for every indexed experiment is recorded in
 [PUBLIC_EVIDENCE_MATRIX.md](PUBLIC_EVIDENCE_MATRIX.md).
 The four reinforcement-learning experiments form one cumulative evidence chain,
