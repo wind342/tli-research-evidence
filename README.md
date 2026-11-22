@@ -146,7 +146,7 @@ Each primary experiment retains its frozen protocol, implementation, machine
 results, negative controls and independent checker where those objects existed
 in the source experiment. External payload identities and verification boundaries are recorded in
 [provenance](provenance/EXTERNAL_ARTIFACTS.md) and the [evidence matrix](PUBLIC_EVIDENCE_MATRIX.md).
-Historical archive references are not a current TLI evidence-package release. Reproduction commands
+Historical archive records and superseded package-building scripts remain available through Git history. Reproduction commands
 and the distinction between result recomputation and full native re-execution
 are documented in `PUBLIC_EVIDENCE_MATRIX.md`. The common Python package and
 Core v3 schemas are retained under `src/` and `protocol/core_v3/`.

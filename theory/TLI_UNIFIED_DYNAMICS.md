@@ -587,7 +587,7 @@ From these facts, the core TLI relationships follow naturally: an actual update 
 
 ## 9. Frozen computation and small trainable transformations — a research proposal
 
-**Status:** This is a separate **untested engineering proposal** informed by TLI, outside the current ICML paper's fourteen mathematical recoveries. It is not an additional experimental finding and does not claim that the architecture itself is new.
+**Status:** An exploratory engineering proposal informed by TLI, with experimental validation pending.
 
 ### 9.1 A task result is not a stored "capability"
 
@@ -604,7 +604,7 @@ For a correctness-based target, the readout answers whether the produced result 
 
 A one-parameter function may satisfy a simple target, whereas a general-purpose model may use billions of parameters to serve many different targets and input conditions. The parameter count of a model on which a behavior is observed **is not automatically a lower bound on the parameters needed to realize that behavior in a specialized system**. The task, rather than the label "capability," determines the computation required.
 
-This changes the design question. Do **not** ask whether a pretrained backbone already "has" the new target capability. Ask whether a **composition of fixed existing computation and small new computation** can produce the required outputs.
+The design question is whether a **composition of fixed existing computation and small new computation** can produce the required outputs.
 
 ### 9.2 Architecture: change a small part of the computation, freeze the rest
 
@@ -664,11 +664,11 @@ For a back-only head, if two inputs need different answers but the frozen backbo
 
 ### 9.5 Relation to RL-E06, incremental reuse, and existing work
 
-[RL-E06](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) established that a shared GRU which initially completed all four registered tasks could lose success on unreinforced tasks under concentrated positive feedback, then largely recover under redistributed feedback. The architecture and model size were unchanged; feedback changed the learned functional organization and thus the target readouts. This supports the **motivation to avoid unnecessary overwriting of established shared computations**, not a claim that frozen-backbone heads were tested in RL-E06.
+[RL-E06](../experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) established that a shared GRU which initially completed all four registered tasks could lose success on unreinforced tasks under concentrated positive feedback, then largely recover under redistributed feedback. The architecture and model size were unchanged; feedback changed the learned functional organization and thus the target readouts. This motivates studying how to preserve established shared computations while adding new ones.
 
 For incremental use, freeze the completed task-specific transformations when training the next ones. An optional small coordination module may combine their outputs without updating the older modules. Preserving parameters preserves an earlier task's original computational path only if that path, its inputs, and its routing are still used unchanged.
 
-The broad engineering family has substantial precedent, including [Head2Toe (ICML 2022)](https://proceedings.mlr.press/v162/evci22a.html) and [Visual Prompt Tuning (ECCV 2022)](https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4175_ECCV_2022_paper.php). **The proposal does not claim novelty for freezing pretrained weights or adding task-specific trainable modules.**
+The broad engineering family has substantial precedent, including [Head2Toe (ICML 2022)](https://proceedings.mlr.press/v162/evci22a.html) and [Visual Prompt Tuning (ECCV 2022)](https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4175_ECCV_2022_paper.php).
 
 **Research question left open:** For ordinary target functions that are practically reachable by appropriately sized networks, how often can a **mostly frozen pretrained computation**, supplemented by **small front and/or back transformations**, realize those targets with far fewer updated parameters—and preserve earlier task computations while new ones are added?
 
