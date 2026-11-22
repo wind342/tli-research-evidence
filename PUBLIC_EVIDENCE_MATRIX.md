@@ -21,6 +21,8 @@ This matrix identifies current Git experiment records and the verification scope
 | RL-E05 | [RL-E05 results](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/RESULTS.md) and [checker](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/independent_checker.py) | All 12 formal seeds, frozen-state identities, 29,352 generation facts, feedback ledgers, support profiles and every preregistered decision gate are independently checked | The strict temporal-precedence hypothesis remains `NOT_SUPPORTED`; the preserved evidence supports only the narrower co-occurring support-concentration and capability-trade-off relations |
 | RL-E06 | [RL-E06 results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) and [checker](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/independent_checker.py) | All 12 formal dose/recovery seeds, 84 condition executions, checkpoints, ledgers, GFGs, dose associations, recovery forks and the corrected recovery-reference arithmetic are independently checked | Full native re-execution is computationally larger than static public recomputation and writes a separate audit root; the public bundle contains the complete formal authority once, without duplicating the fresh audit payload |
 
+The TL-E06 support-reallocation analysis and the TL-P01 prediction implementation retain their shared preprocessing and record dependencies, including the response-factor-analysis module. These are implementation dependencies, not additional experiments in the current manuscript.
+
 ## Historical external-payload verification commands
 
 - TL-P01: `python -m experiments.gfg_nanogpt_actual_update_boundary_v1.INDEPENDENT_CHECKER <extracted-bundle-root>`
