@@ -1,0 +1,19 @@
+{
+  "archive": "TLI_nanoGPT_Three_History_Evidence.zip",
+  "bytes": 2571710539,
+  "sha256": "31df9772537300226bfd889c3294dc1e2ea274f660f019ca07e7357d3ee004fb",
+  "parts": [
+    {
+      "name": "TLI_nanoGPT_Three_History_Evidence.zip.001",
+      "bytes": 1400000000,
+      "sha256": "2c6f2f439f4f260c871e26e2e6394d56301e1e9332ed084cd681ba1604fd80a5",
+      "url": "https://github.com/wind342/tli-research-evidence/releases/download/tli-execution-evidence-20261125/TLI_nanoGPT_Three_History_Evidence.zip.001"
+    },
+    {
+      "name": "TLI_nanoGPT_Three_History_Evidence.zip.002",
+      "bytes": 1171710539,
+      "sha256": "e8fe396a6baabde495b68ff09334396dc8685175f9f064f18a55d5d8b5f40827",
+      "url": "https://github.com/wind342/tli-research-evidence/releases/download/tli-execution-evidence-20261125/TLI_nanoGPT_Three_History_Evidence.zip.002"
+    }
+  ]
+}

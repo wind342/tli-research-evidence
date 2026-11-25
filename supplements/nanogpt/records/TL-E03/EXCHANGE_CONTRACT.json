@@ -1,0 +1,129 @@
+{
+  "adjudication": {
+    "counterexample_resolution": "The inherited count may be reduced only if a candidate selected without h100 future information is prospectively rolled against registered surviving pairs. Endpoint-state causal discrimination alone is not counted as resolving all inherited pairs.",
+    "nonseparable_interaction": "The reciprocal hybrids are not consistently assigned by one donor across receivers and registered comparisons, or form new support/capability orderings. The observed result then requires an executable parameter/support-by-optimizer interaction state; neither channel is sufficient alone.",
+    "optimizer_memory_dominant": "At both receivers, both reciprocal hybrids are closer on the frozen h100 comparisons to the native control that donated optimizer state than to the control that donated parameters, and capability ordering transfers accordingly.",
+    "parameter_support_history_dominant": "At both receivers, both reciprocal hybrids are closer on the frozen h100 comparisons to the native control that donated parameters than to the control that donated optimizer state, and capability ordering remains parameter-donor aligned."
+  },
+  "branches": [
+    {
+      "branch_id": "theta0_O0",
+      "kind": "native_control",
+      "optimizer_donor_scale": 0.0,
+      "parameter_donor_scale": 0.0
+    },
+    {
+      "branch_id": "theta1_O1",
+      "kind": "native_control",
+      "optimizer_donor_scale": 1.0,
+      "parameter_donor_scale": 1.0
+    },
+    {
+      "branch_id": "theta0_O1",
+      "kind": "reciprocal_optimizer_exchange",
+      "optimizer_donor_scale": 1.0,
+      "parameter_donor_scale": 0.0
+    },
+    {
+      "branch_id": "theta1_O0",
+      "kind": "reciprocal_optimizer_exchange",
+      "optimizer_donor_scale": 0.0,
+      "parameter_donor_scale": 1.0
+    }
+  ],
+  "comparison_contract": {
+    "capability": "At h100 compare absolute capability-accuracy difference to each native endpoint control.",
+    "categorical": "At h100 compare every non-floating CSRG probe output to each native endpoint control by exact mismatch count without subtraction, averaging or interpolation.",
+    "numeric": "At h100 concatenate every finite coordinate from every floating CSRG probe output in canonical role and coordinate order and compute the unweighted RMS difference from each native endpoint control.",
+    "selection": "Report all three distances independently. Do not fit weights, thresholds or a combined score. Scientific adjudication is not performed by the executor."
+  },
+  "continuation_final_horizon": 100,
+  "exchange_horizon": 20,
+  "execution_contract": {
+    "capture": "At h20, h21 and h100 execute CSRG-4C-v1. At every h20-to-h100 training step preserve the actual batch identity, training logits, registered activations, raw and clipped gradients, parameter update, weight-decay update, adaptive residual, Adam first- and second-moment deltas, Adam step delta and post-preconditioned direction.",
+    "continuation": "For every branch at one receiver, use the exact native batches and the exact content-derived RNG opportunities frozen by the source amplitude-path protocol from h20 through h100.",
+    "exchange": "Within each receiver, construct each branch from the complete parameter map of its named parameter donor and the complete exp_avg, exp_avg_sq and step maps of its named optimizer donor. Never mix receivers, add deltas or interpolate optimizer tensors.",
+    "future_information_used": false,
+    "native_controls": "Reexecute theta0_O0 and theta1_O1 from the exact h20 states and require byte-exact h100 state and probe agreement with the source amplitude-path execution."
+  },
+  "future_information_used": false,
+  "observation_horizons": [
+    20,
+    21,
+    100
+  ],
+  "optimizer_keys": [
+    "exp_avg",
+    "exp_avg_sq",
+    "step"
+  ],
+  "probe_contract_id": "CSRG-4C-v1",
+  "protocol_id": "H20-RECIPROCAL-OPTIMIZER-STATE-EXCHANGE-v1",
+  "purpose": "Resolve the frozen A/B survivor's remaining causal ambiguity by exchanging complete h20 Adam state between the already executed scale-zero and scale-one endpoints while holding the receiver, parameter state, subsequent batches and RNG opportunity fixed.",
+  "receivers": [
+    {
+      "base_optimizer_step": 3600,
+      "endpoints": {
+        "0": {
+          "h100_source_content_sha256": "ccb211053052a9d64c2c49a1c3d717cc7dbc2f1d244259a513513bf00f839c85",
+          "h100_source_object_id": "obj_52aaa33a8af5e78b0ee6074bbe059d16d96b23851bc848a7045bc9f175d2e334",
+          "h100_state_sha256": "d117409ffa6ef3581b22743b22272d7b3da001ed797af68d41c56cbd291db749",
+          "h20_source_content_sha256": "c5075ea4f95c2cc112466a6afa105bde5ee5f130094e8390758262155c117881",
+          "h20_source_object_id": "obj_f5c3fd31385e8219ca1f9fb9c1d440b4f5d329c39a7b71cf8ce8042de953fce7",
+          "h20_state_sha256": "e84269c94083b13707bba1178b1a7ecec6d200f6d2163f501e4a3d2ed19e598e",
+          "scale": 0.0
+        },
+        "1": {
+          "h100_source_content_sha256": "619970985a3df9fb1ce5b2a04cf4e7ab1578c7c673097441805718aef7817df7",
+          "h100_source_object_id": "obj_2b3f58892b9cfae0336e4e47572bdf99ef9ebf13f6be787ad26ef2ec6086c07b",
+          "h100_state_sha256": "d44bb5059e95314d3be07210347d075d0a94ed8872ba40d544e97675bc97ac33",
+          "h20_source_content_sha256": "ab6b96464f9c98e51116d4a44f98e560e049ddd228f6ed9ceb710b0ea9560edc",
+          "h20_source_object_id": "obj_0c7ddf9265d588610d6431eadc7f4e9b6148511fc1c8d22e6ae8f78f9a1abffc",
+          "h20_state_sha256": "72c1fc5908766a7db25916e46a32210199bc6f4c426b96b0bf63692514242baf",
+          "scale": 1.0
+        }
+      },
+      "entry_id": "nano-supp-01",
+      "h20_optimizer_step": 3620,
+      "label": "A",
+      "source_bundle_id": "f433287dd03c138e88468c1203bbdfc751ab35613c9672ecb105316a37480971"
+    },
+    {
+      "base_optimizer_step": 4100,
+      "endpoints": {
+        "0": {
+          "h100_source_content_sha256": "6e0b161ef83bb9fed59e590edc21d7377d33e909ed99e2eaf773ab7127a6a1c2",
+          "h100_source_object_id": "obj_75d4872db3469819294eb9583e28a840a1597660dde4ec7a2289cb9660fccb0d",
+          "h100_state_sha256": "4f28124cb2e7513adb611a14466ea640c9bf69d2b54301b8e2f8dceb768ce915",
+          "h20_source_content_sha256": "ff98d6501aa3fee80edfb03bad5620d029af6554e6d4d42c940c20ce0d7b989b",
+          "h20_source_object_id": "obj_d48997a461f820051a475031360c9a7ef974d3c382f933ca18db0db1b8439714",
+          "h20_state_sha256": "905d62323abb9e1a5ff0d49397dde486f1f6d150f7744677f3188d119699f9c0",
+          "scale": 0.0
+        },
+        "1": {
+          "h100_source_content_sha256": "972e4fc2d07287737e6977693c9a5b1242bbee2ecc5b7dfee9556863cd7338c9",
+          "h100_source_object_id": "obj_2b5683793a9d5cece4482d2cda044536fe37a3f0e0c17c1991ec049489ee6d66",
+          "h100_state_sha256": "2432168ea12ee49a06b1283d64520703b8add506d7d9ea6b87ef46f70ca91067",
+          "h20_source_content_sha256": "e8f9e51340e606dd1c9f6609b030dbf1a62f2a7fcc56a63929c3410551068511",
+          "h20_source_object_id": "obj_9c9275a3b0e8abfde346d75804df21c327bc51935c4e6e9543e243ebc982095b",
+          "h20_state_sha256": "c535b6ea05004ff334d6a3eaa11a371ce325fd602e7df0fecbb709f084cbc816",
+          "scale": 1.0
+        }
+      },
+      "entry_id": "nano-supp-01",
+      "h20_optimizer_step": 4120,
+      "label": "B",
+      "source_bundle_id": "f433287dd03c138e88468c1203bbdfc751ab35613c9672ecb105316a37480971"
+    }
+  ],
+  "schema": "nanogpt-h20-reciprocal-optimizer-exchange-protocol-v1",
+  "scientific_interpretation_performed_by_executor": false,
+  "source_amplitude_path": {
+    "evidence_validation_sha256": "b1acdbd1a71516eaf10cd0fb15a33ee586546c74dca14746abe9638f6f05fe41",
+    "graph_database_sha256": "33da607fac4450d6a7ae21bff3a778813c3ee72dfe5495ad8394646bf1d406be",
+    "graph_manifest_sha256": "fa637f2e315269ceb88371cd93af1da1034d0e1748f2ea196d50c4d341262151",
+    "graph_schema": "nanogpt-b-update-amplitude-path-gfg-manifest-v1",
+    "protocol_id": "B-UPDATE-AMPLITUDE-PATH-CONTINUATION-v1",
+    "protocol_sha256": "9e6844e6f3640e54746272e2908e02d2148a08416ee6c0c03b3b6a02f1b3e7a9"
+  }
+}

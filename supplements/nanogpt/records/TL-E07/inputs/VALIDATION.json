@@ -1,0 +1,15 @@
+{
+  "alpha0_native_exact_section_count": 36,
+  "alpha1_native_exact_section_count": 36,
+  "alpha_count": 7,
+  "forward_count_per_alpha": 12,
+  "forward_derivation_check_count": 3024,
+  "future_information_used_for_formal_predictors": false,
+  "geometry_controls_frozen_before_curves": true,
+  "global_unseen_entry_accessed": false,
+  "schema": "nanogpt-adjacent-response-independent-validation-v1",
+  "section_count": 36,
+  "status": "PASS",
+  "support_derivation_check_count": 756,
+  "target_crossing_ledger_count": 7632
+}

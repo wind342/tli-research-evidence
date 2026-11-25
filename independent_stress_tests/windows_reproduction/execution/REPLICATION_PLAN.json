@@ -1,0 +1,43 @@
+{
+  "archived_protocols": {
+    "gnn/gnn_falsification_frozen.json": "e2bd6b803c20df9bc3e612edc931631df4b8ec14016b2db1fb5fc5a321932085",
+    "snn/snn_tlir_frozen_protocol.json": "9cc39a3ca6dc7b60697136ddccfa0caa9753860f2598f2e679bb62242a1ddace",
+    "tlp01_prediction/FROZEN_PROTOCOL.json": "0feef5f57264f57587e5d933b1ff451cea75c2de8518bfd5a1bbc7bcee5d69be"
+  },
+  "date": "2026-11-18",
+  "design": "Use the archived models, data-generation rules, training budgets, checkpoints, evaluation and thresholds.",
+  "environment": {
+    "numpy": "2.4.4",
+    "omp_num_threads_environment": "1",
+    "openblas_num_threads": "1",
+    "platform": "Windows",
+    "python": "3.12.10",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "torch": "2.13.0+cpu",
+    "torch_threads": 2
+  },
+  "frozen_inputs": {
+    "inputs/gnn_falsification_frozen.json": "1ad493652cc54f3d0fdf32b15cb736c643c94562d993c95bb1edef70b42568b0",
+    "inputs/gnn_tlir_counterexample.py": "28e9b9d8d611c05fa3b6a45b89f359181c6d83ef21d4fb8681f85e4d6ab5a722",
+    "inputs/snn_tlir_adversarial.py": "718931152b06d6b7aa0d8416fe094463fed714e9cf06efb0e90dbb270a748cf1",
+    "inputs/snn_tlir_frozen_protocol.json": "b72bf95389bdc5477f209e33cf349fcbe1e7ea64459a3b8c06a611f77d17543e",
+    "inputs/snn_tlir_independent_checker.py": "1374cce6da20bf1ca828bf134de21ffd6189c6831c7936cf62f87124b36d1c41",
+    "predictor/FROZEN_PROTOCOL.json": "90e2a6cbfed5daa24c4519cd34ffd0cc4189a3867ddef3f7a4af4771c2d61bdc",
+    "predictor/independent_checker.py": "de56fa07b4c65df89eac790e7a869f3ab6f59db7969f1c009cffc909dd00f38d",
+    "predictor/tlp01_cross_system.py": "86c73158473c8be452919fdca12b59b5f483e3c9187f935c1b930dcdcea7ca78"
+  },
+  "gnn_seeds": [
+    202611801,
+    202611802,
+    202611803
+  ],
+  "runner_sha256": "9060c77d1ff88ab13c4fe7901041a3c3b5ecfc27b3f83f79b7b91519b52eb7e3",
+  "seed_selection": "Fixed consecutive new IDs, disjoint from the archived pilot and formal seeds; retain every result.",
+  "snn_seeds": [
+    71101,
+    71102,
+    71103,
+    71104
+  ]
+}

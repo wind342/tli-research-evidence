@@ -1,0 +1,60 @@
+{
+  "adjudication": {
+    "delayed_optimizer_dominant": "Parameter-donor responses follow the donor at horizon 1 while optimizer or joint donor responses become donor-like only at later horizons.",
+    "otherwise": "NONSEPARABLE_INTERACTION_OR_OBSERVATION_FAILURE",
+    "receiving_state_dominant": "Both reciprocal donor responses remain closer to recipient-native than donor-native response signatures.",
+    "response_comparison": "Compare branch-minus-skip response tensors, not absolute poststates.",
+    "update_dominant": "Both reciprocal donor responses are closer to donor-native than recipient-native response signatures at the relevant horizons."
+  },
+  "branches": [
+    "skip",
+    "native_full",
+    "native_parameter_only",
+    "native_optimizer_only",
+    "donor_parameter_delta",
+    "donor_optimizer_innovation",
+    "donor_joint_update"
+  ],
+  "endpoints": [
+    {
+      "entry_id": "nano-supp-01",
+      "label": "A",
+      "optimizer_step": 3600,
+      "source_bundle_id": "f433287dd03c138e88468c1203bbdfc751ab35613c9672ecb105316a37480971",
+      "window_id": "phase-v3-window-6c1d8e8102a5cc58ff894e66"
+    },
+    {
+      "entry_id": "nano-supp-01",
+      "label": "B",
+      "optimizer_step": 4100,
+      "source_bundle_id": "f433287dd03c138e88468c1203bbdfc751ab35613c9672ecb105316a37480971",
+      "window_id": "phase-v3-window-ca443b73b8714f7c3cf8da55"
+    }
+  ],
+  "future_information_used": false,
+  "horizons": [
+    1,
+    2,
+    5,
+    20,
+    100
+  ],
+  "protocol_id": "RECIPROCAL-MATCHED-PAIR-v2",
+  "purpose": "Discriminate receiving-state structure from local parameter and Adam update registration on one surviving matched-prestate counterexample.",
+  "schema": "nanogpt-reciprocal-matched-pair-protocol-v2",
+  "supplement_input_binding": {
+    "original_sha256": "6a6f20e0a5055df7dd01f204dfbf0c0710c5ffd3045abc1717c4a760c4e3642d",
+    "pair_id": "phase-v3-pair-1e79d0bdda390ec430dadd3a",
+    "selection_rule": "minimum frozen development matching distance, then pair id"
+  },
+  "transplant_semantics": {
+    "absolute_donor_poststate_used": false,
+    "aligned_rng_across_recipient_branches": true,
+    "joint": "Apply the donor parameter delta and donor Adam innovation to the same recipient prestate.",
+    "optimizer": "For exp_avg and exp_avg_sq, retain the recipient carry term beta times recipient prestate and add the donor's realized innovation post minus beta times donor prestate. Add the donor's realized Adam step increment.",
+    "parameter": "Add the donor's named native parameter delta to the recipient prestate parameter with the same identity.",
+    "raw_second_moment_delta_addition_used": false,
+    "reason": "Raw cross-state addition can leave the valid Adam state space by producing negative exp_avg_sq.",
+    "recipient_continuation_batches": true
+  }
+}

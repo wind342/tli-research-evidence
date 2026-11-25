@@ -61,3 +61,11 @@ The five native reference paths are retained at:
 GF-P01 invokes these paths separately and compares their independently formed
 native/reference views with the projected views. They are not five additional
 entries in the 16-experiment manuscript index.
+
+## nanoGPT three-history experimental supplement
+
+The [integrated supplement](supplements/nanogpt/README.md) provides three
+10,000-update histories with their matched interventions, finite-amplitude
+responses, support and boundary measurements, frozen inference and
+target-boundary prediction. The capture, execution and result files are
+distributed together through one package and one reproduction sequence.

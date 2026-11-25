@@ -1,0 +1,36 @@
+{
+  "optimizer_steps": {
+    "nano-supp-01": [
+      3600,
+      3601,
+      4198,
+      4199,
+      6998,
+      6999
+    ],
+    "nano-supp-02": [
+      2298,
+      2299,
+      2500,
+      2501,
+      7698,
+      7699
+    ],
+    "nano-supp-03": [
+      2800,
+      2801,
+      3998,
+      3999,
+      8398,
+      8399
+    ]
+  },
+  "registration": "fixed two adjacent steps per available original maintain/decline/recovery window; no target or predictions used in selection",
+  "selection_sha256": "f46dd0a8d2a0e92645757c921ae39689f1f938ee1e021befb18e284fd82fba8b",
+  "source_protocol_sha256": "77d4271f95044a297e167dc93f27f0bc5980e1c20bc353a7150d9db11bfcffc3",
+  "splits": {
+    "nano-supp-01": "development",
+    "nano-supp-02": "development",
+    "nano-supp-03": "confirmation"
+  }
+}

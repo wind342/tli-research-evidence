@@ -1,0 +1,82 @@
+{
+  "not_measured": {},
+  "original_protocol_sha256": "20063f172ea46f2b134b316a315b7e45e332ff1ae82f17ea5ffe137ff75446b1",
+  "selected": {
+    "nano-supp-01": {
+      "decline": {
+        "adjacent_drop": 0.8962264150943396,
+        "optimizer_step": 6800,
+        "prediction_sha256": "9181ae16c615e9272cc8d5c4b27df4c2a8f8c995106309dce3b7db94b9df78d4",
+        "prior_optimizer_step": 6700,
+        "prior_validation_accuracy": 1.0,
+        "validation_accuracy": 0.10377358490566038
+      },
+      "formed": {
+        "optimizer_step": 1800,
+        "prediction_sha256": "b88beec878213f983f43814736cebd35f709477a6767bafe870123fc3559e789",
+        "validation_accuracy": 0.9150943396226415
+      },
+      "pre_formation": {
+        "optimizer_step": 1700,
+        "prediction_sha256": "ebeccc094e140b6b0a627e51652ff312d960d2d8d2853ebe74332f0e794ff71c",
+        "validation_accuracy": 0.8679245283018868
+      },
+      "recovered": {
+        "optimizer_step": 7000,
+        "prediction_sha256": "c38d72cc728ed0abb9577dc175f7ee2143fb497fb193d3d1ce9200eca6ac38b7",
+        "validation_accuracy": 0.9575471698113207
+      }
+    },
+    "nano-supp-02": {
+      "decline": {
+        "adjacent_drop": 0.6839622641509434,
+        "optimizer_step": 7600,
+        "prediction_sha256": "024233965b9b4a3bc73065ce65e63d19e9a5f28e75f2711f6757ef0daab85056",
+        "prior_optimizer_step": 7500,
+        "prior_validation_accuracy": 1.0,
+        "validation_accuracy": 0.3160377358490566
+      },
+      "formed": {
+        "optimizer_step": 500,
+        "prediction_sha256": "5b544efe2c4922362503006be75ad87044575265cf4914967fff0ee7eeb2ec1f",
+        "validation_accuracy": 0.9386792452830188
+      },
+      "pre_formation": {
+        "optimizer_step": 400,
+        "prediction_sha256": "25897540c4da281801ce56e504945d8a283d290f161e7eccd8ed4cd2945325a7",
+        "validation_accuracy": 0.5518867924528302
+      },
+      "recovered": {
+        "optimizer_step": 7700,
+        "prediction_sha256": "13cb3c21e6b1a03184edd500ee3c813aa7903830f145d4017cd6b1de5f8078c7",
+        "validation_accuracy": 1.0
+      }
+    },
+    "nano-supp-03": {
+      "decline": {
+        "adjacent_drop": 0.7877358490566038,
+        "optimizer_step": 8300,
+        "prediction_sha256": "0c2a5024cff6a2260e43ac296b6dae6c398f2af7ef025675d94e6a9d88ec8a96",
+        "prior_optimizer_step": 8200,
+        "prior_validation_accuracy": 1.0,
+        "validation_accuracy": 0.21226415094339623
+      },
+      "formed": {
+        "optimizer_step": 1200,
+        "prediction_sha256": "259990fbc237c3635c4e56d010e3c58e62b4977326a0aff7de50f9600ded773e",
+        "validation_accuracy": 0.9858490566037735
+      },
+      "pre_formation": {
+        "optimizer_step": 1100,
+        "prediction_sha256": "94512c9928252c0ac9950c0ad8c1d89dfe6e7910ba41c0ffe1b5c2cd803ae591",
+        "validation_accuracy": 0.8726415094339622
+      },
+      "recovered": {
+        "optimizer_step": 8400,
+        "prediction_sha256": "8034c38c00f8231db002b98d5ebe2f4412ffb638782baab538d87e0882987e01",
+        "validation_accuracy": 1.0
+      }
+    }
+  },
+  "source_index_sha256": "0e97c118a0ea8f5e65c247a9f44e4add701056d23e595b02642149495a23b352"
+}

@@ -1,0 +1,38 @@
+{
+  "nano-supp-01": {
+    "bytes": 1169055766,
+    "capture_manifest_sha256": "97e1d5cfb3fe888c4f46d01e41ad803e10eea4bf9799de454640213873b2fb23",
+    "database_sha256": "09e4d8cb84a7f47d423ff4cb9c1c7141afdf28f865756831a1f5cdc862218fc9",
+    "device_peak_allocated_bytes": 46432768,
+    "elapsed_seconds": 537.16,
+    "evaluations": 101,
+    "net_disk_bytes": 1160118272,
+    "role": "development",
+    "status": "PASS",
+    "steps": 10000
+  },
+  "nano-supp-02": {
+    "bytes": 1166841107,
+    "capture_manifest_sha256": "ed2c9192bb84699dcfd5e8affe0a45ed2ddbee5ae74e8ab28fbcfda74cfb67c8",
+    "database_sha256": "e1f0df0419f50cda3391048e9a5147974b423f04e3a85f38bf65cca3321a75bd",
+    "device_peak_allocated_bytes": 46432768,
+    "elapsed_seconds": 509.56,
+    "evaluations": 101,
+    "net_disk_bytes": 1206386688,
+    "role": "development",
+    "status": "PASS",
+    "steps": 10000
+  },
+  "nano-supp-03": {
+    "bytes": 1168130851,
+    "capture_manifest_sha256": "4e119ad5eca6239719f61689fca54549dde5d55dcc988613e3198c9733e65ae0",
+    "database_sha256": "7da7496276753733af7d15df9df5b78c4729ce3a4d35c3bc7dc5b9bb836cdc4a",
+    "device_peak_allocated_bytes": 46432768,
+    "elapsed_seconds": 540.38,
+    "evaluations": 101,
+    "net_disk_bytes": 1314553856,
+    "role": "confirmation",
+    "status": "PASS",
+    "steps": 10000
+  }
+}

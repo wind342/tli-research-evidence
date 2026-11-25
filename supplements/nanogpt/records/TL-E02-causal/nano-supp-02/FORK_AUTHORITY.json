@@ -1,0 +1,230 @@
+{
+  "batch_matches": true,
+  "checkpoint_sha256": "b9874b9c5d9d7c128c8d6b3222e88f6baea1fe1251ed5be34bba943d672a09a6",
+  "native_database_sha256": "e1f0df0419f50cda3391048e9a5147974b423f04e3a85f38bf65cca3321a75bd",
+  "optimizer_identity": {
+    "transformer.h.0.attn.c_attn.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.0.attn.c_proj.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.0.ln_1.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.0.ln_2.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.0.mlp.c_fc.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.0.mlp.c_proj.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.1.attn.c_attn.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.1.attn.c_proj.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.1.ln_1.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.1.ln_2.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.1.mlp.c_fc.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.h.1.mlp.c_proj.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.ln_f.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.wpe.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    },
+    "transformer.wte.weight": {
+      "exp_avg": true,
+      "exp_avg_sq": true,
+      "step": true
+    }
+  },
+  "parameter_identity": {
+    "transformer.h.0.attn.c_attn.weight": true,
+    "transformer.h.0.attn.c_proj.weight": true,
+    "transformer.h.0.ln_1.weight": true,
+    "transformer.h.0.ln_2.weight": true,
+    "transformer.h.0.mlp.c_fc.weight": true,
+    "transformer.h.0.mlp.c_proj.weight": true,
+    "transformer.h.1.attn.c_attn.weight": true,
+    "transformer.h.1.attn.c_proj.weight": true,
+    "transformer.h.1.ln_1.weight": true,
+    "transformer.h.1.ln_2.weight": true,
+    "transformer.h.1.mlp.c_fc.weight": true,
+    "transformer.h.1.mlp.c_proj.weight": true,
+    "transformer.ln_f.weight": true,
+    "transformer.wpe.weight": true,
+    "transformer.wte.weight": true
+  },
+  "state_source": {
+    "optimizer_object_ids": {
+      "transformer.h.0.attn.c_attn.weight.exp_avg": "obj_631c071f7e23c8e50dab3709031147113e50770888ace4b7aa5fd8856942d8bb",
+      "transformer.h.0.attn.c_attn.weight.exp_avg_sq": "obj_f3bb8b433bb49af2f7364fc18f0361112de825fc0dc5b0efa8fb886119792e0d",
+      "transformer.h.0.attn.c_attn.weight.step": "obj_942e19aa35cbd2a4e22f3a7dc48cf2aa8144255196caa886f952a6b128a58b56",
+      "transformer.h.0.attn.c_proj.weight.exp_avg": "obj_e252d33debf9e760e3b9e3a0f9d440783add49d10d579fb77cb3e8dca937af89",
+      "transformer.h.0.attn.c_proj.weight.exp_avg_sq": "obj_0584483f3ebd26396380df7714f28d330e91e00fa271fe9651d08373feb00a0e",
+      "transformer.h.0.attn.c_proj.weight.step": "obj_9ad92c75d46cf7de0415074c7417c0b82ec7d48636b0906cb534bf777b1c9fa9",
+      "transformer.h.0.ln_1.weight.exp_avg": "obj_e3171d8269683da9cee52de09f65ef591db1acca125f9ce8485cb5d0f63e8864",
+      "transformer.h.0.ln_1.weight.exp_avg_sq": "obj_6dab1b4672f8ad0fc486edfe22a91f20318e98dda085648915900949d5d657f4",
+      "transformer.h.0.ln_1.weight.step": "obj_b8b63ea301b75be4c1d84bfcd949aba622b56da86c2d8f7437f701c4003c06c0",
+      "transformer.h.0.ln_2.weight.exp_avg": "obj_0451ffbc2c140548c043d95dede3cff538c5a759558fd2a671da3af7defcadaf",
+      "transformer.h.0.ln_2.weight.exp_avg_sq": "obj_296fffc6bc79397b11c48bb4d68737f5666e537112893808f018a6aa999a4fff",
+      "transformer.h.0.ln_2.weight.step": "obj_c2e612e03d7610ad2dde708ec5d8c96acaa2b777823f7fd4db65501109320c3f",
+      "transformer.h.0.mlp.c_fc.weight.exp_avg": "obj_292e512588efc0f0065896b7c51d9fbdf32752b0b07bcd25195d5936ee8b9030",
+      "transformer.h.0.mlp.c_fc.weight.exp_avg_sq": "obj_979e92f9e9deef072c6f136498991ea341af8bfe921b1ab7fcd416e00a6afeb3",
+      "transformer.h.0.mlp.c_fc.weight.step": "obj_cf025875c58a0831e2597760dd82642ffe210cf0d81db93f25aa6e5985fe2e1d",
+      "transformer.h.0.mlp.c_proj.weight.exp_avg": "obj_d36360571c256116a66223956847753fe421ba2e6fa642eb2cde439287ad8678",
+      "transformer.h.0.mlp.c_proj.weight.exp_avg_sq": "obj_a07817544727ab440f0228507e3782eac438db34d106ef5d04fc7fb8a36178e7",
+      "transformer.h.0.mlp.c_proj.weight.step": "obj_4df977608f004502d5fa44b4b8ad18957ccc6cfefef01000359d3efd721dd1ca",
+      "transformer.h.1.attn.c_attn.weight.exp_avg": "obj_5e0dcb4d78ad7f86a695ab73cc6b91198949d4b4e331712bcad56f80f9dbd22d",
+      "transformer.h.1.attn.c_attn.weight.exp_avg_sq": "obj_ce3d7040396fe2dc3246d5bcb35cf800e7022ef7577f379d32777ac2beee9506",
+      "transformer.h.1.attn.c_attn.weight.step": "obj_4952b84c92869733873c593c16b000fff834eb64ed016f26c8d7288837fd05f8",
+      "transformer.h.1.attn.c_proj.weight.exp_avg": "obj_1d831d012470e5ead1143f6f1da5247f1b64782bc4f45b98cfde3b512b4e1a58",
+      "transformer.h.1.attn.c_proj.weight.exp_avg_sq": "obj_b77dbdb06a147f50932d9c6479bb7b9869674e332e1e421a9dc816c07635a7aa",
+      "transformer.h.1.attn.c_proj.weight.step": "obj_ac3fedf190e86f5aed6766c37a6dd380f0f666f9b8acb00a29f9d120fb5c5212",
+      "transformer.h.1.ln_1.weight.exp_avg": "obj_2662dec51639240ac0bc5e75d9e52383f6bbe271e789249abcc0db3a8a28a419",
+      "transformer.h.1.ln_1.weight.exp_avg_sq": "obj_d91a95a9c601b1ebee6aac7b973dc72ab456085caf88c5e135066062a4c3938b",
+      "transformer.h.1.ln_1.weight.step": "obj_c725d2b9f48d18986dc052d025ba28aef9327911437b1b2160aa71294f98453a",
+      "transformer.h.1.ln_2.weight.exp_avg": "obj_7247908bc4048d06f4b954f0ca65f2b143e42e62a073b912daf7764804eaea2d",
+      "transformer.h.1.ln_2.weight.exp_avg_sq": "obj_a26883112e91e07343709297569583595ccfa5d1d18a256e908e10ae9eef752c",
+      "transformer.h.1.ln_2.weight.step": "obj_ee1bd4655f15120659238788cf3eb349b826792742c364cb99ab549d6b449b24",
+      "transformer.h.1.mlp.c_fc.weight.exp_avg": "obj_105701fe97ba8f3ffbf386ca9178bafb02955e7a14bccd77ea46c3e3989eac31",
+      "transformer.h.1.mlp.c_fc.weight.exp_avg_sq": "obj_1f7a946753bdbc7b54de77128eb8c7d48b354ca41749255f6b9dde8b449bef9b",
+      "transformer.h.1.mlp.c_fc.weight.step": "obj_5bbf9906c637977f836af1026f1e8b0b2431142e5ac5eb32fcf3ae4575e6e4c1",
+      "transformer.h.1.mlp.c_proj.weight.exp_avg": "obj_d6e16837bdfd27a4077598bb9cd4bfe1e9169fc323366b4d3db9de63af4fbaf0",
+      "transformer.h.1.mlp.c_proj.weight.exp_avg_sq": "obj_d9e521b16ec995943552bf03d00fbdc5a6221675687d2182f6e7ed615703a2b4",
+      "transformer.h.1.mlp.c_proj.weight.step": "obj_3cd0f5537f3754514179f265422a05764377737b6637b625c6e823f796580f6b",
+      "transformer.ln_f.weight.exp_avg": "obj_b32caa4aa46ce1397e5ab37cabb9747fa095b9509418c0cb85493ae645ac5958",
+      "transformer.ln_f.weight.exp_avg_sq": "obj_ab81c942dca8e3a3a9cffbb25f0fbc5cff75753b244d0f121ce489e5adcf6cee",
+      "transformer.ln_f.weight.step": "obj_39599c9566724689c36600b4e864f0431c9b911fb9581099ebeebb81db21b4dc",
+      "transformer.wpe.weight.exp_avg": "obj_7f957f4574a2b2df8ea8020d8f6b1ebb3705750cddb951d57dee1c66d35bed7e",
+      "transformer.wpe.weight.exp_avg_sq": "obj_540e954cc1889c42bfacc903b79aac5f57386979eef42e73d9a629e8a0ca7f24",
+      "transformer.wpe.weight.step": "obj_3d437fd560e066498cc79246446630f0d7833da0e75f3811a248c1b9194387a0",
+      "transformer.wte.weight.exp_avg": "obj_daf2e8615cc3e7ac80731691a17a0645fe49719baa6f3d8a7c474423768d8652",
+      "transformer.wte.weight.exp_avg_sq": "obj_611367ea2a5b907bd2c041605753c35f5a1656f2009ffc260210458ea59c2690",
+      "transformer.wte.weight.step": "obj_8e0c92b86542b7a78c15dfbf0d7238d41341f78efeb644fc4196cab053b2bff1"
+    },
+    "optimizer_sha256": {
+      "transformer.h.0.attn.c_attn.weight.exp_avg": "3e8cbaeea2e6294d84a6099c3f555c8048bd559697d571739bb1ca974e4104c8",
+      "transformer.h.0.attn.c_attn.weight.exp_avg_sq": "b1f39db351a6c60bcb208f484b52a7c72de7262c776df08b367f507817fb2588",
+      "transformer.h.0.attn.c_attn.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.0.attn.c_proj.weight.exp_avg": "9671f386d41c3208169249816a3d0441045de4962b94ce8a2e89ac1cff271a35",
+      "transformer.h.0.attn.c_proj.weight.exp_avg_sq": "ac7747178d2deee14a30e5c43ca938b73866467e0f81da144ccc5e71dde3d285",
+      "transformer.h.0.attn.c_proj.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.0.ln_1.weight.exp_avg": "79ffdd3bed160e761e9433e0ed7515352ca4ce3040f832ba488f3e2f893b4ca1",
+      "transformer.h.0.ln_1.weight.exp_avg_sq": "d5068d844a85b359a56ef17e489e9ba684e3a010311727cb6aaaa2c983cb1663",
+      "transformer.h.0.ln_1.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.0.ln_2.weight.exp_avg": "94dbc6b9085b0bd7459e449eed1b598417a7b42511b3de5684063478d277b17f",
+      "transformer.h.0.ln_2.weight.exp_avg_sq": "364969f74d81ca66df84851635160a8f55191198c6b86d09f3965f348c6e447f",
+      "transformer.h.0.ln_2.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.0.mlp.c_fc.weight.exp_avg": "a952187db9c3b36b918c0e52889fc0dbc417ad1ae58c197069d3b0890f75fe77",
+      "transformer.h.0.mlp.c_fc.weight.exp_avg_sq": "78db280249e86469cd0fb053bd9d7d599f823bb183d9b7858b5408948f648b47",
+      "transformer.h.0.mlp.c_fc.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.0.mlp.c_proj.weight.exp_avg": "60a2c539ee0fa90b74d5e675ceeca254601825c25fa48d9f80a8d439b3fa2728",
+      "transformer.h.0.mlp.c_proj.weight.exp_avg_sq": "0166519db6bf3840e0c91a9633ffea31f5da9e1e69850355cb98e1d7193dec9c",
+      "transformer.h.0.mlp.c_proj.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.1.attn.c_attn.weight.exp_avg": "81a4fd6919b4e6f65a9fdad32adc8321c97e437da7ab246f312814174bea9f99",
+      "transformer.h.1.attn.c_attn.weight.exp_avg_sq": "cd85184c34d7f8a9968cfcc84f19df9cf2f191fed7381fc58ce0a8f6666f56c0",
+      "transformer.h.1.attn.c_attn.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.1.attn.c_proj.weight.exp_avg": "0d1d3a6462f6ab9ac7037628b4d6a5d4dd98ad2ba6209c5ade15eed4db3f543d",
+      "transformer.h.1.attn.c_proj.weight.exp_avg_sq": "502befc00a91c170edc9f4e26d3a0292bee77329d0531ee4371dde8cfb1af7d2",
+      "transformer.h.1.attn.c_proj.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.1.ln_1.weight.exp_avg": "e44f2180550a919bee4fffb321708245c34e26b20143b1106bde417d8ae88338",
+      "transformer.h.1.ln_1.weight.exp_avg_sq": "d36d900b4166f9a582dfa98b27ea966e598f707dee6663cd95318bb5d7a95d88",
+      "transformer.h.1.ln_1.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.1.ln_2.weight.exp_avg": "125bb45c1236db04cccfdf61f8a85a737c19cf00798bfdf3383970e7f2c4fd0a",
+      "transformer.h.1.ln_2.weight.exp_avg_sq": "fb87ac0a71b4b750655445b823e958026df7b703771125d810ca46b33127a2ed",
+      "transformer.h.1.ln_2.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.1.mlp.c_fc.weight.exp_avg": "fe41f3035e95b048660df271847ad6a4ffe309b1cbd0d53970b7aa4d919f234a",
+      "transformer.h.1.mlp.c_fc.weight.exp_avg_sq": "bfddcff98c719829e7e2e0d708ea7058f89451c106201e3ea7e491f8ed935586",
+      "transformer.h.1.mlp.c_fc.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.h.1.mlp.c_proj.weight.exp_avg": "413e80da9ea2b2233d570e2c32d62d097124030ce39325b63d1633032eaa66c5",
+      "transformer.h.1.mlp.c_proj.weight.exp_avg_sq": "4b6a18b395982d415d0b58cea53235f7402803a880b8d7f67f92ca8cde60e3c5",
+      "transformer.h.1.mlp.c_proj.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.ln_f.weight.exp_avg": "730c7bd55beffaf8d101b7de1413b0f5cf860fb5f5fd77f36996d8a4d26a70fc",
+      "transformer.ln_f.weight.exp_avg_sq": "e5cca379995552403b49a1f0f93bb6edf5b97c0fc8092f86a4ad0567262b7f8d",
+      "transformer.ln_f.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.wpe.weight.exp_avg": "b34492fead6f67b76ab8824c2459ade4979a375acbbab1a30a4ea7a6e79f9d4e",
+      "transformer.wpe.weight.exp_avg_sq": "60351e2086af6adfce540ae2325f53719ddf3709b850b66f3df98d8ad851dad0",
+      "transformer.wpe.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7",
+      "transformer.wte.weight.exp_avg": "0e6a252a7399d4d65766c9ba019ce5689b9fd205548e0b3eeb798c00bfc143e4",
+      "transformer.wte.weight.exp_avg_sq": "23e206b63793d157b994b8c13e6cae6a1acf7d5dc3e099387360cefffdacb819",
+      "transformer.wte.weight.step": "ac8fb139930df65fdb788559d7299840c359549afc851b82ba08d1485e67f3b7"
+    },
+    "parameter_object_ids": {
+      "transformer.h.0.attn.c_attn.weight": "obj_1771db22a45f9dfb544f8b74d805abf30a4912b92847a12f74b2dcd67a02c3f5",
+      "transformer.h.0.attn.c_proj.weight": "obj_1eb1f6ba7415f410e884a979b0ef73b0a6b2a19ec2d530eecdf8eb95a9e797e3",
+      "transformer.h.0.ln_1.weight": "obj_8809533585fdcab72bbe7f3961a1b963452058f5233c66fed1ed7e37995d47c5",
+      "transformer.h.0.ln_2.weight": "obj_81e5128debe37a0aa128b2b5602a0b881454e52112f19a342e3b327f5c2c2c2f",
+      "transformer.h.0.mlp.c_fc.weight": "obj_c3f88c333e828ec489bb49fc5d1932edbf387a2c7f9772cbfc478f0327add099",
+      "transformer.h.0.mlp.c_proj.weight": "obj_d1eb72ab0ddc8a268fd823e431fab6942f4c09c8c1e1334eabf1c6007b0872f4",
+      "transformer.h.1.attn.c_attn.weight": "obj_761caee7374c051f25ec32e665e22c6a35eb6fddb7b6c866efc4e773082af112",
+      "transformer.h.1.attn.c_proj.weight": "obj_f4e39af827fd110c7624d1b0a5d57050644f2b283ede40b7badea60f0f7884dd",
+      "transformer.h.1.ln_1.weight": "obj_9fa188b7c5647b6f87b01b1c4e6e8b0954a484d336c3116737da5b6b0d18b7e8",
+      "transformer.h.1.ln_2.weight": "obj_e7d6f0c4048a9a73c544f53fad9499f0da2147a9d9249bcfa46cb5eb192c0119",
+      "transformer.h.1.mlp.c_fc.weight": "obj_0131f7e2b80bcbefc7e5e1fbd18731b9cd9eaf046ca1be31293a2377ea08bf30",
+      "transformer.h.1.mlp.c_proj.weight": "obj_5be840b1621e4b4f3fbb64443ec642fd7409b5115b109d7de19350aeadc41c31",
+      "transformer.ln_f.weight": "obj_807e0feda567e5148d6e41b3fd2d998adae930173839ede756c3b83723f2c62c",
+      "transformer.wpe.weight": "obj_87ba558bee1f85226e098e53f1dff3d742361496f6e9e71e99f81c1cd6e00554",
+      "transformer.wte.weight": "obj_1b22f5fb1105932e43c19ce829a60380f7935eb9ee80ebf7e5413942c63c7f21"
+    },
+    "parameter_sha256": {
+      "transformer.h.0.attn.c_attn.weight": "5cd31a447cd399c013739aad2307386b4e2e0538f18547786ee7501de2ae2dd7",
+      "transformer.h.0.attn.c_proj.weight": "6962296e5a5a14a86e56bfd9af849c5762be79ef418afacd3f4bc354417bc0ce",
+      "transformer.h.0.ln_1.weight": "1d8ca1f436c943b9365c0bcf222d8cc6c16a857fbbc804c54ad2fb333e004670",
+      "transformer.h.0.ln_2.weight": "d8a139bd3ed0ab6e922110163360a1e150a6fc3b6e444d1e8bc0a36280ae2171",
+      "transformer.h.0.mlp.c_fc.weight": "5555e3db29d0c244da61ff5a858717bab6fd6aa87584d2809d268d0d664ec102",
+      "transformer.h.0.mlp.c_proj.weight": "7b98e9319baa9ec5e27228e831823305ee47e68dc569a53671a5f776e1d3712e",
+      "transformer.h.1.attn.c_attn.weight": "1f1290f83b8e02f961f78551e62a2c887b7a9c3a16fb8d65c02317b308494718",
+      "transformer.h.1.attn.c_proj.weight": "ac93b5920068f382ae91d094735f773825ce0025d1e93c1778f7ca85710d912e",
+      "transformer.h.1.ln_1.weight": "02183ccb28285fd052654a1cbb4ac423fb847c56e76e6632f7d5bbbbb590b362",
+      "transformer.h.1.ln_2.weight": "d6482ede0b2b5fd75b0a577dfb39f34ddd2bcca15a861af25e4da7ffb0443d1c",
+      "transformer.h.1.mlp.c_fc.weight": "dd4411acf40149a2ed38d94bcf35b2ecf43eaeff8323bf67d1bbf48442cd17be",
+      "transformer.h.1.mlp.c_proj.weight": "e4ba5ec469bdf68c5d290c40790c9f55934a150991488fa8b09e82c4dcb3eee9",
+      "transformer.ln_f.weight": "5871a62c4567f278cff00024ad197be9e114a38596fdd78158bc9c579f885364",
+      "transformer.wpe.weight": "6c610e11d372d215caf07793708ad5f80df0e062809d25091bfec401c460b37c",
+      "transformer.wte.weight": "31f31e162f67b70ea706b0f4bf4d6568d5ae4133b6c612e2815885b3f9499baa"
+    }
+  },
+  "step": 400
+}

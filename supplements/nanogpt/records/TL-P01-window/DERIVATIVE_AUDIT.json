@@ -1,0 +1,136 @@
+{
+  "actual_margin_ledger_sha256": "3028f946621d852c97cc99ff3a4cb94b5870a6c8c9166ab3e6bf1a8e88068e6b",
+  "max_jvp_error": 2.2649765014648438e-06,
+  "measurement_count": 3816,
+  "prediction_result_sha256_unchanged": "6c69c0d665bec39cf53b420ed90e2eb5609080d5b8ead109c6b2a5427b854bba",
+  "section_count": 18,
+  "sections": [
+    {
+      "full_network_jvp_reconstruction_max_abs": 7.450580596923828e-09,
+      "primal_max_abs": 1.0609626770019531e-05,
+      "run": "nano-supp-01",
+      "seal_sha256": "dcda90ac1c079dead9f7961fff92b2ef26cc7869d92ab9d2a448fbb84e70ec75",
+      "step": 3600
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 1.0710209608078003e-08,
+      "primal_max_abs": 9.5367431640625e-06,
+      "run": "nano-supp-01",
+      "seal_sha256": "3f533246633f89bdfd5e25fc95eaf4f6836b1607d28bb68274dd25ad795f52b5",
+      "step": 3601
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 2.2649765014648438e-06,
+      "primal_max_abs": 7.033348083496094e-06,
+      "run": "nano-supp-01",
+      "seal_sha256": "c6facb27fc99ac07dcfaa8974876d949a5c5bae18887fe244b7379f7f4dcb799",
+      "step": 4198
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 1.9073486328125e-06,
+      "primal_max_abs": 6.139278411865234e-06,
+      "run": "nano-supp-01",
+      "seal_sha256": "6ca80c48889c50eea6fb1af2ebb4f594c476938794b14b93bd39249c53fa2bc6",
+      "step": 4199
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 2.60770320892334e-08,
+      "primal_max_abs": 1.1920928955078125e-05,
+      "run": "nano-supp-01",
+      "seal_sha256": "4c68161d804cc16b9d583e7f38bfc120ab883a0aad67faa3a6b2fee0196514e0",
+      "step": 6998
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 2.421438694000244e-08,
+      "primal_max_abs": 7.62939453125e-06,
+      "run": "nano-supp-01",
+      "seal_sha256": "c9a470c2140e4c8117389038cd2f50dfac91dd0849ccee1765038549d2dd299d",
+      "step": 6999
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 2.115964889526367e-06,
+      "primal_max_abs": 5.7220458984375e-06,
+      "run": "nano-supp-02",
+      "seal_sha256": "5cdcc9b2a4c67bbff3b3418007e32aa4866fc0992d8ec7bab7ff9eff82c9c43f",
+      "step": 2298
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 1.3113021850585938e-06,
+      "primal_max_abs": 6.198883056640625e-06,
+      "run": "nano-supp-02",
+      "seal_sha256": "49bcc0317729c31b73a1c77d398790d140e1d4ec2e5b72aaac0ee27d5d8ce651",
+      "step": 2299
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 8.381903171539307e-09,
+      "primal_max_abs": 6.198883056640625e-06,
+      "run": "nano-supp-02",
+      "seal_sha256": "873410e623ab532256d5e936f11349a1db9f1e95dd1b033920d91db9decfab76",
+      "step": 2500
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 8.381903171539307e-09,
+      "primal_max_abs": 7.867813110351562e-06,
+      "run": "nano-supp-02",
+      "seal_sha256": "bbe5da8107b32794c43073392f584a2a1df856ebc0c127481fcba54da9db4166",
+      "step": 2501
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 2.2351741790771484e-08,
+      "primal_max_abs": 8.374452590942383e-06,
+      "run": "nano-supp-02",
+      "seal_sha256": "fcfd59b4f0ff76ec2ed4395efd842510ecd3fc6372f743f90480438dec1f8260",
+      "step": 7698
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 2.60770320892334e-08,
+      "primal_max_abs": 9.5367431640625e-06,
+      "run": "nano-supp-02",
+      "seal_sha256": "21e1db9622172282a7953d3832f5b39707cb5bb9d7df50faa873d80e36cf56cb",
+      "step": 7699
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 6.28642737865448e-09,
+      "primal_max_abs": 1.0013580322265625e-05,
+      "run": "nano-supp-03",
+      "seal_sha256": "68e1c05b7ab500655dc9f2501376219d692b12b996dc8e7122a612a289c83526",
+      "step": 2800
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 5.820766091346741e-09,
+      "primal_max_abs": 1.1682510375976562e-05,
+      "run": "nano-supp-03",
+      "seal_sha256": "520850dcd35b5b2e938442e849af358b7e4658e048566c40b5f2ca783959fdb3",
+      "step": 2801
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 1.043081283569336e-06,
+      "primal_max_abs": 4.887580871582031e-06,
+      "run": "nano-supp-03",
+      "seal_sha256": "18760ec822b03c66f7c651fed6b63c4e7ac55b7ff8a3eafa2bdc7d83aac51be7",
+      "step": 3998
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 1.6689300537109375e-06,
+      "primal_max_abs": 4.76837158203125e-06,
+      "run": "nano-supp-03",
+      "seal_sha256": "5d928d11974e4714a0195c97067d2d537bdd260157a4bfe1f3a3daba49ae8243",
+      "step": 3999
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 3.725290298461914e-08,
+      "primal_max_abs": 1.2874603271484375e-05,
+      "run": "nano-supp-03",
+      "seal_sha256": "7dcb0bd19c523758efe1453af725ee15d32701a45eb1e513d0873e0f05dfa971",
+      "step": 8398
+    },
+    {
+      "full_network_jvp_reconstruction_max_abs": 3.166496753692627e-08,
+      "primal_max_abs": 1.0162591934204102e-05,
+      "run": "nano-supp-03",
+      "seal_sha256": "72aa1036ef5e61b99bfeb8128171ebb0d21a6f0d8e3bdbe617b486baca6feb1e",
+      "step": 8399
+    }
+  ],
+  "status": "PASS"
+}

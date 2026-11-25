@@ -1,0 +1,30 @@
+{
+  "historical_forecast_gate_used": false,
+  "plan": {
+    "nano-supp-01": {
+      "cut": 1700,
+      "hook_sha256": "32ed5b76a0346ccacb98fe2a161fd1ab4c9c922a281914465f21790c0aec6493",
+      "intervention": "pause",
+      "native_formation": 1800,
+      "native_sha256": "09e4d8cb84a7f47d423ff4cb9c1c7141afdf28f865756831a1f5cdc862218fc9",
+      "variant": "entry-786d0a3628f6f791399f"
+    },
+    "nano-supp-02": {
+      "cut": 400,
+      "hook_sha256": "32ed5b76a0346ccacb98fe2a161fd1ab4c9c922a281914465f21790c0aec6493",
+      "intervention": "pause",
+      "native_formation": 500,
+      "native_sha256": "e1f0df0419f50cda3391048e9a5147974b423f04e3a85f38bf65cca3321a75bd",
+      "variant": "entry-786d0a3628f6f791399f"
+    },
+    "nano-supp-03": {
+      "cut": 1100,
+      "hook_sha256": "3d2af37aa17baa36ffc536defb48ff77c2280d45eb91d267c151adbc65999cbc",
+      "intervention": "clip",
+      "native_formation": 1200,
+      "native_sha256": "7da7496276753733af7d15df9df5b78c4729ce3a4d35c3bc7dc5b9bb836cdc4a",
+      "variant": "entry-362ded584a953f360aec"
+    }
+  },
+  "rule": "Last 100-step checkpoint strictly before first native sustained formation. The frozen native history is the baseline; the treatment is a new branch from the authenticated identical state."
+}

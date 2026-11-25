@@ -1,0 +1,5 @@
+{
+  "execution": "PASS",
+  "gfg": "PASS",
+  "validation": "native/amplitude_path_validation.json"
+}

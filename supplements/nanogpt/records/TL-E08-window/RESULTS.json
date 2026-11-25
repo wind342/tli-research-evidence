@@ -1,0 +1,31 @@
+{
+  "case_ledgers": [
+    "../TL-P01-window/nano-supp-01/CASE_03600.json",
+    "../TL-P01-window/nano-supp-01/CASE_03601.json",
+    "../TL-P01-window/nano-supp-01/CASE_04198.json",
+    "../TL-P01-window/nano-supp-01/CASE_04199.json",
+    "../TL-P01-window/nano-supp-01/CASE_06998.json",
+    "../TL-P01-window/nano-supp-01/CASE_06999.json",
+    "../TL-P01-window/nano-supp-02/CASE_02298.json",
+    "../TL-P01-window/nano-supp-02/CASE_02299.json",
+    "../TL-P01-window/nano-supp-02/CASE_02500.json",
+    "../TL-P01-window/nano-supp-02/CASE_02501.json",
+    "../TL-P01-window/nano-supp-02/CASE_07698.json",
+    "../TL-P01-window/nano-supp-02/CASE_07699.json",
+    "../TL-P01-window/nano-supp-03/CASE_02800.json",
+    "../TL-P01-window/nano-supp-03/CASE_02801.json",
+    "../TL-P01-window/nano-supp-03/CASE_03998.json",
+    "../TL-P01-window/nano-supp-03/CASE_03999.json",
+    "../TL-P01-window/nano-supp-03/CASE_08398.json",
+    "../TL-P01-window/nano-supp-03/CASE_08399.json"
+  ],
+  "native_transition_counts": {
+    "CORRECT_TO_WRONG": 83,
+    "MAINTAIN_CORRECT": 3147,
+    "MAINTAIN_WRONG": 445,
+    "WRONG_TO_CORRECT": 141
+  },
+  "scope": "identity-aligned measurement of native target-boundary changes; not the historical 500-case candidate",
+  "section_count": 18,
+  "target_count": 3816
+}

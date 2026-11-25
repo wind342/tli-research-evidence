@@ -13,8 +13,19 @@ The prediction criterion requires accuracy and four-way macro recall of at least
 - [GNN structure](round-1/gnn_tli_formal_results.json) · [SNN structure](round-1/SNN_TLI_formal/FORMAL_SUMMARY.json)
 - [Table 3](round-1/table3/ADJUDICATION_REPORT.json) · [Independent prediction audit](round-1/table3/INDEPENDENT_CHECK_RESULT.json)
 
-## Source identity and verification level
+## Execution files and reproduction
 
-The current directory contains the November machine-result summaries, seed/criterion record, prediction adjudication and independent-check receipt. The current tree does **not** contain the exact November-run native training programs, runnable environment specification, or full frozen execution protocol. The GNN and SNN source programs under the adjacent historical directories correspond to different October seeds and should be cited as historical source, not the executable authority for these November records. The existing prediction checker receipt reports `PASS` for 28 events and 10,272 targets; that receipt documents the recorded check, rather than a new native training rerun performed by this documentation update.
+The [execution directory](execution/README.md) contains the frozen plan,
+model and prediction programs, runtime versions, seven seeds' native training
+states, sealed predictions, endpoint records and independent checkers. These
+files connect the current manuscript's reported measurements to executable
+inputs and saved model states.
 
-Earlier manuscript versions can still be audited with the archived [GNN](../gnn/), [SNN](../snn/), and [prediction](../tlp01_prediction/) evidence and the Git history.
+- [Complete execution ZIP](https://github.com/wind342/tli-research-evidence/releases/download/tli-execution-evidence-20261125/TLI_GNN_SNN_Execution_Evidence.zip)
+- [Frozen plan](execution/REPLICATION_PLAN.json)
+- [Model programs and structure records](execution/inputs/)
+- [Prediction code](execution/predictor/) and [prediction records](execution/table3/)
+- [File hashes](execution/SHA256_MANIFEST.json)
+
+The execution README gives the environment installation, saved-state replay
+and fresh-training commands.

@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "capability_changed_count": 211,
+    "capability_declined_count": 77,
+    "capability_improved_count": 134,
+    "capability_unchanged_count": 617,
+    "claim_scope": "EXPLORATORY_POST_HOC_CAUSAL_DESCRIPTION_NOT_ADVANCE_PREDICTION",
+    "component_relations": {
+      "h0_attn": {
+        "update_to_mean_allocation_delta_rho": -0.06821106821106822,
+        "update_to_mean_necessity_delta_rho": 0.543886743886744
+      },
+      "h0_mlp": {
+        "update_to_mean_allocation_delta_rho": 0.22985842985842986,
+        "update_to_mean_necessity_delta_rho": 0.44839124839124844
+      },
+      "h1_attn": {
+        "update_to_mean_allocation_delta_rho": -0.2522522522522523,
+        "update_to_mean_necessity_delta_rho": -0.11583011583011583
+      },
+      "h1_mlp": {
+        "update_to_mean_allocation_delta_rho": -0.21312741312741315,
+        "update_to_mean_necessity_delta_rho": 0.11145431145431146
+      }
+    },
+    "entry_count": 3,
+    "future_information_used_as_predictor": false,
+    "invalid_allocation_transition_count": 0,
+    "mean_reallocation_when_capability_changed": 0.09495084962977396,
+    "mean_reallocation_when_capability_unchanged": 0.015312820214945233,
+    "new_execution": false,
+    "per_run": {
+      "nano-supp-01": {
+        "count": 276,
+        "effective_support_to_capability_change_rho": 0.10116691473794859,
+        "reallocation_to_absolute_capability_change_rho": 0.5819688500351108,
+        "update_to_reallocation_rho": 0.8831711534984831
+      },
+      "nano-supp-02": {
+        "count": 276,
+        "effective_support_to_capability_change_rho": 0.11638265758143979,
+        "reallocation_to_absolute_capability_change_rho": 0.6638728596257466,
+        "update_to_reallocation_rho": 0.7803527582677968
+      },
+      "nano-supp-03": {
+        "count": 276,
+        "effective_support_to_capability_change_rho": 0.25644450138966685,
+        "reallocation_to_absolute_capability_change_rho": 0.5876634634282212,
+        "update_to_reallocation_rho": 0.793618373129719
+      }
+    },
+    "primary_support_switch_count": 24,
+    "primary_support_switch_rate": 0.028985507246376812,
+    "reallocation_magnitude": {
+      "maximum": 0.8115783866776216,
+      "mean": 0.03560705234843419,
+      "median": 0.0018155194875959964,
+      "p95": 0.1577947425222274
+    },
+    "relations": {
+      "concentration_change_to_capability_change_rho": -0.15922692611611197,
+      "effective_support_change_to_capability_change_rho": 0.16226408853628396,
+      "reallocation_to_absolute_capability_change_rho": 0.6226999034052688,
+      "reallocation_to_capability_change_rho": 0.1535996435546612,
+      "update_magnitude_to_primary_support_switch_rate_rho": 0.5570028195166098,
+      "update_magnitude_to_section_mean_reallocation_rho": 0.8823680823680824
+    },
+    "schema": "nanogpt-update-driven-support-reallocation-audit-v1",
+    "section_count": 36,
+    "status": "PASS",
+    "target_group_transition_count": 828,
+    "valid_allocation_transition_count": 828
+  },
+  "validation": {
+    "check_count": 3,
+    "checks": [
+      "source_hashes_and_counts",
+      "all_rows_reconstructed_from_npz",
+      "summary_relations_recomputed"
+    ],
+    "future_leakage_claimed_as_prediction": false,
+    "schema": "nanogpt-support-reallocation-independent-check-v1",
+    "section_count": 36,
+    "status": "PASS",
+    "target_group_transition_count": 828
+  }
+}

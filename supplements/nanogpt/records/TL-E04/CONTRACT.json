@@ -1,0 +1,103 @@
+{
+  "adjudication": {
+    "coarse_path_falsification": "Any raw-logit or frozen large-failure role that fails the fixed test falsifies five-center finite-path sufficiency; the grid must not be enlarged after reading outcomes.",
+    "counterexample_count_reduction": "No surviving counterexample is counted as resolved unless this candidate is rolled prospectively against that registered pair's future.",
+    "delayed_dynamics_requirement": "If h1 finite-path closure passes but branch support or capability ordering first separates during continuation, the earliest separating horizon and exact training-step facts become the next causal target.",
+    "finite_path_local_closure": "The fixed Simpson response-path prediction must improve over both registered endpoint first-order and signed endpoint second-order predictions on the frozen large-failure roles, introduce no failure among the other nonzero numeric roles at either receiver, and reproduce the exact categorical endpoint transitions.",
+    "observation_omission_witness": "Only equal complete numeric and categorical CSRG paths plus equal prefix optimizer/update facts followed by different capability futures support a specific CSRG-4C observation omission.",
+    "scientific_interpretation_performed_by_executor": false
+  },
+  "continuation_scales": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "continuation_semantics": "After h1 path materialization, continue only the five registered center states with the receiver's actual subsequent batches, identical content-derived RNG opportunity across its five branches, and ordinary native AdamW updates.",
+  "donor_update": {
+    "label": "B",
+    "semantics": "The exact named parameter delta from B's actual native training step; each receiver retains its exact skip-state Adam state at amplitude-path initialization.",
+    "source_object_id": "obj_fc09564347a6799c5c1eb013b550c870d256160be13dd7759e67cda93fd59061"
+  },
+  "epsilon": 0.125,
+  "future_information_used": false,
+  "horizons": [
+    1,
+    2,
+    5,
+    20,
+    100
+  ],
+  "inherited_reciprocal_protocol_id": "RECIPROCAL-MATCHED-PAIR-v2",
+  "initial_optimizer_semantics": "For every amplitude at one receiver, copy that receiver's exact skip-state optimizer tensors without transplantation or interpolation.",
+  "probe_contract_id": "CSRG-4C-v1",
+  "protocol_id": "B-UPDATE-AMPLITUDE-PATH-CONTINUATION-v1",
+  "purpose": "Discriminate finite-amplitude receiver-local response structure from delayed optimizer-conditioned transport on the frozen A/B survivor using B's exact realized parameter update.",
+  "receivers": [
+    {
+      "entry_id": "nano-supp-01",
+      "label": "A",
+      "optimizer_step": 3600,
+      "skip_state_source_object_id": "obj_0f74bed81d79c4ca8f2551c306c10bebbac1ca96820e9b532aea4ae10bd83a45",
+      "source_bundle_id": "f433287dd03c138e88468c1203bbdfc751ab35613c9672ecb105316a37480971",
+      "window_id": "phase-v3-window-6c1d8e8102a5cc58ff894e66"
+    },
+    {
+      "entry_id": "nano-supp-01",
+      "label": "B",
+      "optimizer_step": 4100,
+      "skip_state_source_object_id": "obj_4f6b3cb11d9db32a78d3fc98038fa52e3c6ff8589dfb8cf0667de21238066f03",
+      "source_bundle_id": "f433287dd03c138e88468c1203bbdfc751ab35613c9672ecb105316a37480971",
+      "window_id": "phase-v3-window-ca443b73b8714f7c3cf8da55"
+    }
+  ],
+  "response_centers": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "response_contract": {
+    "categorical": "Preserve every raw categorical value and adjacent-scale transition mask; never subtract, average or interpolate category labels.",
+    "numeric": "At every registered center, compute J and K by the frozen central finite difference with epsilon 0.125. Before any h100 result exists, compute the fixed five-center composite-Simpson prediction of the scale-zero to scale-one numeric response.",
+    "probe": "At every registered state execute CSRG-4C-v1: two baselines, four single-component gates and six pair-component gates.",
+    "step_capture": "For every continuation step preserve the actual batch identity, training logits, registered activations, raw and clipped gradients, parameter update, weight-decay update, adaptive residual, Adam first- and second-moment deltas, Adam step delta and post-preconditioned direction."
+  },
+  "scales": [
+    -0.125,
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0,
+    1.125
+  ],
+  "schema": "nanogpt-b-update-amplitude-path-protocol-v1",
+  "simpson_contract": {
+    "interval": [
+      0.0,
+      1.0
+    ],
+    "normalizer": 12.0,
+    "subinterval_width": 0.25,
+    "tuning_permitted": false,
+    "weights": [
+      1.0,
+      4.0,
+      2.0,
+      4.0,
+      1.0
+    ]
+  },
+  "source_response_transport_protocol_id": "RESPONSE-TRANSPORT-CROSS-v1",
+  "supplement_input_binding": {
+    "original_sha256": "9b8c11e0efe18ff7f502a12ced817a9dab11e10b3762dcdaa05b5d9ade2b86d9",
+    "reciprocal_contract_sha256": "18b605704ee90528fff2a3c14ab19fa90149ae885329e65b398cda85b571612c"
+  }
+}

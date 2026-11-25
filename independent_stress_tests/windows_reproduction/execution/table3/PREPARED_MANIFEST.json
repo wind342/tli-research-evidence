@@ -1,0 +1,111 @@
+{
+  "entries": [
+    {
+      "checkpoints": [
+        25,
+        100,
+        200,
+        350
+      ],
+      "native_endpoint_reference": "table3/native_endpoints/gnn_202611801_post.pt",
+      "native_endpoint_sha256": "eb8f7cbba615b456f22b5b588b86e92b3af636e02a411d15302b9e44db1f9565",
+      "pretarget_file": "gnn_202611801_pre.pt",
+      "pretarget_sha256": "b296ac8a5dd46630f8e8cee87847252ed50e56c2cf0a3e66d926d8306c709668",
+      "seed": 202611801,
+      "system": "gnn",
+      "targets": 256
+    },
+    {
+      "checkpoints": [
+        25,
+        100,
+        200,
+        350
+      ],
+      "native_endpoint_reference": "table3/native_endpoints/gnn_202611802_post.pt",
+      "native_endpoint_sha256": "d0e1b5d5b6064299c1f2cb7c5322aceb20b3e1395651932a73e2ec1b14c72c61",
+      "pretarget_file": "gnn_202611802_pre.pt",
+      "pretarget_sha256": "85d54425f0571df70db9d655a48e77d61a5cc86e203fcd91ac09734b3d676688",
+      "seed": 202611802,
+      "system": "gnn",
+      "targets": 256
+    },
+    {
+      "checkpoints": [
+        25,
+        100,
+        200,
+        350
+      ],
+      "native_endpoint_reference": "table3/native_endpoints/gnn_202611803_post.pt",
+      "native_endpoint_sha256": "52f9f0b208aabebb53e76a7c8670bec410339f2e8b7ed67e2a13f3e7080c3d5c",
+      "pretarget_file": "gnn_202611803_pre.pt",
+      "pretarget_sha256": "86b8ac541e9c0196f7d63d007076a276d76e47788f8cb66de5fd08965187cbb3",
+      "seed": 202611803,
+      "system": "gnn",
+      "targets": 256
+    },
+    {
+      "checkpoints": [
+        50,
+        200,
+        400,
+        700
+      ],
+      "native_endpoint_reference": "inputs/SNN_TLIR_formal/seed_71101/NATIVE_STATES_AND_OUTCOMES.pt",
+      "native_endpoint_sha256": "4aa8c177f1af0df247389d4e1ac655c62eb42f6080bf2c2472fcaae2938210c7",
+      "pretarget_file": "snn_71101_pre.pt",
+      "pretarget_sha256": "5c9daf1f5dc9cddaf46cb2404c36590f21604cd4b0933296e4d0f9c5a73db8c6",
+      "seed": 71101,
+      "system": "snn",
+      "targets": 450
+    },
+    {
+      "checkpoints": [
+        50,
+        200,
+        400,
+        700
+      ],
+      "native_endpoint_reference": "inputs/SNN_TLIR_formal/seed_71102/NATIVE_STATES_AND_OUTCOMES.pt",
+      "native_endpoint_sha256": "b657d54fa5dac4e7e633556047061b024a4feb8f899663afc5ac57b6529966d0",
+      "pretarget_file": "snn_71102_pre.pt",
+      "pretarget_sha256": "cd7a65fa8a58f03728827bd3528d511994be16c803cc118b281a4e5c121e930a",
+      "seed": 71102,
+      "system": "snn",
+      "targets": 450
+    },
+    {
+      "checkpoints": [
+        50,
+        200,
+        400,
+        700
+      ],
+      "native_endpoint_reference": "inputs/SNN_TLIR_formal/seed_71103/NATIVE_STATES_AND_OUTCOMES.pt",
+      "native_endpoint_sha256": "a541b01e48cbb7d43a096f4b2b430a5613dcc85499d402e43d2130ca3c8eff63",
+      "pretarget_file": "snn_71103_pre.pt",
+      "pretarget_sha256": "d44660764990e659ea0a8e1ab714c226f834a9dc7e23fd1215b263ae2c1ee199",
+      "seed": 71103,
+      "system": "snn",
+      "targets": 450
+    },
+    {
+      "checkpoints": [
+        50,
+        200,
+        400,
+        700
+      ],
+      "native_endpoint_reference": "inputs/SNN_TLIR_formal/seed_71104/NATIVE_STATES_AND_OUTCOMES.pt",
+      "native_endpoint_sha256": "da023afb38d113219d7278bdc51dfbe61605ce38293f8563c6bd8b0c7b1d705d",
+      "pretarget_file": "snn_71104_pre.pt",
+      "pretarget_sha256": "2bc9a856ac193850b73181dd7d8a449e9725c0a8f384c7580b5f9caf5bf84854",
+      "seed": 71104,
+      "system": "snn",
+      "targets": 450
+    }
+  ],
+  "frozen_protocol_sha256": "90e2a6cbfed5daa24c4519cd34ffd0cc4189a3867ddef3f7a4af4771c2d61bdc",
+  "schema": "tlp01-transport-pretarget-v1"
+}

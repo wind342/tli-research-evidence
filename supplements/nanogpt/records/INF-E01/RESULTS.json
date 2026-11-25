@@ -1,0 +1,124 @@
+{
+  "gfg_checks": [
+    {
+      "block_count": 5,
+      "database_sha256": "a1e64eb4265baf4efe3a15eb9b316ba67de2dc6828862269e731f8840d617c34",
+      "entry_id": "nano-supp-01",
+      "fact_count": 97,
+      "object_count": 130,
+      "occurrence_count": 93,
+      "origin_count": 35,
+      "relation_types": [
+        "calls_learned_support",
+        "combines_support_nonadditively",
+        "generated_origin_dependency",
+        "program_order",
+        "projects_support_for_target_groups",
+        "reads_from",
+        "realizes_fact",
+        "restores_native_result",
+        "rollback_tests_learned_version_dependence",
+        "tests_causal_support"
+      ],
+      "schema": "nanogpt-training-learning-inference-projection-gfg-validation-v1",
+      "status": "PASS"
+    },
+    {
+      "block_count": 5,
+      "database_sha256": "281a57d1d7d4f1dda085704068ff30ce4a8f0c67455f9d570af73df38f175337",
+      "entry_id": "nano-supp-02",
+      "fact_count": 97,
+      "object_count": 130,
+      "occurrence_count": 93,
+      "origin_count": 35,
+      "relation_types": [
+        "calls_learned_support",
+        "combines_support_nonadditively",
+        "generated_origin_dependency",
+        "program_order",
+        "projects_support_for_target_groups",
+        "reads_from",
+        "realizes_fact",
+        "restores_native_result",
+        "rollback_tests_learned_version_dependence",
+        "tests_causal_support"
+      ],
+      "schema": "nanogpt-training-learning-inference-projection-gfg-validation-v1",
+      "status": "PASS"
+    },
+    {
+      "block_count": 5,
+      "database_sha256": "171773f883dd41e90359f6415d21f239a01cd02b51c23059a23e9ade376cd718",
+      "entry_id": "nano-supp-03",
+      "fact_count": 97,
+      "object_count": 130,
+      "occurrence_count": 93,
+      "origin_count": 35,
+      "relation_types": [
+        "calls_learned_support",
+        "combines_support_nonadditively",
+        "generated_origin_dependency",
+        "program_order",
+        "projects_support_for_target_groups",
+        "reads_from",
+        "realizes_fact",
+        "restores_native_result",
+        "rollback_tests_learned_version_dependence",
+        "tests_causal_support"
+      ],
+      "schema": "nanogpt-training-learning-inference-projection-gfg-validation-v1",
+      "status": "PASS"
+    }
+  ],
+  "not_measured": {},
+  "planned_run_count": 3,
+  "replay_checks": [
+    {
+      "checks": [
+        "all_phase_native_baseline_and_gate_hashes",
+        "all_formed_component_rollbacks_and_restorations"
+      ],
+      "entry_id": "nano-supp-01"
+    },
+    {
+      "checks": [
+        "all_phase_native_baseline_and_gate_hashes",
+        "all_formed_component_rollbacks_and_restorations"
+      ],
+      "entry_id": "nano-supp-02"
+    },
+    {
+      "checks": [
+        "all_phase_native_baseline_and_gate_hashes",
+        "all_formed_component_rollbacks_and_restorations"
+      ],
+      "entry_id": "nano-supp-03"
+    }
+  ],
+  "scientific": {
+    "claim_boundary": "This establishes an operational training-learning-inference support projection in the executed nanoGPT family; it is not a universal theorem for every model or inference process.",
+    "formed_distinct_group_profile_minimum": 23,
+    "formed_nonadditive_pair_group_minimum": 138,
+    "gates": {
+      "causal_component_call": true,
+      "formation_support_reorganization": true,
+      "identity_continuity": true,
+      "learned_version_rollback_and_restore": true,
+      "query_conditioning_and_nonadditive_combination": true
+    },
+    "interpretation": "Original frozen gate functions evaluated on the measured subset of the three-history supplementary roster.",
+    "native_component_call_count": 48,
+    "pair_gate_forward_count": 72,
+    "phase_observation_count": 12,
+    "restoration_forward_count": 12,
+    "rollback_accuracy_effect_max": -0.014150943396226356,
+    "rollback_accuracy_effect_mean": -0.17767295597484278,
+    "rollback_accuracy_effect_min": -0.6745283018867925,
+    "rollback_forward_count": 12,
+    "run_count": 3,
+    "runs_with_changed_rollback_logits": 3,
+    "schema": "nanogpt-training-learning-inference-projection-summary-v1",
+    "single_gate_forward_count": 48,
+    "status": "PASS"
+  }
+}

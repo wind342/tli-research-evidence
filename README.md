@@ -2,7 +2,7 @@
 
 This repository accompanies the current **TLI paper**, [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml). Frozen experimental identifiers and historical schema strings are preserved for provenance; active GNN/SNN artifact filenames use TLI.
 
-**Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/icml/TLI_ICML_Manuscript.pdf) is hosted alongside its LaTeX source.
+**Start with the [TLI/ICML paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md)**, organized around the current `icml-final` manuscript sections, figures and appendix tables. The [compiled paper](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/TLI_ICML2027_Anonymous.pdf) is hosted alongside its LaTeX source.
 
 Experiment identifiers follow the current manuscript and [experiment index](EXPERIMENT_INDEX.md). Historical releases remain available in Git history.
 
@@ -26,7 +26,19 @@ The corresponding **GNN/SNN** evidence is the [Windows-run machine results and a
 | **GNN** | 3,068 / 3,072 | **99.87%** | **97.87%** | 8/9, 9/9, 8/9; nonlinear counts 6/256, 36/256, 20/256 |
 | **Hard-spiking SNN** | 6,713 / 7,200 | **93.24%** | **60.05%** | 12/12 in all four seeds |
 
-[Independent prediction audit receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json): `PASS`, 28 events and 10,272 target records. The figures match ICML appendix Table 3. The GNN predictor met its registered criterion; the SNN predictor's **60.05%** four-way macro recall fell below its prediction threshold, while all four SNN seeds passed the **12/12 structural TLI criteria**. Earlier experiment versions remain archived. The November GNN/SNN result directory includes machine summaries and an independent prediction-check receipt; it does not include the exact November native execution programs or frozen source/protocol files. The adjacent October programs belong to different registered seeds. See the [current-result provenance note](independent_stress_tests/windows_reproduction/README.md).
+[Independent prediction audit receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json): `PASS`, 28 events and 10,272 target records. The figures match ICML appendix Table 3. The GNN predictor met its registered criterion; the SNN predictor's **60.05%** four-way macro recall fell below its prediction threshold, while all four SNN seeds passed the **12/12 structural TLI criteria**. Earlier experiment versions remain archived. The [execution package](independent_stress_tests/windows_reproduction/execution/README.md) connects these results to the frozen run plan, model code, native training states, sealed predictions and endpoint checks. The [downloadable archive](https://github.com/wind342/tli-research-evidence/releases/download/tli-execution-evidence-20261125/TLI_GNN_SNN_Execution_Evidence.zip) contains the same execution files.
+
+## nanoGPT three-history experimental supplement
+
+The [three-history supplement](supplements/nanogpt/README.md) brings together
+30,000 captured training updates, model states, matched interventions, measured
+responses, support and boundary ledgers, frozen inference and target-boundary
+prediction. It is published as one package so the full experimental sequence
+can be downloaded and reproduced from the same three histories.
+
+The [release](https://github.com/wind342/tli-research-evidence/releases/tag/tli-execution-evidence-20261125) contains the complete GFGs, checkpoints,
+measurement programs and shared dependencies. The repository entry provides
+the result records, source identities and reproduction commands.
 
 ## Mathematical and historical materials
 

@@ -1,0 +1,21 @@
+{
+  "schema": "tlir-nanogpt-three-history-supplement-v1",
+  "design": "Fresh execution of the original nanoGPT measurements at a reduced run count; not a replacement for the frozen paper results.",
+  "trainer_commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291",
+  "trainer_model_sha256": "63d46bccd28157de4ae3d4e714f3945370be708852d2f411e0d017a7da5f8d39",
+  "steps_per_history": 10000,
+  "evaluation_interval": 100,
+  "capture": "Original TrainingGFGCapture without thinning or modified arithmetic.",
+  "selection": {
+    "history_roster": "Run every registered seed without outcome-based replacement or extension.",
+    "inference_phases": "Use original INF-E01 select_phases on the completed history. Record missing phases without invented measurements.",
+    "stepwise_windows": "Use the original phase/window-selection criteria on the supplementary roster; preserve predecessor coverage and the registered follow-up horizons.",
+    "predictor": "Keep the frozen quadratic_complete formula. Development-only analysis must not select or tune the confirmation run. Seal prediction records before scorer access to the endpoints."
+  },
+  "runs": [
+    {"id": "nano-supp-01", "role": "development", "model_seed": 2611701, "data_order_seed": 2711701, "token_seed": 2811701, "split_seed": 2911701},
+    {"id": "nano-supp-02", "role": "development", "model_seed": 2611702, "data_order_seed": 2711702, "token_seed": 2811702, "split_seed": 2911702},
+    {"id": "nano-supp-03", "role": "confirmation", "model_seed": 2611703, "data_order_seed": 2711703, "token_seed": 2811703, "split_seed": 2911703}
+  ],
+  "targets": ["TL-E01", "TL-E02", "TL-E03", "TL-E04", "TL-E05", "TL-E06", "TL-E07", "TL-E08", "INF-E01", "TL-P01"]
+}

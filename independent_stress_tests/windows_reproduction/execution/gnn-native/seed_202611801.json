@@ -1,0 +1,204 @@
+{
+  "execution_integrity": {
+    "frozen_inference_exact": true
+  },
+  "finite_amplitude": [
+    {
+      "max_chord_deviation": 0.008443817496299744,
+      "mean_abs_change": 0.16989770531654358,
+      "nonlinear_count": 6,
+      "nonlinear_fraction": 0.09375,
+      "number": 64,
+      "step": 25
+    },
+    {
+      "max_chord_deviation": 0.0003151893615722656,
+      "mean_abs_change": 0.04949590563774109,
+      "nonlinear_count": 0,
+      "nonlinear_fraction": 0.0,
+      "number": 64,
+      "step": 100
+    },
+    {
+      "max_chord_deviation": 0.000125885009765625,
+      "mean_abs_change": 0.0328204482793808,
+      "nonlinear_count": 0,
+      "nonlinear_fraction": 0.0,
+      "number": 64,
+      "step": 200
+    },
+    {
+      "max_chord_deviation": 4.9591064453125e-05,
+      "mean_abs_change": 0.028179705142974854,
+      "nonlinear_count": 0,
+      "nonlinear_fraction": 0.0,
+      "number": 64,
+      "step": 350
+    }
+  ],
+  "gates": {
+    "distributed_support": true,
+    "exact_learned_version_rollback": true,
+    "finite_amplitude_nonlinearity": false,
+    "frozen_execution_integrity": true,
+    "frozen_query_conditioning": true,
+    "nonadditive_complete_logits": true,
+    "persistent_support_reallocation": true,
+    "same_update_different_receiver": true,
+    "training_capability": true
+  },
+  "identities": {
+    "final_sha256": "0bbb65085e7ce1b816e13c04f94dc95f1a87b06e7aaa3332112892f769fcf9b4",
+    "model_initial_sha256": "b8a4f1c0b187b120238f95fac2340fa61a0c9d6f44c1a2e98de7485b479c441d",
+    "test_rows_sha256": "e28c03e749a769d7a548b59a028ca98b161d435da1d9488db58b6dca3eb147ba",
+    "training_rows_sha256": "9ad7c94f5f966e6f30c48e102c81febd180acdc76ca9afa600a167703f0bf2e5",
+    "updates": [
+      {
+        "batch_indices_sha": "c6dc1a0bb073d189d868322517cbc72a3813fcb8494728844056351b00df4a39",
+        "post_sha": "d0649d5c4db2d683710b692aef2ad903ad65aef3f1a3af6f90d13b9a9c0e2423",
+        "pre_sha": "7d86ec71dd636669f8c37111827fb30fed6208c62edd03656daf606b5f6be3d9",
+        "step": 25,
+        "update_sha": "1902c6779db84d5248e1712aa8117d0d73b015c032ff71890a24d5e6feefb37b"
+      },
+      {
+        "batch_indices_sha": "6cf52272651438137be53b05e6f420fd4b776a91162f4f926beff38511aabf35",
+        "post_sha": "bc66a9cefed203264d85e99c990d8775e2daaff51d00c05616ce0442f0b0995f",
+        "pre_sha": "24af6068e7b9666545751cb8ab7779986d7f5f6eb48a8968c44fbb83fe1bf3b1",
+        "step": 100,
+        "update_sha": "16073e6d84f4a93e09711e031be092f79bc384527f34e184bf244e942967fff4"
+      },
+      {
+        "batch_indices_sha": "e055f17067839a4ea597a5106f5aad3fe7a887750e0079b697b4b85af9429f0a",
+        "post_sha": "dc6fb3a042341f97d3664a49be2c3766a89006c5509f79c9cf1ea57224814788",
+        "pre_sha": "6151f7f9d755f3e3a6e7c97c41070385ba5b8f70481b909be6982919bc198ed8",
+        "step": 200,
+        "update_sha": "94978edb330db8a6c0acecf961bb5084a64094c9e85580d30c8d3747a85b7b7e"
+      },
+      {
+        "batch_indices_sha": "98cd4f5cca49f523c7cb134c94da80af8be0f37c05d87be7b30316efe11aac7c",
+        "post_sha": "01372f5484bca359beb425353e05d69796468ff79dd70ffc4c8bbb0c15456588",
+        "pre_sha": "62d7b9da2cc1084324bccb51769eabac9146175eb03a8eaafad8bcc464ed0145",
+        "step": 350,
+        "update_sha": "a319701d8261cffdca9a7b31c8dff80e590597d609dc17699294e3d7150cbba7"
+      }
+    ]
+  },
+  "observation_status": "OBSERVED_WITH_FROZEN_THRESHOLDS",
+  "receiving_state_exchanges": [
+    {
+      "alternate_rms": 0.008280308025134676,
+      "delta_l2": 0.014292501447651717,
+      "earlier": 25,
+      "later": 100,
+      "nrmse": 1.2657712909385352,
+      "received_rms": 0.05291973663190048
+    },
+    {
+      "alternate_rms": 0.02451863087938752,
+      "delta_l2": 0.006133940974242405,
+      "earlier": 100,
+      "later": 200,
+      "nrmse": 0.3781421160275212,
+      "received_rms": 0.03557343806638182
+    },
+    {
+      "alternate_rms": 0.020371905309209643,
+      "delta_l2": 0.004236543142888061,
+      "earlier": 200,
+      "later": 350,
+      "nrmse": 0.3606392736763774,
+      "received_rms": 0.029394394475060603
+    }
+  ],
+  "rollbacks": [
+    {
+      "component": 0,
+      "exact_restoration": true,
+      "maximum_full_output_difference": 15.203475952148438
+    },
+    {
+      "component": 1,
+      "exact_restoration": true,
+      "maximum_full_output_difference": 13.16321849822998
+    },
+    {
+      "component": 2,
+      "exact_restoration": true,
+      "maximum_full_output_difference": 9.42016887664795
+    },
+    {
+      "component": 3,
+      "exact_restoration": true,
+      "maximum_full_output_difference": 4.3914594650268555
+    }
+  ],
+  "seed": 202611801,
+  "support": [
+    {
+      "active_fraction": 1.0,
+      "max_complete_logit_pair_interaction_rms": 0.08578297643962157,
+      "max_query_profile_l1": 2.000000238418579,
+      "primary_switch_fraction": 0.265625,
+      "reallocation_fraction": 1.0,
+      "step": 25
+    },
+    {
+      "active_fraction": 1.0,
+      "max_complete_logit_pair_interaction_rms": 3.2536986579474543,
+      "max_query_profile_l1": 1.112892985343933,
+      "primary_switch_fraction": 0.0,
+      "reallocation_fraction": 0.3125,
+      "step": 100
+    },
+    {
+      "active_fraction": 1.0,
+      "max_complete_logit_pair_interaction_rms": 5.345279608162222,
+      "max_query_profile_l1": 1.0476539134979248,
+      "primary_switch_fraction": 0.015625,
+      "reallocation_fraction": 0.0,
+      "step": 200
+    },
+    {
+      "active_fraction": 1.0,
+      "max_complete_logit_pair_interaction_rms": 7.9576221012263995,
+      "max_query_profile_l1": 1.04742431640625,
+      "primary_switch_fraction": 0.0,
+      "reallocation_fraction": 0.0,
+      "step": 350
+    }
+  ],
+  "train_log": [
+    {
+      "step": 1,
+      "test_accuracy": 0.5,
+      "test_loss": 0.7230122089385986
+    },
+    {
+      "step": 25,
+      "test_accuracy": 0.796875,
+      "test_loss": 0.5301669836044312
+    },
+    {
+      "step": 100,
+      "test_accuracy": 1.0,
+      "test_loss": 0.0015985174104571342
+    },
+    {
+      "step": 200,
+      "test_accuracy": 1.0,
+      "test_loss": 3.367693716427311e-05
+    },
+    {
+      "step": 350,
+      "test_accuracy": 1.0,
+      "test_loss": 4.125752468553401e-07
+    },
+    {
+      "step": 500,
+      "test_accuracy": 1.0,
+      "test_loss": 9.313224635931761e-10
+    }
+  ],
+  "training_accuracy": 1.0,
+  "training_loss": 9.313224635931761e-10
+}

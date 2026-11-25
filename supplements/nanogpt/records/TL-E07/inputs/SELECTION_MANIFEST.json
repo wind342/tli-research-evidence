@@ -1,0 +1,729 @@
+{
+  "adjacent_pair_count": 18,
+  "alignment_lock_sha256": "210e4ef7e3e6392a08dca904bc343af1e9ba943db2bad9af746cbee2173612f4",
+  "development_entry_count": 3,
+  "entry_sources": {
+    "nano-supp-01": {
+      "original_training_gfg": {
+        "task_commitment": "e859b30bcc4b2bbaa59ccec436ef99513d619699107e54a7b3be91699646d36b",
+        "validation_input": {
+          "content_sha256": "ad167f8d6cac4a6031bf42130e67634c8f36fa03b6c7690e9dd1d25f4fd271de",
+          "object_id_at_step_100": "obj_a2447e49b6963776a29564401a562ea68c8a8e5ed79e52c9d0977b0b5527e5da"
+        }
+      }
+    },
+    "nano-supp-02": {
+      "original_training_gfg": {
+        "task_commitment": "6b49cc6e0cada54ca2c4e82ae2e259877c943c7da40b95c7078d044ce9417f40",
+        "validation_input": {
+          "content_sha256": "fc6ed7f52f7fc9795f5a666ed1ce6c1a3a54dd01215abde8d3517f660b2b9585",
+          "object_id_at_step_100": "obj_28db95569d9ff657351ae542ca42390a25f50863943fb9ae316e790a222e9c20"
+        }
+      }
+    },
+    "nano-supp-03": {
+      "original_training_gfg": {
+        "task_commitment": "cf2f0782a463d342e3db4243682c5dc2cc20e3d458184ec77e571eeee396666e",
+        "validation_input": {
+          "content_sha256": "074e6fafca022e1b4b6d2e144d2c892f98213c8dc506edd7cb0d289d8dc4b1d7",
+          "object_id_at_step_100": "obj_0e1c3d85d9279daa32d808703e1a6e565c92b58bc2f0cc28f34e6eefd2e7483e"
+        }
+      }
+    }
+  },
+  "global_unseen_policy": {
+    "entry_id": "NO_E05_HOLDOUT_AFTER_PREDICTIONS_SCORED"
+  },
+  "original_response_contract_sha256": "3904286fe068d4ce63d0fc9bb972bd881f4743ac1c6d2620df0f2ac82f21dfd6",
+  "pairs": [
+    {
+      "entry_id_audit_only": "nano-supp-01",
+      "pair_id": "nano-supp-01-matched_stable-03600",
+      "primary_stratum": "matched_stable",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-1b0be21f29cf44bc80a662f4c06d9067",
+            "probe_observation_id": "probe-bc886f83cbcd9fa0e579153086973f9c"
+          },
+          "native_endpoint_optimizer_step_audit_only": 3601,
+          "observation_id": "nano-supp-01-matched_stable-03600-0",
+          "receiver_optimizer_step_audit_only": 3600,
+          "receiver_prestate": {
+            "observed_state_id": "state-3d900c935fad07c44da6ed6156bc4553",
+            "probe_observation_id": "probe-da62e139ef4d0ceedab62777572c5907"
+          },
+          "section_id": "nano-supp-01-matched_stable-03600-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-0d0c82ae3b5f255817ea1c2eb195a107",
+            "probe_observation_id": "probe-cbcc3f3d9426c75c960cc6bfcaf11819"
+          },
+          "native_endpoint_optimizer_step_audit_only": 3602,
+          "observation_id": "nano-supp-01-matched_stable-03600-1",
+          "receiver_optimizer_step_audit_only": 3601,
+          "receiver_prestate": {
+            "observed_state_id": "state-1b0be21f29cf44bc80a662f4c06d9067",
+            "probe_observation_id": "probe-bc886f83cbcd9fa0e579153086973f9c"
+          },
+          "section_id": "nano-supp-01-matched_stable-03600-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-86ecc817c8fe08bb98f0a883"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-01",
+      "pair_id": "nano-supp-01-pre_decline-04198",
+      "primary_stratum": "pre_decline",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-2a11f1123e2919f848a1db54e089250f",
+            "probe_observation_id": "probe-ea04e44452055fae951650906a9bdd83"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4199,
+          "observation_id": "nano-supp-01-pre_decline-04198-0",
+          "receiver_optimizer_step_audit_only": 4198,
+          "receiver_prestate": {
+            "observed_state_id": "state-64ac8b8a9ef07a699a77129a4b25ffe2",
+            "probe_observation_id": "probe-1fc2e6adff38cc60f65957bbfb320cdf"
+          },
+          "section_id": "nano-supp-01-pre_decline-04198-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-00438884b12c2bdbae0a1e8334b1d565",
+            "probe_observation_id": "probe-05a47afd5e2a7847a2c01c74534afa54"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4200,
+          "observation_id": "nano-supp-01-pre_decline-04198-1",
+          "receiver_optimizer_step_audit_only": 4199,
+          "receiver_prestate": {
+            "observed_state_id": "state-2a11f1123e2919f848a1db54e089250f",
+            "probe_observation_id": "probe-ea04e44452055fae951650906a9bdd83"
+          },
+          "section_id": "nano-supp-01-pre_decline-04198-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-a8c26254154f4f93bd20e591"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-01",
+      "pair_id": "nano-supp-01-recovery-06998",
+      "primary_stratum": "recovery",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-7174e89a440e3ad16f199d489cd47d5d",
+            "probe_observation_id": "probe-a37ea9a7a231970eff2c8f05de5f6199"
+          },
+          "native_endpoint_optimizer_step_audit_only": 6999,
+          "observation_id": "nano-supp-01-recovery-06998-0",
+          "receiver_optimizer_step_audit_only": 6998,
+          "receiver_prestate": {
+            "observed_state_id": "state-30c0b6632718595cc6090722260f79a5",
+            "probe_observation_id": "probe-e5bff2a1e784a9e45a0aa5c750402161"
+          },
+          "section_id": "nano-supp-01-recovery-06998-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-dc79adeca5ffd12652c0e1af8e120433",
+            "probe_observation_id": "probe-fc81800a1de22bdd47e82852dcd53541"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7000,
+          "observation_id": "nano-supp-01-recovery-06998-1",
+          "receiver_optimizer_step_audit_only": 6999,
+          "receiver_prestate": {
+            "observed_state_id": "state-7174e89a440e3ad16f199d489cd47d5d",
+            "probe_observation_id": "probe-a37ea9a7a231970eff2c8f05de5f6199"
+          },
+          "section_id": "nano-supp-01-recovery-06998-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-061707ab21af47ec1d496fae"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-01",
+      "pair_id": "nano-supp-01-large_support_change-04700",
+      "primary_stratum": "large_support_change",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-50607fe4ff3ecdb38e6039f4fda37bf8",
+            "probe_observation_id": "probe-0d641b427a9b703aa166cfb6e45cedaf"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4701,
+          "observation_id": "nano-supp-01-large_support_change-04700-0",
+          "receiver_optimizer_step_audit_only": 4700,
+          "receiver_prestate": {
+            "observed_state_id": "state-84d58dfacd1acc7476d7e1520efbb1f5",
+            "probe_observation_id": "probe-1440bc097ae9027d1445b05f6cf49fbd"
+          },
+          "section_id": "nano-supp-01-large_support_change-04700-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-3a2c1c9762cb07b0abf4f6cc77f8989b",
+            "probe_observation_id": "probe-27c3db079a80980a556d0de44c1be1c6"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4702,
+          "observation_id": "nano-supp-01-large_support_change-04700-1",
+          "receiver_optimizer_step_audit_only": 4701,
+          "receiver_prestate": {
+            "observed_state_id": "state-50607fe4ff3ecdb38e6039f4fda37bf8",
+            "probe_observation_id": "probe-0d641b427a9b703aa166cfb6e45cedaf"
+          },
+          "section_id": "nano-supp-01-large_support_change-04700-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-a8d73cc44b9ba0fcf10cfcc2"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-01",
+      "pair_id": "nano-supp-01-near_boundary-08800",
+      "primary_stratum": "near_boundary",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-d89d9ecc6c55cee9ded36af7e51fb506",
+            "probe_observation_id": "probe-d5a67bc8a8cca74e214eac9f96f646e1"
+          },
+          "native_endpoint_optimizer_step_audit_only": 8801,
+          "observation_id": "nano-supp-01-near_boundary-08800-0",
+          "receiver_optimizer_step_audit_only": 8800,
+          "receiver_prestate": {
+            "observed_state_id": "state-5d7c2cfa53deaba2abbc923c35aad810",
+            "probe_observation_id": "probe-a97d5aed8a2deb887c6bc70808ff9790"
+          },
+          "section_id": "nano-supp-01-near_boundary-08800-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-3f1a334c6a94f1fc5f16891e3383b6c1",
+            "probe_observation_id": "probe-115d681972eaedef927f57a0377fd60b"
+          },
+          "native_endpoint_optimizer_step_audit_only": 8802,
+          "observation_id": "nano-supp-01-near_boundary-08800-1",
+          "receiver_optimizer_step_audit_only": 8801,
+          "receiver_prestate": {
+            "observed_state_id": "state-d89d9ecc6c55cee9ded36af7e51fb506",
+            "probe_observation_id": "probe-d5a67bc8a8cca74e214eac9f96f646e1"
+          },
+          "section_id": "nano-supp-01-near_boundary-08800-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-32920ae2885a82345cbf765f"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-01",
+      "pair_id": "nano-supp-01-far_boundary-04600",
+      "primary_stratum": "far_boundary",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-b1e2dcbe50739f2ec5104da1e3839df2",
+            "probe_observation_id": "probe-dcbfc61cb2586efdac91eed1684040d0"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4601,
+          "observation_id": "nano-supp-01-far_boundary-04600-0",
+          "receiver_optimizer_step_audit_only": 4600,
+          "receiver_prestate": {
+            "observed_state_id": "state-58067e2c19424efff8108fab690baf50",
+            "probe_observation_id": "probe-76eb50cc2fc25a24766f788dfd30fcd3"
+          },
+          "section_id": "nano-supp-01-far_boundary-04600-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-1d610b1a0c007cddbfdf243119056e72",
+            "probe_observation_id": "probe-e140ed6497329e84de02c3b708a2ac05"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4602,
+          "observation_id": "nano-supp-01-far_boundary-04600-1",
+          "receiver_optimizer_step_audit_only": 4601,
+          "receiver_prestate": {
+            "observed_state_id": "state-b1e2dcbe50739f2ec5104da1e3839df2",
+            "probe_observation_id": "probe-dcbfc61cb2586efdac91eed1684040d0"
+          },
+          "section_id": "nano-supp-01-far_boundary-04600-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-2bacbc14dcdf9969e81f83ba"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-02",
+      "pair_id": "nano-supp-02-matched_stable-02500",
+      "primary_stratum": "matched_stable",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-0a6c3f8644586cbc66529186e4913215",
+            "probe_observation_id": "probe-3a482d1706495f4c4e84b42bfa18ef22"
+          },
+          "native_endpoint_optimizer_step_audit_only": 2501,
+          "observation_id": "nano-supp-02-matched_stable-02500-0",
+          "receiver_optimizer_step_audit_only": 2500,
+          "receiver_prestate": {
+            "observed_state_id": "state-a4f445b665801547a0be34dfb3efb51e",
+            "probe_observation_id": "probe-e89a44eae93ce62f51a742c4a11a1290"
+          },
+          "section_id": "nano-supp-02-matched_stable-02500-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-21fc1f28080b2da5ecf513667f56d972",
+            "probe_observation_id": "probe-b8cde42d49d10e1e00dbae848760fd7d"
+          },
+          "native_endpoint_optimizer_step_audit_only": 2502,
+          "observation_id": "nano-supp-02-matched_stable-02500-1",
+          "receiver_optimizer_step_audit_only": 2501,
+          "receiver_prestate": {
+            "observed_state_id": "state-0a6c3f8644586cbc66529186e4913215",
+            "probe_observation_id": "probe-3a482d1706495f4c4e84b42bfa18ef22"
+          },
+          "section_id": "nano-supp-02-matched_stable-02500-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-2e48b34cbb93f21bef6978f7"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-02",
+      "pair_id": "nano-supp-02-pre_decline-02298",
+      "primary_stratum": "pre_decline",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-c7f0519ff27580ba201706104e06cd6d",
+            "probe_observation_id": "probe-24018b70d2f8ee0c015e5cb42c0ee9ac"
+          },
+          "native_endpoint_optimizer_step_audit_only": 2299,
+          "observation_id": "nano-supp-02-pre_decline-02298-0",
+          "receiver_optimizer_step_audit_only": 2298,
+          "receiver_prestate": {
+            "observed_state_id": "state-70c1d38201f6a4e442f33c69b8352ffe",
+            "probe_observation_id": "probe-761fff1a50773e04bf5df6c96bb953e5"
+          },
+          "section_id": "nano-supp-02-pre_decline-02298-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-58102a228657e77cb86fdbe068c32b23",
+            "probe_observation_id": "probe-a37cd7801ff650db286e1bd7576d73c5"
+          },
+          "native_endpoint_optimizer_step_audit_only": 2300,
+          "observation_id": "nano-supp-02-pre_decline-02298-1",
+          "receiver_optimizer_step_audit_only": 2299,
+          "receiver_prestate": {
+            "observed_state_id": "state-c7f0519ff27580ba201706104e06cd6d",
+            "probe_observation_id": "probe-24018b70d2f8ee0c015e5cb42c0ee9ac"
+          },
+          "section_id": "nano-supp-02-pre_decline-02298-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-3bb17caba2b5be490d29cb3c"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-02",
+      "pair_id": "nano-supp-02-recovery-07698",
+      "primary_stratum": "recovery",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-dc3ee4538c6cae5491cbea6817a445f8",
+            "probe_observation_id": "probe-1b18913106ed6a25f5576551008bf228"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7699,
+          "observation_id": "nano-supp-02-recovery-07698-0",
+          "receiver_optimizer_step_audit_only": 7698,
+          "receiver_prestate": {
+            "observed_state_id": "state-22a53973746cf7d8de3e3e8f76ef82af",
+            "probe_observation_id": "probe-47df185bb4aead266047b0cbd9ebf2c6"
+          },
+          "section_id": "nano-supp-02-recovery-07698-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-f0a55d4c7450433f2727ae91cc2e8597",
+            "probe_observation_id": "probe-ffe088b4800ac9b72cdfc7f78a232c54"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7700,
+          "observation_id": "nano-supp-02-recovery-07698-1",
+          "receiver_optimizer_step_audit_only": 7699,
+          "receiver_prestate": {
+            "observed_state_id": "state-dc3ee4538c6cae5491cbea6817a445f8",
+            "probe_observation_id": "probe-1b18913106ed6a25f5576551008bf228"
+          },
+          "section_id": "nano-supp-02-recovery-07698-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-7d98890b3b26324e1c42bc7f"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-02",
+      "pair_id": "nano-supp-02-large_support_change-09100",
+      "primary_stratum": "large_support_change",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-74daaa8f2a104bf02da9511f65d5ea9d",
+            "probe_observation_id": "probe-dcb1a2a2665d5865190c5392f7885018"
+          },
+          "native_endpoint_optimizer_step_audit_only": 9101,
+          "observation_id": "nano-supp-02-large_support_change-09100-0",
+          "receiver_optimizer_step_audit_only": 9100,
+          "receiver_prestate": {
+            "observed_state_id": "state-e9259385caf9867d28c1146befe09a47",
+            "probe_observation_id": "probe-02995fdea81ce8451a8dd63ffcd197bf"
+          },
+          "section_id": "nano-supp-02-large_support_change-09100-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-1deda792c214fafc6d480211831466cc",
+            "probe_observation_id": "probe-0dbd7a9b24219dcba960725280addb6a"
+          },
+          "native_endpoint_optimizer_step_audit_only": 9102,
+          "observation_id": "nano-supp-02-large_support_change-09100-1",
+          "receiver_optimizer_step_audit_only": 9101,
+          "receiver_prestate": {
+            "observed_state_id": "state-74daaa8f2a104bf02da9511f65d5ea9d",
+            "probe_observation_id": "probe-dcb1a2a2665d5865190c5392f7885018"
+          },
+          "section_id": "nano-supp-02-large_support_change-09100-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-3f9d6603a9e9dbebebcb089f"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-02",
+      "pair_id": "nano-supp-02-near_boundary-07600",
+      "primary_stratum": "near_boundary",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-0ef3d42a7de19092234b8842d379292c",
+            "probe_observation_id": "probe-50f15f9608b1d3807c5cd3361892eacd"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7601,
+          "observation_id": "nano-supp-02-near_boundary-07600-0",
+          "receiver_optimizer_step_audit_only": 7600,
+          "receiver_prestate": {
+            "observed_state_id": "state-5d1fa7db5fb752b22dd3f9a6b9cc0d07",
+            "probe_observation_id": "probe-09a98ea59bdeea0476d2be39ebbb3596"
+          },
+          "section_id": "nano-supp-02-near_boundary-07600-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-4e6e96e8e6164bba79627f2a49df6348",
+            "probe_observation_id": "probe-10fc48da7f20e4b114c37d26ad513d78"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7602,
+          "observation_id": "nano-supp-02-near_boundary-07600-1",
+          "receiver_optimizer_step_audit_only": 7601,
+          "receiver_prestate": {
+            "observed_state_id": "state-0ef3d42a7de19092234b8842d379292c",
+            "probe_observation_id": "probe-50f15f9608b1d3807c5cd3361892eacd"
+          },
+          "section_id": "nano-supp-02-near_boundary-07600-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-3e9487bfb756b841db504a2c"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-02",
+      "pair_id": "nano-supp-02-far_boundary-09800",
+      "primary_stratum": "far_boundary",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-a07e5e538faeccc0fdcbe961efa37344",
+            "probe_observation_id": "probe-c15e373b69e39e471864bc4a5b7af8dc"
+          },
+          "native_endpoint_optimizer_step_audit_only": 9801,
+          "observation_id": "nano-supp-02-far_boundary-09800-0",
+          "receiver_optimizer_step_audit_only": 9800,
+          "receiver_prestate": {
+            "observed_state_id": "state-ca0040120cf255c216b7b1b58a965787",
+            "probe_observation_id": "probe-b4321e0a69c689f3a5f6e8f7bcb68703"
+          },
+          "section_id": "nano-supp-02-far_boundary-09800-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-815691e06ce0e9bb56c8a02a0343549f",
+            "probe_observation_id": "probe-089148ae18b69e5ff9f4848d6d0a023d"
+          },
+          "native_endpoint_optimizer_step_audit_only": 9802,
+          "observation_id": "nano-supp-02-far_boundary-09800-1",
+          "receiver_optimizer_step_audit_only": 9801,
+          "receiver_prestate": {
+            "observed_state_id": "state-a07e5e538faeccc0fdcbe961efa37344",
+            "probe_observation_id": "probe-c15e373b69e39e471864bc4a5b7af8dc"
+          },
+          "section_id": "nano-supp-02-far_boundary-09800-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-91d2f2f35a909155a511496a"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-03",
+      "pair_id": "nano-supp-03-matched_stable-02800",
+      "primary_stratum": "matched_stable",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-25dbcbca8416a7ae009f89ae3f721d05",
+            "probe_observation_id": "probe-5043885db63b5b5e4782608641b45a47"
+          },
+          "native_endpoint_optimizer_step_audit_only": 2801,
+          "observation_id": "nano-supp-03-matched_stable-02800-0",
+          "receiver_optimizer_step_audit_only": 2800,
+          "receiver_prestate": {
+            "observed_state_id": "state-258cca66350f7997d56121e1f1d2aa6f",
+            "probe_observation_id": "probe-0d8958dd05c8ab836df54fb509451c05"
+          },
+          "section_id": "nano-supp-03-matched_stable-02800-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-a934e12f9e39b9fe2edc7d9e46b23f06",
+            "probe_observation_id": "probe-2f1c848326f41549c399abcf78858255"
+          },
+          "native_endpoint_optimizer_step_audit_only": 2802,
+          "observation_id": "nano-supp-03-matched_stable-02800-1",
+          "receiver_optimizer_step_audit_only": 2801,
+          "receiver_prestate": {
+            "observed_state_id": "state-25dbcbca8416a7ae009f89ae3f721d05",
+            "probe_observation_id": "probe-5043885db63b5b5e4782608641b45a47"
+          },
+          "section_id": "nano-supp-03-matched_stable-02800-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-03163f7b199de005724d06cd"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-03",
+      "pair_id": "nano-supp-03-pre_decline-03998",
+      "primary_stratum": "pre_decline",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-271951b18743a905ed5243e0686ba382",
+            "probe_observation_id": "probe-966a73c1403abf7233c37fc84890f837"
+          },
+          "native_endpoint_optimizer_step_audit_only": 3999,
+          "observation_id": "nano-supp-03-pre_decline-03998-0",
+          "receiver_optimizer_step_audit_only": 3998,
+          "receiver_prestate": {
+            "observed_state_id": "state-27a1ca2d1c029ab7770553b13094b492",
+            "probe_observation_id": "probe-dd890bb026c74549e04aa29b0f7d3e27"
+          },
+          "section_id": "nano-supp-03-pre_decline-03998-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-8a3e3446b6cbbbb1b385ce1eabfba2d5",
+            "probe_observation_id": "probe-a5aa5b36750971c5085c56b1bb9f9da2"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4000,
+          "observation_id": "nano-supp-03-pre_decline-03998-1",
+          "receiver_optimizer_step_audit_only": 3999,
+          "receiver_prestate": {
+            "observed_state_id": "state-271951b18743a905ed5243e0686ba382",
+            "probe_observation_id": "probe-966a73c1403abf7233c37fc84890f837"
+          },
+          "section_id": "nano-supp-03-pre_decline-03998-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-28cd8876c60d6cb925f51829"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-03",
+      "pair_id": "nano-supp-03-recovery-08398",
+      "primary_stratum": "recovery",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-a3f3bd0756bd6e8d6effb0415709f985",
+            "probe_observation_id": "probe-2037bc6dff2571990803b0d5800ee746"
+          },
+          "native_endpoint_optimizer_step_audit_only": 8399,
+          "observation_id": "nano-supp-03-recovery-08398-0",
+          "receiver_optimizer_step_audit_only": 8398,
+          "receiver_prestate": {
+            "observed_state_id": "state-d3b04191bd7c586bdfb5978025248d89",
+            "probe_observation_id": "probe-2ab66c97f64f2953f350d1aaf04d69c9"
+          },
+          "section_id": "nano-supp-03-recovery-08398-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-7d625bc4d78be0f99cd1e4bd8fd33d3d",
+            "probe_observation_id": "probe-46106bd44eafc881bc1587bc2e93fac9"
+          },
+          "native_endpoint_optimizer_step_audit_only": 8400,
+          "observation_id": "nano-supp-03-recovery-08398-1",
+          "receiver_optimizer_step_audit_only": 8399,
+          "receiver_prestate": {
+            "observed_state_id": "state-a3f3bd0756bd6e8d6effb0415709f985",
+            "probe_observation_id": "probe-2037bc6dff2571990803b0d5800ee746"
+          },
+          "section_id": "nano-supp-03-recovery-08398-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-b862f9177b73b1278a48348f"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-03",
+      "pair_id": "nano-supp-03-large_support_change-07100",
+      "primary_stratum": "large_support_change",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-7af93cbfe1bdfbfd9cb7e27f1f99136f",
+            "probe_observation_id": "probe-aa9efa16c6c942f5a969f1ad821c36ca"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7101,
+          "observation_id": "nano-supp-03-large_support_change-07100-0",
+          "receiver_optimizer_step_audit_only": 7100,
+          "receiver_prestate": {
+            "observed_state_id": "state-a0574fb5d74b3876ad824c1b4074af3f",
+            "probe_observation_id": "probe-10a220912950d560bd247b23b88b2742"
+          },
+          "section_id": "nano-supp-03-large_support_change-07100-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-a6141a81b03142970540d46f5d778891",
+            "probe_observation_id": "probe-4d3a5277a9c39dc274fc4ec545a84855"
+          },
+          "native_endpoint_optimizer_step_audit_only": 7102,
+          "observation_id": "nano-supp-03-large_support_change-07100-1",
+          "receiver_optimizer_step_audit_only": 7101,
+          "receiver_prestate": {
+            "observed_state_id": "state-7af93cbfe1bdfbfd9cb7e27f1f99136f",
+            "probe_observation_id": "probe-aa9efa16c6c942f5a969f1ad821c36ca"
+          },
+          "section_id": "nano-supp-03-large_support_change-07100-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-0fd4db4f0c898000de3af567"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-03",
+      "pair_id": "nano-supp-03-near_boundary-04400",
+      "primary_stratum": "near_boundary",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-e036fbedc8814863ba25932310d23cea",
+            "probe_observation_id": "probe-08547f27f2e03bddc4e7bde78ee7a0f9"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4401,
+          "observation_id": "nano-supp-03-near_boundary-04400-0",
+          "receiver_optimizer_step_audit_only": 4400,
+          "receiver_prestate": {
+            "observed_state_id": "state-a638650bd3f5fbec61680fdf103bac31",
+            "probe_observation_id": "probe-051727ac8dc0760167a9cd19be6ae75c"
+          },
+          "section_id": "nano-supp-03-near_boundary-04400-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-0efcb80a92abb7f9f34d21f07273d010",
+            "probe_observation_id": "probe-a3346a48a56f1e51d1ddec0db74576e7"
+          },
+          "native_endpoint_optimizer_step_audit_only": 4402,
+          "observation_id": "nano-supp-03-near_boundary-04400-1",
+          "receiver_optimizer_step_audit_only": 4401,
+          "receiver_prestate": {
+            "observed_state_id": "state-e036fbedc8814863ba25932310d23cea",
+            "probe_observation_id": "probe-08547f27f2e03bddc4e7bde78ee7a0f9"
+          },
+          "section_id": "nano-supp-03-near_boundary-04400-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-8c88f71e422a0c1f9c451871"
+    },
+    {
+      "entry_id_audit_only": "nano-supp-03",
+      "pair_id": "nano-supp-03-far_boundary-05500",
+      "primary_stratum": "far_boundary",
+      "sections": [
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-2eaca778781c3730dad334decc631f6e",
+            "probe_observation_id": "probe-8752ab33cdd1f0406b481599ea3fd29f"
+          },
+          "native_endpoint_optimizer_step_audit_only": 5501,
+          "observation_id": "nano-supp-03-far_boundary-05500-0",
+          "receiver_optimizer_step_audit_only": 5500,
+          "receiver_prestate": {
+            "observed_state_id": "state-9c5a4bd4e2aec96a8eb2c640b4010818",
+            "probe_observation_id": "probe-24ddb1c51f751089f5a825358289708a"
+          },
+          "section_id": "nano-supp-03-far_boundary-05500-0",
+          "section_ordinal_within_pair": 0
+        },
+        {
+          "native_endpoint_adjudication_only": {
+            "observed_state_id": "state-e6f521165a9e256d7834cec1bd71ec7b",
+            "probe_observation_id": "probe-bc7dff59b07b05b7eb5ceccffdd96b83"
+          },
+          "native_endpoint_optimizer_step_audit_only": 5502,
+          "observation_id": "nano-supp-03-far_boundary-05500-1",
+          "receiver_optimizer_step_audit_only": 5501,
+          "receiver_prestate": {
+            "observed_state_id": "state-2eaca778781c3730dad334decc631f6e",
+            "probe_observation_id": "probe-8752ab33cdd1f0406b481599ea3fd29f"
+          },
+          "section_id": "nano-supp-03-far_boundary-05500-1",
+          "section_ordinal_within_pair": 1
+        }
+      ],
+      "window_id": "e05-window-93b669618f3b2597f68724ea"
+    }
+  ],
+  "parent_window_selection_sha256": "f46dd0a8d2a0e92645757c921ae39689f1f938ee1e021befb18e284fd82fba8b",
+  "response_section_count": 36,
+  "section_id_set_sha256": "d66ec7e09e87ffbb15a1370736ebb163b2ab722b6010d44399fccd6cdd5c5487",
+  "selection_scope": "All three histories and six selection strata",
+  "status": "SELECTION_FROZEN_NO_NEW_CURVES_VIEWED"
+}

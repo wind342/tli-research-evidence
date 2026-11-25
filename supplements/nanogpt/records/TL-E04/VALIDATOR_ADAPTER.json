@@ -1,0 +1,6 @@
+{
+  "changes_raw_measurements_or_contract": false,
+  "correction": "Verify all recorded transitions. Compose only the recorded 0-to-1 transitions when comparing with the scale-1 endpoint, not the outer finite-difference samples.",
+  "error_observed_in_working_run": "SST_AMPLITUDE_PATH_VALIDATION_CATEGORY_COMPOSITION_MISMATCH:A:forward/11/predictions",
+  "original_validator_sha256": "48c908617d9184bde7ae4282247a15c3f82de622d7e8e67dee34ffd55372e052"
+}

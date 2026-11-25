@@ -1,0 +1,44 @@
+{
+  "runs": [
+    {
+      "actual_shift_optimizer_steps": 800,
+      "baseline_transition_step": 1800,
+      "cut": 1700,
+      "gfg": "PASS",
+      "interpretation": "MEASURED",
+      "intervention_transition_step": 2600,
+      "run": "nano-supp-01",
+      "status": "EXECUTED",
+      "variant": {
+        "kind": "pause"
+      }
+    },
+    {
+      "actual_shift_optimizer_steps": 1100,
+      "baseline_transition_step": 500,
+      "cut": 400,
+      "gfg": "PASS",
+      "interpretation": "MEASURED",
+      "intervention_transition_step": 1600,
+      "run": "nano-supp-02",
+      "status": "EXECUTED",
+      "variant": {
+        "kind": "pause"
+      }
+    },
+    {
+      "actual_shift_optimizer_steps": 0,
+      "baseline_transition_step": 1200,
+      "cut": 1100,
+      "gfg": "PASS",
+      "interpretation": "MEASURED",
+      "intervention_transition_step": 1200,
+      "run": "nano-supp-03",
+      "status": "EXECUTED",
+      "variant": {
+        "kind": "clip"
+      }
+    }
+  ],
+  "total_planned": 3
+}
