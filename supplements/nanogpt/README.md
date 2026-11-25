@@ -28,10 +28,32 @@ support hand-offs. The target-boundary records contain 3,816 measured targets.
 The complete quadratic predictor scored 1,264/1,272 on the confirmation
 history, with 99.37% accuracy and 98.31% four-way macro recall.
 
+## Record-to-paper numbering
+
+The package retains the identifiers used when its records were generated.
+The corresponding measurements in the current paper are:
+
+| Measurement | Saved package identifier | Current paper identifier | Records |
+|---|---|---|---|
+| Component gating and distributed support | TL-E06 | TL-E05 | [Support replay](records/TL-E06/) |
+| Support reallocation | TL-E07 | TL-E06 | [Support ledger and results](records/TL-E07/) |
+| Measured target-boundary transitions | TL-E08 | TL-E07 | [Measured margins](records/TL-E08-window/) |
+
+TL-E01–TL-E04, INF-E01 and TL-P01 retain the same identifiers. The complete
+sequence is run with the commands below; saved file and command identifiers
+follow the package column.
+
+The paper's TL-P01 confirmation reports 4,652/5,088 (91.43% accuracy,
+91.49% four-way macro recall) in the [original confirmation results](../../experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md).
+This supplement reports 1,264/1,272 (99.37% accuracy, 98.31% four-way macro
+recall) on `nano-supp-03` in its [confirmation results](records/TL-P01-window/RESULTS.json).
+These results come from their respective confirmation samples.
+
 ## Download and run
 
 Download the two parts of `TLI_nanoGPT_Three_History_Evidence.zip` and the
-`TLI_nanoGPT_Three_History_Evidence.parts.json` manifest from the release.
+`TLI_nanoGPT_Three_History_Evidence.parts.json` manifest from the
+[release](https://github.com/wind342/tli-research-evidence/releases/tag/tli-execution-evidence-20261125).
 Join them with `fetch_archive.py`; the helper checks each part and the joined
 archive. Extract the ZIP into a new directory. From that directory:
 

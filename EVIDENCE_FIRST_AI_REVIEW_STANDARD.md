@@ -1,6 +1,6 @@
 # Evidence-based scientific audit procedure for the current TLI paper
 
-**Current manuscript:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks* (TLI)](https://github.com/wind342/tli-paper/tree/icml-final/icml). This procedure also applies to the historical TLIR research archives when their distinct versions are identified.
+**Current manuscript:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks* (TLI)](https://github.com/wind342/tli-paper/tree/icml-final/submission/icml2027). This procedure also applies to the historical TLIR research archives when their distinct versions are identified.
 
 **Evidence map:** [TLI_ICML_PAPER_EVIDENCE_MAP.md](TLI_ICML_PAPER_EVIDENCE_MAP.md)  
 **Original documentation version:** 2026-10-25; current-paper alignment: 2026-11-20.

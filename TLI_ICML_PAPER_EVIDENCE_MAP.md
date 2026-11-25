@@ -1,38 +1,29 @@
 # TLI — ICML paper-to-evidence map
 
-**Current manuscript:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml) (ICML-formatted manuscript; 8-page main text plus references, appendix, figures and declarations).
+**Current manuscript:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/submission/icml2027) (ICML 2027 submission; 8-page main text plus references, appendix, figures and declarations).
 
-**Authority for ICML GNN/SNN numbers:** [Windows evidence](independent_stress_tests/windows_reproduction/README.md), [prediction metrics](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), and [checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json). The November Windows runs establish the current paper's GNN/SNN evidence version. Earlier runs are retained as historical experimental records; prior manuscript navigation is available in Git history.
+**Authority for ICML GNN/SNN numbers:** [Windows evidence](independent_stress_tests/windows_reproduction/README.md), [prediction metrics](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), and [checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json). The November Windows runs establish the current paper's GNN/SNN evidence version.
 
 ## ICML reading order
 
 | Current ICML manuscript location | Experiment or evidence authority |
 |---|---|
-| [Introduction](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/intro.tex) | Questions motivating the eight core TLI experiments |
-| [Experimental Methods and Findings: instruments](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/experiments_layout.tex) | [GFG and four reusable instruments](EXPERIMENTAL_INSTRUMENTS.md); frozen interventions and independently auditable results |
+| [Introduction](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/intro.tex) | Questions motivating the eight core TLI experiments |
+| [Experimental Methods and Findings: instruments](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/experiments_layout.tex) | [GFG and four reusable instruments](EXPERIMENTAL_INSTRUMENTS.md); frozen interventions and independently auditable results |
 | Experimental section: training | TL-E01–TL-E04 (formation, receiver-state causal forks, finite-amplitude nonlinear responses) |
 | Experimental section: learning | TL-E05–TL-E07 (distributed support, persistent reallocation, target-boundary transitions) |
 | Experimental section: inference | INF-E01 (13 histories, 52 checkpoints, query-conditioned support and exact learned-version rollback) |
 | Experimental section: prediction | TL-P01; 4,652/5,088 = **91.43%**, four-transition macro recall **91.49%** |
 | Experimental section: five additional TLI systems | ResNet, diffusion U-Net, Vision-MoE, GNN, hard-spiking SNN; see appendix **Table 2** (seven systems) and **Table 3** (six-system prediction results) |
 | Experimental section: feedback | Seventh system, GRU RL-E05/06; distinct from the six complete TLI experimental chains |
-| [Unified dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex) | Training action/state, functional response, support change, capability, frozen inference and feedback closure |
-| [Mathematical unification](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/extrapolations_main_complete.tex) | Two complete main-text recoveries: **Edge of Stability** and **Catastrophic Forgetting**, tagged [T]/[A]/[R] |
-| [This Is a Simple Theory](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/simple.tex) | Elementary neural-computation explanation of the coupled TLI relations |
-| [Conclusion](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/conclusion.tex) | Synthesis of experiment-based TLI and mathematical unification |
-| [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md), [runnable 21-check mathematical audit](math_audit/README.md) |
-| [Appendix experimental displays](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Figure 3 and Tables 1–3 |
+| [Unified dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/dynamics_layout.tex) | Training action/state, functional response, support change, capability, frozen inference and feedback closure |
+| [Mathematical unification](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/extrapolations_main_complete.tex) | Two complete main-text recoveries: **Edge of Stability** and **Catastrophic Forgetting**, tagged [T]/[A]/[R] |
+| [This Is a Simple Theory](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/simple.tex) | Elementary neural-computation explanation of the coupled TLI relations |
+| [Conclusion](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/conclusion.tex) | Synthesis of experiment-based TLI and mathematical unification |
+| [Appendix: remaining 12 complete derivations](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/appendix_remaining_complete.tex) | All **14** derivations in total; organized full account and [independent mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md), [runnable 21-check mathematical audit](math_audit/README.md) |
+| [Appendix experimental displays](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/appendix_floats.tex) | Figure 3 and Tables 1–3 |
 
-**Document convention:** Section, figure, table and equation references follow the `icml-final` manuscript. Experiment identifiers follow the current [experiment index](EXPERIMENT_INDEX.md); the November Windows GNN/SNN runs have distinct registered seeds.
-
-## Confirmed ICML GNN and SNN results
-
-| System | Predictor correct/targets | Accuracy | Four-way macro recall | Structural criteria |
-|---|---:|---:|---:|---|
-| GNN | **3,068 / 3,072** | **99.87%** | **97.87%** | **8/9, 9/9, 8/9**; nonlinear counts **6/256, 36/256, 20/256** |
-| Hard-spiking SNN | **6,713 / 7,200** | **93.24%** | **60.05%** | **12/12** in four seeds |
-
-The GNN predictor meets its recorded transport criterion. The hard-spiking SNN predictor does **not** meet the recorded 90% four-way recall criterion, even though its 12/12 structural TLI checks passed in all four seeds. Source: [machine summary](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json) and [checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json).
+**Document convention:** Section, figure, table and equation references follow the `icml-final/submission/icml2027` manuscript. Experiment identifiers follow the current [experiment index](EXPERIMENT_INDEX.md); the November Windows GNN/SNN runs have distinct registered seeds.
 
 ## 1. Introduction (ICML manuscript)
 
@@ -87,15 +78,15 @@ The direct TL-P01 algorithm implements the established TLI relations among reali
 | nanoGPT / Adam | TL-E01–07, INF-E01, TL-P01 | Sections 2 and 3.1 above | [Experiment index](EXPERIMENT_INDEX.md), [TL-P01 results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md), [independent checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) |
 | ResNet-18 / CIFAR-100 / SGD momentum | TL-G01; inference also INF-G01 | [Protocol](experiments/gfg_resnet_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_resnet_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_resnet_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
 | Diffusion U-Net / CIFAR-10 / AdamW | TL-G02; inference also INF-G01 | [Protocol](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/PROTOCOL_FREEZE.md), [implementation](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/) | [Results](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md), [checker](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) |
-| Vision-MoE / CIFAR-100 / AdamW | **TL-G03 / INF-G02** | [Protocol](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/PROTOCOL_FREEZE.md), [model contract](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/MODEL_CONTRACT.json), [model](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/model.py), [runner](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/runner.py) | [Results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md), [machine results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RESULTS.json), [checker](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECKER.py), [historical check receipt](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECK_RESULT.json) |
-| GNN / graph reachability / RMSprop | Independent TLI stress test | [Frozen execution plan and native code](independent_stress_tests/windows_reproduction/execution/README.md) | [ICML November machine result](independent_stress_tests/windows_reproduction/round-1/gnn_tli_formal_results.json), [Windows summary](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json); historical native data retained under `independent_stress_tests/gnn/` |
-| Hard-spiking SNN / digits / Adagrad | Independent TLI stress test | [Frozen execution plan and native code](independent_stress_tests/windows_reproduction/execution/README.md) | [ICML November machine result](independent_stress_tests/windows_reproduction/round-1/SNN_TLI_formal/FORMAL_SUMMARY.json), [Windows summary](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json); historical native data retained under `independent_stress_tests/snn/` |
+| Vision-MoE / CIFAR-100 / AdamW | **TL-G03 / INF-G02** | [Protocol](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/PROTOCOL_FREEZE.md), [model contract](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/MODEL_CONTRACT.json), [model](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/model.py), [runner](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/runner.py) | [Results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/RESULTS.md), [machine results](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RESULTS.json), [checker](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECKER.py), [checker receipt](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/INDEPENDENT_CHECK_RESULT.json) |
+| GNN / graph reachability / RMSprop | Independent TLI stress test | [Frozen execution plan and native code](independent_stress_tests/windows_reproduction/execution/README.md) | [ICML November machine result](independent_stress_tests/windows_reproduction/round-1/gnn_tli_formal_results.json), [Windows summary](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json) |
+| Hard-spiking SNN / digits / Adagrad | Independent TLI stress test | [Frozen execution plan and native code](independent_stress_tests/windows_reproduction/execution/README.md) | [ICML November machine result](independent_stress_tests/windows_reproduction/round-1/SNN_TLI_formal/FORMAL_SUMMARY.json), [Windows summary](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json) |
 
 ResNet and diffusion inference are separately documented in **INF-G01**: [protocol](experiments/gfg_cross_system_frozen_inference_projection_v1/PROTOCOL_FREEZE.md), [results](experiments/gfg_cross_system_frozen_inference_projection_v1/RESULTS.md), [checker](experiments/gfg_cross_system_frozen_inference_projection_v1/INDEPENDENT_CHECKER.py).
 
 The **MoE formal experiment package** includes its protocol, source, machine results and checker. All three formal seeds (20260910–12) passed the registered joint verdict. Its routed forward uses deterministic top-2 selection among four experts; all expert branches execute and nonselected weights are zero. The [scientific assessment](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/SCIENTIFIC_ASSESSMENT.md) documents the test, and the [runtime manifest](experiments/gfg_moe_cifar_training_learning_inference_generalization_v1/FORMAL_RUNTIME_MANIFEST.json) identifies externally archived runtime objects.
 
-The [execution package](independent_stress_tests/windows_reproduction/execution/README.md) supplies the native model programs, frozen run plan, runtime versions, training states and prediction records for the November measurements. In the **ICML GNN Windows run**, seeds 202611801–202611803 produced **6/256, 36/256 and 20/256** nonlinear responses and passed **8/9, 9/9 and 8/9** structural criteria. ICML SNN Windows seeds 71101–71104 passed **12/12** each. The [Windows evidence](independent_stress_tests/windows_reproduction/) has the current-machine results, and the earlier GNN/SNN tests are historical. These independent stress tests used PyTorch-native records and their own component intervention designs; see [experimental scope](independent_stress_tests/EVIDENCE_SCOPE.md).
+The [execution package](independent_stress_tests/windows_reproduction/execution/README.md) supplies the native model programs, frozen run plan, runtime versions, training states and prediction records for the November measurements. In the **ICML GNN Windows run**, seeds 202611801–202611803 produced **6/256, 36/256 and 20/256** nonlinear responses and passed **8/9, 9/9 and 8/9** structural criteria. ICML SNN Windows seeds 71101–71104 passed **12/12** each. The [Windows evidence](independent_stress_tests/windows_reproduction/) has the current-machine results. These independent stress tests used PyTorch-native records and their own component intervention designs; see [experimental scope](independent_stress_tests/EVIDENCE_SCOPE.md).
 
 ### Table 3: post-update target-boundary classification
 
@@ -108,7 +99,7 @@ The [execution package](independent_stress_tests/windows_reproduction/execution/
 | GNN | 99.87 | 97.87 | [ICML Windows prediction record](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), 3,068/3,072 |
 | Hard-spiking SNN | 93.24 | 60.05 | [ICML Windows prediction record](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), 6,713/7,200; prediction criterion NOT_SUPPORTED |
 
-**GNN/SNN ICML prediction authorities:** [Windows overview](independent_stress_tests/windows_reproduction/README.md), [machine prediction metrics](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), and [independent checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json). The prior checker reported `PASS` across **28 events and 10,272 target records**. The [earlier TL-P01 transport record](independent_stress_tests/tlp01_prediction/REPORT.md) documents a separate historical experiment.
+**GNN/SNN ICML prediction authorities:** [Windows overview](independent_stress_tests/windows_reproduction/README.md), [machine prediction metrics](independent_stress_tests/windows_reproduction/round-1/table3/ADJUDICATION_REPORT.json), and [independent checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json). The prior checker reported `PASS` across **28 events and 10,272 target records**.
 
 ## 4. Feedback allocation experiments in the shared GRU (ICML experimental section)
 
@@ -125,20 +116,20 @@ RL-E06 retains all 12 seeds. The update-800 other-skill accuracy is 70.31%; reba
 
 ## 5. Unified equations and mathematical unification (ICML)
 
-The ICML paper separates the [coupled dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/dynamics_layout.tex) from the [14 mathematical recoveries](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md). The main-text worked derivations are **Edge of Stability** (`icml/sections/extrap_cases/eos.tex`) and **Catastrophic Forgetting** (`icml/sections/extrap_cases/forgetting.tex`). The remaining **12** appear in the [appendix source](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_remaining_complete.tex): implicit bias, model collapse, spectral bias, benign overfitting, Chinchilla, dynamical isometry, dropout, grokking, μP, SAM/sharpness, gradient noise scale and double descent.
+The ICML paper separates the [coupled dynamical equations](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/dynamics_layout.tex) from the [14 mathematical recoveries](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md). The main-text worked derivations are **Edge of Stability** (`submission/icml2027/sections/extrap_cases/eos.tex`) and **Catastrophic Forgetting** (`submission/icml2027/sections/extrap_cases/forgetting.tex`). The remaining **12** appear in the [appendix source](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/appendix_remaining_complete.tex): implicit bias, model collapse, spectral bias, benign overfitting, Chinchilla, dynamical isometry, dropout, grokking, μP, SAM/sharpness, gradient noise scale and double descent.
 
-The complete source-oriented ledger remains in [14 theory-first derivations](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md), [21 historical positive/contrasting comparisons](theory/TLI_HISTORICAL_COMPARISONS_21.md), and [14-item mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md). The historical 21-case research record is supplementary material.
+The complete source-oriented ledger remains in [14 theory-first derivations](theory/TLI_THEORY_FIRST_14_DERIVATIONS.md) and [14-item mathematical audit](audits/TLI_14_EXTRAPOLATIONS_MATH_AUDIT.md).
 
 ## 6. ICML figures and appendix tables
 
 | ICML item | Manuscript source | Evidence scope |
 |---|---|---|
-| **Figure 1** | [TLI core with feedback](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig1_tli_core_feedback.pdf) | Conceptual TLI and feedback schematic |
-| **Figure 2** | [Experimental evidence](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig2_experimental_evidence.pdf) | 13 panels covering training, learning, inference and RL feedback; panel-by-panel map below |
-| **Figure 3** | [Six-system TLI experiment chains](https://github.com/wind342/tli-paper/blob/icml-final/icml/figures/fig3_cross_system.pdf) | Two GNN seeds 8/9, one 9/9; four SNN seeds 12/12; detailed numerical authorities above |
-| **Table 1 (appendix)** | [Experimental relations](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Nine experimental relations and their variables (labels `eq:exp1`–`eq:exp9`) |
-| **Table 2 (appendix)** | [Seven systems](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Six TLI system chains plus the GRU feedback system |
-| **Table 3 (appendix)** | [Boundary prediction](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/appendix_floats.tex) | Immediate post-update target-boundary accuracy and four-way macro recall; GNN/SNN numbers from the November Windows record |
+| **Figure 1** | [TLI core with feedback](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/figures/fig1_tli_core_feedback.pdf) | Conceptual TLI and feedback schematic |
+| **Figure 2** | [Experimental evidence](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/figures/fig2_experimental_evidence.pdf) | 13 panels covering training, learning, inference and RL feedback; panel-by-panel map below |
+| **Figure 3** | [Six-system TLI experiment chains](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/figures/fig3_cross_system.pdf) | Two GNN seeds 8/9, one 9/9; four SNN seeds 12/12; detailed numerical authorities above |
+| **Table 1 (appendix)** | [Experimental relations](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/appendix_floats.tex) | Nine experimental relations and their variables (labels `eq:exp1`–`eq:exp9`) |
+| **Table 2 (appendix)** | [Seven systems](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/appendix_floats.tex) | Six TLI system chains plus the GRU feedback system |
+| **Table 3 (appendix)** | [Boundary prediction](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/appendix_floats.tex) | Immediate post-update target-boundary accuracy and four-way macro recall; GNN/SNN numbers from the November Windows record |
 
 **Figure 2 individual panels:**
 
@@ -157,14 +148,14 @@ The complete source-oriented ledger remains in [14 theory-first derivations](the
 | d3 | RL-E05 | 168 proper-subset component rollbacks (14 × 12) |
 | d4 | RL-E06 | Common update-800 state, continued exclusive feedback versus two recovery allocations |
 
-Figure 3 summarizes the six-system experiment chains. The [November Windows records](independent_stress_tests/windows_reproduction/README.md) provide the ICML GNN/SNN numerical results and recorded prediction audit; the earlier [GNN](independent_stress_tests/gnn/) and [SNN](independent_stress_tests/snn/) records remain archived.
+Figure 3 summarizes the six-system experiment chains. The [November Windows records](independent_stress_tests/windows_reproduction/README.md) provide the ICML GNN/SNN numerical results and recorded prediction audit.
 
 ## 7. Audit and availability
 
 - [Frozen experiment index](EXPERIMENT_INDEX.md), [four instruments](EXPERIMENTAL_INSTRUMENTS.md), [public evidence boundaries](PUBLIC_EVIDENCE_MATRIX.md) and [original import authority](provenance/EVIDENCE_IMPORT.md)
 - [Current ICML GNN/SNN machine results](independent_stress_tests/windows_reproduction/WINDOWS_REPRODUCTION.json) and [prediction checker receipt](independent_stress_tests/windows_reproduction/round-1/table3/INDEPENDENT_CHECK_RESULT.json); the receipt reports `PASS` for 28 events and 10,272 targets
 - [RL-E05 scientific assessment](experiments/gfg_rl_selective_positive_feedback_support_concentration_v1/SCIENTIFIC_ASSESSMENT.md) retains its stronger temporal-precedence criterion as `NOT_SUPPORTED`; [RL-E06 formal results](experiments/gfg_rl_selective_positive_feedback_dose_recovery_v1/RESULTS.md) retain all twelve seeds
-- [Imported evidence source identities](provenance/SOURCE_MANIFEST.md); [ICML manuscript sources](https://github.com/wind342/tli-paper/tree/icml-final/icml)
+- [Imported evidence source identities](provenance/SOURCE_MANIFEST.md); [ICML manuscript sources](https://github.com/wind342/tli-paper/tree/icml-final/submission/icml2027)
 
 The Git repository contains programs, frozen protocols, machine summaries and checkers. The [public evidence matrix](PUBLIC_EVIDENCE_MATRIX.md) documents verification scope by experiment. This documentation revision reused the existing checks and experiment records.
 
@@ -173,4 +164,6 @@ The Git repository contains programs, frozen protocols, machine summaries and ch
 The [integrated supplement](supplements/nanogpt/README.md) connects three
 complete training histories with the Training, Learning and Inference
 measurements and the target-boundary predictor. Its single download includes
-the GFG captures, checkpoints, execution code and measurement ledgers.
+the GFG captures, checkpoints, execution code and measurement ledgers. The
+[record-to-paper numbering](supplements/nanogpt/README.md#record-to-paper-numbering)
+maps the saved identifiers to the current manuscript.

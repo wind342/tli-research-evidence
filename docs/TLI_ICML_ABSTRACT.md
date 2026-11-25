@@ -1,8 +1,8 @@
 # Current TLI/ICML abstract — source-aligned English copy
 
-**Paper:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/icml).
+**Paper:** [*Unified Dynamics of Training, Learning, and Inference in Neural Networks*](https://github.com/wind342/tli-paper/tree/icml-final/submission/icml2027).
 
-**Canonical source:** [icml/sections/abstract_layout.tex](https://github.com/wind342/tli-paper/blob/icml-final/icml/sections/abstract_layout.tex). The paragraph below follows the current source with LaTeX percentage escapes rendered as ordinary percentages.
+**Canonical source:** [submission/icml2027/sections/abstract_layout.tex](https://github.com/wind342/tli-paper/blob/icml-final/submission/icml2027/sections/abstract_layout.tex). The paragraph below follows the current source with LaTeX percentage escapes rendered as ordinary percentages.
 
 ## Abstract
 

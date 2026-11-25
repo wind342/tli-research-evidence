@@ -2,19 +2,14 @@
 
 Experiment identifiers follow the current [experiment index](EXPERIMENT_INDEX.md).
 
-This matrix identifies current Git experiment records and the verification scope reported in earlier audits. Recorded recomputation of external payloads is a historical result, not a newly run check or a designated current TLI ZIP release. Distinguish source inspection, recomputation from saved machine records, and native experimental re-execution. See [the current paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) for paper-level authorities and [source provenance](provenance/EXTERNAL_ARTIFACTS.md) for original external artifact identifiers.
+This matrix lists the evidence files, recorded verification scope and reproduction requirements for the current paper. See the [paper-to-evidence map](TLI_ICML_PAPER_EVIDENCE_MAP.md) for the corresponding paper sections and the [external artifact manifest](provenance/EXTERNAL_ARTIFACTS.md) for source payload identities.
 
-| Experiment | Current Git evidence | Historically recorded verification scope | Boundary |
+| Experiment | Current Git evidence | Recorded verification scope | Boundary |
 |---|---|---|---|
-| GF-P01 | Code, frozen profiles, machine summaries and deletion witnesses in Git | Exact/strict projection decisions and five-coordinate irreducibility witnesses | Three upstream Git-history authority checks require the original source repository, as recorded in `REPRODUCIBILITY_NOTES.md` |
-| GF-P02 | Code, machine summaries and frozen third-party authority hashes in Git | Semiring projection and collision-witness decisions | Third-party papers are cited and hashed, not redistributed |
 | TL-E01–TL-E02 | Contracts, compact run summaries, ledgers and causal-evaluation records in Git | Reported state-sufficiency counterexamples and intervention decisions | Complete native training histories and checkpoints are not duplicated |
 | TL-E03–TL-E07 | Frozen protocols, implementations, validators, the four-instrument source archive and the TL-P01 identity-aligned truth ledger | Method, event boundary, adjudication code, compact recorded results and all 15,264 identity-aligned four-transition truth records | Full native replay requires the source training/CSRG bundles identified by the manifests |
 | TL-P01 | [TL-P01 results](experiments/gfg_nanogpt_actual_update_boundary_v1/RESULTS.md) and [checker](experiments/gfg_nanogpt_actual_update_boundary_v1/INDEPENDENT_CHECKER.py) | All 15,264 target records, hashes, derivative audit, the frozen four-run confirmation split, 4,652/5,088 result, accuracy, balanced accuracy, per-transition recalls and macro recall are recomputed | This is a frozen raw-state re-execution of the established algorithm, not a new confirmation run |
 | INF-E01 | [INF-E01 public evidence notes](experiments/gfg_nanogpt_training_learning_inference_projection_v1/PUBLIC_EVIDENCE.md) and [checker](experiments/gfg_nanogpt_training_learning_inference_projection_v1/PUBLIC_EVIDENCE_CHECKER.py) | Integrity of 13 derived GFGs and their tensor payloads; 52 checkpoint-phase logit-level non-additivity and query-conditioned support-profile results are recomputed | Regenerating the GFGs and rollback forwards requires the original parameter checkpoints |
-| RL-E01 | Protocol, implementation, results and compact causal-fork records in Git | Binding/credit fork decisions and reported seed summary | Fresh training requires the documented Python environment |
-| RL-E02 | [RL-E02 protocol](experiments/gfg_temporal_credit_discovery_v1/PROTOCOL_FREEZE.md) and [results](experiments/gfg_temporal_credit_discovery_v1/RESULTS.md) | Formal GFG ledgers, candidate/credit ledgers, checkpoints, policy evaluations and independent checks | The frozen archive preserves the original absolute path labels; validators rebase the runtime root |
-| RL-E03–RL-E04 | Code, frozen contracts, committed machine results, validators and tests in Git | Long-chain, exact-credit optimization, stochastic controls and policy-transfer results | Fresh stochastic/training runs require the documented environment |
 | TL-G01 | [ResNet results](experiments/gfg_resnet_cifar_training_learning_generalization_v1/RESULTS.md) and [checker](experiments/gfg_resnet_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) | All three formal ResNet-18/CIFAR-100/SGD-momentum runs, realized-event ledgers, compact GFGs, checkpoint identities and the cross-run aggregate result are independently recomputed | Fresh training requires the documented PyTorch environment and the standard CIFAR-100 dataset, which is not redistributed |
 | TL-G02 | [Diffusion results](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/RESULTS.md) and [checker](experiments/gfg_ddpm_cifar_training_learning_generalization_v1/INDEPENDENT_CHECKER.py) | All three formal time-conditioned U-Net/CIFAR-10/AdamW runs, occurrence-level response records, compact GFGs, checkpoint identities and the cross-run aggregate result are independently recomputed | Fresh training requires the documented PyTorch environment and the standard CIFAR-10 dataset, which is not redistributed |
 | INF-G01 | [INF-G01 results](experiments/gfg_cross_system_frozen_inference_projection_v1/RESULTS.md) and [checker](experiments/gfg_cross_system_frozen_inference_projection_v1/INDEPENDENT_CHECKER.py) | The formal ResNet and diffusion results, validated GFG, all six seed-level nine-criterion decisions and all six exact checkpoint authorities are independently checked | The checkpoints are stored once in their training-learning bundles and resolved by byte length and SHA-256 rather than duplicated in the inference bundle |
@@ -33,9 +28,10 @@ captured updates, the corresponding GFGs and checkpoints, native intervention
 programs, measured response and support ledgers, boundary records, frozen
 inference observations and predictor records. File manifests bind the release
 downloads to the captured inputs and recorded outputs. The package README
-provides the hash check, saved-history replay and fresh-training commands.
+provides the hash check, saved-history replay, fresh-training commands and
+[record-to-paper numbering](supplements/nanogpt/README.md#record-to-paper-numbering).
 
-## Historical external-payload verification commands
+## Commands for source experiment bundles
 
 - TL-P01: `python -m experiments.gfg_nanogpt_actual_update_boundary_v1.INDEPENDENT_CHECKER <extracted-bundle-root>`
 - INF-E01: `python -m experiments.gfg_nanogpt_training_learning_inference_projection_v1.PUBLIC_EVIDENCE_CHECKER <extracted-bundle-root>`
@@ -44,9 +40,9 @@ provides the hash check, saved-history replay and fresh-training commands.
 - INF-G01: `python -m experiments.gfg_cross_system_frozen_inference_projection_v1.INDEPENDENT_CHECKER --results <extracted-bundle-root>/FORMAL_RESULTS.json --gfg <extracted-bundle-root>/FORMAL_GFG.json`
 - RL-E05: `python -m experiments.gfg_rl_selective_positive_feedback_support_concentration_v1.independent_checker --artifact-root <extracted-bundle-root>/formal --device cpu`
 
-The commands above require the matching historical external runtime payloads where a bundle root is specified. For checks against the **current Git checkout** instead, run `python tools/verify_tli_repository_integrity.py`.
+The commands above require the matching external runtime payloads where a bundle root is specified. For checks against the **current Git checkout** instead, run `python tools/verify_tli_repository_integrity.py`.
 
 Absolute filesystem strings retained inside frozen source manifests are
 provenance labels from the native execution.  They are not required input paths
-for the two public result checkers above and have not been rewritten after the
+for the result checkers above and have not been rewritten after the
 fact.

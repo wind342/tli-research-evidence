@@ -32,5 +32,4 @@ interpretation.
 
 The correct conclusion is bounded cross-system support in the executed compact
 Vision-MoE. It is evidence that the relations are not peculiar to dense
-Transformers, ResNets or diffusion U-Nets. It is not unconditional proof for
-all MoE routing algorithms, expert counts, datasets or training regimes.
+Transformers, ResNets or diffusion U-Nets.
